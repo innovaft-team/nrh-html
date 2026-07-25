@@ -1,0 +1,22 @@
+# Dependencies
+/node_modules
+
+# Environment variables
+.env*.local
+.env
+
+# Vercel
+.vercel
+
+# Firebase cache (not config)
+.firebase/
+
+# VS Code personal settings
+.vscode/
+
+# Root-level output.css (duplicate of dist/output.css, not needed)
+/output.css
+
+# OS files
+.DS_Store
+Thumbs.db

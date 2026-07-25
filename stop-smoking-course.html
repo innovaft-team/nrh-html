@@ -1,0 +1,1339 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nrh Stop Smoking Course</title>
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="icon" type="image/svg" href="./assets/images/logo.webp" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <aside
+      id="sidebar"
+      class="fixed top-0 right-0 h-dvh bg-white w-[320px] transform transition-transform duration-300 ease-in-out z-9999 flex flex-col justify-start p-4 translate-x-full"
+    >
+      <!-- Main Menu Content -->
+      <div class="sidebar-overlay"></div>
+      <div id="main-menu">
+        <div class="flex justify-between items-center mb-6">
+          <a aria-label="logo" href="./">
+            <img
+              class="max-w-10.25 w-full"
+              src="./assets/images/logo.webp"
+              alt="logo"
+            />
+          </a>
+          <button
+            id="close-sidebar"
+            class="text-2xl"
+            aria-label="clsoe sidebar"
+          >
+            <img
+              class="w-8 h-8 object-cover"
+              src="./assets/images/close-sidebar.webp"
+              alt="cross-icon"
+            />
+          </button>
+        </div>
+        <div>
+          <nav
+            class="flex flex-col justify-between grow overflow-auto h-full hide-scrollbar"
+          >
+            <div class="flex flex-col justify-between gap-7 text-primary">
+              <a aria-label="manu list" href="#" class="header-li"> Magazin </a>
+              <a aria-label="manu list" href="#" class="header-li">
+                Erfolgsgeschichten
+              </a>
+              <a aria-label="manu list" href="#" class="header-li"> FAQ </a>
+
+              <button
+                data-modal-open="login"
+                class="flex gap-2 hover:scale-95 transition-all duration-300 ease-in-out"
+              >
+                <img
+                  class="max-w-4.75 w-full"
+                  src="./assets/images/profile-icon.webp"
+                  alt="profile"
+                />
+                Login
+              </button>
+            </div>
+          </nav>
+          <div
+            class="flex flex-col justify-between items-center gap-3 w-full pt-10"
+          >
+            <button
+              class="sm:py-2 py-1.5 lg:py-3 3xl:py-4 px-6 rounded-4xl bg-iceFishing text-primary font-medium hover:scale-95 transition-all duration-300 ease-in-out font-ibm-plex text-base lg:text-lg xl:text-xl 3xl:text-2xl w-full eading-[150%] sm:leading-[100%]"
+            >
+              Fachkreise
+            </button>
+            <button class="primary-btn w-full">Dein Weg zur App</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!---------------------------------------- HEADER ---------------------------------- -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 z-999 opacity-0 pointer-events-none transition-opacity duration-300"
+    ></div>
+    <header
+      class="text-white z-50 transition-transform duration-300 ease-in-out sticky top-0 w-full"
+    >
+      <!-- {/* Top Bar for Contact Info */} -->
+      <div class="bg-KonBlue">
+        <div
+          class="flex justify-end items-center sm:px-9! px-4! py-2 text-[11px] xs:text-xs font-ibm-plex sm:text-sm bg-KonBlue gap-4 overflow-auto custom-container hide-scrollbar"
+        >
+          <span class="hidden md:inline text-iceFishing text-base font-medium">
+            Unsere Experten sind für Dich da:
+          </span>
+          <div
+            class="flex sm:justify-center justify-between items-center xs:gap-7! gap-2! sm:w-fit w-full"
+          >
+            <a
+              href="tel:+49871121999343"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/phone-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              +49 8711 21 999 343
+            </a>
+            <a
+              href="mailto:service@nichtraucherhelden.de"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/email-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              service@nichtraucherhelden.de
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- {/* Main Navigation Bar */} -->
+      <div
+        class="bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.05)] text-black px-4"
+      >
+        <div class="custom-container py-2 sm:py-3 3xl:py-4 px-0!">
+          <div class="flex justify-between items-center">
+            <div class="shrink-0 flex items-center">
+              <div
+                class="max-w-13 3xl:max-w-18 aspect-square w-full cursor-pointer"
+              >
+                <img
+                  class="w-full h-full"
+                  src="/assets/images/logo.webp"
+                  alt="logo"
+                />
+              </div>
+            </div>
+            <button class="primary-btn block sm:hidden">
+              Dein Weg zur App
+            </button>
+            <nav
+              class="flex text-lg md:text-xl font-fira font-medium items-center gap-8 3xl:gap-12 leading-[140%]"
+            >
+              <div
+                class="hidden xl:flex justify-between items-center gap-10 text-primary"
+              >
+                <a href="#" class="header-li"> Magazin </a>
+                <a href="#" class="header-li"> Erfolgsgeschichten </a>
+                <a href="#" class="header-li"> FAQ </a>
+
+                <button
+                  data-modal-open="login"
+                  class="flex justify-center items-center gap-2 header-li icon-hover"
+                >
+                  <img
+                    class="max-w-4.75 w-full icon"
+                    src="./assets/images/profile-icon.webp"
+                    alt="profile"
+                  />
+                  Login
+                </button>
+              </div>
+              <div class="hidden sm:flex justify-between gap-5">
+                <button class="primary-btn-v3">Fachkreise</button>
+                <button class="primary-btn-v2">Dein Weg zur App</button>
+              </div>
+              <button
+                id="hamburger"
+                aria-label="hamburger button"
+                class="block xl:hidden space-y-1.5"
+              >
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- HERO -->
+    <div class="sm:px-5">
+      <div
+        class="custom-container 3xl:max-w-396 flex items-end relative overflow-hidden pt-[284px] sm:pt-40 xl:pt-81 pb-5 md:pb-14 xl:pb-28 px-5 md:px-12 xl:px-29 sm:rounded-[44px] rounded-[36px] rounded-t-none sm:mt-8"
+      >
+        <div
+          class="bg-KonBlue p-4 md:p-6 lg:p-10 2xl:p-16 rounded-[20px] relative z-10 max-w-208 w-full"
+        >
+          <p class="hero-subheading">Online und als App</p>
+          <h2 class="traning-hero-heading text-white font-fira">
+            Dein Nichtraucherkurs
+          </h2>
+        </div>
+        <img
+          class="absolute top-0 left-0 pointer-events-none h-full w-full object-cover hidden xxs:block"
+          src="./assets/images/stop-smoking-course.webp"
+          alt="magazin"
+        /><img
+          class="absolute top-0 left-0 pointer-events-none h-full w-full object-cover xxs:hidden"
+          src="./assets/images/webp/header-smoking-course.webp"
+          alt="magazin"
+        />
+      </div>
+    </div>
+    <!------------------------ Smoke-Free --------------------------->
+    <section class="pt-8 sm:pt-12 md:pt-14 lg:pt-16 xl:pt-20">
+      <div
+        class="secondary-container mx-auto flex justify-between flex-col-reverse lg:flex-row items-center"
+      >
+        <!-- LEFT LIST -->
+        <div
+          class="flex flex-col gap-2 sm:gap-4 relative z-10 -mt-12 lg:mt-0 lg:-mr-10 max-w-[500px] 3xl:max-w-[628px] xl:-mr-[60px] w-full"
+        >
+          <!-- BOX 1 -->
+          <div
+            class="flex items-start gap-[14px] sm:gap-4 md:gap-7 p-4 2xl:px-4 2xl:py-5 3xl:px-8 3xl:py-10 rounded-3xl md:rounded-[20px] bg-iceFishing"
+          >
+            <span
+              class="max-sm:hidden max-w-12 lg:max-w-[60px] 3xl:max-w-[72px] w-full"
+            >
+              <img
+                class="w-full h-full rounded-full object-cover"
+                src="./assets/images/money.webp"
+                alt="deign"
+              />
+            </span>
+            <span
+              class="sm:hidden max-w-12 lg:max-w-[60px] 3xl:max-w-[72px] w-full"
+            >
+              <img
+                class="w-full h-full rounded-full object-cover"
+                src="./assets/images/webp/money.webp-mobile.webp"
+                alt="deign"
+              />
+            </span>
+            <div>
+              <p
+                class="max-sm:hidden text-KonBlue paragraph-text font-bold font-ibm-plex leading-[100%] mb-[5px]"
+              >
+                Erstattung
+              </p>
+              <p
+                class="max-sm:hidden text-KonBlue free-help-text font-ibm-plex"
+              >
+                Nichtraucherkurs wird von Krankenkassen anteilig oder komplett
+                erstattet.
+              </p>
+              <p
+                class="sm:hidden text-KonBlue paragraph-text font-medium font-ibm-plex"
+              >
+                1. Kurs kaufen & starten
+              </p>
+              <p
+                class="sm:hidden text-KonBlue free-help-text font-ibm-plex leading-[138%] mt-[3px]"
+              >
+                Kaufe einen der beiden Kurse (Basis- oder Plus-Kurs), melde Dich
+                an und starte mit dem Kurs.
+              </p>
+            </div>
+          </div>
+
+          <!-- BOX 2 -->
+          <div
+            class="flex items-start gap-[14px] sm:gap-4 md:gap-7 p-4 2xl:px-4 2xl:py-5 3xl:px-8 3xl:py-10 rounded-3xl md:rounded-[20px] bg-iceFishing"
+          >
+            <span
+              class="max-sm:hidden max-w-12 lg:max-w-[60px] 3xl:max-w-[72px] w-full"
+            >
+              <img
+                class="w-full h-full rounded-full object-cover"
+                src="./assets/images/doctor.webp"
+                alt="deign"
+              />
+            </span>
+            <span
+              class="sm:hidden max-w-12 lg:max-w-[60px] 3xl:max-w-[72px] w-full"
+            >
+              <img
+                class="w-full h-full rounded-full object-cover"
+                src="./assets/images/webp/doctor.webp-mobile.webp"
+                alt="deign"
+              />
+            </span>
+            <div>
+              <p
+                class="max-sm:hidden text-KonBlue paragraph-text font-bold font-ibm-plex leading-[100%] mb-[5px]"
+              >
+                Fachexperten
+              </p>
+              <p
+                class="max-sm:hidden text-KonBlue free-help-text font-ibm-plex"
+              >
+                Erfahrener Lungenfacharzt, der früher selbst Raucher war, coacht
+                Dich im Nichtraucherkurs.
+              </p>
+              <p
+                class="sm:hidden text-KonBlue paragraph-text font-medium font-ibm-plex"
+              >
+                2. Bescheinigung abrufen
+              </p>
+              <p
+                class="sm:hidden text-KonBlue free-help-text font-ibm-plex leading-[138%] mt-[3px]"
+              >
+                Durchlaufe das gesamte Porgramm und erhalte am Kursende eine
+                Teilnahmebescheinigung.
+              </p>
+            </div>
+          </div>
+
+          <!-- BOX 3 -->
+          <div
+            class="flex items-start gap-[14px] sm:gap-4 md:gap-7 p-4 2xl:px-4 2xl:py-5 3xl:px-8 3xl:py-10 rounded-3xl md:rounded-[20px] bg-iceFishing"
+          >
+            <span
+              class="max-sm:hidden max-w-12 lg:max-w-[60px] 3xl:max-w-[72px] w-full"
+            >
+              <img
+                class="w-full h-full rounded-full object-cover"
+                src="./assets/images/hand.webp"
+                alt="deign"
+              />
+            </span>
+            <span
+              class="sm:hidden max-w-12 lg:max-w-[60px] 3xl:max-w-[72px] w-full"
+            >
+              <img
+                class="w-full h-full rounded-full object-cover"
+                src="./assets/images/webp/hand.webp-mobile.webp"
+                alt="deign"
+              />
+            </span>
+            <div>
+              <p
+                class="max-sm:hidden text-KonBlue paragraph-text font-bold font-ibm-plex leading-[100%] mb-[5px]"
+              >
+                Begleitung
+              </p>
+              <p
+                class="max-sm:hidden text-KonBlue free-help-text font-ibm-plex"
+              >
+                Werde Schritt für Schritt auf den Rauchstopp vorbereitet und 3
+                Monate weiter begleitet.
+              </p>
+              <p
+                class="sm:hidden text-KonBlue paragraph-text font-ibm-plex font-medium"
+              >
+                3. Erstattung erhalten
+              </p>
+              <p
+                class="sm:hidden text-KonBlue free-help-text font-ibm-plex leading-[138%] mt-[3px]"
+              >
+                Reiche die Bescheinigung bei deiner Krankenkasse ein und erhalte
+                bis zu 100% der Kosten erstattet.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div
+          class="flex justify-center lg:-ml-10 sm:max-w-[450px] max-w-[550px] xl:max-w-[700px] 3xl:max-w-[760px] w-full h-full max-sm:h-[268px] sm:h-[500px] 3xl:h-[672px]"
+        >
+          <img
+            src="./assets/images/doctor-stop-smoking.webp"
+            class="rounded-2xl w-full object-cover object-left"
+            alt="Preview Image"
+          />
+        </div>
+      </div>
+      <div
+        class="pt-8 sm:pt-12 md:pt-14 lg:pt-16 xl:pt-20 max-sm:px-4 flex justify-center sm:justify-start items-center"
+      >
+        <button
+          class="professional-page-btn mx-auto w-full sm:max-w-[336px]! font-fira text-KonBlue!"
+        >
+          Weitere Informationen
+        </button>
+      </div>
+    </section>
+    <!-- FEATURE CARDS -->
+    <section class="mt-8 sm:mt-12 md:mt-14 lg:mt-16 xl:mt-20 px-4">
+      <div
+        class="md:hidden w-full bg-iceFishing flex items-center relative rounded-[20px] swiper-feature-slider px-4"
+      >
+        <!-- Swiper Container -->
+        <div
+          class="swiper-button-prev-feature relative max-w-12 2xl:max-w-[50px] 3xl:max-w-[72px] min-w-12 2xl:min-w-[50px] 3xl:min-w-[72px] cursor-pointer pointer-events-auto"
+        >
+          <img
+            class="w-full h-full"
+            src="./assets/images/feature-left.webp"
+            alt="magazin"
+          />
+        </div>
+        <div class="swiper feature-swiper relative">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide w-full">
+              <article class="group-of-card">
+                <div
+                  class="3xl:w-[72px] w-[60px] 3xl:h-[72px] h-[60px] rounded-full flex justify-center items-center bg-primary mb-5 3xl:mb-8"
+                >
+                  <img
+                    class="w-full h-full object-cover"
+                    src="./assets/images/video.webp"
+                    alt="magazin"
+                  />
+                </div>
+                <h3
+                  class="individually-card-title font-fira leading-[133.333%]! lg:leading-[125%]! text-KonBlue"
+                >
+                  Coaching-Videos <br />
+                  Übungen
+                </h3>
+                <p
+                  class="free-help-text 3xl:mt-6 mt-4 font-ibm-plex text-KonBlue leading-[175%] lg:leading-[140%]"
+                >
+                  Bereiten Dich Schritt für Schritt auf den Rauchstopp vor
+                </p>
+              </article>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide w-full">
+              <article class="group-of-card">
+                <div
+                  class="3xl:w-[72px] w-[60px] 3xl:h-[72px] h-[60px] rounded-full flex justify-center items-center bg-primary mb-5 3xl:mb-8"
+                >
+                  <img
+                    class="w-full h-full object-cover"
+                    src="./assets/images/doctor.webp"
+                    alt="magazin"
+                  />
+                </div>
+                <h3
+                  class="individually-card-title font-fira leading-[133.333%]! lg:leading-[125%]! text-KonBlue"
+                >
+                  Begleitung durch <br />
+                  Lungenfacharzt
+                </h3>
+                <p
+                  class="free-help-text 3xl:mt-6 mt-4 font-ibm-plex text-KonBlue leading-[175%] lg:leading-[140%]"
+                >
+                  Du wirst professionell <br />
+                  gecoacht und betreut .
+                </p>
+              </article>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide w-full">
+              <article class="group-of-card">
+                <div
+                  class="3xl:w-[72px] w-[60px] 3xl:h-[72px] h-[60px] rounded-full flex justify-center items-center bg-primary mb-5 3xl:mb-8"
+                >
+                  <img
+                    class="w-full h-full object-cover"
+                    src="./assets/images/community.webp"
+                    alt="magazin"
+                  />
+                </div>
+                <h3
+                  class="individually-card-title font-fira leading-[133.333%]! lg:leading-[125%]! text-KonBlue"
+                >
+                  Unterstützung <br />durch Community
+                </h3>
+                <p
+                  class="free-help-text 3xl:mt-6 mt-4 font-ibm-plex text-KonBlue leading-[175%] lg:leading-[140%]"
+                >
+                  Tausche Dich jederzeit mit <br />
+                  Gleichgesinnten oder dem <br />
+                  Kursleiter aus
+                </p>
+              </article>
+            </div>
+            <!-- Slide 4 -->
+            <div class="swiper-slide w-full">
+              <article class="group-of-card">
+                <div
+                  class="3xl:w-[72px] w-[60px] 3xl:h-[72px] h-[60px] rounded-full flex justify-center items-center bg-primary mb-5 3xl:mb-8"
+                >
+                  <img
+                    class="w-full h-full object-cover"
+                    src="./assets/images/no-smoking-sign.webp"
+                    alt="magazin"
+                  />
+                </div>
+                <h3
+                  class="individually-card-title font-fira leading-[133.333%]! lg:leading-[125%]! text-KonBlue"
+                >
+                  Hilfe auch nach <br />
+                  dem Rauchstopp
+                </h3>
+                <p
+                  class="free-help-text 3xl:mt-6 mt-4 font-ibm-plex text-KonBlue leading-[175%] lg:leading-[140%]"
+                >
+                  3 Monate Begleitung, um <br />
+                  einen Rückfall zu verhindern
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div
+          class="swiper-button-next-feature max-w-12 rotate-180 2xl:max-w-[50px] 3xl:max-w-[72px] min-w-12 2xl:min-w-[50px] 3xl:min-w-[72px] cursor-pointer pointer-events-auto"
+        >
+          <img
+            class="w-full h-full"
+            src="./assets/images/feature-left.webp"
+            alt="magazin"
+          />
+        </div>
+      </div>
+      <div
+        class="custom-container px-0! md:grid hidden 3xl:gap-8 grid-cols-2 xl:grid-cols-4 gap-6 w-full"
+      >
+        <!-- Card -->
+        <article
+          class="group-of-card transition-all duration-300 ease-in-out hover:translate-y-1"
+        >
+          <div
+            class="3xl:w-[72px] w-[60px] 3xl:h-[72px] h-[60px] rounded-full flex justify-center items-center bg-primary mb-5 3xl:mb-8"
+          >
+            <img
+              class="w-full h-full object-cover"
+              src="./assets/images/video.webp"
+              alt="magazin"
+            />
+          </div>
+          <h3
+            class="individually-card-title font-fira leading-[133.333%]! lg:leading-[125%]! text-KonBlue"
+          >
+            Coaching-Videos<br />
+            & Übungen
+          </h3>
+          <p
+            class="free-help-text 3xl:mt-6 mt-4 font-ibm-plex text-KonBlue leading-[175%] lg:leading-[140%]"
+          >
+            Bereiten Dich Schritt für <br />
+            Schritt auf den Rauchstopp <br />
+            vor
+          </p>
+        </article>
+
+        <!-- Card -->
+        <article
+          class="group-of-card transition-all duration-300 ease-in-out hover:translate-y-1"
+        >
+          <div
+            class="3xl:w-[72px] w-[60px] 3xl:h-[72px] h-[60px] rounded-full flex justify-center items-center bg-primary mb-5 3xl:mb-8"
+          >
+            <img
+              class="w-full h-full object-cover"
+              src="./assets/images/doctor.webp"
+              alt="magazin"
+            />
+          </div>
+          <h3
+            class="individually-card-title font-fira leading-[133.333%]! lg:leading-[125%]! text-KonBlue"
+          >
+            Begleitung durch<br />
+            Lungenfacharzt
+          </h3>
+          <p
+            class="free-help-text 3xl:mt-6 mt-4 font-ibm-plex text-KonBlue leading-[175%] lg:leading-[140%]"
+          >
+            Du wirst professionell <br />
+            gecoacht und betreut
+          </p>
+        </article>
+
+        <!-- Card -->
+        <article
+          class="group-of-card transition-all duration-300 ease-in-out hover:translate-y-1"
+        >
+          <div
+            class="3xl:w-[72px] w-[60px] 3xl:h-[72px] h-[60px] rounded-full flex justify-center items-center bg-primary mb-5 3xl:mb-8"
+          >
+            <img
+              class="w-full h-full object-cover"
+              src="./assets/images/community.webp"
+              alt="magazin"
+            />
+          </div>
+          <h3
+            class="individually-card-title font-fira leading-[133.333%]! lg:leading-[125%]! text-KonBlue"
+          >
+            Unterstützung <br />
+            durch Community
+          </h3>
+          <p
+            class="free-help-text 3xl:mt-6 mt-4 font-ibm-plex text-KonBlue leading-[175%] lg:leading-[140%]"
+          >
+            Tausche Dich jederzeit mit <br />
+            Gleichgesinnten oder dem <br />
+            Kursleiter aus
+          </p>
+        </article>
+
+        <!-- Card -->
+        <article
+          class="group-of-card transition-all duration-300 ease-in-out hover:translate-y-1"
+        >
+          <div
+            class="3xl:w-[72px] w-[60px] 3xl:h-[72px] h-[60px] rounded-full flex justify-center items-center bg-primary mb-5 3xl:mb-8"
+          >
+            <img
+              class="w-full h-full object-cover"
+              src="./assets/images/no-smoking-sign.webp"
+              alt="magazin"
+            />
+          </div>
+          <h3
+            class="individually-card-title font-fira leading-[133.333%]! lg:leading-[125%]! text-KonBlue"
+          >
+            Hilfe auch nach <br />
+            dem Rauchstopp
+          </h3>
+          <p
+            class="free-help-text 3xl:mt-6 mt-4 font-ibm-plex text-KonBlue leading-[175%] lg:leading-[140%]"
+          >
+            3 Monate Begleitung, um <br />
+            einen Rückfall zu verhindern
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section
+      class="bg-icelightBlue py-9 lg:py-14 xl:py-24 2xl:py-31 font-fira mt-8 sm:mt-12 md:mt-14 lg:mt-16 xl:mt-20"
+    >
+      <div class="max-w-322 max-2xl:px-4 mx-auto 2xl:secondary-container">
+        <div
+          class="md:space-y-3 space-y-1 xl:mb-13.5 lg:mb-10 md:mb-8 sm:mb-6 mb-4"
+        >
+          <p
+            class="paragraph-text font-fira font-medium text-celestialBlue max-sm:px-5"
+          >
+            Mit Struktur und professioneller Begleitung.
+          </p>
+          <h5
+            class="text-lg! xs:text-[28px]! lg:text-[26px]! 3xl:text-[32px]! font-medium text-KonBlue max-sm:px-5 leading-[125%]"
+          >
+            Dein Weg zum Nichtraucher beginnt hier
+          </h5>
+        </div>
+        <div class="space-y-2 sm:space-y-4 max-sm:px-1">
+          <article class="rounded-[20px] lg:p-8 md:p-6 p-4 bg-iceFishing">
+            <div class="flex items-center 2xl:gap-8 md:gap-6 gap-4">
+              <img
+                class="max-w-9 md:max-w-14 object-cover"
+                src="/assets/images/png/target.png"
+                alt="large"
+              />
+              <p class="free-help-text font-medium font-fira text-KonBlue">
+                Treffe eine bewusste Entscheidung
+              </p>
+            </div>
+            <p
+              class="free-help-text text-KonBlue md:font-light md:leading-8 leading-[25px] font-ibm-plex md:mt-3 mt-4"
+            >
+              Du möchtest Dich endlich von Deinem Laster des Rauchens befreien
+              und ein selbst bestimmtes rauchfreies Leben führen? Der Entschluss
+              das Rauchen aufzuhören ist schon einmal der erste große Schritt
+              auf Deinem Weg in ein rauchfreies Leben. Du hast dir schon oft
+              vorgenommen aufzuhören – es ist aber immer wieder etwas dazwischen
+              gekommen oder Du bist bei einem Aufhörversuch in
+              Nichtraucherkursen gescheitert? Bleib am Ball und höre auf Deine
+              innere Stimme.
+            </p>
+          </article>
+          <!-- 1 -->
+          <article class="rounded-[20px] lg:p-8 md:p-6 p-4 bg-iceFishing">
+            <div class="flex items-center 2xl:gap-8 md:gap-6 gap-4">
+              <img
+                class="max-w-9 md:max-w-14 object-cover"
+                src="/assets/images/png/brain.png"
+                alt="large"
+              />
+              <p class="free-help-text font-medium font-fira text-KonBlue">
+                Rauchen aufhören beginnt im Kopf
+              </p>
+            </div>
+            <p
+              class="free-help-text text-KonBlue md:font-light md:leading-8 leading-[25px] font-ibm-plex md:mt-3 mt-4"
+            >
+              Genau jetzt ist Dein perfekter Zeitpunkt gekommen. Du weißt aber
+              nicht, wie Du das alleine schaffen sollst? Du musst den Weg aus
+              der Zigarettenabhängigkeit nicht alleine gehen, unser
+              Nichtraucherkurs kann Dir dabei helfen. Durch einen ausgeklügelten
+              Lernplan und entsprechendes Nichtrauchertraining wirst Du schnell
+              Dein Leben als Raucher gegen ein freies Leben ohne Rauchen
+              eintauschen können.
+            </p>
+          </article>
+
+          <!-- 2 -->
+          <article class="rounded-[20px] lg:p-8 md:p-6 p-4 bg-iceFishing">
+            <div class="flex items-center 2xl:gap-8 md:gap-6 gap-4">
+              <img
+                class="max-w-9 md:max-w-14 object-cover"
+                src="/assets/images/png/large-3.png"
+                alt="large"
+              />
+              <p class="free-help-text font-medium font-fira text-KonBlue">
+                Ein professioneller Nichtraucherkurs ist hier genau das Richtige
+              </p>
+            </div>
+            <p
+              class="free-help-text text-KonBlue md:font-light md:leading-8 leading-[25px] font-ibm-plex md:mt-3 mt-4"
+            >
+              Durch gezielte Hilfestellungen wirst Du Deinen Weg zum
+              Nichtraucher in ein neues Leben ohne Zigaretten erfolgreich gehen
+              und Deinem Körper Regenerierung verschaffen. Mit dem passenden
+              Lernplan können Nichtraucherkurse der Schlüssel zum Erfolg sein.
+              Es gibt aber viele Nichtraucherprogramme und –kurse mit
+              unterschiedlichem Lernplan im Netz - manche mehr, manche weniger
+              professionell, seriös und erfolgreich. Von Hypnose über
+              Atemübungen bis hin zum Nichtraucher in wenigen Stunden gibt es
+              zur Raucherentwöhnung durch Nichtraucherkurse fast alles. Oftmals
+              bist Du für solche Nichtraucherkurse aber auch ganz schön viel
+              Geld los ohne Erfolge auf dem Weg ins Nichtrauchen sehen zu
+              können. Achte daher genau darauf, für welchen Nichtraucherkurs und
+              welchen Lernplan Du Dich entscheidest. Nur so wirst Du Deinem
+              Leben als Raucher endgültig Lebewohl sagen können.
+            </p>
+          </article>
+
+          <!-- 3 -->
+          <article class="rounded-[20px] lg:p-8 md:p-6 p-4 bg-iceFishing">
+            <div class="flex items-center 2xl:gap-8 md:gap-6 gap-4">
+              <img
+                class="max-w-9 md:max-w-14 object-cover"
+                src="/assets/images/png/large-4.png"
+                alt="large"
+              />
+              <p class="free-help-text font-medium font-fira text-KonBlue">
+                Qualitativ hochwertiges Programm mit fundierter Basis und sehr
+                guten Erfolgsquoten
+              </p>
+            </div>
+            <p
+              class="free-help-text text-KonBlue md:font-light md:leading-8 leading-[25px] font-ibm-plex md:mt-3 mt-4"
+            >
+              Durch die Hilfe eines erfahrenen Tabakentwöhners sowie
+              unterstützende, informative Videos und Übungssequenzen für Zuhause
+              wirst Du innerhalb von 10 Tagen zum Nichtraucher. Das auf den
+              neusten suchtmedizinischen Kenntnissen basierende Programm zur
+              Nikotinentwöhnung mit optimiertem Lernplan besteht aus 7 Tagen
+              Vorbereitungszeit, dem Tag des Rauchstopps sowie 2 Tagen weiterer
+              Begleitung. So wirst Du durch diesen abgestimmten Lernplan nicht
+              nur einwandfrei auf Deinen Rauchstopp vorbereitet und maximal
+              motiviert, sondern auch im Anschluss vor einem möglichen Rückfall
+              geschützt.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- TOP ARTICLES AFTER QUITTING SMOKING -->
+    <section class="px-4 mt-8 sm:mt-12 md:mt-14 lg:mt-16 xl:mt-20">
+      <div
+        class="section-container-primary gap-6 flex-col md:flex-row bg-lightvanilla p-5 sm:p-6 xl:p-12 rounded-[20px] md:rounded-3xl flex items-center justify-between"
+      >
+        <div class="px-13.25 sm:px-0">
+          <img
+            class="w-full sm:h-87.5 md:max-w-80 xl:max-w-100.75 xl:h-100.75 object-contain"
+            src="./assets/images/german-based.webp"
+            alt="german"
+          />
+        </div>
+        <div class="xl:px-13.25 flex flex-col gap-4 sm:gap-5 xl:gap-11">
+          <h3
+            class="text-xl md:text-2xl font-fira font-medium leading-[140%] md:leading-[134%]"
+          >
+            Brauchst Du Unterstützung beim <br class="hidden md:block" />
+            Rauchstopp?
+          </h3>
+          <p
+            class="article-desc font-light max-sm:max-w-[300px] xl:max-w-[400px] 3xl:max-w-[474px]"
+          >
+            Unser krankenkassenzertifiziertes Programm begleitet Dich beim
+            Rauchausstieg.
+          </p>
+          <div class="space-y-4">
+            <p class="flex items-center gap-4 sm:gap-6 article-desc font-light">
+              <span
+                ><img
+                  class="pointer-events-none w-7 h-7 lg:w-9 lg:h-9 hidden sm:block"
+                  src="./assets/images/click-white.webp"
+                  alt="tick" />
+                <img
+                  class="sm:hidden w-7 h-7"
+                  src="./assets/images/click-white-mobile.webp"
+                  alt="tick-icon"
+              /></span>
+              Zertifizierter Präventionskurs
+            </p>
+            <p class="flex items-center gap-4 sm:gap-6 article-desc font-light">
+              <span class="shrink-0"
+                ><img
+                  class="pointer-events-none w-7 h-7 lg:w-9 lg:h-9 hidden sm:block"
+                  src="./assets/images/click-white.webp"
+                  alt="tick" />
+                <img
+                  class="sm:hidden w-7 h-7"
+                  src="./assets/images/click-white-mobile.webp"
+                  alt="tick-icon"
+              /></span>
+              Bis zu 100 % Kostenerstattung
+            </p>
+            <p class="flex items-center gap-4 sm:gap-6 article-desc font-light">
+              <span
+                ><img
+                  class="pointer-events-none w-7 h-7 lg:w-9 lg:h-9 hidden sm:block"
+                  src="./assets/images/click-white.webp"
+                  alt="tick" />
+                <img
+                  class="sm:hidden w-7 h-7"
+                  src="./assets/images/click-white-mobile.webp"
+                  alt="tick-icon"
+              /></span>
+              Wirksamkeit wissenschaftlich <br class="sm:hidden" />
+              bestätigt
+            </p>
+          </div>
+          <button
+            class="professional-page-btn max-sm:rounded-xl! sm:max-w-[336px]!"
+          >
+            Weitere Informationen
+          </button>
+        </div>
+      </div>
+    </section>
+    <section
+      class="px-4 pt-8 sm:pt-12 md:pt-14 lg:pt-16 xl:pt-20 mb-8 lg:mb-10 xl:mb-20"
+    >
+      <div class="section-container-primary">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 xl:gap-8">
+          <div
+            class="p-4 sm:p-6 md:p-7 lg:px-9 xl:p-10 3xl:p-12 bg-iceFishing flex flex-col gap-6 rounded-3xl"
+          >
+            <div
+              class="flex items-start sm:items-center gap-3.5 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8"
+            >
+              <img
+                class="w-12 sm:w-14 shrink-0 sm:h-14"
+                src="./assets/images/png/settings.png"
+                alt="settings"
+              />
+              <div class="flex flex-col max-sm:gap-1">
+                <h3
+                  class="font-fira font-medium text-base sm:text-xl md:text-2xl lg:text-[26px] 3xl:text-[32px] leading-[125%] text-KonBlue"
+                >
+                  Flexibler Nichtraucherkurs
+                </h3>
+                <p
+                  class="font-light sm:hidden font-ibm-plex text-base md:text-lg lg:text-xl leading-[150%] sm:leading-[160%] text-black"
+                >
+                  Durch das flexible Onlineprogramm mit perfekt abgestimmtem
+                  Lernplan kannst Du völlig orts- und zeitungebunden auf Dein
+                  tägliches, unterhaltsames und informatives Video zugreifen
+                </p>
+              </div>
+            </div>
+            <p
+              class="font-light max-sm:hidden font-ibm-plex text-base md:text-lg lg:text-xl leading-[160%] text-black"
+            >
+              Durch das flexible Onlineprogramm mit perfekt abgestimmtem
+              Lernplan kannst Du völlig orts- und zeitungebunden auf Dein
+              tägliches, unterhaltsames und informatives Video zugreifen
+            </p>
+          </div>
+          <div
+            class="p-4 sm:p-6 md:p-7 lg:px-9 xl:p-10 3xl:p-12 bg-iceFishing flex flex-col gap-6 rounded-3xl"
+          >
+            <div
+              class="flex items-start sm:items-center gap-3.5 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8"
+            >
+              <img
+                class="w-12 sm:w-14 shrink-0 sm:h-14"
+                src="./assets/images/png/brain.png"
+                alt="brain"
+              />
+              <div class="flex flex-col max-sm:gap-1">
+                <h3
+                  class="font-fira font-medium text-base sm:text-xl md:text-2xl lg:text-[26px] 3xl:text-[32px] leading-[125%] text-KonBlue"
+                >
+                  Hilfreiche Übungen
+                </h3>
+                <p
+                  class="font-light sm:hidden font-ibm-plex text-base md:text-lg lg:text-xl leading-[150%] sm:leading-[160%] text-black"
+                >
+                  Durch kleine Übungen für Zuhause kannst Du das in den Videos
+                  Erlernte nochmals verinnerlichen und festigen und Dich ganz
+                  persönlich optimal vorbereiten. Du erhältst regelmäßig
+                  E-Mails, und wirst so in Deinem Vorhaben unterstützt und
+                  motiviert.
+                </p>
+              </div>
+            </div>
+            <p
+              class="font-light max-sm:hidden font-ibm-plex text-base md:text-lg lg:text-xl leading-[160%] text-black"
+            >
+              Durch kleine Übungen für Zuhause kannst Du das in den Videos
+              Erlernte nochmals verinnerlichen und festigen und Dich ganz
+              persönlich optimal vorbereiten. Du erhältst regelmäßig E-Mails,
+              und wirst so in Deinem Vorhaben unterstützt und motiviert.
+            </p>
+          </div>
+          <div
+            class="p-4 sm:p-6 md:p-7 lg:px-9 xl:p-10 3xl:p-12 bg-iceFishing flex flex-col gap-6 rounded-3xl"
+          >
+            <div
+              class="flex items-start sm:items-center gap-3.5 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8"
+            >
+              <img
+                class="w-12 sm:w-14 shrink-0 sm:h-14"
+                src="./assets/images/png/community-white.png"
+                alt="community"
+              />
+              <div class="flex flex-col max-sm:gap-1">
+                <h3
+                  class="font-fira font-medium text-base sm:text-xl md:text-2xl lg:text-[26px] 3xl:text-[32px] leading-[125%] text-KonBlue"
+                >
+                  Aktive Community
+                </h3>
+                <p
+                  class="font-light sm:hidden font-ibm-plex text-base md:text-lg lg:text-xl leading-[150%] sm:leading-[160%] text-black"
+                >
+                  Im Forum kannst Du Dich mit Gleichgesinnten austauschen, Deine
+                  Fragen, Ängste und Nöte mitteilen und Hilfe erhalten. Auch
+                  unser erfahrener Tabakentwöhner Dr. Rupp steht Dir hier Rede
+                  und Antwort.
+                </p>
+              </div>
+            </div>
+            <p
+              class="font-light max-sm:hidden font-ibm-plex text-base md:text-lg lg:text-xl leading-[160%] text-black"
+            >
+              Im Forum kannst Du Dich mit Gleichgesinnten austauschen, Deine
+              Fragen, Ängste und Nöte mitteilen und Hilfe erhalten. Auch unser
+              erfahrener Tabakentwöhner Dr. Rupp steht Dir hier Rede und
+              Antwort.
+            </p>
+          </div>
+          <div
+            class="p-4 sm:p-6 md:p-7 lg:px-9 xl:p-10 3xl:p-12 bg-iceFishing flex flex-col gap-6 rounded-3xl"
+          >
+            <div
+              class="flex items-start sm:items-center gap-3.5 sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8"
+            >
+              <img
+                class="w-12 sm:w-14 shrink-0 sm:h-14 max-sm:hidden"
+                src="./assets/images/png/statics.png"
+                alt="statics"
+              />
+              <img
+                class="w-12 sm:w-14 shrink-0 sm:h-14 sm:hidden"
+                src="./assets/images/png/community-white.png"
+                alt="community"
+              />
+              <div class="flex flex-col max-sm:gap-1">
+                <h3
+                  class="font-fira font-medium text-base sm:text-xl md:text-2xl lg:text-[26px] 3xl:text-[32px] leading-[125%] text-KonBlue"
+                >
+                  Motivierende Rauchfrei-Statistik
+                </h3>
+                <p
+                  class="font-light sm:hidden font-ibm-plex text-base md:text-lg lg:text-xl leading-[150%] sm:leading-[160%] text-black"
+                >
+                  Deine persönlichen Erfolge, z.B. wie viele Tage Du rauchfrei
+                  bist oder wie viel Geld Du durch Deinen Rauchstopp bereits
+                  gespart hast, werden Dir tagesgenau angezeigt.
+                </p>
+              </div>
+            </div>
+            <p
+              class="font-light max-sm:hidden font-ibm-plex text-base md:text-lg lg:text-xl leading-[160%] text-black"
+            >
+              Deine persönlichen Erfolge, z.B. wie viele Tage Du rauchfrei bist
+              oder wie viel Geld Du durch Deinen Rauchstopp bereits gespart
+              hast, werden Dir tagesgenau angezeigt.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!------------------------ Free and helpful --------------------------->
+    <section class="md:py-[50px] lg:py-16 2xl:py-24 3xl:py-28">
+      <div
+        class="max-w-322 max-2xl:px-4 mx-auto 2xl:secondary-container flex flex-col-reverse lg:flex-row justify-start lg:justify-between items-center gap-9 lg:gap-12"
+      >
+        <div class="px-4 lg:px-0 lg:max-w-[496px] w-full">
+          <p
+            class="free-help-text font-fira text-celestialBlue sm:text-blueBay leading-[150%] 3xl:leading-[120%]"
+          >
+            Werde rauchfrei
+          </p>
+          <h2
+            class="program-card-title text-KonBlue 3xl:leading-[116.667%] leading-[120.571%] font-fira pt-[13px] 3xl:pt-5"
+          >
+            Wertvolle Tipps direkt
+            <span class="lg:block">in Dein Postfach!</span>
+          </h2>
+          <p
+            class="text-KonBlue leading-[150%] 3xl:leading-[160%] free-help-text font-fira sm:font-ibm-plex pt-3.5 sm:pt-[25px] lg:pt-[30px] mb-3.5 sm:mb-6 md:mb-8"
+          >
+            Erhalte völlig kostenfrei exklusive Rauchfrei-Tipps per E-Mail.
+            Melde Dich jetzt zu unserem Newsletter an.
+          </p>
+
+          <button
+            class="primary-btn 3xl:leading-[100%] leading-[150%] font-fira font-light! max-lg:h-[52px]! sm:max-w-[300px] w-full rounded-xl! 3xl:text-xl!"
+          >
+            Tipps abonnieren
+          </button>
+        </div>
+        <div
+          class="w-full aspect-628/472 sm:max-h-[400px] lg:max-h-[472px] lg:max-w-[628px] overflow-hidden rounded-3xl sm:rounded-[20px]"
+        >
+          <img
+            class="w-full h-full object-cover"
+            src="./assets/images/free-help-girl.webp"
+            alt="free help"
+          />
+        </div>
+      </div>
+    </section>
+    <!------------------------ Footer Section --------------------------->
+    <footer class="bg-KonBlue text-white px-8 sm:px-5">
+      <!-- TOP SECTION -->
+      <div
+        class="section-container py-12 xl:justify-between grid grid-cols-1 sm:grid-cols-2 3xl:pt-27.75 3xl:pb-26.25 lg:grid-cols-4 gap-8 3xl:gap-17 xl:flex"
+      >
+        <!-- Column 1 -->
+        <div>
+          <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+            Sanero Medical GmbH
+          </h3>
+          <p class="footer-link font-normal font-ibm-plex">
+            Wilhelmstraße 19 70182<br />
+            Stuttgart Germany
+          </p>
+
+          <div class="mt-4 md:mt-6 space-y-2 text-sm">
+            <a
+              href="tel:+49 (0)711 / 99 538 110"
+              class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+            >
+              <img
+                class="max-w-5 w-full"
+                src="./assets/images/phone-white.webp"
+                alt="phone"
+              />
+
+              +49 (0)711 / 99 538 110
+            </a>
+            <a
+              href="mailto:info@sanero-medical.de"
+              class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+            >
+              <img
+                class="max-w-5 w-full"
+                src="./assets/images/email-white.webp"
+                alt="phone"
+              />
+              info@sanero-medical.de
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div>
+          <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+            Unternehmen
+          </h3>
+          <ul
+            class="space-y-2 font-normal footer-link font-ibm-plex text-white"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Über uns</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Kontakt</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Presse</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div>
+          <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+            Service
+          </h3>
+          <ul
+            class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >FAQ</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Impressum</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Datenschutz</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4 -->
+        <div>
+          <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+            Prävention nach §20
+          </h3>
+          <ul
+            class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Präventionskurs</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Krankenkassen</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Firmenprogramm</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- BOTTOM BAR -->
+    <section class="bg-windsweptBeach hidden md:block px-5">
+      <div
+        class="section-container mt-0! py-4 md:py-6.5! flex flex-col lg:flex-row justify-between items-center gap-4"
+      >
+        <p class="text-encoreGray footer-link font-ibm-plex">
+          © 2025 NichtraucherHelden – ein Produkt der Sanero Medical GmbH
+        </p>
+
+        <div class="flex items-center gap-6">
+          <a
+            href="#"
+            class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+            >Impressum</a
+          >
+          <a
+            href="#"
+            class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+            >Datenschutzerklärung</a
+          >
+          <a
+            href="#"
+            class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+            >AGB</a
+          >
+        </div>
+      </div>
+    </section>
+    <!-- BACK-TO-TOP -->
+    <button
+      id="backToTopBtn"
+      class="bg-KonBlue invisible fixed right-2 min-h-11 min-w-11 bottom-4 z-40 translate-y-4 cursor-pointer rounded-full p-3 text-white opacity-0 shadow-lg transition-all duration-300 focus:outline-none lg:right-8 md:bottom-8"
+    >
+      <!-- Arrow Up Icon -->
+      <img
+        class="max-w-5 rotate-177"
+        src="./assets/images/scroll-button.webp"
+        alt="arrow"
+      />
+    </button>
+    <div
+      data-modal="login"
+      class="fixed modal inset-0 z-50 hidden overflow-hidden"
+    >
+      <!-- Overlay -->
+      <div
+        class="fixed inset-0 bg-KonBlue/90 opacity-0 transition-opacity duration-300 modal-overlay"
+      ></div>
+      <!-- Modal Content -->
+      <div
+        class="min-h-dvh h-dvh max-h-dvh p-5 flex items-center justify-center"
+      >
+        <div
+          class="modal-content modal-container max-w-190 relative overflow-auto max-h-full hide-scrollbar"
+        >
+          <div class="modal-header sticky top-0">
+            <h4 class="individually-card-title">Login</h4>
+            <button class="modal-close-button" data-modal-close>
+              <img
+                class="object-contain w-full h-full"
+                src="./assets/images/png/modal-close.png"
+                alt="modal-close"
+              />
+            </button>
+          </div>
+          <form
+            id="loginForm"
+            class="3xl:gap-12 2xl:gap-10 h-auto 1xl:gap-8 gap-6 xl:px-6 px-4 3xl:pt-11 2xl:pt-10 1xl:pt-9 pt-6 3xl:pb-12 2xl:pb-10 pb-8 flex flex-col justify-center overflow-auto"
+          >
+            <p class="free-help-text text-KonBlue leading-[150%] px-4">
+              Melde Dich hier für deinen persönlichen Bereich an.
+            </p>
+
+            <div class="md:space-y-3 space-y-2">
+              <!-- Email -->
+              <div>
+                <input
+                  id="email"
+                  class="primary-input free-help-text"
+                  placeholder="Benutzername / E-Mail-Adresse"
+                  type="email"
+                />
+                <p id="emailError" class="text-red-500 text-sm mt-1 hidden"></p>
+              </div>
+
+              <!-- Password -->
+              <div>
+                <div
+                  class="flex items-center justify-between primary-input free-help-text"
+                >
+                  <input
+                    id="password"
+                    class="w-full outline-none bg-transparent placeholder:text-encoreGray"
+                    placeholder="Passwort*"
+                    type="password"
+                  />
+
+                  <button type="button" id="togglePassword" class="w-6 h-6">
+                    <img
+                      id="eyeIcon"
+                      class="object-contain w-full h-full"
+                      src="./assets/images/png/open-eye.png"
+                      alt="toggle password"
+                    />
+                  </button>
+                </div>
+                <p
+                  id="passwordError"
+                  class="text-red-500 text-sm mt-1 hidden"
+                ></p>
+              </div>
+            </div>
+
+            <a
+              class="free-help-text text-KonBlue underline font-light leading-[160%] w-fit mx-auto"
+              href=""
+            >
+              Passwort vergessen?
+            </a>
+
+            <button
+              type="submit"
+              class="text-white leading-[160%] font-fira font-medium hover:bg-white border border-blueBay bg-blueBay rounded-2xl flex items-center justify-center free-help-text md:h-14 h-13 hover:text-blueBay duration-300 ease-in-out transition-all"
+            >
+              Einloggen
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/js/popup.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/back-to-top.js"></script>
+    <script src="/js/professional.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/js/nichtraucher-slider.js"></script>
+
+    <script>
+      var swiper = new Swiper(".feature-swiper", {
+        navigation: {
+          nextEl: ".swiper-button-next-feature",
+          prevEl: ".swiper-button-prev-feature",
+        },
+      });
+    </script>
+
+    <script>
+      const form = document.getElementById("newsletterForm");
+      const successMessage = document.getElementById("successMessage");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // stop page reload
+
+        // show message
+        successMessage.classList.remove("hidden");
+
+        // optionally reset form
+        form.reset();
+      });
+    </script>
+  </body>
+</html>

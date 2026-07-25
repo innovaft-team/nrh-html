@@ -1,0 +1,879 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Urf - Deine App auf Rezept unterstützt Dichlangfristig und kostenfrei.
+    </title>
+
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="icon" type="image/svg" href="./assets/images/logo.webp" />
+  </head>
+
+  <body>
+    <!---------------------------------------- HEADER ---------------------------------- -->
+    <aside
+      id="sidebar"
+      class="fixed top-0 right-0 h-dvh bg-white w-[320px] transform transition-transform duration-300 ease-in-out z-[9999] flex flex-col justify-start p-4 translate-x-full"
+    >
+      <!-- Main Menu Content -->
+      <div class="sidebar-overlay"></div>
+      <div id="main-menu">
+        <div class="flex justify-between items-center mb-6">
+          <a aria-label="logo" href="./">
+            <img
+              class="max-w-10.25 w-full"
+              src="./assets/images/logo.webp"
+              alt="logo"
+            />
+          </a>
+          <button
+            id="close-sidebar"
+            class="text-2xl"
+            aria-label="clsoe sidebar"
+          >
+            <img
+              class="w-8 h-8 object-cover"
+              src="./assets/images/close-sidebar.webp"
+              alt="cross-icon"
+            />
+          </button>
+        </div>
+        <div>
+          <nav
+            class="flex flex-col justify-between grow overflow-auto h-full hide-scrollbar"
+          >
+            <div class="flex flex-col justify-between gap-7 text-primary">
+              <a aria-label="manu list" href="#" class="header-li"> Magazin </a>
+              <a aria-label="manu list" href="#" class="header-li">
+                Erfolgsgeschichten
+              </a>
+              <a aria-label="manu list" href="#" class="header-li"> FAQ </a>
+
+              <button
+                data-modal-open="login"
+                class="flex gap-2 hover:scale-95 transition-all duration-300 ease-in-out"
+              >
+                <img
+                  class="max-w-4.75 w-full"
+                  src="./assets/images/profile-icon.webp"
+                  alt="profile"
+                />
+                Login
+              </button>
+            </div>
+          </nav>
+          <div
+            class="flex flex-col justify-between items-center gap-3 w-full pt-10"
+          >
+            <button
+              class="sm:py-2 py-1.5 lg:py-3 3xl:py-4 px-6 rounded-4xl bg-iceFishing text-primary font-medium hover:scale-95 transition-all duration-300 ease-in-out font-ibm-plex text-base lg:text-lg xl:text-xl 3xl:text-2xl w-full eading-[150%] sm:leading-[100%]"
+            >
+              Fachkreise
+            </button>
+            <button class="primary-btn w-full">Dein Weg zur App</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!---------------------------------------- HEADER ---------------------------------- -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 z-999 opacity-0 pointer-events-none transition-opacity duration-300"
+    ></div>
+    <header
+      class="text-white z-50 transition-transform duration-300 ease-in-out sticky top-0 w-full"
+    >
+      <!-- {/* Top Bar for Contact Info */} -->
+      <div class="bg-KonBlue">
+        <div
+          class="flex justify-end items-center sm:px-9! px-4! py-2 text-[11px] xs:text-xs font-ibm-plex sm:text-sm bg-KonBlue gap-4 overflow-auto custom-container hide-scrollbar"
+        >
+          <span class="hidden md:inline text-iceFishing text-base font-medium">
+            Unsere Experten sind für Dich da:
+          </span>
+          <div
+            class="flex sm:justify-center justify-between items-center xs:gap-7! gap-2! sm:w-fit w-full"
+          >
+            <a
+              href="tel:+49871121999343"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/phone-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              +49 8711 21 999 343
+            </a>
+            <a
+              href="mailto:service@nichtraucherhelden.de"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/email-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              service@nichtraucherhelden.de
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- {/* Main Navigation Bar */} -->
+      <div class="bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.05)] text-black">
+        <div class="custom-container py-2 sm:py-3 3xl:py-4">
+          <div class="flex justify-between items-center">
+            <div class="shrink-0 flex items-center">
+              <div
+                class="max-w-13 3xl:max-w-18 aspect-square w-full cursor-pointer"
+              >
+                <img
+                  class="w-full h-full"
+                  src="/assets/images/logo.webp"
+                  alt="logo"
+                />
+              </div>
+            </div>
+            <button class="primary-btn block sm:hidden">
+              Dein Weg zur App
+            </button>
+            <nav
+              class="flex text-lg md:text-xl font-fira font-medium items-center gap-8 3xl:gap-12 leading-[140%]"
+            >
+              <div
+                class="hidden xl:flex justify-between items-center gap-10 text-primary"
+              >
+                <a href="#" class="header-li"> Magazin </a>
+                <a href="#" class="header-li"> Erfolgsgeschichten </a>
+                <a href="#" class="header-li"> FAQ </a>
+
+                <button
+                  data-modal-open="login"
+                  class="flex justify-center items-center gap-2 header-li icon-hover"
+                >
+                  <img
+                    class="max-w-[19px] w-full icon"
+                    src="./assets/images/profile-icon.webp"
+                    alt="profile"
+                  />
+                  Login
+                </button>
+              </div>
+              <div class="hidden sm:flex justify-between gap-5">
+                <button class="primary-btn-v3">Fachkreise</button>
+                <button class="primary-btn-v2">Dein Weg zur App</button>
+              </div>
+              <button
+                id="hamburger"
+                aria-label="hamburger button"
+                class="block xl:hidden space-y-1.5"
+              >
+                <span class="w-[21px] h-0.5 bg-primary flex"></span>
+                <span class="w-[21px] h-0.5 bg-primary flex"></span>
+                <span class="w-[21px] h-0.5 bg-primary flex"></span>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- <<============================================= SIDERBAR ============================================>> -->
+    <main id="main-content">
+      <section
+        class="max-w-[760px] w-full mx-auto space-y-8 md:space-y-10 lg:space-y-13 3xl:space-y-16 my-8 md:my-10 lg:my-13 3xl:my-16"
+      >
+        <div class="px-6 xl:px-0">
+          <h3 class="imprint-title">
+            Anmeldung zum <br />
+            Nichtraucher-Programm
+          </h3>
+        </div>
+
+        <div class="bg-iceFishing py-8 px-6 rounded-3xl">
+          <!-- Fee Section -->
+          <div class="mb-6 sm:mb-8 md:mb-9 3xl:mb-10">
+            <p class="imprint-section-title mb-4">Wähle ein Programm</p>
+          </div>
+
+          <!-- Refund Section -->
+          <div class="mb-6 sm:mb-8 md:mb-9 3xl:mb-10 space-y-8 md:space-y-10">
+            <div class="space-y-4" id="plans">
+              <!-- plan a  -->
+              <div
+                class="bg-white rounded-[20px] md:rounded-3xl plan-card"
+                data-plan="plus"
+              >
+                <div
+                  class="rounded-t-[20px] md:rounded-t-3xl bg-blueBay flex justify-between items-center sm:gap-2 md:pl-6 pl-4 plan-header"
+                >
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="radio-circle min-w-6 min-h-6 lg:w-8 lg:h-8 3xl:w-10 3xl:h-10 rounded-full flex items-center justify-center border-2 border-KonBlue"
+                    >
+                      <span
+                        class="radio-dot hidden w-[9px] h-[9px] lg:w-[13px] lg:h-[13px] rounded-full bg-blueBay"
+                      ></span>
+                    </div>
+                    <h3
+                      class="text-base md:text-lg 3xl:text-xl text-white leading-[116%] font-medium font-fira check-title"
+                    >
+                      Plusprogramm – Einmalig 149€
+                    </h3>
+                  </div>
+                  <span>
+                    <img
+                      class="max-w-[124px] w-full max-h-[72px] h-full object-cover"
+                      src="/assets/images/mask-group.webp"
+                      alt="mask-group"
+                    />
+                  </span>
+                </div>
+
+                <div class="md:px-6 px-4 md:py-4 2xl:py-8 3xl:py-10 pt-6 pb-4">
+                  <div class="md:space-y-6 space-y-4">
+                    <article
+                      class="flex items-center md:gap-6 gap-3.5 free-help-text font-normal leading-[150%] sm:leading-[160%] text-black font-ibm-plex feature-item"
+                    >
+                      <img
+                        class="md:max-w-8 3xl:max-w-9 max-w-7 w-full"
+                        src="/assets/images/all-green-icon.webp"
+                        alt="check-icon"
+                      />
+                      Nutzungszeitraum 6 Monate
+                    </article>
+                    <article
+                      class="flex items-center md:gap-6 gap-3.5 free-help-text font-normal leading-[150%] sm:leading-[160%] text-black font-ibm-plex feature-item"
+                    >
+                      <img
+                        class="md:max-w-8 3xl:max-w-9 max-w-7"
+                        src="/assets/images/all-green-icon.webp"
+                        alt="check-icon"
+                      />
+                      Vorbereitung auf den Rauchstopp plus 3 Monate
+                      Nachbetreuung
+                    </article>
+                    <article
+                      class="flex items-center md:gap-6 gap-3.5 free-help-text font-normal leading-[150%] sm:leading-[160%] text-black font-ibm-plex feature-item"
+                    >
+                      <img
+                        class="md:max-w-8 3xl:max-w-9 max-w-7"
+                        src="/assets/images/green-pig-icon.webp"
+                        alt="check-icon"
+                      />
+                      Zuschuss deiner TK: 119,20€
+                    </article>
+                    <article
+                      class="flex items-center md:gap-6 gap-3.5 free-help-text font-normal leading-[150%] sm:leading-[160%] text-black font-ibm-plex feature-item"
+                    >
+                      <img
+                        class="md:max-w-8 3xl:max-w-9 max-w-7"
+                        src="/assets/images/green-c-icon.webp"
+                        alt="check-icon"
+                      />
+                      Somit beträgt Dein Eigenanteil nur 29,80€
+                    </article>
+                  </div>
+                </div>
+              </div>
+              <!-- plan a  -->
+              <div
+                class="bg-white rounded-[20px] md:rounded-3xl plan-card"
+                data-plan="basic"
+              >
+                <div
+                  class="rounded-t-[20px] md:rounded-t-3xl bg-windsweptBeach flex justify-between items-center sm:gap-2 md:pl-6 pl-4 py-6 plan-header"
+                >
+                  <div class="flex items-center gap-6">
+                    <div
+                      class="radio-circle w-6 h-6 lg:w-8 lg:h-8 3xl:w-10 3xl:h-10 rounded-full flex items-center justify-center border-2 border-KonBlue"
+                    >
+                      <span
+                        class="radio-dot hidden w-[9px] h-[9px] lg:w-[13px] lg:h-[13px] rounded-full bg-blueBay"
+                      ></span>
+                    </div>
+                    <h3
+                      class="text-base md:text-lg 3xl:text-xl text-KonBlue leading-[116%] font-medium font-ibm-plex check-title"
+                    >
+                      Basisprogramm – Ohne Nachbetreuung
+                    </h3>
+                  </div>
+                </div>
+
+                <div class="md:px-6 px-4 md:py-4 2xl:py-8 3xl:py-10 pt-6 pb-4">
+                  <div class="md:space-y-6 space-y-4">
+                    <article
+                      class="flex items-center md:gap-6 gap-3.5 free-help-text font-normal leading-[150%] sm:leading-[160%] text-black font-ibm-plex feature-item"
+                    >
+                      <img
+                        class="md:max-w-8 3xl:max-w-9 max-w-7"
+                        src="/assets/images/gray-check-icon.webp"
+                        alt="check-icon"
+                      />
+                      Nutzungszeitraum 3 Monate
+                    </article>
+                    <article
+                      class="flex items-center md:gap-6 gap-3.5 free-help-text font-normal leading-[150%] sm:leading-[160%] text-black font-ibm-plex feature-item"
+                    >
+                      <img
+                        class="md:max-w-8 3xl:max-w-9 max-w-7"
+                        src="/assets/images/gray-check-icon.webp"
+                        alt="check-icon"
+                      />
+                      Vorbereitung auf den Rauchstopp
+                    </article>
+                    <article
+                      class="flex items-center md:gap-6 gap-3.5 free-help-text font-normal leading-[150%] sm:leading-[160%] text-black font-ibm-plex feature-item"
+                    >
+                      <img
+                        class="md:max-w-8 3xl:max-w-9 max-w-7"
+                        src="/assets/images/gray-pig-icon.webp"
+                        alt="check-icon"
+                      />
+                      Zuschuss deiner TK: 77,60€
+                    </article>
+                    <article
+                      class="flex items-center md:gap-6 gap-3.5 free-help-text font-normal leading-[150%] sm:leading-[160%] text-black font-ibm-plex feature-item"
+                    >
+                      <img
+                        class="md:max-w-8 3xl:max-w-9 max-w-7"
+                        src="/assets/images/gray-c-icon.webp"
+                        alt="check-icon"
+                      />
+                      Somit beträgt Dein Eigenanteil nur 19,40€
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- form field  -->
+            <form action="/">
+              <section class="space-y-3">
+                <div class="relative w-full">
+                  <input
+                    required
+                    id="E-Mail-Adresse*"
+                    type="email"
+                    placeholder=" "
+                    class="step-input-field free-help-text font-medium leading-[175%] text-primaryButton peer bg-white!"
+                  />
+
+                  <label for="E-Mail-Adresse*" class="step-input-field-label-2">
+                    E-Mail-Adresse*
+                  </label>
+                </div>
+                <div class="relative w-full">
+                  <input
+                    required
+                    id="Vorname-Nachname*"
+                    type="text"
+                    placeholder="  "
+                    class="step-input-field free-help-text font-medium leading-[175%] text-primaryButton peer bg-white!"
+                  />
+
+                  <label
+                    for="Vorname-Nachname*"
+                    class="step-input-field-label-2"
+                  >
+                    Vorname, Nachname*
+                  </label>
+                </div>
+                <!-- Password -->
+                <div class="relative w-full password-field">
+                  <input
+                    required
+                    id="Passwort"
+                    type="password"
+                    placeholder="  "
+                    class="step-input-field free-help-text font-medium leading-[175%] text-primaryButton peer bg-white!"
+                  />
+
+                  <label for="Passwort" class="step-input-field-label-2">
+                    Passwort* (Mindestens 8 Zeichen)
+                  </label>
+
+                  <span
+                    class="absolute right-7 transform -translate-y-1/2 top-1/2 cursor-pointer toggle-password"
+                  >
+                    <!-- Eye icon -->
+                    <svg
+                      width="23"
+                      height="18"
+                      viewBox="0 0 23 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11.2891 1.25C5.78125 1.25 2.34375 6.25 1.28906 8.75C2.34375 11.25 5.78125 16.25 11.2891 16.25C16.7969 16.25 20.2344 11.25 21.2891 8.75C20.2344 6.25 16.7969 1.25 11.2891 1.25ZM3.75 3.16406C5.625 1.44531 8.125 0 11.2891 0C14.4531 0 16.9922 1.44531 18.8281 3.16406C20.625 4.84375 21.875 6.875 22.4609 8.28125C22.5781 8.59375 22.5781 8.90625 22.4609 9.21875C21.875 10.625 20.625 12.6562 18.8281 14.3359C16.9922 16.0547 14.4531 17.5 11.2891 17.5C8.125 17.5 5.625 16.0547 3.75 14.3359C1.95312 12.6562 0.703125 10.625 0.117188 9.21875C0 8.90625 0 8.59375 0.117188 8.28125C0.703125 6.875 1.95312 4.84375 3.75 3.16406ZM11.2891 12.5C13.3594 12.5 15.0391 10.8203 15.0391 8.75C15.0391 7.07031 13.9062 5.625 12.3828 5.15625C12.5 5.50781 12.5391 5.85938 12.5391 6.25C12.5391 8.32031 10.8594 10 8.78906 10C8.39844 10 8.04688 9.96094 7.69531 9.84375C8.16406 11.3672 9.60938 12.5 11.2891 12.5Z"
+                        fill="#172735"
+                      />
+                    </svg>
+                  </span>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="relative w-full password-field">
+                  <input
+                    required
+                    id="Passwort-bestätigen"
+                    type="password"
+                    placeholder="  "
+                    class="step-input-field free-help-text font-medium leading-[175%] text-primaryButton peer bg-white!"
+                  />
+
+                  <label
+                    for="Passwort-bestätigen"
+                    class="step-input-field-label-2"
+                  >
+                    Passwort bestätigen*
+                  </label>
+
+                  <span
+                    class="absolute right-7 transform -translate-y-1/2 top-1/2 cursor-pointer toggle-password"
+                  >
+                    <!-- Eye icon -->
+                    <svg
+                      width="23"
+                      height="18"
+                      viewBox="0 0 23 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11.2891 1.25C5.78125 1.25 2.34375 6.25 1.28906 8.75C2.34375 11.25 5.78125 16.25 11.2891 16.25C16.7969 16.25 20.2344 11.25 21.2891 8.75C20.2344 6.25 16.7969 1.25 11.2891 1.25ZM3.75 3.16406C5.625 1.44531 8.125 0 11.2891 0C14.4531 0 16.9922 1.44531 18.8281 3.16406C20.625 4.84375 21.875 6.875 22.4609 8.28125C22.5781 8.59375 22.5781 8.90625 22.4609 9.21875C21.875 10.625 20.625 12.6562 18.8281 14.3359C16.9922 16.0547 14.4531 17.5 11.2891 17.5C8.125 17.5 5.625 16.0547 3.75 14.3359C1.95312 12.6562 0.703125 10.625 0.117188 9.21875C0 8.90625 0 8.59375 0.117188 8.28125C0.703125 6.875 1.95312 4.84375 3.75 3.16406ZM11.2891 12.5C13.3594 12.5 15.0391 10.8203 15.0391 8.75C15.0391 7.07031 13.9062 5.625 12.3828 5.15625C12.5 5.50781 12.5391 5.85938 12.5391 6.25C12.5391 8.32031 10.8594 10 8.78906 10C8.39844 10 8.04688 9.96094 7.69531 9.84375C8.16406 11.3672 9.60938 12.5 11.2891 12.5Z"
+                        fill="#172735"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div class="relative w-full">
+                  <input
+                    required
+                    id="code"
+                    type="text"
+                    placeholder="  "
+                    class="step-input-field free-help-text font-medium leading-[175%] text-primaryButton peer bg-white!"
+                  />
+
+                  <label for="code" class="step-input-field-label-2">
+                    Gutschein-/Aktions-Code (falls vorhanden)
+                  </label>
+                </div>
+              </section>
+            </form>
+            <div
+              class="registration-description font-light font-ibm-plex px-3 sm:px-0"
+            >
+              Mit * markierte Felder sind Pflichtfelder
+            </div>
+
+            <!-- check-box-section  -->
+            <div class="space-y-4 px-3 sm:px-0" id="checkGroup">
+              <div class="flex gap-4 items-start check-item">
+                <div
+                  class="bg-white p-1.5 sm:p-2 md:p-2.5 rounded-full h-fit outer"
+                >
+                  <div
+                    class="radio-circle w-4 h-4 lg:w-8 lg:h-8 3xl:w-9 3xl:h-9 rounded-full flex items-center justify-center border-2 border-KonBlue"
+                  >
+                    <span
+                      class="radio-dot hidden w-[5px] h-[5px] sm:w-[9px] sm:h-[9px] lg:w-[13px] lg:h-[13px] rounded-full bg-blueBay"
+                    ></span>
+                  </div>
+                </div>
+
+                <p
+                  class="registration-description font-light font-ibm-plex leading-[160%] pt-0 sm:pt-3"
+                >
+                  Ja, bitte den Newsletter zusenden
+                </p>
+              </div>
+              <div class="flex gap-4 items-start check-item">
+                <div
+                  class="bg-white p-1.5 sm:p-2 md:p-2.5 rounded-full h-fit outer"
+                >
+                  <div
+                    class="radio-circle w-4 h-4 lg:w-8 lg:h-8 3xl:w-9 3xl:h-9 rounded-full flex items-center justify-center border-2 border-KonBlue"
+                  >
+                    <span
+                      class="radio-dot hidden w-[5px] h-[5px] sm:w-[9px] sm:h-[9px] lg:w-[13px] lg:h-[13px] rounded-full bg-blueBay"
+                    ></span>
+                  </div>
+                </div>
+
+                <p
+                  class="registration-description font-light font-ibm-plex leading-[160%] pt-0 sm:pt-3"
+                >
+                  Ich habe sowohl die Bedingungen zur Mitgliedschaft (AGB), die
+                  Datenschutzerklärung sowie die Widerrufsbelehrung gelesen und
+                  akzeptiere sie. *
+                </p>
+              </div>
+              <div class="flex gap-4 items-start check-item">
+                <div
+                  class="bg-white p-1.5 sm:p-2 md:p-2.5 rounded-full h-fit outer"
+                >
+                  <div
+                    class="radio-circle w-4 h-4 lg:w-8 lg:h-8 3xl:w-9 3xl:h-9 rounded-full flex items-center justify-center border-2 border-KonBlue"
+                  >
+                    <span
+                      class="radio-dot hidden w-[5px] h-[5px] sm:w-[9px] sm:h-[9px] lg:w-[13px] lg:h-[13px] rounded-full bg-blueBay"
+                    ></span>
+                  </div>
+                </div>
+
+                <p
+                  class="registration-description font-light font-ibm-plex leading-[160%] pt-0 sm:pt-3"
+                >
+                  Ich bestätige, dass ich die gesundheitlichen Vorraussetzungen
+                  erfülle. *
+                </p>
+              </div>
+              <div class="flex gap-4 items-start check-item">
+                <div
+                  class="bg-white p-1.5 sm:p-2 md:p-2.5 rounded-full h-fit outer"
+                >
+                  <div
+                    class="radio-circle w-4 h-4 lg:w-8 lg:h-8 3xl:w-9 3xl:h-9 rounded-full flex items-center justify-center border-2 border-KonBlue"
+                  >
+                    <span
+                      class="radio-dot hidden w-[5px] h-[5px] sm:w-[9px] sm:h-[9px] lg:w-[13px] lg:h-[13px] rounded-full bg-blueBay"
+                    ></span>
+                  </div>
+                </div>
+
+                <p
+                  class="registration-description font-light font-ibm-plex leading-[160%] pt-0 sm:pt-3"
+                >
+                  Ich bin damit einverstanden, dass die Sanero Medical GmbH die
+                  von mir bei der Registrierung und bei der Durchführung des
+                  Nichtraucher-Programms mitgeteilten Gesundheitsdaten zur
+                  Vertragserfüllung verarbeitet. Diese Einwilligung umfasst
+                  nicht die Weiterleitung der Gesundheitsdaten an Dritte. Meine
+                  Einwilligung gilt bis auf Widerruf, den ich jederzeit mit
+                  Wirkung für die Zukunft, z. B. per E-Mail unter
+                  service@nichtraucherhelden.de, erklären kann. Die Durchführung
+                  des Vertrages wird bei Widerruf der Einwilligung
+                  gegebenenfalls unmöglich. Ab Zugang der Widerrufserklärung
+                  werden die Daten unverzüglich gelöscht, sofern keine
+                  gesetzlichen Aufbewahrungsfristen entgegenstehen. *
+                </p>
+              </div>
+            </div>
+            <!-- Continue Button -->
+            <div class="md:px-0 px-4">
+              <button class="primary-button sm:max-w-[340px] w-full">
+                Weiter
+              </button>
+            </div>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="flex xl:gap-28 lg:pt-8">
+            <div
+              class="text-KonBlue text-xs sm:text-sm xl:text-base 2xl:text-base 3xl:text-xl leading-[133%] space-y-4 text-center w-full"
+            >
+              <img
+                class="object-contain aspect-square w-full h-full max-w-[72px] md:max-w-[121px] max-h-[68px] md:max-h-[116px] mx-auto"
+                src="/assets/images/png/ssl.png"
+                alt="zga"
+              />
+              <p>Sichere Datenübertragung</p>
+            </div>
+            <div
+              class="text-KonBlue text-xs sm:text-sm xl:text-base 2xl:text-base 3xl:text-xl leading-[133%] space-y-4 text-center w-full"
+            >
+              <img
+                class="object-contain aspect-square w-full h-full max-w-[72px] md:max-w-[121px] max-h-[68px] md:max-h-[116px] mx-auto"
+                src="/assets/images/png/zga.png"
+                alt="zga"
+              />
+              <p>Krankenkassen-Zertifiziert</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!------------------------ Footer Section --------------------------->
+      <footer class="bg-KonBlue text-white px-8 sm:px-5">
+        <!-- TOP SECTION -->
+        <div
+          class="section-container py-12 xl:justify-between grid grid-cols-1 sm:grid-cols-2 3xl:pt-[111px] 3xl:pb-[105px] lg:grid-cols-4 gap-8 3xl:gap-17 xl:flex"
+        >
+          <!-- Column 1 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Sanero Medical GmbH
+            </h3>
+            <p class="footer-link font-normal font-ibm-plex">
+              Wilhelmstraße 19 70182<br />
+              Stuttgart Germany
+            </p>
+
+            <div class="mt-4 md:mt-6 space-y-2 text-sm">
+              <a
+                href="tel:+49 (0)711 / 99 538 110"
+                class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+              >
+                <img
+                  class="max-w-5 w-full"
+                  src="./assets/images/phone-white.webp"
+                  alt="phone"
+                />
+
+                +49 (0)711 / 99 538 110
+              </a>
+              <a
+                href="mailto:info@sanero-medical.de"
+                class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+              >
+                <img
+                  class="max-w-5 w-full"
+                  src="./assets/images/email-white.webp"
+                  alt="phone"
+                />
+                info@sanero-medical.de
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Unternehmen
+            </h3>
+            <ul
+              class="space-y-2 font-normal footer-link font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Über uns</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Kontakt</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Presse</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Service
+            </h3>
+            <ul
+              class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Impressum</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Datenschutz</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Prävention nach §20
+            </h3>
+            <ul
+              class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Präventionskurs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Krankenkassen</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Firmenprogramm</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <!-- BOTTOM BAR -->
+      <section class="bg-windsweptBeach hidden md:block px-5">
+        <div
+          class="section-container mt-0! py-4 md:py-6.5! flex flex-col lg:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-encoreGray footer-link font-ibm-plex">
+            © 2025 NichtraucherHelden – ein Produkt der Sanero Medical GmbH
+          </p>
+
+          <div class="flex items-center gap-6">
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >Impressum</a
+            >
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >Datenschutzerklärung</a
+            >
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >AGB</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <button
+      id="backToTopBtn"
+      class="bg-KonBlue invisible fixed right-2 min-h-11 min-w-11 bottom-4 z-40 translate-y-4 cursor-pointer rounded-full p-3 text-white opacity-0 shadow-lg transition-all duration-300 focus:outline-none lg:right-8 md:bottom-8 border border-white"
+    >
+      <!-- Arrow Up Icon -->
+      <img
+        class="max-w-5 rotate-[177deg]"
+        src="./assets/images/scroll-button.webp"
+        alt="arrow"
+      />
+    </button>
+    <div
+      data-modal="login"
+      class="fixed modal inset-0 z-50 hidden overflow-hidden"
+    >
+      <!-- Overlay -->
+      <div
+        class="fixed inset-0 bg-KonBlue/90 opacity-0 transition-opacity duration-300 modal-overlay"
+      ></div>
+      <!-- Modal Content -->
+      <div
+        class="min-h-dvh h-dvh max-h-dvh p-5 flex items-center justify-center"
+      >
+        <div
+          class="modal-content modal-container max-w-190 relative overflow-auto max-h-full hide-scrollbar"
+        >
+          <div class="modal-header sticky top-0">
+            <h4 class="individually-card-title">Login</h4>
+            <button class="modal-close-button" data-modal-close>
+              <img
+                class="object-contain w-full h-full"
+                src="./assets/images/png/modal-close.png"
+                alt="modal-close"
+              />
+            </button>
+          </div>
+          <form
+            id="loginForm"
+            class="3xl:gap-12 2xl:gap-10 h-auto 1xl:gap-8 gap-6 xl:px-6 px-4 3xl:pt-11 2xl:pt-10 1xl:pt-9 pt-6 3xl:pb-12 2xl:pb-10 pb-8 flex flex-col justify-center overflow-auto"
+          >
+            <p class="free-help-text text-KonBlue leading-[150%] px-4">
+              Melde Dich hier für deinen persönlichen Bereich an.
+            </p>
+
+            <div class="md:space-y-3 space-y-2">
+              <!-- Email -->
+              <div>
+                <input
+                  id="email"
+                  class="primary-input free-help-text"
+                  placeholder="Benutzername / E-Mail-Adresse"
+                  type="email"
+                />
+                <p id="emailError" class="text-red-500 text-sm mt-1 hidden"></p>
+              </div>
+
+              <!-- Password -->
+              <div>
+                <div
+                  class="flex items-center justify-between primary-input free-help-text"
+                >
+                  <input
+                    id="password"
+                    class="w-full outline-none bg-transparent placeholder:text-encoreGray"
+                    placeholder="Passwort*"
+                    type="password"
+                  />
+
+                  <button type="button" id="togglePassword" class="w-6 h-6">
+                    <img
+                      id="eyeIcon"
+                      class="object-contain w-full h-full"
+                      src="./assets/images/png/open-eye.png"
+                      alt="toggle password"
+                    />
+                  </button>
+                </div>
+                <p
+                  id="passwordError"
+                  class="text-red-500 text-sm mt-1 hidden"
+                ></p>
+              </div>
+            </div>
+
+            <a
+              class="free-help-text text-KonBlue underline font-light leading-[160%] w-fit mx-auto"
+              href=""
+            >
+              Passwort vergessen?
+            </a>
+
+            <button
+              type="submit"
+              class="text-white leading-[160%] font-fira font-medium hover:bg-white border border-blueBay bg-blueBay rounded-2xl flex items-center justify-center free-help-text md:h-14 h-13 hover:text-blueBay duration-300 ease-in-out transition-all"
+            >
+              Einloggen
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/js/popup.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/pricing-plan.js"></script>
+    <!-- <script src="/js/header-animation.js"></script> -->
+    <script src="/js/back-to-top.js"></script>
+  </body>
+</html>

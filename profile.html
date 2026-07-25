@@ -1,0 +1,1104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Urf - Deine App auf Rezept unterstützt Dichlangfristig und kostenfrei.
+    </title>
+
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="icon" type="image/svg" href="./assets/images/logo.webp" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+
+  <body>
+    <!---------------------------------------- HEADER ---------------------------------- -->
+
+    <aside
+      id="sidebar"
+      class="fixed top-0 right-0 h-dvh bg-white w-[320px] transform transition-transform duration-300 ease-in-out z-[9999] flex flex-col justify-start p-4 translate-x-full"
+    >
+      <!-- Main Menu Content -->
+      <div class="sidebar-overlay"></div>
+      <div id="main-menu">
+        <div class="flex justify-between items-center mb-6">
+          <a aria-label="logo" href="./">
+            <img
+              class="max-w-10.25 w-full"
+              src="./assets/images/logo.webp"
+              alt="logo"
+            />
+          </a>
+          <button
+            id="close-sidebar"
+            class="text-2xl"
+            aria-label="clsoe sidebar"
+          >
+            <img
+              class="w-8 h-8 object-cover"
+              src="./assets/images/close-sidebar.webp"
+              alt="cross-icon"
+            />
+          </button>
+        </div>
+        <div>
+          <nav
+            class="flex flex-col justify-between grow overflow-auto h-full hide-scrollbar"
+          >
+            <div class="flex flex-col justify-between gap-7 text-primary">
+              <a aria-label="manu list" href="#" class="header-li"> Magazin </a>
+              <a aria-label="manu list" href="#" class="header-li">
+                Erfolgsgeschichten
+              </a>
+              <a aria-label="manu list" href="#" class="header-li"> FAQ </a>
+
+              <button
+                data-modal-open="login"
+                class="flex gap-2 hover:scale-95 transition-all duration-300 ease-in-out"
+              >
+                <img
+                  class="max-w-4.75 w-full"
+                  src="./assets/images/profile-icon.webp"
+                  alt="profile"
+                />
+                Login
+              </button>
+            </div>
+          </nav>
+          <div
+            class="flex flex-col justify-between items-center gap-3 w-full pt-10"
+          >
+            <button
+              class="sm:py-2 py-1.5 lg:py-3 3xl:py-4 px-6 rounded-4xl bg-iceFishing text-primary font-medium hover:scale-95 transition-all duration-300 ease-in-out font-ibm-plex text-base lg:text-lg xl:text-xl 3xl:text-2xl w-full eading-[150%] sm:leading-[100%]"
+            >
+              Fachkreise
+            </button>
+            <button class="primary-btn w-full">Dein Weg zur App</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!---------------------------------------- HEADER ---------------------------------- -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 z-999 opacity-0 pointer-events-none transition-opacity duration-300"
+    ></div>
+    <header
+      class="text-white z-50 transition-transform duration-300 ease-in-out sticky top-0 w-full"
+    >
+      <!-- {/* Top Bar for Contact Info */} -->
+      <div class="bg-KonBlue">
+        <div
+          class="flex justify-end items-center sm:px-9! px-4! py-2 text-[11px] xs:text-xs font-ibm-plex sm:text-sm gap-4 overflow-auto custom-container hide-scrollbar"
+        >
+          <span class="hidden md:inline text-iceFishing text-base font-medium">
+            Unsere Experten sind für Dich da:
+          </span>
+          <div
+            class="flex sm:justify-center justify-between items-center xs:gap-7! gap-2! sm:w-fit w-full"
+          >
+            <a
+              href="tel:+49871121999343"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/phone-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              +49 8711 21 999 343
+            </a>
+            <a
+              href="mailto:service@nichtraucherhelden.de"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/email-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              service@nichtraucherhelden.de
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- {/* Main Navigation Bar */} -->
+      <div class="bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.05)] text-black">
+        <div class="custom-container py-2 sm:py-3 3xl:py-4">
+          <div class="flex justify-between items-center">
+            <div class="shrink-0 flex items-center">
+              <div
+                class="max-w-13 3xl:max-w-18 aspect-square w-full cursor-pointer"
+              >
+                <img
+                  class="w-full h-full"
+                  src="/assets/images/logo.webp"
+                  alt="logo"
+                />
+              </div>
+            </div>
+            <button class="primary-btn block sm:hidden">
+              Dein Weg zur App
+            </button>
+            <nav
+              class="flex text-lg md:text-xl font-fira font-medium items-center gap-8 3xl:gap-12 leading-[140%]"
+            >
+              <div
+                class="hidden xl:flex justify-between items-center gap-10 text-primary"
+              >
+                <a href="#" class="header-li"> Magazin </a>
+                <a href="#" class="header-li"> Erfolgsgeschichten </a>
+                <a href="#" class="header-li"> FAQ </a>
+
+                <button
+                  data-modal-open="login"
+                  class="flex justify-center items-center gap-2 header-li icon-hover"
+                >
+                  <img
+                    class="max-w-4.75 w-full icon"
+                    src="./assets/images/profile-icon.webp"
+                    alt="profile"
+                  />
+                  Login
+                </button>
+              </div>
+              <div class="hidden sm:flex justify-between gap-5">
+                <button class="primary-btn-v3">Fachkreise</button>
+                <button class="primary-btn-v2">Dein Weg zur App</button>
+              </div>
+              <button
+                id="hamburger"
+                aria-label="hamburger button"
+                class="block xl:hidden space-y-1.5"
+              >
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- <<============================================= SIDERBAR ============================================>> -->
+    <main id="main-content">
+      <div
+        class="3xl:space-y-20 lg:space-y-16 space-y-14 3xl:mb-20 lg:mb-16 mb-14 relative"
+      >
+        <!-- Hallo Du Heldin! -->
+        <section class="hallo-sticky-container">
+          <div class="custom-container py-8">
+            <div
+              class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"
+            >
+              <div
+                class="flex items-center gap-3 sm:gap-4 2xl:gap-6 3xl:gap-16"
+              >
+                <img
+                  src="./assets/images/profile.webp"
+                  alt="profile"
+                  class="3xl:max-w-23.5 2xl:max-w-20 max-w-16 w-full object-cover aspect-square rounded-full border-4 border-white"
+                />
+                <div>
+                  <h1 class="traning-hero-heading">Hallo Du Heldin!</h1>
+                  <p class="paragraph-xl font-light mt-4">
+                    Schon, dass Du hier bist...
+                  </p>
+                </div>
+              </div>
+
+              <div class="hallo">
+                <a
+                  href="/heroes-day.html"
+                  class="hero-pages group free-help-text-v2"
+                >
+                  <img
+                    class="secondary-nav-img-inactive"
+                    src="assets/images/png/normal-calander.png"
+                    alt="calander"
+                  />
+                  <span class="sm:block hidden"> Heldentag</span>
+                  <span class="block sm:hidden"> Dein Tag</span>
+                </a>
+                <a
+                  href="/hero-status.html"
+                  class="hero-pages group free-help-text-v2"
+                >
+                  <img
+                    class="secondary-nav-img-inactive"
+                    src="assets/images/png/shield-halved.png"
+                    alt="calander"
+                  />
+
+                  <span class="sm:block hidden"> Heldenstatus</span>
+                  <span class="block sm:hidden"> Status</span>
+                </a>
+                <a
+                  href="/dranbleiben.html"
+                  class="hero-pages group free-help-text-v2"
+                >
+                  <img
+                    class="secondary-nav-img-inactive"
+                    src="assets/images/png/rocket.png"
+                    alt="calander"
+                  />
+                  Dranbleiben
+                </a>
+                <a
+                  href="community.html"
+                  class="hero-pages hero-pages group free-help-text-v2"
+                >
+                  <img
+                    class="secondary-nav-img-inactive"
+                    src="assets/images/png/grid-box.png"
+                    alt="calander"
+                  />
+
+                  Community
+                </a>
+                <a
+                  href="profile.html"
+                  class="hero-pages bg-iceFishing font-bold group free-help-text-v2"
+                >
+                  <img
+                    class="secondary-nav-img-active"
+                    src="assets/images/png/circle-user.png"
+                    alt="calander"
+                  />
+                  Profil
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Kontaktdaten -->
+        <section
+          class="section-container-primary 3xl:px-0 px-4 3xl:mt-20 lg:mt-16 mt-14"
+        >
+          <div
+            class="md:px-20 lg:px-30 3xl:px-33 pt-5 sm:py-10 md:py-12.5 lg:py-15 3xl:py-19 bg-transparent md:bg-iceFishing 3xl:rounded-3xl rounded-[20px] space-y-8! 3xl:space-y-12!"
+          >
+            <h4
+              class="imprint-title mb-6 lg:mb-8 3xl:mb-12 px-5 sm:px-10 md:px-0"
+            >
+              Testzugänge und Anfrage
+            </h4>
+            <!-- form field  -->
+            <form
+              action="/"
+              class="bg-iceFishing px-5 sm:px-10 md:px-0 rounded-3xl py-5 md:py-0! space-y-6! lg:space-y-8! 3xl:space-y-12!"
+            >
+              <div>
+                <div class="space-y-4">
+                  <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-3 3xl:gap-8 md:gap-5"
+                  >
+                    <div class="relative customSelect peer">
+                      <!-- Button -->
+
+                      <button
+                        id="Your-first-name"
+                        type="button"
+                        class="w-full flex relative items-center justify-between step-input-field text-base xl:text-xl font-medium! font-fira! leading-[175%] text-encoreGray! peer opacity-100! bg-white! selectBtn py-0! h-13 sm:h-14 xl:h-20 pb-2 sm:pb-0 md:px-6 px-4 xl:rounded-3xl rounded-xl outline-0 pt-6 sm:pt-3"
+                      >
+                        <span
+                          class="floating-label font-fira! font-medium! text-encoreGray md:left-6 left-4"
+                          >Anrede*</span
+                        >
+
+                        <!-- Selected value -->
+                        <span
+                          class="selectedValue text-base! 2xl:text-lg! 3xl:text-xl! font-medium font-fira text-KonBlue xl:mt-4 mt-5.5"
+                        ></span>
+
+                        <img
+                          class="max-w-3.5 w-full transition-transform duration-300 arrow"
+                          src="./assets/images/arrow-select.webp"
+                          alt="arrow"
+                        />
+                      </button>
+
+                      <!-- Options -->
+                      <div
+                        class="absolute options left-0 right-0 mt-2 overflow-hidden rounded-xl md:rounded-2xl bg-white shadow-lg transition-all duration-300 ease-out max-h-0 opacity-0 -translate-y-2 pointer-events-none z-10"
+                      >
+                        <div
+                          class="option px-4 py-3 cursor-pointer hover:bg-blueRay hover:text-white transition-all duration-200 ease-in-out font-fira text-base 2xl:text-base 3xl:text-xl"
+                        >
+                          männlich
+                        </div>
+                        <div
+                          class="option px-4 py-3 cursor-pointer hover:bg-blueRay hover:text-white transition-all duration-200 ease-in-out font-fira text-base 2xl:text-base 3xl:text-xl"
+                        >
+                          weiblich
+                        </div>
+                        <div
+                          class="option px-4 py-3 cursor-pointer hover:bg-blueRay hover:text-white transition-all duration-200 ease-in-out font-fira text-base 2xl:text-base 3xl:text-xl"
+                        >
+                          andere
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-3 3xl:gap-8 md:gap-5"
+                  >
+                    <div class="relative w-full">
+                      <input
+                        required
+                        id="Your-first-name"
+                        type="text"
+                        placeholder="  "
+                        class="step-input-field free-help-text font-medium leading-[175%] text-primaryButton peer bg-white!"
+                      />
+
+                      <label
+                        for="Your-first-name"
+                        class="step-input-field-label-2 font-fira! font-medium! text-encoreGray!"
+                      >
+                        Vorname*
+                      </label>
+                    </div>
+                    <div class="relative w-full">
+                      <input
+                        required
+                        id="Your-last-name"
+                        type="text"
+                        placeholder="  "
+                        class="step-input-field-v2 peer opacity-100!"
+                      />
+
+                      <label
+                        for="Your-last-name"
+                        class="step-input-field-label-2 font-fira! font-medium! text-encoreGray!"
+                      >
+                        Nachname*
+                      </label>
+                    </div>
+                  </div>
+                  <div class="relative w-full">
+                    <input
+                      required
+                      id="E-Mail-Adresse*"
+                      type="email"
+                      placeholder=" "
+                      class="step-input-field-v2 peer opacity-100!"
+                    />
+
+                    <label
+                      for="E-Mail-Adresse*"
+                      class="step-input-field-label-2 font-fira! font-medium! text-encoreGray!"
+                    >
+                      Straße und Hausnummer*
+                    </label>
+                  </div>
+                  <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-3 3xl:gap-8 md:gap-5"
+                  >
+                    <div class="relative w-full">
+                      <input
+                        required
+                        id="Your-practice-name*"
+                        type="text"
+                        placeholder="  "
+                        class="step-input-field-v2 peer opacity-100!"
+                      />
+
+                      <label
+                        for="Your-practice-name*"
+                        class="step-input-field-label-2 font-fira! font-medium! text-encoreGray!"
+                      >
+                        PLZ*
+                      </label>
+                    </div>
+                    <!-- Password -->
+                    <div class="relative w-full">
+                      <input
+                        required
+                        id="Street and house number of your practice*"
+                        type="text"
+                        placeholder="  "
+                        class="step-input-field-v2 peer opacity-100!"
+                      />
+
+                      <label
+                        for="Street and house number of your practice*"
+                        class="step-input-field-label-2 font-fira! font-medium! text-encoreGray!"
+                      >
+                        Wohnort*
+                      </label>
+                    </div>
+                  </div>
+                  <div class="relative customSelect peer">
+                    <!-- Button -->
+
+                    <button
+                      id="Your-first-name"
+                      type="button"
+                      class="w-full flex relative items-center justify-between step-input-field text-base xl:text-xl font-medium! font-fira! leading-[175%] text-encoreGray! peer opacity-100! bg-white! selectBtn py-0! h-13 sm:h-14 xl:h-20 pb-2 sm:pb-0 md:px-6 px-4 xl:rounded-3xl rounded-xl outline-0 pt-6 sm:pt-3"
+                    >
+                      <span
+                        class="floating-label font-fira! font-medium! text-encoreGray md:left-6 left-4"
+                        >Land*</span
+                      >
+
+                      <!-- Selected value -->
+                      <span
+                        class="selectedValue text-base! 2xl:text-lg! 3xl:text-xl! font-medium font-fira text-KonBlue xl:mt-4 mt-5.5"
+                      ></span>
+
+                      <img
+                        class="max-w-3.5 w-full transition-transform duration-300 arrow"
+                        src="./assets/images/arrow-select.webp"
+                        alt="arrow"
+                      />
+                    </button>
+
+                    <!-- Options -->
+                    <div
+                      class="absolute options left-0 right-0 mt-2 overflow-hidden rounded-xl md:rounded-2xl bg-white shadow-lg transition-all duration-300 ease-out max-h-0 opacity-0 -translate-y-2 pointer-events-none z-10"
+                    >
+                      <div
+                        class="option px-4 py-3 cursor-pointer hover:bg-blueRay hover:text-white transition-all duration-200 ease-in-out font-fira text-base 2xl:text-base 3xl:text-xl"
+                      >
+                        männlich
+                      </div>
+                      <div
+                        class="option px-4 py-3 cursor-pointer hover:bg-blueRay hover:text-white transition-all duration-200 ease-in-out font-fira text-base 2xl:text-base 3xl:text-xl"
+                      >
+                        weiblich
+                      </div>
+                      <div
+                        class="option px-4 py-3 cursor-pointer hover:bg-blueRay hover:text-white transition-all duration-200 ease-in-out font-fira text-base 2xl:text-base 3xl:text-xl"
+                      >
+                        andere
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- check-box-section  -->
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-3 3xl:gap-8 md:gap-5"
+              >
+                <button class="primary-button 3xl:rounded-2xl!">
+                  Speichern
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+        <!-- Daten zur Person -->
+        <section class="section-container-primary 3xl:px-0 px-4">
+          <div
+            class="md:px-20 lg:px-30 3xl:px-33 py-5 sm:py-10 md:py-12.5 lg:py-15 3xl:py-19 bg-iceFishing 3xl:rounded-3xl rounded-[20px] space-y-8! 3xl:space-y-12! px-5"
+          >
+            <h4
+              class="imprint-title mb-6 lg:mb-8 3xl:mb-12 px-5 sm:px-10 md:px-0"
+            >
+              Daten zur Person
+            </h4>
+            <!-- form field  -->
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 gap-3 3xl:gap-8 md:gap-5"
+            >
+              <div>
+                <div class="flex items-center gap-6">
+                  <img
+                    class="3xl:max-w-42.25 2xl:max-w-30 xl:max-w-24 lg:max-w-16 max-w-14 aspect-square w-full object-cover rounded-full"
+                    src="assets/images/png/dummy.png"
+                    alt="dummy"
+                  />
+                  <div>
+                    <p
+                      class="free-help-text font-medium font-fira leading-8 text-black"
+                    >
+                      Profilbild
+                    </p>
+                    <span class="free-help-text font-light leading-8 text-black"
+                      >PNG, JPEG, unter 15 MB</span
+                    >
+                  </div>
+                </div>
+                <button
+                  class="primary-button lg:mt-8 mt-6 w-full 3xl:rounded-2xl!"
+                >
+                  Neues Bild festlegen
+                </button>
+              </div>
+              <div>
+                <div class="flex items-center">
+                  <div
+                    class="3xl:min-h-42.25 2xl:min-h-30 xl:min-h-24 lg:min-h-16 min-h-14 w-0 object-cover rounded-full invisible"
+                  ></div>
+
+                  <div class="relative w-full">
+                    <input
+                      required
+                      id="E-Mail-Adresse*"
+                      type="email"
+                      placeholder=" "
+                      class="step-input-field-v2 peer opacity-100!"
+                    />
+
+                    <label
+                      for="E-Mail-Adresse*"
+                      class="step-input-field-label-2 font-fira! font-medium! text-encoreGray!"
+                    >
+                      Geburtsdatum
+                    </label>
+                  </div>
+                </div>
+                <button
+                  class="primary-button 3xl:rounded-2xl! lg:mt-8 mt-6 w-full"
+                >
+                  Geburtsdatum speichern
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Login -->
+        <section class="section-container-primary 3xl:px-0 px-4">
+          <div
+            class="md:px-20 lg:px-30 3xl:px-33 pt-5 sm:py-10 md:py-12.5 lg:py-15 3xl:py-19 bg-transparent md:bg-iceFishing 3xl:rounded-3xl rounded-[20px] space-y-8! 3xl:space-y-12!"
+          >
+            <h4
+              class="imprint-title mb-6 lg:mb-8 3xl:mb-12 px-5 sm:px-10 md:px-0"
+            >
+              Login
+            </h4>
+
+            <!-- form field  -->
+            <div
+              class="bg-iceFishing px-5 sm:px-10 md:px-0 rounded-3xl py-5 md:py-0! space-y-6! lg:space-y-8! 3xl:space-y-12!"
+            >
+              <!-- Benutzername  -->
+              <form action="" class="space-y-8! 3xl:space-y-12!">
+                <p class="article-heading">Benutzername</p>
+                <div class="space-y-4">
+                  <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-3 3xl:gap-8 md:gap-5"
+                  >
+                    <div class="relative w-full">
+                      <input
+                        required
+                        id="Your-first-name"
+                        type="text"
+                        placeholder="  "
+                        class="step-input-field free-help-text font-medium leading-[175%] text-primaryButton peer bg-white!"
+                      />
+
+                      <label
+                        for="Your-first-name"
+                        class="step-input-field-label-2 font-fira! font-medium! text-encoreGray!"
+                      >
+                        E-Mail-Adresse*
+                      </label>
+                    </div>
+                  </div>
+                  <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-3 3xl:gap-8 md:gap-5"
+                  >
+                    <div class="relative w-full">
+                      <input
+                        required
+                        id="Your-first-name"
+                        type="text"
+                        placeholder="  "
+                        class="step-input-field free-help-text font-medium leading-[175%] text-primaryButton peer bg-white!"
+                      />
+
+                      <label
+                        for="Your-first-name"
+                        class="step-input-field-label-2 font-fira! font-medium! text-encoreGray!"
+                      >
+                        Benutzername
+                      </label>
+                    </div>
+                    <div class="relative w-full">
+                      <input
+                        required
+                        id="Your-last-name"
+                        type="text"
+                        placeholder="  "
+                        class="step-input-field-v2 peer opacity-100!"
+                      />
+
+                      <label
+                        for="Your-last-name"
+                        class="step-input-field-label-2 font-fira! font-medium! text-encoreGray!"
+                      >
+                        Neuer Benutzername
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 gap-3 3xl:gap-8 md:gap-5"
+                >
+                  <button class="primary-button 3xl:rounded-2xl!">
+                    Passwort ändern
+                  </button>
+                </div>
+              </form>
+              <!-- Passwort  -->
+              <form action="" class="space-y-8! 3xl:space-y-12!">
+                <p class="article-heading">Passwort</p>
+                <div class="space-y-4">
+                  <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-3 3xl:gap-8 md:gap-5"
+                  >
+                    <div class="relative w-full">
+                      <input
+                        required
+                        id="old-password"
+                        type="password"
+                        placeholder="  "
+                        class="step-input-field free-help-text font-medium leading-[175%] text-primaryButton peer bg-white!"
+                      />
+
+                      <label
+                        for="old-password"
+                        class="step-input-field-label-2 font-fira! font-medium! text-encoreGray!"
+                      >
+                        Altes Passwort*
+                      </label>
+                    </div>
+                  </div>
+                  <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-3 3xl:gap-8 md:gap-5"
+                  >
+                    <div class="relative w-full">
+                      <input
+                        required
+                        id="new-password"
+                        type="password"
+                        placeholder="  "
+                        class="step-input-field free-help-text font-medium leading-[175%] text-primaryButton peer bg-white!"
+                      />
+
+                      <label
+                        for="new-password"
+                        class="step-input-field-label-2 font-fira! font-medium! text-encoreGray!"
+                      >
+                        Neues Passwort* (mind. 8 Zeichen)
+                      </label>
+                    </div>
+                    <div class="relative w-full">
+                      <input
+                        required
+                        id="repeat-new-password"
+                        type="password"
+                        placeholder="  "
+                        class="step-input-field-v2 peer opacity-100!"
+                      />
+
+                      <label
+                        for="repeat-new-password"
+                        class="step-input-field-label-2 font-fira! font-medium! text-encoreGray!"
+                      >
+                        Neues Passwort wiederholen* (mind. 8 Zeichen)
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 gap-3 3xl:gap-8 md:gap-5"
+                >
+                  <button class="primary-button 3xl:rounded-2xl!">
+                    Passwort ändern
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+        <!-- Erweiterte Einstellungen -->
+        <section class="section-container-primary 3xl:px-0 px-4">
+          <div
+            class="md:px-20 lg:px-30 3xl:px-33 pt-5 sm:py-10 md:py-12.5 lg:py-15 3xl:py-19 bg-transparent md:bg-iceFishing 3xl:rounded-3xl rounded-[20px] space-y-8! 3xl:space-y-12!"
+          >
+            <h4
+              class="imprint-title mb-6 lg:mb-8 3xl:mb-12 px-5 sm:px-10 md:px-0"
+            >
+              Erweiterte Einstellungen
+            </h4>
+            <div class="space-y-4 px-3 sm:px-0" id="checkGroup">
+              <div class="flex gap-4 items-center check-item">
+                <div
+                  class="bg-white p-1.5 sm:p-2 md:p-2.5 rounded-full h-fit outer"
+                >
+                  <div
+                    class="radio-circle w-4 h-4 lg:w-8 lg:h-8 3xl:w-9 3xl:h-9 rounded-full flex items-center justify-center border-2 border-KonBlue"
+                  >
+                    <span
+                      class="radio-dot hidden w-1.25 h-1.25 sm:w-2.25 sm:h-2.25 lg:w-3.25 lg:h-3.25 rounded-full bg-blueBay"
+                    ></span>
+                  </div>
+                </div>
+
+                <p
+                  class="registration-description font-light font-ibm-plex leading-[160%]"
+                >
+                  Ich möchte den NichtraucherHelden Newsletter erhalten.
+                </p>
+              </div>
+              <div class="flex gap-4 items-center check-item">
+                <div class="bg-white p-1.5 sm:p-2 rounded-full h-fit outer">
+                  <div
+                    class="radio-circle w-4 h-4 lg:w-8 lg:h-8 3xl:w-9 3xl:h-9 rounded-full flex items-center justify-center border-2 border-KonBlue"
+                  >
+                    <span
+                      class="radio-dot hidden w-1.25 h-1.25 sm:w-2.25 sm:h-2.25 lg:w-3.25 lg:h-3.25 rounded-full bg-blueBay"
+                    ></span>
+                  </div>
+                </div>
+
+                <p
+                  class="registration-description font-light font-ibm-plex leading-[160%]"
+                >
+                  Ich möchte bei Änderungen im Forum (Helden-Community) bei von
+                  mir kommentierten oder erstellten Themen informiert werden.
+                </p>
+              </div>
+            </div>
+            <div>
+              <h5 class="imprint-title mb-4 lg:mb-6 px-5 sm:px-10 md:px-0">
+                Profil löschen
+              </h5>
+              <p
+                class="registration-description font-light font-ibm-plex leading-[160%]"
+              >
+                Hier kannst Du Dein Profil komplett löschen. Ein Login ist
+                danach nicht mehr möglich.
+              </p>
+            </div>
+            <button
+              class="px-4 md:h-14 h-13 flex items-center justify-center rounded-xl 3xl:rounded-2xl font-medium font-fira text-white hover:bg-transparent border border-dein1 bg-dein1 hover:text-dein1 transition-all duration-300 ease-in-out text-base md:text-lg lg:text-xl leading-[150%] max-w-124 w-full"
+            >
+              Profil löschen
+            </button>
+            <div
+              class="free-help-text font-light text-KonBlue 3xl:space-y-10 md:space-y-7 space-y-4 leading-[150%]"
+            >
+              <h3>
+                Unsere
+                <span class="font-bold">Datenschutzerklärung</span> findest du
+                hier.
+              </h3>
+              <h4>
+                Deine
+                <span class="font-bold"
+                  >Einverständniserklärung zur Datenverarbeitung</span
+                >
+                ist hier nochmals genannt:
+              </h4>
+              <h5>
+                Ich bin damit einverstanden, dass die Sanero Medical GmbH die
+                von mir bei der Registrierung und bei der Durchführung des
+                Nichtraucher-Programms mitgeteilten Gesundheitsdaten zur
+                Vertragserfüllung verarbeitet. Diese Einwilligung umfasst nicht
+                die Weiterleitung der Gesundheitsdaten an Dritte. Meine
+                Einwilligung gilt bis auf Widerruf, den ich jederzeit mit
+                Wirkung für die Zukunft, z. B. per E-Mail unter
+                service@nichtraucherhelden.de, erklären kann. Die Durchführung
+                des Vertrages wird bei Widerruf der Einwilligung gegebenenfalls
+                unmöglich. Ab Zugang der Widerrufserklärung werden die Daten
+                unverzüglich gelöscht, sofern keine gesetzlichen
+                Aufbewahrungsfristen entgegenstehen.
+              </h5>
+            </div>
+            <!-- form field  -->
+          </div>
+        </section>
+      </div>
+      <!------------------------ Footer Section --------------------------->
+      <footer class="bg-KonBlue text-white px-8 sm:px-5">
+        <!-- TOP SECTION -->
+        <div
+          class="section-container-primary py-12 xl:justify-between grid grid-cols-1 sm:grid-cols-2 3xl:pt-27.75 3xl:pb-26.25 lg:grid-cols-4 gap-8 3xl:gap-17 xl:flex"
+        >
+          <!-- Column 1 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Sanero Medical GmbH
+            </h3>
+            <p class="footer-link font-normal font-ibm-plex">
+              Wilhelmstraße 19 70182<br />
+              Stuttgart Germany
+            </p>
+
+            <div class="mt-4 md:mt-6 space-y-2 text-sm">
+              <a
+                href="tel:+49 (0)711 / 99 538 110"
+                class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+              >
+                <img
+                  class="max-w-5 w-full"
+                  src="./assets/images/phone-white.webp"
+                  alt="phone"
+                />
+
+                +49 (0)711 / 99 538 110
+              </a>
+              <a
+                href="mailto:info@sanero-medical.de"
+                class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+              >
+                <img
+                  class="max-w-5 w-full"
+                  src="./assets/images/email-white.webp"
+                  alt="phone"
+                />
+                info@sanero-medical.de
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Unternehmen
+            </h3>
+            <ul
+              class="space-y-2 font-normal footer-link font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Über uns</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Kontakt</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Presse</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Service
+            </h3>
+            <ul
+              class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Impressum</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Datenschutz</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Prävention nach §20
+            </h3>
+            <ul
+              class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Präventionskurs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Krankenkassen</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Firmenprogramm</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <!-- BOTTOM BAR -->
+      <section class="bg-windsweptBeach hidden md:block px-5">
+        <div
+          class="section-container-primary py-4 md:py-6.5! flex flex-col lg:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-encoreGray footer-link font-ibm-plex">
+            © 2025 NichtraucherHelden – ein Produkt der Sanero Medical GmbH
+          </p>
+
+          <div class="flex items-center gap-6">
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >Impressum</a
+            >
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >Datenschutzerklärung</a
+            >
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >AGB</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <button
+      id="backToTopBtn"
+      class="bg-KonBlue invisible fixed right-2 min-h-11 min-w-11 bottom-4 z-40 translate-y-4 cursor-pointer rounded-full p-3 text-white opacity-0 shadow-lg transition-all duration-300 focus:outline-none lg:right-8 md:bottom-8 border border-white"
+    >
+      <!-- Arrow Up Icon -->
+      <img
+        class="max-w-5 rotate-[177deg]"
+        src="./assets/images/scroll-button.webp"
+        alt="arrow"
+      />
+    </button>
+    <div
+      data-modal="login"
+      class="fixed modal inset-0 z-50 hidden overflow-hidden"
+    >
+      <!-- Overlay -->
+      <div
+        class="fixed inset-0 bg-KonBlue/90 opacity-0 transition-opacity duration-300 modal-overlay"
+      ></div>
+      <!-- Modal Content -->
+      <div
+        class="min-h-dvh h-dvh max-h-dvh p-5 flex items-center justify-center"
+      >
+        <div
+          class="modal-content modal-container max-w-190 relative overflow-auto max-h-full hide-scrollbar"
+        >
+          <div class="modal-header sticky top-0">
+            <h4 class="individually-card-title">Login</h4>
+            <button class="modal-close-button" data-modal-close>
+              <img
+                class="object-contain w-full h-full"
+                src="./assets/images/png/modal-close.png"
+                alt="modal-close"
+              />
+            </button>
+          </div>
+          <form
+            id="loginForm"
+            class="3xl:gap-12 2xl:gap-10 h-auto 1xl:gap-8 gap-6 xl:px-6 px-4 3xl:pt-11 2xl:pt-10 1xl:pt-9 pt-6 3xl:pb-12 2xl:pb-10 pb-8 flex flex-col justify-center overflow-auto"
+          >
+            <p class="free-help-text text-KonBlue leading-[150%] px-4">
+              Melde Dich hier für deinen persönlichen Bereich an.
+            </p>
+
+            <div class="md:space-y-3 space-y-2">
+              <!-- Email -->
+              <div>
+                <input
+                  id="email"
+                  class="primary-input free-help-text"
+                  placeholder="Benutzername / E-Mail-Adresse"
+                  type="email"
+                />
+                <p id="emailError" class="text-red-500 text-sm mt-1 hidden"></p>
+              </div>
+
+              <!-- Password -->
+              <div>
+                <div
+                  class="flex items-center justify-between primary-input free-help-text"
+                >
+                  <input
+                    id="password"
+                    class="w-full outline-none bg-transparent placeholder:text-encoreGray"
+                    placeholder="Passwort*"
+                    type="password"
+                    autocomplete="current-password"
+                  />
+
+                  <button type="button" id="togglePassword" class="w-6 h-6">
+                    <img
+                      id="eyeIcon"
+                      class="object-contain w-full h-full"
+                      src="./assets/images/png/open-eye.png"
+                      alt="toggle password"
+                    />
+                  </button>
+                </div>
+                <p
+                  id="passwordError"
+                  class="text-red-500 text-sm mt-1 hidden"
+                ></p>
+              </div>
+            </div>
+
+            <a
+              class="free-help-text text-KonBlue underline font-light leading-[160%] w-fit mx-auto"
+              href=""
+            >
+              Passwort vergessen?
+            </a>
+
+            <button
+              type="submit"
+              class="text-white leading-[160%] font-fira font-medium hover:bg-white border border-blueBay bg-blueBay rounded-2xl flex items-center justify-center free-help-text md:h-14 h-13 hover:text-blueBay duration-300 ease-in-out transition-all"
+            >
+              Einloggen
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/js/popup.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/back-to-top.js"></script>
+    <script src="/js/select-v2.js"></script>
+    <script src="/js/radio.js"></script>
+    <script src="/js/pricing-plan.js"></script>
+  </body>
+</html>

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Urf - Deine App auf Rezept unterstützt Dichlangfristig und kostenfrei.
+    </title>
+
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="icon" type="image/svg" href="./assets/images/logo.webp" />
+  </head>
+
+  <body class="bg-white font-fira flex flex-col pb-9 relative">
+    <section
+      class="bg-KonBlue md:rounded-b-none rounded-b-4xl sticky! top-0 z-10"
+    >
+      <div class="common-step-layout py-6">
+        <div class="flex items-center justify-between">
+          <a class="common-back-button-step" href="/become-smoke-free.html">
+            <img src="./assets/images/back-arrow-icon.webp" alt="back-arrow" />
+          </a>
+          <a
+            class="common-close-button-step"
+            href="/check-prescription-question-1.html"
+          >
+            <img
+              src="./assets/images/close-arrow-icon.webp"
+              alt="close-arrow-icon"
+            />
+          </a>
+        </div>
+        <h2 class="common-heading-layout-title">Der Weg zur Rauchfreiheit</h2>
+        <h2
+          class="common-heading-layout-sub-title sm:w-full sm:max-w-full max-w-[80%]"
+        >
+          So erhälst Du NichtraucherHelden
+        </h2>
+      </div>
+    </section>
+    <main class="space-y-8 mt-8">
+      <p
+        class="free-help-text common-step-layout font-light leading-[160%] text-primary font-ibm-plex"
+      >
+        Orci faucibus eu venenatis tristique lorem nam non. Malesuada vitae
+        neque congue in non velit pharetra nullam. Pharetra viverra pellentesque
+        aliquet in aliquet dictumst.
+      </p>
+      <form class="space-y-8" action="/">
+        <section class="md:space-y-4 space-y-3 common-step-layout">
+          <div class="relative w-full">
+            <input
+              required
+              id="firstname"
+              type="text"
+              placeholder=" "
+              class="step-input-field free-help-text font-medium leading-[175%] text-primaryButton peer"
+            />
+
+            <label for="firstname" class="step-input-field-label">
+              Vorname*
+            </label>
+          </div>
+          <div class="relative w-full">
+            <input
+              required
+              id="Nachname"
+              type="text"
+              placeholder="  "
+              class="step-input-field free-help-text font-medium leading-[175%] text-primaryButton peer"
+            />
+
+            <label for="Nachname" class="step-input-field-label">
+              Nachname*
+            </label>
+          </div>
+          <div class="relative w-full">
+            <input
+              required
+              id="address"
+              type="text"
+              placeholder="  "
+              class="step-input-field free-help-text font-medium leading-[175%] text-primaryButton peer"
+            />
+
+            <label for="address" class="step-input-field-label">
+              Adresse und Hausnummer
+            </label>
+          </div>
+          <div class="relative w-full">
+            <input
+              required
+              id="PLZ"
+              type="text"
+              placeholder="  "
+              class="step-input-field free-help-text font-medium leading-[175%] text-primaryButton peer"
+            />
+
+            <label for="PLZ" class="step-input-field-label"> PLZ* </label>
+          </div>
+          <div class="relative w-full">
+            <input
+              required
+              id="Stadt"
+              type="text"
+              placeholder="  "
+              class="step-input-field free-help-text font-medium leading-[175%] text-primaryButton peer"
+            />
+
+            <label for="Stadt" class="step-input-field-label"> Stadt* </label>
+          </div>
+          <div class="relative w-full">
+            <input
+              required
+              id="email"
+              type="text"
+              placeholder="  "
+              class="step-input-field free-help-text font-medium leading-[175%] text-primaryButton peer"
+            />
+
+            <label for="email" class="step-input-field-label">
+              E-Mail-Adresse*
+            </label>
+          </div>
+          <div class="bg-iceFishing lg:rounded-3xl md:rounded-2xl rounded-xl">
+            <button
+              type="button"
+              onclick="toggleAccordion()"
+              class="flex items-center justify-between gap-2 w-full cursor-pointer md:px-6 px-4 md:py-5 py-4 free-help-text font-medium leading-[140%]"
+            >
+              Land auswählen
+              <span
+                id="accordionArrow"
+                class="bg-white min-w-10 min-h-10 w-10 h-10 rounded-full flex items-center justify-center"
+              >
+                <img
+                  class="h-full w-full"
+                  src="./assets/images/faq-down-arrow.webp"
+                  alt="faq"
+                />
+              </span>
+            </button>
+            <div class="accordion">
+              <div
+                class="accordion-inner md:px-6 px-4 md:pb-5 pb-4 free-help-text font-normal"
+              >
+                Prüfe hier, wie viel Deine Krankenkasse erstattet.
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="md:space-y-3 space-y-5 text-xs sm:text-sm md:text-base font-thin font-ibm-plex leading-[175%] text-primary common-step-layout"
+        >
+          <div class="flex items-start gap-4">
+            <input
+              required
+              class="custom-checkbox"
+              type="checkbox"
+              id="withdrawal"
+            />
+            <label for="withdrawal"
+              >*Ich erteile hiermit der Sanero Medical GmbH die ausdrückliche
+              Zustimmung, dass sie mit den Ausführungen des Vertrags vor Ablauf
+              der Widerrufsfrist beginnen darf und verzichte dadurch auf mein
+              Widerrufsrecht.</label
+            >
+          </div>
+          <div class="flex items-start gap-4">
+            <input required class="custom-checkbox" type="checkbox" id="die" />
+            <label for="die"
+              >Hiermit akzeptiere ich die Allgemeinen Geschäftsbedingungen und
+              Datenschutzerklärung der Sanero Medical GmbH.</label
+            >
+          </div>
+        </section>
+        <section class="common-step-layout">
+          <button type="submit" class="primary-button w-full">
+            NichtraucherHelden-App kaufen
+          </button>
+        </section>
+        <section class="common-step-layout">
+          <div
+            class="md:rounded-3xl rounded-xl md:p-6 p-4 bg-whiteSmoke space-y-6"
+          >
+            <div class="md:space-y-4 space-y-6">
+              <div class="flex items-center md:gap-8 sm:gap-6 gap-4">
+                <img
+                  class="w-[60px] h-[60px] rounded-full"
+                  src="/assets/images/andre.webp"
+                  alt="andre"
+                />
+                <p
+                  class="paragraph-text text-KonBlue font-medium leading-[120%] font-fira"
+                >
+                  Wir sind für Sie da
+                </p>
+              </div>
+              <p
+                class="free-help-text font-light leading-[160%] text-primary font-ibm-plex"
+              >
+                Du hast Fragen zu NichtraucherHelden? Wir helfen dir gern!
+                Telefonisch von Mo. - Fr. von 10:00 - 17:00 Uhr, E-Mails
+                beantworten wir innerhalb von 24 Stunden.
+              </p>
+            </div>
+            <div class="md:space-y-4 space-y-2">
+              <a
+                href="tel:+49 0711 21 959 343"
+                class="flex items-center gap-2.5 md:gap-4 bg-white rounded-xl free-help-text font-normal text-KonBlue px-4 py-3 md:py-5"
+              >
+                <img
+                  class="max-w-[15px] w-full"
+                  src="./assets/images/mobile-no.webp"
+                  alt="mobile no"
+                />
+                +49 0711 21 959 343
+              </a>
+              <a
+                href="mailto:service@nichtraucherhelden.de"
+                class="flex items-center gap-2.5 md:gap-4 bg-white rounded-xl free-help-text font-normal text-KonBlue px-4 py-3 md:py-5"
+              >
+                <img
+                  class="max-w-[18px] w-full"
+                  src="./assets/images/email.webp"
+                  alt="email"
+                />
+
+                service@nichtraucherhelden.de
+              </a>
+            </div>
+          </div>
+        </section>
+      </form>
+    </main>
+    <script src="/js/common-accordion.js"></script>
+  </body>
+</html>

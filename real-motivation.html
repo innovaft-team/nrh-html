@@ -1,0 +1,1484 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Urf - Deine App auf Rezept unterstützt Dichlangfristig und kostenfrei.
+    </title>
+
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="icon" type="image/svg" href="./assets/images/logo.webp" />
+  </head>
+  <body>
+    <aside
+      id="sidebar"
+      class="fixed top-0 right-0 h-dvh bg-white w-[320px] transform transition-transform duration-300 ease-in-out z-[9999] flex flex-col justify-start p-4 translate-x-full"
+    >
+      <!-- Main Menu Content -->
+      <div class="sidebar-overlay"></div>
+      <div id="main-menu">
+        <div class="flex justify-between items-center mb-6">
+          <a aria-label="logo" href="./">
+            <img
+              class="max-w-10.25 w-full"
+              src="./assets/images/logo.webp"
+              alt="logo"
+            />
+          </a>
+          <button
+            id="close-sidebar"
+            class="text-2xl"
+            aria-label="clsoe sidebar"
+          >
+            <img
+              class="w-8 h-8 object-cover"
+              src="./assets/images/close-sidebar.webp"
+              alt="cross-icon"
+            />
+          </button>
+        </div>
+        <div>
+          <nav
+            class="flex flex-col justify-between grow overflow-auto h-full hide-scrollbar"
+          >
+            <div class="flex flex-col justify-between gap-7 text-primary">
+              <a aria-label="manu list" href="#" class="header-li"> Magazin </a>
+              <a aria-label="manu list" href="#" class="header-li">
+                Erfolgsgeschichten
+              </a>
+              <a aria-label="manu list" href="#" class="header-li"> FAQ </a>
+
+              <button
+                data-modal-open="login"
+                class="flex gap-2 hover:scale-95 transition-all duration-300 ease-in-out"
+              >
+                <img
+                  class="max-w-4.75 w-full"
+                  src="./assets/images/profile-icon.webp"
+                  alt="profile"
+                />
+                Login
+              </button>
+            </div>
+          </nav>
+          <div
+            class="flex flex-col justify-between items-center gap-3 w-full pt-10"
+          >
+            <button
+              class="sm:py-2 py-1.5 lg:py-3 3xl:py-4 px-6 rounded-4xl bg-iceFishing text-primary font-medium hover:scale-95 transition-all duration-300 ease-in-out font-ibm-plex text-base lg:text-lg xl:text-xl 3xl:text-2xl w-full eading-[150%] sm:leading-[100%]"
+            >
+              Fachkreise
+            </button>
+            <button class="primary-btn w-full">Dein Weg zur App</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!---------------------------------------- HEADER ---------------------------------- -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 z-999 opacity-0 pointer-events-none transition-opacity duration-300"
+    ></div>
+    <header
+      class="text-white z-50 transition-transform duration-300 ease-in-out sticky top-0 w-full"
+    >
+      <!-- {/* Top Bar for Contact Info */} -->
+      <div class="bg-KonBlue">
+        <div
+          class="flex justify-end items-center sm:px-9! px-4! py-2 text-[11px] xs:text-xs font-ibm-plex sm:text-sm bg-KonBlue gap-4 overflow-auto custom-container hide-scrollbar"
+        >
+          <span class="hidden md:inline text-iceFishing text-base font-medium">
+            Unsere Experten sind für Dich da:
+          </span>
+          <div
+            class="flex sm:justify-center justify-between items-center xs:gap-7! gap-2! sm:w-fit w-full"
+          >
+            <a
+              href="tel:+49871121999343"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/phone-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              +49 8711 21 999 343
+            </a>
+            <a
+              href="mailto:service@nichtraucherhelden.de"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/email-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              service@nichtraucherhelden.de
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- {/* Main Navigation Bar */} -->
+      <div class="bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.05)] text-black">
+        <div class="custom-container py-2 sm:py-3 3xl:py-4">
+          <div class="flex justify-between items-center">
+            <div class="shrink-0 flex items-center">
+              <div
+                class="max-w-13 3xl:max-w-18 aspect-square w-full cursor-pointer"
+              >
+                <img
+                  class="w-full h-full"
+                  src="/assets/images/logo.webp"
+                  alt="logo"
+                />
+              </div>
+            </div>
+            <button class="primary-btn block sm:hidden">
+              Dein Weg zur App
+            </button>
+            <nav
+              class="flex text-lg md:text-xl font-fira font-medium items-center gap-8 3xl:gap-12 leading-[140%]"
+            >
+              <div
+                class="hidden xl:flex justify-between items-center gap-10 text-primary"
+              >
+                <a href="#" class="header-li"> Magazin </a>
+                <a href="#" class="header-li"> Erfolgsgeschichten </a>
+                <a href="#" class="header-li"> FAQ </a>
+
+                <button
+                  data-modal-open="login"
+                  class="flex justify-center items-center gap-2 header-li icon-hover"
+                >
+                  <img
+                    class="max-w-4.75 w-full icon"
+                    src="./assets/images/profile-icon.webp"
+                    alt="profile"
+                  />
+                  Login
+                </button>
+              </div>
+              <div class="hidden sm:flex justify-between gap-5">
+                <button class="primary-btn-v3">Fachkreise</button>
+                <button class="primary-btn-v2">Dein Weg zur App</button>
+              </div>
+              <button
+                id="hamburger"
+                aria-label="hamburger button"
+                class="block xl:hidden space-y-1.5"
+              >
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main id="main-content">
+      <section
+        class="real-motivation-container my-8 md:my-10 lg:my-13 3xl:my-16"
+      >
+        <article>
+          <p class="step-input-radio-description font-medium!">
+            Echte Motivation & hilfreiche Tipps
+          </p>
+          <h3 class="smoke-step-title mt-2">
+            Rauchstopp - Erfahrungen von <br class="xl:block hidden" />
+            Ex-Rauchern
+          </h3>
+          <p class="free-help-text leading-[160%] font-light md:mt-6 mt-5">
+            Viele Ex-Raucher haben es bereits geschafft und sind wahre
+            NichtraucherHelden. Sie berichten hier von ihren Rauchstopp
+            Erfahrungen mit unserem NichtraucherHelden-Programm. Auch Du kannst
+            einer von ihnen werden. Lass Dich von ihren Geschichten motivieren.
+          </p>
+        </article>
+        <section
+          class="md:space-y-4 space-y-2 my-8 md:my-10 lg:my-13 3xl:my-16"
+        >
+          <article
+            class="md:px-6 px-4 xl:py-8 sm:py-6 py-4 rounded-[20px] md:rounded-3xl bg-iceFishing main-article custom-scroll-margin"
+          >
+            <div
+              class="flex items-center xl:gap-8 lg:gap-6 gap-4 text-base sm:text-xl md:text-2xl lg:text-[28px] 3xl:text-[32px] font-medium font-fira leading-[125%] text-KonBlue"
+            >
+              <img
+                class="xl:max-w-25 lg:max-w-20 max-w-18 w-full min-w-18 aspect-square rounded-full object-cover"
+                src="/assets/images/png/non-smoking.png"
+                alt="iceFishing"
+              />
+              <p class="md:max-w-full! xs:max-w-[70%]! w-full max-w-full!">
+                Zu meinem runden Geburtstag!
+              </p>
+            </div>
+            <div
+              class="flex flex-wrap gap-2 xl:my-10 lg:my-8 md:my-6 my-4 text-KonBlue"
+            >
+              <article
+                class="bg-white rounded-xl xl:px-5 px-3 xl:text-base lg:text-sm text-xs leading-[150%] font-fira h-9 xl:h-10 flex items-center justify-center font-medium"
+              >
+                Petra, 63 Jahre
+              </article>
+              <article
+                class="bg-white rounded-xl xl:px-5 px-3 xl:text-base lg:text-sm text-xs leading-[150%] font-fira h-9 xl:h-10 flex items-center justify-center font-medium"
+              >
+                131 Tage rauchfrei
+              </article>
+              <article
+                class="bg-white rounded-xl xl:px-5 px-3 xl:text-base lg:text-sm text-xs leading-[150%] font-fira h-9 xl:h-10 flex items-center justify-center font-medium"
+              >
+                Präventionsprogramm
+              </article>
+            </div>
+            <p
+              class="free-help-text text-black font-light line-clamp-2 description leading-[160%] overflow-hidden transition-all duration-500"
+            >
+              Zu meinem runden Geburtstag vor vielen Jahren hatte ich
+              beschlossen, den Kilimanjaro zu besteigen.Mir war klar, dass ich
+              dazu das Rauchen aufhören musste, was bis dahin seit fast 30
+              Jahren laut Aussage meines Umfeldes fast zu meinem Image gehört
+              hatte. Ich hatte ein Ziel, das mir so wichtig war, dass ich es
+              geschafft habe, die Zigaretten aus meinem Leben zu verbannen. Das
+              war vor 13 Jahren und hat tatsächlich 11Jahre angehalten. Vor 2
+              Jahren habe ich aus reiner Selbstüberschätzung im Urlaub wieder an
+              der Zigarette einer Freundin gezogen und es war passiert: Ich war
+              wieder dabei. Lange Zeit wollte ich es ignorieren. Meine
+              Gesundheit, das viele Geld und die vergeudete Zeit haben mich
+              schließlich über meine Krankenkasse zu den NichraucherHelden.de
+              gebracht. Hier wurde ich bestens unterstützt und war sehr
+              motiviert. Aber das Rauchen hat mir irgendwie auch wieder "Spaß
+              gemacht“ und ich habe das Programm abgebrochen. Als ich dies dem
+              Service von NichtraucherHelden erzählte, haben diese mich so
+              motiviert, dass ich es erneut angegangen bin. Dieses Mal mit
+              Erfolg: seit 50 Tagen rauche ich nicht mehr und bin mächtig stolz
+              darauf. Die täglichen Videos waren meine Motivation und haben mir
+              so deutlich vor Augen gehalten, was ich eigentlich schon wusste.
+              Manche habe ich mehrmals geschaut. Sie zusammen mit der weiteren
+              Dranbleiben-Betreuung helfen mir jeden Tag. Die App ist mein
+              fester Anker. Jeden Morgen schaue ich in meiner Statistik, wie
+              viele stinkenden Zigarettenstummel und Geld ich mir seit meinem
+              Rauchstopp gespart habe und es zaubert mir ein Lächeln ins
+              Gesicht.
+            </p>
+            <button
+              class="bg-white expand-btn rounded-xl xl:px-5 px-3 xl:text-base lg:text-sm text-xs leading-[150%] font-fira h-9 xl:h-10 flex items-center justify-center font-medium xl:mt-10 lg:mt-8 md:mt-6 mt-4 gap-3 w-fit text-KonBlue"
+            >
+              <img
+                class="w-3 h-2 arrow-icon transition-transform duration-300"
+                src="/assets/images/png/Copytext.png"
+                alt="img"
+              />
+              Petra, 63 Jahre
+            </button>
+          </article>
+          <article
+            class="md:px-6 px-4 xl:py-8 sm:py-6 py-4 rounded-[20px] md:rounded-3xl bg-iceFishing main-article custom-scroll-margin"
+          >
+            <div
+              class="flex items-center xl:gap-8 lg:gap-6 gap-4 text-base sm:text-xl md:text-2xl lg:text-[28px] 3xl:text-[32px] font-medium font-fira leading-[125%] text-KonBlue"
+            >
+              <img
+                class="xl:max-w-25 lg:max-w-20 max-w-18 w-full min-w-18 aspect-square rounded-full object-cover"
+                src="/assets/images/png/non-smoking.png"
+                alt="iceFishing"
+              />
+              <p class="md:max-w-full! xs:max-w-[70%]! w-full max-w-full!">
+                Zu meinem runden Geburtstag!
+              </p>
+            </div>
+            <div
+              class="flex flex-wrap gap-2 xl:my-10 lg:my-8 md:my-6 my-4 text-KonBlue"
+            >
+              <article
+                class="bg-white rounded-xl xl:px-5 px-3 xl:text-base lg:text-sm text-xs leading-[150%] font-fira h-9 xl:h-10 flex items-center justify-center font-medium"
+              >
+                Petra, 63 Jahre
+              </article>
+              <article
+                class="bg-white rounded-xl xl:px-5 px-3 xl:text-base lg:text-sm text-xs leading-[150%] font-fira h-9 xl:h-10 flex items-center justify-center font-medium"
+              >
+                131 Tage rauchfrei
+              </article>
+              <article
+                class="bg-white rounded-xl xl:px-5 px-3 xl:text-base lg:text-sm text-xs leading-[150%] font-fira h-9 xl:h-10 flex items-center justify-center font-medium"
+              >
+                Präventionsprogramm
+              </article>
+            </div>
+            <p
+              class="free-help-text text-black font-light line-clamp-2 description leading-[160%] overflow-hidden transition-all duration-500"
+            >
+              Zu meinem runden Geburtstag vor vielen Jahren hatte ich
+              beschlossen, den Kilimanjaro zu besteigen.Mir war klar, dass ich
+              dazu das Rauchen aufhören musste, was bis dahin seit fast 30
+              Jahren Zu meinem runden Geburtstag vor vielen Jahren hatte ich
+              beschlossen, den Kilimanjaro zu besteigen.Mir war klar, dass ich
+              dazu das Rauchen aufhören musste, was bis dahin seit fast 30
+              Jahren
+            </p>
+            <button
+              class="bg-white expand-btn rounded-xl xl:px-5 px-3 xl:text-base lg:text-sm text-xs leading-[150%] font-fira h-9 xl:h-10 flex items-center justify-center font-medium xl:mt-10 lg:mt-8 md:mt-6 mt-4 gap-3 w-fit text-KonBlue"
+            >
+              <img
+                class="w-3 h-2 arrow-icon transition-transform duration-300"
+                src="/assets/images/png/Copytext.png"
+                alt="img"
+              />
+              Petra, 63 Jahre
+            </button>
+          </article>
+        </section>
+      </section>
+      <section class="px-5">
+        <div
+          class="section-container-primary gap-6 flex-col md:flex-row bg-lightvanilla p-4 sm:p-6 xl:p-12 rounded-[20px] md:rounded-3xl flex items-center justify-between"
+        >
+          <div class="px-13.25 sm:px-0">
+            <img
+              class="w-full sm:h-87.5 md:max-w-80 xl:max-w-100.75 xl:h-100.75 object-contain"
+              src="./assets/images/german-based.webp"
+              alt="german"
+            />
+          </div>
+          <div class="xl:px-13.25 flex flex-col gap-4 sm:gap-5 xl:gap-11">
+            <h3 class="article-heading">
+              NichtraucherHelden-App <br class="hidden md:block" />
+              kostenfrei auf Rezept
+            </h3>
+            <div class="space-y-4">
+              <p
+                class="flex items-center gap-4 sm:gap-6 article-desc sm:font-light"
+              >
+                <span
+                  ><img
+                    class="pointer-events-none w-7 h-7 lg:w-9 lg:h-9 hidden sm:block"
+                    src="./assets/images/click-white.webp"
+                    alt="tick" />
+                  <img
+                    class="sm:hidden w-7 h-7"
+                    src="./assets/images/click-white-mobile.webp"
+                    alt="tick-icon"
+                /></span>
+                100 % Kassenleistung bei Verordnung
+              </p>
+              <p
+                class="flex items-center gap-4 sm:gap-6 article-desc sm:font-light"
+              >
+                <span class="shrink-0"
+                  ><img
+                    class="pointer-events-none w-7 h-7 lg:w-9 lg:h-9 hidden sm:block"
+                    src="./assets/images/click-white.webp"
+                    alt="tick" />
+                  <img
+                    class="sm:hidden w-7 h-7"
+                    src="./assets/images/click-white-mobile.webp"
+                    alt="tick-icon"
+                /></span>
+                Klinisch bestätigt mit doppelter Erfolgschance
+              </p>
+              <p
+                class="flex items-center gap-4 sm:gap-6 article-desc sm:font-light"
+              >
+                <span
+                  ><img
+                    class="pointer-events-none w-7 h-7 lg:w-9 lg:h-9 hidden sm:block"
+                    src="./assets/images/click-white.webp"
+                    alt="tick" />
+                  <img
+                    class="sm:hidden w-7 h-7"
+                    src="./assets/images/click-white-mobile.webp"
+                    alt="tick-icon"
+                /></span>
+                Über 10 Jahre erprobt & wirksam
+              </p>
+            </div>
+            <button class="professional-page-btn">Dein Weg zur App</button>
+          </div>
+        </div>
+      </section>
+      <section
+        class="real-motivation-container my-8 md:my-10 lg:my-13 3xl:my-16 md:space-y-4 space-y-2"
+      >
+        <article
+          class="md:px-6 px-4 xl:py-8 sm:py-6 py-4 rounded-[20px] md:rounded-3xl bg-iceFishing main-article custom-scroll-margin"
+        >
+          <div
+            class="flex items-center xl:gap-8 lg:gap-6 gap-4 text-base sm:text-xl md:text-2xl lg:text-[28px] 3xl:text-[32px] font-medium font-fira leading-[125%] text-KonBlue"
+          >
+            <img
+              class="xl:max-w-25 lg:max-w-20 max-w-18 w-full min-w-18 aspect-square rounded-full object-cover"
+              src="/assets/images/png/non-smoking.png"
+              alt="iceFishing"
+            />
+            <p class="md:max-w-full! xs:max-w-[70%]! w-full max-w-full!">
+              Zu meinem runden Geburtstag!
+            </p>
+          </div>
+          <div
+            class="flex flex-wrap gap-2 xl:my-10 lg:my-8 md:my-6 my-4 text-KonBlue"
+          >
+            <article
+              class="bg-white rounded-xl xl:px-5 px-3 xl:text-base lg:text-sm text-xs leading-[150%] font-fira h-9 xl:h-10 flex items-center justify-center font-medium"
+            >
+              Petra, 63 Jahre
+            </article>
+            <article
+              class="bg-white rounded-xl xl:px-5 px-3 xl:text-base lg:text-sm text-xs leading-[150%] font-fira h-9 xl:h-10 flex items-center justify-center font-medium"
+            >
+              131 Tage rauchfrei
+            </article>
+            <article
+              class="bg-white rounded-xl xl:px-5 px-3 xl:text-base lg:text-sm text-xs leading-[150%] font-fira h-9 xl:h-10 flex items-center justify-center font-medium"
+            >
+              Präventionsprogramm
+            </article>
+          </div>
+          <p
+            class="free-help-text text-black font-light line-clamp-2 description leading-[160%] overflow-hidden transition-all duration-500"
+          >
+            Zu meinem runden Geburtstag vor vielen Jahren hatte ich beschlossen,
+            den Kilimanjaro zu besteigen.Mir war klar, dass ich dazu das Rauchen
+            aufhören musste, was bis dahin seit fast 30 Jahren
+          </p>
+          <button
+            class="bg-white expand-btn rounded-xl xl:px-5 px-3 xl:text-base lg:text-sm text-xs leading-[150%] font-fira h-9 xl:h-10 flex items-center justify-center font-medium xl:mt-10 lg:mt-8 md:mt-6 mt-4 gap-3 w-fit text-KonBlue"
+          >
+            <img
+              class="w-3 h-2 arrow-icon transition-transform duration-300"
+              src="/assets/images/png/Copytext.png"
+              alt="img"
+            />
+            Petra, 63 Jahre
+          </button>
+        </article>
+        <article
+          class="md:px-6 px-4 xl:py-8 sm:py-6 py-4 rounded-[20px] md:rounded-3xl bg-iceFishing main-article custom-scroll-margin"
+        >
+          <div
+            class="flex items-center xl:gap-8 lg:gap-6 gap-4 text-base sm:text-xl md:text-2xl lg:text-[28px] 3xl:text-[32px] font-medium font-fira leading-[125%] text-KonBlue"
+          >
+            <img
+              class="xl:max-w-25 lg:max-w-20 max-w-18 w-full min-w-18 aspect-square rounded-full object-cover"
+              src="/assets/images/png/non-smoking.png"
+              alt="iceFishing"
+            />
+            <p class="md:max-w-full! xs:max-w-[70%]! w-full max-w-full!">
+              Zu meinem runden Geburtstag!
+            </p>
+          </div>
+          <div
+            class="flex flex-wrap gap-2 xl:my-10 lg:my-8 md:my-6 my-4 text-KonBlue"
+          >
+            <article
+              class="bg-white rounded-xl xl:px-5 px-3 xl:text-base lg:text-sm text-xs leading-[150%] font-fira h-9 xl:h-10 flex items-center justify-center font-medium"
+            >
+              Petra, 63 Jahre
+            </article>
+            <article
+              class="bg-white rounded-xl xl:px-5 px-3 xl:text-base lg:text-sm text-xs leading-[150%] font-fira h-9 xl:h-10 flex items-center justify-center font-medium"
+            >
+              131 Tage rauchfrei
+            </article>
+            <article
+              class="bg-white rounded-xl xl:px-5 px-3 xl:text-base lg:text-sm text-xs leading-[150%] font-fira h-9 xl:h-10 flex items-center justify-center font-medium"
+            >
+              Präventionsprogramm
+            </article>
+          </div>
+          <p
+            class="free-help-text text-black font-light line-clamp-2 description leading-[160%] overflow-hidden transition-all duration-500"
+          >
+            Zu meinem runden Geburtstag vor vielen Jahren hatte ich beschlossen,
+            den Kilimanjaro zu besteigen.Mir war klar, dass ich dazu das Rauchen
+            aufhören musste, was bis dahin seit fast 30 Jahren
+          </p>
+          <button
+            class="bg-white expand-btn rounded-xl xl:px-5 px-3 xl:text-base lg:text-sm text-xs leading-[150%] font-fira h-9 xl:h-10 flex items-center justify-center font-medium xl:mt-10 lg:mt-8 md:mt-6 mt-4 gap-3 w-fit text-KonBlue"
+          >
+            <img
+              class="w-3 h-2 arrow-icon transition-transform duration-300"
+              src="/assets/images/png/Copytext.png"
+              alt="img"
+            />
+            Petra, 63 Jahre
+          </button>
+        </article>
+        <article
+          class="md:px-6 px-4 xl:py-8 sm:py-6 py-4 rounded-[20px] md:rounded-3xl bg-iceFishing main-article custom-scroll-margin"
+        >
+          <div
+            class="flex items-center xl:gap-8 lg:gap-6 gap-4 text-base sm:text-xl md:text-2xl lg:text-[28px] 3xl:text-[32px] font-medium font-fira leading-[125%] text-KonBlue"
+          >
+            <img
+              class="xl:max-w-25 lg:max-w-20 max-w-18 w-full min-w-18 aspect-square rounded-full object-cover"
+              src="/assets/images/png/non-smoking.png"
+              alt="iceFishing"
+            />
+            <p class="md:max-w-full! xs:max-w-[70%]! w-full max-w-full!">
+              Zu meinem runden Geburtstag!
+            </p>
+          </div>
+          <div
+            class="flex flex-wrap gap-2 xl:my-10 lg:my-8 md:my-6 my-4 text-KonBlue"
+          >
+            <article
+              class="bg-white rounded-xl xl:px-5 px-3 xl:text-base lg:text-sm text-xs leading-[150%] font-fira h-9 xl:h-10 flex items-center justify-center font-medium"
+            >
+              Petra, 63 Jahre
+            </article>
+            <article
+              class="bg-white rounded-xl xl:px-5 px-3 xl:text-base lg:text-sm text-xs leading-[150%] font-fira h-9 xl:h-10 flex items-center justify-center font-medium"
+            >
+              131 Tage rauchfrei
+            </article>
+            <article
+              class="bg-white rounded-xl xl:px-5 px-3 xl:text-base lg:text-sm text-xs leading-[150%] font-fira h-9 xl:h-10 flex items-center justify-center font-medium"
+            >
+              Präventionsprogramm
+            </article>
+          </div>
+          <p
+            class="free-help-text text-black font-light line-clamp-2 description leading-[160%] overflow-hidden transition-all duration-500"
+          >
+            Zu meinem runden Geburtstag vor vielen Jahren hatte ich beschlossen,
+            den Kilimanjaro zu besteigen.Mir war klar, dass ich dazu das Rauchen
+            aufhören musste, was bis dahin seit fast 30 Jahren
+          </p>
+          <button
+            class="bg-white expand-btn rounded-xl xl:px-5 px-3 xl:text-base lg:text-sm text-xs leading-[150%] font-fira h-9 xl:h-10 flex items-center justify-center font-medium xl:mt-10 lg:mt-8 md:mt-6 mt-4 gap-3 w-fit text-KonBlue"
+          >
+            <img
+              class="w-3 h-2 arrow-icon transition-transform duration-300"
+              src="/assets/images/png/Copytext.png"
+              alt="img"
+            />
+            Petra, 63 Jahre
+          </button>
+        </article>
+      </section>
+      <div class="px-5">
+        <div
+          class="section-container grid lg:grid-cols-2 gap-y-16 sm:gap-8 bg-meltingGlacier rounded-2xl md:rounded-3xl px-4 sm:px-5 py-4 sm:py-6 lg:py-14 xl:py-18 lg:px-8 xl:px-12"
+        >
+          <div
+            class="xl:px-13.25 flex flex-col sm:gap-5 xl:gap-11 order-2 lg:order-1"
+          >
+            <h3 class="article-heading">
+              Wie erhalte ich die kostenfreie Rauchfrei-App auf Rezept?
+            </h3>
+            <div class="my-6 sm:my-0 space-y-4">
+              <p
+                class="flex sm:items-center gap-4 sm:gap-6 article-desc sm:font-light"
+              >
+                <span
+                  class="bg-white leading-[100%] w-7 sm:w-9 h-7 sm:h-9 rounded-full flex-none font-fira font-bold flex items-center justify-center sm:text-xl text-KonBlue"
+                  >1</span
+                >
+                Beim Vorliegen einer Tabakabhängigkeit kann dir die App vom Arzt
+                verschrieben werden
+              </p>
+              <p
+                class="flex sm:items-center gap-4 sm:gap-6 article-desc sm:font-light"
+              >
+                <span
+                  class="bg-white leading-[100%] w-7 sm:w-9 h-7 sm:h-9 rounded-full flex-none font-fira font-bold flex items-center justify-center sm:text-xl text-KonBlue"
+                  >2</span
+                >
+                Nach dem Einreichen des Rezeptes bei deiner Krankenkasse
+                erhältst du einen Freischaltcode
+              </p>
+              <p
+                class="flex sm:items-center gap-4 sm:gap-6 article-desc sm:font-light"
+              >
+                <span
+                  class="bg-white leading-[100%] w-7 sm:w-9 h-7 sm:h-9 rounded-full flex-none font-fira font-bold flex items-center justify-center sm:text-xl text-KonBlue"
+                  >3</span
+                >
+                Lade die App herunter und starte mit dem Freischaltcode
+                kostenfrei in die App
+              </p>
+            </div>
+            <button class="professional-page-btn">Jetzt Anspruch prüfen</button>
+          </div>
+          <div class="xl:py-4.5 xl:px-7.5 relative order-1">
+            <img
+              class="rounded-2xl object-cover"
+              src="./assets/images/map-section.webp"
+              alt="map-section"
+            />
+            <img
+              class="top-29 sm:top-47.5 xl:top-48.75 sm:hidden lg:block object-cover w-40.75 h-28.75 sm:w-50 sm:h-30 xl:w-66 xl:h-46.5 absolute right-4 sm:right-9"
+              src="./assets/images/small-map.webp"
+              alt="map-section"
+            />
+          </div>
+        </div>
+      </div>
+      <!------------------------ Footer Section --------------------------->
+      <footer class="bg-KonBlue text-white px-8 sm:px-5">
+        <!-- TOP SECTION -->
+        <div
+          class="section-container py-12 xl:justify-between grid grid-cols-1 sm:grid-cols-2 3xl:pt-27.75 3xl:pb-26.25 lg:grid-cols-4 gap-8 3xl:gap-17 xl:flex"
+        >
+          <!-- Column 1 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Sanero Medical GmbH
+            </h3>
+            <p class="footer-link font-normal font-ibm-plex">
+              Wilhelmstraße 19 70182<br />
+              Stuttgart Germany
+            </p>
+
+            <div class="mt-4 md:mt-6 space-y-2 text-sm">
+              <a
+                href="tel:+49 (0)711 / 99 538 110"
+                class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+              >
+                <img
+                  class="max-w-5 w-full"
+                  src="./assets/images/phone-white.webp"
+                  alt="phone"
+                />
+
+                +49 (0)711 / 99 538 110
+              </a>
+              <a
+                href="mailto:info@sanero-medical.de"
+                class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+              >
+                <img
+                  class="max-w-5 w-full"
+                  src="./assets/images/email-white.webp"
+                  alt="phone"
+                />
+                info@sanero-medical.de
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Unternehmen
+            </h3>
+            <ul
+              class="space-y-2 font-normal footer-link font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Über uns</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Kontakt</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Presse</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Service
+            </h3>
+            <ul
+              class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Impressum</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Datenschutz</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Prävention nach §20
+            </h3>
+            <ul
+              class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Präventionskurs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Krankenkassen</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Firmenprogramm</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <!-- BOTTOM BAR -->
+      <section class="bg-windsweptBeach hidden md:block px-5">
+        <div
+          class="section-container mt-0! py-4 md:py-6.5! flex flex-col lg:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-encoreGray footer-link font-ibm-plex">
+            © 2025 NichtraucherHelden – ein Produkt der Sanero Medical GmbH
+          </p>
+
+          <div class="flex items-center gap-6">
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >Impressum</a
+            >
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >Datenschutzerklärung</a
+            >
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >AGB</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- LOGIN MODAL -->
+    <div
+      data-modal="login"
+      class="fixed modal inset-0 z-50 hidden overflow-hidden"
+    >
+      <!-- Overlay -->
+      <div
+        data-modal-close
+        class="fixed inset-0 bg-KonBlue/90 opacity-0 transition-opacity duration-300 modal-overlay"
+      ></div>
+      <!-- Modal Content -->
+      <div
+        class="min-h-dvh h-dvh max-h-dvh p-5 flex items-center justify-center"
+      >
+        <div
+          class="modal-content modal-container max-w-190 relative overflow-auto max-h-full hide-scrollbar"
+        >
+          <div class="modal-header sticky top-0">
+            <h4
+              class="text-base sm:text-xl md:text-2xl lg:text-[28px] 3xl:text-[32px] font-medium font-fira"
+            >
+              Login
+            </h4>
+            <button class="modal-close-button" data-modal-close>
+              <img
+                class="object-contain w-full h-full"
+                src="./assets/images/png/modal-close.png"
+                alt="modal-close"
+              />
+            </button>
+          </div>
+          <form
+            id="loginForm"
+            class="3xl:gap-12 2xl:gap-10 h-auto 1xl:gap-8 gap-6 xl:px-6 px-4 3xl:pt-11 2xl:pt-10 1xl:pt-9 pt-6 3xl:pb-12 2xl:pb-10 pb-8 flex flex-col justify-center overflow-auto"
+          >
+            <p class="free-help-text text-KonBlue leading-[150%] px-4">
+              Melde Dich hier für deinen persönlichen Bereich an.
+            </p>
+
+            <div class="md:space-y-3 space-y-2">
+              <!-- Email -->
+              <div>
+                <input
+                  id="email"
+                  class="primary-input free-help-text"
+                  placeholder="Benutzername / E-Mail-Adresse"
+                  type="email"
+                />
+                <p id="emailError" class="text-red-500 text-sm mt-1 hidden"></p>
+              </div>
+
+              <!-- Password -->
+              <div>
+                <div
+                  class="flex items-center justify-between primary-input free-help-text"
+                >
+                  <input
+                    id="password"
+                    class="w-full outline-none bg-transparent placeholder:text-encoreGray"
+                    placeholder="Passwort*"
+                    type="password"
+                  />
+
+                  <button type="button" id="togglePassword" class="w-6 h-6">
+                    <img
+                      id="eyeIcon"
+                      class="object-contain w-full h-full"
+                      src="./assets/images/png/open-eye.png"
+                      alt="toggle password"
+                    />
+                  </button>
+                </div>
+                <p
+                  id="passwordError"
+                  class="text-red-500 text-sm mt-1 hidden"
+                ></p>
+              </div>
+            </div>
+
+            <a
+              class="free-help-text text-KonBlue underline font-light leading-[160%] w-fit mx-auto"
+              href=""
+            >
+              Passwort vergessen?
+            </a>
+
+            <button
+              type="submit"
+              class="text-white leading-[160%] font-fira font-medium hover:bg-white border border-blueBay bg-blueBay rounded-2xl flex items-center justify-center free-help-text md:h-14 h-13 hover:text-blueBay duration-300 ease-in-out transition-all"
+            >
+              Einloggen
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- REGISTRATION FORM -->
+    <div
+      data-modal="registrationform"
+      class="fixed modal inset-0 z-50 hidden overflow-hidden"
+    >
+      <!-- Overlay -->
+      <div
+        data-modal-close
+        class="fixed inset-0 bg-KonBlue/90 opacity-0 transition-opacity duration-300 modal-overlay"
+      ></div>
+      <!-- Modal Content -->
+      <div
+        class="min-h-dvh h-dvh max-h-dvh p-5 flex items-center justify-center"
+      >
+        <div
+          class="modal-content modal-container max-w-145! relative overflow-auto max-h-full hide-scrollbar"
+        >
+          <div class="modal-header sticky top-0 z-10">
+            <h4
+              class="text-base sm:text-xl md:text-2xl lg:text-[28px] 3xl:text-[32px] font-medium font-fira"
+            >
+              Anmeldeformular
+            </h4>
+            <button class="modal-close-button" data-modal-close>
+              <img
+                class="object-contain w-full h-full"
+                src="./assets/images/png/modal-close.png"
+                alt="modal-close"
+              />
+            </button>
+          </div>
+          <div
+            class="3xl:gap-12 2xl:gap-10 h-auto 1xl:gap-8 gap-6 xl:px-6 px-4 3xl:pt-11 2xl:pt-10 1xl:pt-9 pt-6 3xl:pb-12 2xl:pb-10 pb-8 flex flex-col justify-center overflow-auto"
+          >
+            <div
+              class="bg-blueBay xl:px-6 px-4 md:py-5 py-3 2xl:rounded-3xl xl:rounded-2xl rounded-xl"
+            >
+              <h4
+                class="text-white leading-[140%] md:leading-[133%] font-fira font-medium text-xl 3xl:text-2xl"
+              >
+                Tabakentwöhnung in der Arztpraxis
+              </h4>
+              <div
+                class="free-help-text text-white md:leading-[160%] leading-[150%] space-y-3 xl:py-6 lg:py-4 py-2"
+              >
+                <p>Feb, 19:00 Uhr (Live)</p>
+                <p>Dr. med. Alexander Rupp (Lungenfacharzt)</p>
+              </div>
+              <button
+                class="text-KonBlue bg-white rounded-xl md:px-5 px-3 md:h-10 h-9 lg:text-base md:text-sm text-xs font-fira hover:bg-opacity-30 leading-[150%] font-medium transition-all duration-300 ease-in-out md:mt-0 mt-2"
+              >
+                2 Punkte (CME)
+              </button>
+            </div>
+
+            <div class="md:space-y-3 space-y-2">
+              <!-- Dropdown -->
+              <div class="relative dropdown w-full">
+                <!-- Trigger -->
+                <button
+                  type="button"
+                  class="modalTrigger primary-input free-help-text flex items-center justify-between w-full"
+                >
+                  <span class="modalSelected">Geschlecht*</span>
+
+                  <img
+                    class="w-4 h-4 object-contain transition-transform duration-300 arrow"
+                    src="./assets/images/png/angle-down.png"
+                    alt="magazin"
+                  />
+                </button>
+
+                <div
+                  class="dropdown-content bottom max-h-0 transition-all overflow-hidden absolute z-30 w-full mt-4"
+                >
+                  <div
+                    class="overflow-hidden duration-300 bg-blueRay rounded-xl w-full px-2 lg:px-4 lg:py-6 py-4 max-h-72 flex flex-col"
+                  >
+                    <div class="overflow-y-auto secondary-scrollbar h-full">
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        TK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        Barmer
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        AOK Baden-Württemberg
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        AOK Bayern
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        DAK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <input
+                class="primary-input free-help-text"
+                placeholder="Titel*"
+                type="text"
+              />
+              <input
+                id="email"
+                class="primary-input free-help-text"
+                placeholder="Vorname, Nachname*"
+                type="text"
+              />
+              <input
+                class="primary-input free-help-text"
+                placeholder="E-Mail-Adresse*"
+                type="email"
+              />
+              <div class="relative dropdown w-full">
+                <!-- Trigger -->
+                <button
+                  type="button"
+                  class="modalTrigger primary-input free-help-text flex items-center justify-between w-full"
+                >
+                  <span class="modalSelected">Fachgruppe auswählen</span>
+
+                  <img
+                    class="w-4 h-4 object-contain transition-transform duration-300 arrow"
+                    src="./assets/images/png/angle-down.png"
+                    alt="magazin"
+                  />
+                </button>
+
+                <div
+                  class="dropdown-content top max-h-0 overflow-hidden absolute z-30 w-full mt-4 transition-[max-height] duration-300 ease-in-out"
+                >
+                  <div
+                    class="overflow-hidden duration-300 bg-blueRay rounded-xl w-full px-2 lg:px-4 lg:py-6 py-4 max-h-72 flex flex-col"
+                  >
+                    <div class="overflow-y-auto secondary-scrollbar h-full">
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        TK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        Barmer
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        AOK Baden-Württemberg
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        AOK Bayern
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        DAK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p
+              class="text-xs sm:text-sm md:text-base 2xl:text-base 3xl:text-xl text-KonBlue font-light"
+            >
+              Mit * markierte Felder sind Pflichtfelder
+            </p>
+            <label
+              class="w-full text-xs sm:text-sm md:text-base xl:gap-6 lg:gap-4 gap-2 2xl:text-base 3xl:text-xl text-KonBlue font-light cursor-pointer flex"
+            >
+              <div class="circle-checkbox">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </div>
+              Ich erteile hiermit der Sanero Medical GmbH die ausdrückliche
+              Zustimmung, dass sie mit den Ausführungen des Vertrags vor Ablauf
+              der Widerrufsfrist beginnen darf und verzichte dadurch auf mein
+              Widerrufsrecht.
+            </label>
+            <label
+              class="w-full text-xs sm:text-sm md:text-base xl:gap-6 lg:gap-4 gap-2 2xl:text-base 3xl:text-xl text-KonBlue font-light cursor-pointer flex"
+            >
+              <div class="circle-checkbox">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </div>
+              Hiermit akzeptiere ich die Allgemeinen Geschäftsbedingungen und
+              Datenschutzerklärung der Sanero Medical GmbH.
+            </label>
+            <button
+              type="submit"
+              class="text-white leading-[160%] font-fira font-medium hover:bg-white border border-blueBay bg-blueBay rounded-2xl flex items-center justify-center free-help-text md:h-14 h-13 hover:text-blueBay duration-300 ease-in-out transition-all"
+            >
+              Einloggen
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- UNBLOCK DOWNLOAD -->
+    <div
+      data-modal="unlockDownload"
+      class="fixed modal inset-0 z-50 hidden overflow-hidden"
+    >
+      <!-- Overlay -->
+      <div
+        data-modal-close
+        class="fixed inset-0 bg-KonBlue/90 opacity-0 transition-opacity duration-300 modal-overlay"
+      ></div>
+      <!-- Modal Content -->
+      <div
+        class="min-h-dvh h-dvh max-h-dvh p-5 flex items-center justify-center"
+      >
+        <div
+          class="modal-content modal-container max-w-145! relative overflow-auto max-h-full hide-scrollbar"
+        >
+          <div class="modal-header sticky top-0 z-10">
+            <h4
+              class="text-base sm:text-xl md:text-2xl lg:text-[28px] 3xl:text-[32px] font-medium font-fira"
+            >
+              Download freischalten
+            </h4>
+            <button class="modal-close-button" data-modal-close>
+              <img
+                class="object-contain w-full h-full"
+                src="./assets/images/png/modal-close.png"
+                alt="modal-close"
+              />
+            </button>
+          </div>
+          <div
+            class="3xl:gap-12 2xl:gap-10 h-auto 1xl:gap-8 gap-6 xl:px-6 px-4 3xl:pt-11 2xl:pt-10 1xl:pt-9 pt-6 3xl:pb-12 2xl:pb-10 pb-8 flex flex-col justify-center overflow-auto"
+          >
+            <div
+              class="bg-blueBay xl:px-6 px-4 md:py-5 py-3 2xl:rounded-3xl xl:rounded-2xl rounded-xl free-help-text text-white"
+            >
+              Bitte geben Sie einmalig Ihre Daten ein. Der Download startet
+              sofort. Wenn Sie anschließend weitere Dokumente herunterladen
+              möchten, müssen Sie dieses Formular innerhalb dieser Sitzung nicht
+              erneut ausfüllen.
+            </div>
+
+            <div class="md:space-y-3 space-y-2">
+              <!-- Dropdown -->
+              <div class="relative dropdown w-full">
+                <!-- Trigger -->
+                <button
+                  type="button"
+                  class="modalTrigger primary-input free-help-text flex items-center justify-between w-full"
+                >
+                  <span class="modalSelected">Geschlecht*</span>
+
+                  <img
+                    class="w-4 h-4 object-contain transition-transform duration-300 arrow"
+                    src="./assets/images/png/angle-down.png"
+                    alt="img"
+                  />
+                </button>
+
+                <div
+                  class="dropdown-content bottom max-h-0 transition-all overflow-hidden absolute z-30 w-full mt-4"
+                >
+                  <div
+                    class="overflow-hidden duration-300 bg-blueRay rounded-xl w-full px-2 lg:px-4 lg:py-6 py-4 max-h-72 flex flex-col"
+                  >
+                    <div class="overflow-y-auto secondary-scrollbar h-full">
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        TK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        Barmer
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        AOK Baden-Württemberg
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        AOK Bayern
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        DAK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <input
+                class="primary-input free-help-text"
+                placeholder="Titel*"
+                type="text"
+              />
+              <input
+                id="email"
+                class="primary-input free-help-text"
+                placeholder="Ihre EFN*"
+                type="text"
+              />
+              <input
+                class="primary-input free-help-text"
+                placeholder="E-Mail-Adresse*"
+                type="email"
+              />
+              <div class="relative dropdown w-full">
+                <!-- Trigger -->
+                <button
+                  type="button"
+                  class="modalTrigger primary-input free-help-text flex items-center justify-between w-full"
+                >
+                  <span class="modalSelected">Fachgruppe auswählen</span>
+
+                  <img
+                    class="w-4 h-4 object-contain transition-transform duration-300 arrow"
+                    src="./assets/images/png/angle-down.png"
+                    alt="img"
+                  />
+                </button>
+
+                <div
+                  class="dropdown-content top max-h-0 overflow-hidden absolute z-30 w-full mt-4 transition-[max-height] duration-300 ease-in-out"
+                >
+                  <div
+                    class="overflow-hidden duration-300 bg-blueRay rounded-xl w-full px-2 lg:px-4 lg:py-6 py-4 max-h-72 flex flex-col"
+                  >
+                    <div class="overflow-y-auto secondary-scrollbar h-full">
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        TK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        Barmer
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        AOK Baden-Württemberg
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        AOK Bayern
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        DAK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                      <div
+                        class="option free-help-text select-option px-2 max-w-[95%]"
+                      >
+                        IKK
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p
+              class="text-xs sm:text-sm md:text-base 2xl:text-base 3xl:text-xl text-KonBlue font-light"
+            >
+              Mit * markierte Felder sind Pflichtfelder
+            </p>
+            <label
+              class="w-full text-xs sm:text-sm md:text-base xl:gap-6 lg:gap-4 gap-2 2xl:text-base 3xl:text-xl text-KonBlue font-light cursor-pointer flex"
+            >
+              <div class="circle-checkbox">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </div>
+              Ich erteile hiermit der Sanero Medical GmbH die ausdrückliche
+              Zustimmung, dass sie mit den Ausführungen des Vertrags vor Ablauf
+              der Widerrufsfrist beginnen darf und verzichte dadurch auf mein
+              Widerrufsrecht.
+            </label>
+            <label
+              class="w-full text-xs sm:text-sm md:text-base xl:gap-6 lg:gap-4 gap-2 2xl:text-base 3xl:text-xl text-KonBlue font-light cursor-pointer flex"
+            >
+              <div class="circle-checkbox">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </div>
+              Hiermit akzeptiere ich die Allgemeinen Geschäftsbedingungen und
+              Datenschutzerklärung der Sanero Medical GmbH.
+            </label>
+            <button
+              type="submit"
+              class="text-white leading-[160%] font-fira font-medium hover:bg-white border border-blueBay bg-blueBay rounded-2xl flex items-center justify-center free-help-text md:h-14 h-13 hover:text-blueBay duration-300 ease-in-out transition-all"
+            >
+              Jetzt anmelden
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      id="backToTopBtn"
+      class="bg-KonBlue invisible fixed right-2 min-h-11 min-w-11 bottom-4 z-40 translate-y-4 cursor-pointer rounded-full p-3 text-white opacity-0 shadow-lg transition-all duration-300 focus:outline-none lg:right-8 md:bottom-8 border border-white"
+    >
+      <!-- Arrow Up Icon -->
+      <img
+        class="max-w-5 rotate-177"
+        src="./assets/images/scroll-button.webp"
+        alt="arrow"
+      />
+    </button>
+    <script src="/js/back-to-top.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/popup.js"></script>
+    <script src="/js/login.js"></script>
+    <script>
+      document.querySelectorAll(".description").forEach((text) => {
+        const computedStyle = window.getComputedStyle(text);
+        const lineHeight = parseFloat(computedStyle.lineHeight);
+        const collapseHeight = lineHeight * 2;
+
+        text.style.maxHeight = collapseHeight + "px";
+        text.dataset.collapseHeight = collapseHeight;
+        text.dataset.expandable = text.scrollHeight > collapseHeight;
+      });
+
+      document.addEventListener("click", function (e) {
+        const btn = e.target.closest(".expand-btn");
+        if (!btn) return;
+
+        const card = btn.closest(".main-article"); // main card
+        const text = card.querySelector(".description");
+        const icon = btn.querySelector(".arrow-icon");
+
+        const expandable = text.dataset.expandable === "true";
+        if (!expandable) return;
+
+        const collapseHeight = text.dataset.collapseHeight;
+        const isExpanded = !text.classList.contains("line-clamp-2");
+
+        if (!isExpanded) {
+          // Expand
+          text.classList.remove("line-clamp-2");
+          text.style.maxHeight = text.scrollHeight + "px";
+          icon.classList.add("rotate-180");
+        } else {
+          // Collapse
+          text.style.maxHeight = collapseHeight + "px";
+          text.classList.add("line-clamp-2");
+          icon.classList.remove("rotate-180");
+
+          // Scroll back to same card
+          card.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

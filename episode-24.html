@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Episode 24 - NichtraucherHelden</title>
+
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="icon" type="image/svg" href="./assets/images/logo.webp" />
+  </head>
+
+  <body class="font-ibm-plex text-primary">
+    <aside
+      id="sidebar"
+      class="fixed top-0 right-0 h-dvh bg-white w-[320px] transform transition-transform duration-300 ease-in-out z-[9999] flex flex-col justify-start p-4 translate-x-full"
+    >
+      <!-- Main Menu Content -->
+      <div class="sidebar-overlay"></div>
+      <div id="main-menu">
+        <div class="flex justify-between items-center mb-6">
+          <a aria-label="logo" href="./">
+            <img
+              class="max-w-10.25 w-full"
+              src="./assets/images/logo.webp"
+              alt="logo"
+            />
+          </a>
+          <button
+            id="close-sidebar"
+            class="text-2xl"
+            aria-label="close sidebar"
+          >
+            <img
+              class="w-8 h-8 object-cover"
+              src="./assets/images/close-sidebar.webp"
+              alt="cross-icon"
+            />
+          </button>
+        </div>
+        <div>
+          <nav
+            class="flex flex-col justify-between grow overflow-auto h-full hide-scrollbar"
+          >
+            <div class="flex flex-col justify-between gap-7 text-primary">
+              <a aria-label="manu list" href="#" class="header-li"> Magazin </a>
+              <a aria-label="manu list" href="#" class="header-li">
+                Erfolgsgeschichten
+              </a>
+              <a aria-label="manu list" href="#" class="header-li"> FAQ </a>
+
+              <button
+                data-modal-open="login"
+                class="flex gap-2 hover:scale-95 transition-all duration-300 ease-in-out"
+              >
+                <img
+                  class="max-w-4.75 w-full"
+                  src="./assets/images/profile-icon.webp"
+                  alt="profile"
+                />
+                Login
+              </button>
+            </div>
+          </nav>
+          <div
+            class="flex flex-col justify-between items-center gap-3 w-full pt-10"
+          >
+            <button
+              class="sm:py-2 py-1.5 lg:py-3 3xl:py-4 px-6 rounded-4xl bg-iceFishing text-primary font-medium hover:scale-95 transition-all duration-300 ease-in-out font-ibm-plex text-base lg:text-lg xl:text-xl 3xl:text-2xl w-full leading-[150%] sm:leading-[100%]"
+            >
+              Fachkreise
+            </button>
+            <button class="primary-btn w-full">Dein Weg zur App</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!---------------------------------------- HEADER ---------------------------------- -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 z-999 opacity-0 pointer-events-none transition-opacity duration-300"
+    ></div>
+    <header
+      class="text-white z-50 transition-transform duration-300 ease-in-out sticky top-0 w-full"
+    >
+      <!-- {/* Top Bar for Contact Info */} -->
+      <div class="bg-KonBlue">
+        <div
+          class="flex justify-end items-center sm:px-9! px-4! py-2 text-[11px] xs:text-xs font-ibm-plex sm:text-sm bg-KonBlue gap-4 overflow-auto custom-container hide-scrollbar"
+        >
+          <span class="hidden md:inline text-iceFishing text-base font-medium">
+            Unsere Experten sind für Dich da:
+          </span>
+          <div
+            class="flex sm:justify-center justify-between items-center xs:gap-7! gap-2! sm:w-fit w-full"
+          >
+            <a
+              href="tel:+49871121999343"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/phone-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              +49 8711 21 999 343
+            </a>
+            <a
+              href="mailto:service@nichtraucherhelden.de"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/email-blue.webp"
+                  alt="email"
+                />
+              </span>
+              service@nichtraucherhelden.de
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- {/* Main Navigation Bar */} -->
+      <div class="bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.05)] text-black">
+        <div class="custom-container py-2 sm:py-3 3xl:py-4">
+          <div class="flex justify-between items-center">
+            <div class="shrink-0 flex items-center">
+              <a href="/" aria-label="home" class="max-w-13 3xl:max-w-18 aspect-square w-full cursor-pointer">
+                <img class="w-full h-full" src="./assets/images/logo.webp" alt="logo" />
+              </a>
+            </div>
+            <button class="primary-btn block sm:hidden">
+              Dein Weg zur App
+            </button>
+            <nav
+              class="flex text-lg md:text-xl font-fira font-medium items-center gap-8 3xl:gap-12 leading-[140%]"
+            >
+              <div
+                class="hidden xl:flex justify-between items-center gap-10 text-primary"
+              >
+                <a href="#" class="header-li"> Magazin </a>
+                <a href="#" class="header-li"> Erfolgsgeschichten </a>
+                <a href="#" class="header-li"> FAQ </a>
+
+                <button
+                  data-modal-open="login"
+                  class="flex justify-center items-center gap-2 header-li icon-hover"
+                >
+                  <img
+                    class="max-w-4.75 w-full icon"
+                    src="./assets/images/profile-icon.webp"
+                    alt="profile"
+                  />
+                  Login
+                </button>
+              </div>
+              <div class="hidden sm:flex justify-between gap-5">
+                <button class="primary-btn-v3">Fachkreise</button>
+                <button class="primary-btn-v2">Dein Weg zur App</button>
+              </div>
+              <button
+                id="hamburger"
+                aria-label="hamburger button"
+                class="block xl:hidden space-y-1.5"
+              >
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="px-4">
+      <div
+        class="w-full max-w-5xl mx-auto space-y-8 lg:space-y-10 xl:space-y-20 pt-8 lg:pt-10 xl:pt-20"
+      >
+        <h2 class="custom-heading">
+          Folge 24: Rauchen und Stress - Was tun ohne Zigarette?
+        </h2>
+        <div
+          class="p-8 rounded-[20px] bg-iceFishing flex items-center gap-6.5 max-md:hidden"
+        >
+          <button class="circle-icon">
+            <img
+              class="size-6 object-contain"
+              src="./assets/images/webp/pause.webp"
+              alt="pause"
+            />
+          </button>
+          <h3 class="paragraph-xl font-medium leading-[160%] font-fira text-KonBlue">06:45</h3>
+          <div class="flex-1 bg-white h-2 rounded-full overflow-hidden">
+            <div class="bg-blueBay w-5/9 h-full rounded-full"></div>
+          </div>
+          <h3 class="paragraph-xl font-medium leading-[160%] font-fira text-KonBlue">17:59</h3>
+          <button class="circle-icon">
+            <img
+              class="size-6 object-contain"
+              src="./assets/images/webp/sound.webp"
+              alt="sound"
+            />
+          </button>
+          <button class="circle-icon">
+            <img
+              class="size-6 object-contain"
+              src="./assets/images/webp/down.webp"
+              alt="download"
+            />
+          </button>
+        </div>
+        <div class="p-8 rounded-[20px] bg-iceFishing md:hidden">
+          <div class="flex-1 bg-white h-5 rounded-full overflow-hidden">
+            <div class="bg-blueBay w-1/4 h-full rounded-full"></div>
+          </div>
+          <div class="flex items-center justify-between mt-2">
+            <h3 class="font-light leading-[160%]">06:45</h3>
+            <h3 class="font-light leading-[160%]">06:45</h3>
+          </div>
+          <div class="flex items-center justify-between gap-3 mt-6">
+            <button
+              class="size-8 rounded-full bg-white flex items-center justify-center flex-none hover:bg-blueBay transition-all duration-300 ease-in-out"
+            >
+              <img
+                class="size-4 object-contain"
+                src="./assets/images/webp/down.webp"
+                alt="download"
+              />
+            </button>
+            <div class="flex items-center gap-5.25">
+              <button
+                class="size-8 rounded-full bg-white flex items-center justify-center flex-none hover:bg-blueBay transition-all duration-300 ease-in-out"
+              >
+                <img
+                  class="size-4 object-contain"
+                  src="./assets/images/png/next.png"
+                  alt="next"
+                />
+              </button>
+              <button class="circle-icon">
+                <img
+                  class="size-6 object-contain"
+                  src="./assets/images/webp/pause.webp"
+                  alt="pause"
+                />
+              </button>
+              <button
+                class="size-8 rounded-full bg-white flex items-center justify-center flex-none hover:bg-blueBay transition-all duration-300 ease-in-out"
+              >
+                <img
+                  class="size-4 object-contain rotate-180"
+                  src="./assets/images/png/next.png"
+                  alt="next"
+                />
+              </button>
+            </div>
+            <button
+              class="size-8 rounded-full bg-white flex items-center justify-center flex-none hover:bg-blueBay transition-all duration-300 ease-in-out"
+            >
+              <img
+                class="size-4 object-contain"
+                src="./assets/images/webp/sound.webp"
+                alt="sound"
+              />
+            </button>
+          </div>
+        </div>
+        <p class="description font-light leading-[160%] max-sm:px-5">
+          Bist Du ein typischer Stress-Raucher? Bei Ärger, Wut und Stress bringt
+          Dich die Zigarette wieder auf den Boden und entspannt Dich? Erfahre in
+          diesem Podcast, was hinter dem Zusammenhang von Rauchen und Stress
+          steckt und wie Du Dich davon lösen kannst. Vielleicht weißt Du nicht,
+          wie Du stressige Situationen ohne die Zigarette schaffen sollst. Im
+          Podcast mit Frau Pöltl-Knüppel, selbst ehemalige Raucherin und
+          mittlerweile langjährige Suchtberaterin, bekommst Du viele Tipps, wie
+          der Weg in ein rauchfreies Leben funktionieren kann. Auch Du kannst es
+          schaffen!
+        </p>
+        <div
+          class="grid sm:grid-cols-2 max-sm:gap-8 bg-iceFishing rounded-3xl py-14 px-6"
+        >
+          <div class="flex flex-col items-center justify-center gap-5">
+            <img
+              class="size-36 rounded-full"
+              src="./assets/images/webp/avtar2.webp"
+              alt="avtar"
+            />
+            <h4 class="text-2xl font-fira font-medium leading-[133%]">
+              Angelika Pöltl-Knüppel
+            </h4>
+          </div>
+          <div class="flex flex-col items-center justify-center gap-5">
+            <img
+              class="size-36 rounded-full"
+              src="./assets/images/webp/avtar.webp"
+              alt="avtar"
+            />
+            <h4 class="text-2xl font-fira font-medium leading-[133%]">
+              Andy Bosch
+            </h4>
+          </div>
+        </div>
+        <div class="space-y-4 md:space-y-6 lg:space-y-8 max-sm:px-4">
+          <h3 class="custom-heading px-0!">Zusammenfassung</h3>
+          <p class="description">
+            In Stresssituationen wird oft zur Zigarette gegriffen, da das darin
+            enthaltene Nikotin der Tabakpflanze eine beruhigende Wirkung haben
+            kann. Dennoch ist Rauchen ungesund und sollte auch in solchen
+            Situationen vermieden und lieber durch gesunde Alternativen ersetzt
+            werden. Gerade vor dem Rauchstopp ist es deswegen sehr wichtig, sich
+            andere Möglichkeiten zu suchen, wie man sich bei Stress oder anderen
+            Gefühlen ablenken kann. Dies gehört zur Verhaltenstherapie und ist
+            ein wichtiger Schritt, um Nichtraucher*in zu werden.
+          </p>
+          <p class="description">
+            <span class="font-medium"
+              >Zusammenhänge von Rauchen und Stress</span
+            >
+            <br />
+            Erkenntnisse aus der Hirnforschung können zu dem Thema einige
+            Zusammenhänge erklären. Das hat unter anderem etwas mit den
+            Botenstoffen in unserem Gehirn zu tun. Denn Nikotin ist ein
+            psychotroper Stoff, den die Tabakpflanze in der Wurzel bildet. Dies
+            dient ihr zur Schädlingsbekämpfung. Diese psychotrope Substanz
+            landet dann durch das Rauchen in unserem Gehirn. Beim Stress muss
+            man ebenfalls das Gehirn betrachten: Wenn man Stress empfindet,
+            werden bestimmte Botenstoffe in unserem Gehirn ausgeschüttet wie
+            z.B. das Adrenalin. Das ist natürlich gut, um in der Natur überleben
+            zu können. Ein Beispiel: Wenn ein Säbeltiger um die Ecke kommt, wird
+            direkt Adrenalin ausgeschüttet - dieses macht wach und aufmerksam.
+            Jetzt können wir kämpfen oder flüchten. Diese Reaktionsmuster
+            brauchen wir in der heutigen Zeit aber nicht mehr.Wenn Stress
+            auftritt, werden wir nicht flüchten oder kämpfen, sondern möchten
+            uns wieder beruhigen und entspannen. Dafür braucht unser Gehirn
+            einen Gegenspieler wie das Serotonin. Damit zurück zum Nikotin:
+            Diese psychotrope Substanz, die wir aus der Tabakpflanze rauchen
+            bewirktdass der Stoff Serotonin vermehrt ausgeschüttet wird und uns
+            damit beruhigt. Das bedeutet: In Sekundenschnelle erleben wir bei
+            Stress und Rauchen eine wohltuende Beruhigung, die entspannt und
+            einen runterkommen lässt.
+          </p>
+          <p class="description">
+            <span class="font-medium">Ohne Zigarette auskommen </span> <br />
+            Das Nichtrauchen in stressigen Situationen muss erst wieder neu
+            gelernt werden. Dazu werden im ersten Schritt alle typischen
+            Rauchsituationen in der sogenannten Selbstbeobachtung
+            aufgeschrieben. Im zweiten Schritt werden Strategien entwickelt, um
+            die Zigarette mit einer gesunden Alternative zu ersetzen. Diese
+            Alternativen sind für jeden Individuell. Ein Beispiel: Ein Raucher
+            empfindet es als hilfreich, bei Stress auf die Terrasse zu gehen,
+            eine zu rauchen und sich damit zu beruhigen. Die neue Strategie: Die
+            Situation direktverlassen, aber anstatt auf die Terrasse zu gehen,
+            geht es mit dem Hund eine Runde Gassi. Das Beispiel zeigt, dass
+            Stress und Rauchen zusammenhängen. Deshalb muss bewusst nach
+            Alternativen gesucht werden. Die Zigarette hat keine zauberhafte
+            Wirkung bei Stress, sondern es geht darum, sich andere
+            Verhaltensweisen anzutrainieren und das Stresslevel wieder
+            abzubauen.
+          </p>
+          <p class="description">
+            Nicht nur Stress kann zum Rauchen führen <br />
+            Bei der Analyse der Situationen in welchen geraucht wird, werden
+            auch Situationen ohne Stress beachtet. Für jede Situation muss eine
+            passende Alternative gefunden werden. Außerdem sollen die Raucher
+            sollen lernen: Ich habe Einfluss auf mein Handeln. Auch andere
+            Gefühle wie Ärger, Wut oder auch Glück müssen beachtet werden.
+          </p>
+          <p class="description">
+            <span class="font-medium">Extremsituationen bewusst abwarten </span>
+            <br />
+            Falls das Gefühl aufkommt, rauchen zu wollen, gibt es für sogenannte
+            Extremsituationen eine kleine Abhilfe. Nach ungefähr 20 Minuten
+            erreicht dieses Gefühl den Höhepunkt, heißt danach ist das Verlangen
+            größtenteils weg. In diesen 20 Minuten soll man sich ganz bewusst
+            fragen: Wenn ich jetzt rauche, was ist dann? Oft bleibt es nicht bei
+            dieser einen Zigarette, sondern die zweite folgt schnell. Diese
+            Rückfälle sollen bewusst gemieden werden. Indem man z.B. gar keine
+            Zigaretten mehr Zuhause hat und im Idealfall erst 15-20 Minuten zur
+            nächsten Tankstelle laufen muss. Bis dahin sollte der Höhepunkt
+            überwunden sein. Denn nicht die erste Zigarette nach dem Rauchstopp
+            macht Dich wieder zum Raucher, sondern die zweite. Ablenkung und
+            Abwarten spielen eine große Rolle.
+          </p>
+          <p class="description">
+            Erfahrungsgemäß werden Rückfälle weniger, sobald sich die neuen
+            Gewohnheiten etabliert haben. Hierbei muss man vertrauen, dass sich
+            dies mit der Zeit einrichtet.
+          </p>
+          <p class="description">
+            <span class="font-medium">Rauchen im Allgemeinen verbieten? </span>
+            <br />
+            Ein allgemein schwieriges Thema, da Verbote oft nicht zu dem
+            gewünschten Erfolg führen. Statt eines Verbots wäre es also
+            angebrachter, für eine bessere Aufklärung zu sorgen. Die Betroffenen
+            sollen Unterstützung erhalten, um endlich Nichtraucher zu werden.
+            Also Prävention und Hilfe statt Verboten.
+          </p>
+          <p
+            class="flex items-center gap-2 mt-4 text-base font-medium font-fira leading-[133%] text-blueBay sm:hidden"
+          >
+            Weiterlesen
+            <img
+              class="object-contain h-4"
+              src="./assets/images/png/arrow-down.png"
+              alt="arrow-down"
+            />
+          </p>
+        </div>
+      </div>
+    </main>
+    <div class="px-4">
+      <div class="section-container mt-8 lg:mt-10 xl:mt-20">
+        <div class="px-5 sm:px-0">
+          <h4
+            class="mb-4 sm:mb-6 xl:mb-10 leading-[134%] text-2xl xl:text-[32px] text-KonBlue font-medium font-fira"
+          >
+            Weitere Podcasts
+          </h4>
+        </div>
+        <div class="flex flex-col gap-y-2 sm:gap-y-4 max-sm:mb-8">
+          <article class="podcast-item w-full">
+            <div
+              class="flex items-start lg:items-center justify-between bg-iceFishing rounded-[20px] p-4 sm:p-6 lg:p-8 flex-col lg:flex-row gap-y-4 sm:gap-y-6"
+            >
+              <div>
+                <p
+                  class="flex items-center gap-4 sm:gap-8 leading-[134%] md:text-xl text-KonBlue font-medium font-fira"
+                >
+                  <span class="flex-none">
+                    <img
+                      class="w-9 h-9 xl:w-14 xl:h-14 object-contain"
+                      src="./assets/images/png/tosmoke.png"
+                      alt="tosmoke"
+                    />
+                  </span>
+                  Rauchen und Stress - <br />
+                  Was tun ohne Zigarette?
+                </p>
+              </div>
+              <div
+                class="flex items-start lg:items-center justify-between flex-wrap gap-4 sm:gap-6 lg:gap-10 xl:gap-30.25 lg:w-fit w-full"
+              >
+                <div class="flex gap-2 items-stretch">
+                  <span
+                    class="info-badge"
+                    >Folge 24</span
+                  >
+                  <span
+                    class="info-badge"
+                    ><img
+                      class="w-4 h-5 sm:w-4.5 sm:h-6 object-contain"
+                      src="./assets/images/png/clock.png"
+                      alt="clock"
+                    />
+                    45 min</span
+                  >
+                </div>
+                <button
+                  class="article-btn-black h-13! sm:h-14! w-full! sm:w-47! text-base! sm:text-xl!"
+                >
+                  Jezzt anhören
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="podcast-item w-full">
+            <div
+              class="flex items-start lg:items-center justify-between bg-iceFishing rounded-[20px] p-4 sm:p-6 lg:p-8 flex-col lg:flex-row gap-y-4 sm:gap-y-6"
+            >
+              <div>
+                <p
+                  class="flex items-center gap-4 sm:gap-8 leading-[134%] md:text-xl text-KonBlue font-medium font-fira"
+                >
+                  <span class="flex-none">
+                    <img
+                      class="w-9 h-9 xl:w-14 xl:h-14 object-contain"
+                      src="./assets/images/png/tosmoke.png"
+                      alt="tosmoke"
+                    />
+                  </span>
+                  Rauchen und Stress - <br />
+                  Was tun ohne Zigarette?
+                </p>
+              </div>
+              <div
+                class="flex items-start lg:items-center justify-between flex-wrap gap-4 sm:gap-6 lg:gap-10 xl:gap-30.25 lg:w-fit w-full"
+              >
+                <div class="flex gap-2 items-stretch">
+                  <span
+                    class="info-badge"
+                    >Folge 24</span
+                  >
+                  <span
+                    class="info-badge"
+                    ><img
+                      class="w-4 h-5 sm:w-4.5 sm:h-6 object-contain"
+                      src="./assets/images/png/clock.png"
+                      alt="clock"
+                    />
+                    45 min</span
+                  >
+                </div>
+                <button
+                  class="article-btn-black h-13! sm:h-14! w-full! sm:w-47! text-base! sm:text-xl!"
+                >
+                  Jezzt anhören
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="podcast-item w-full">
+            <div
+              class="flex items-start lg:items-center justify-between bg-iceFishing rounded-[20px] p-4 sm:p-6 lg:p-8 flex-col lg:flex-row gap-y-4 sm:gap-y-6"
+            >
+              <div>
+                <p
+                  class="flex items-center gap-4 sm:gap-8 leading-[134%] md:text-xl text-KonBlue font-medium font-fira"
+                >
+                  <span class="flex-none">
+                    <img
+                      class="w-9 h-9 xl:w-14 xl:h-14 object-contain"
+                      src="./assets/images/png/tosmoke.png"
+                      alt="tosmoke"
+                    />
+                  </span>
+                  Rauchen und Stress - <br />
+                  Was tun ohne Zigarette?
+                </p>
+              </div>
+              <div
+                class="flex items-start lg:items-center justify-between flex-wrap gap-4 sm:gap-6 lg:gap-10 xl:gap-30.25 lg:w-fit w-full"
+              >
+                <div class="flex gap-2 items-stretch">
+                  <span
+                    class="info-badge"
+                    >Folge 24</span
+                  >
+                  <span
+                    class="info-badge"
+                    ><img
+                      class="w-4 h-5 sm:w-4.5 sm:h-6 object-contain"
+                      src="./assets/images/png/clock.png"
+                      alt="clock"
+                    />
+                    45 min</span
+                  >
+                </div>
+                <button
+                  class="article-btn-black h-13! sm:h-14! w-full! sm:w-47! text-base! sm:text-xl!"
+                >
+                  Jezzt anhören
+                </button>
+              </div>
+            </div>
+          </article>
+          <article
+            class="podcast-item w-full hidden opacity-0 translate-y-5 transition-all duration-500"
+          >
+            <div
+              class="flex items-start lg:items-center justify-between bg-iceFishing rounded-[20px] p-4 sm:p-6 lg:p-8 flex-col lg:flex-row gap-y-4 sm:gap-y-6"
+            >
+              <div>
+                <p
+                  class="flex items-center gap-4 sm:gap-5 leading-[134%] md:text-xl text-KonBlue font-medium font-fira"
+                >
+                  <span class="flex-none">
+                    <img
+                      class="w-9 h-9 xl:w-14 xl:h-14 object-contain"
+                      src="./assets/images/png/tosmoke.png"
+                      alt="tosmoke"
+                    />
+                  </span>
+                  Rauchen und Stress - <br />
+                  Was tun ohne Zigarette?
+                </p>
+              </div>
+              <div
+                class="flex items-start lg:items-center justify-between flex-wrap gap-4 sm:gap-6 lg:gap-10 xl:gap-30.25 lg:w-fit w-full"
+              >
+                <div class="flex gap-2 items-stretch">
+                  <span
+                    class="info-badge"
+                    >Folge 24</span
+                  >
+                  <span
+                    class="info-badge"
+                    ><img
+                      class="w-4 h-5 sm:w-4.5 sm:h-6 object-contain"
+                      src="./assets/images/png/clock.png"
+                      alt="clock"
+                    />
+                    45 min</span
+                  >
+                </div>
+                <button
+                  class="article-btn-black h-13! sm:h-14! w-full! sm:w-47! text-base! sm:text-xl!"
+                >
+                  Jezzt anhören
+                </button>
+              </div>
+            </div>
+          </article>
+          <article
+            class="podcast-item w-full hidden opacity-0 translate-y-5 transition-all duration-500"
+          >
+            <div
+              class="flex items-start lg:items-center justify-between bg-iceFishing rounded-[20px] p-4 sm:p-6 lg:p-8 flex-col lg:flex-row gap-y-4 sm:gap-y-6"
+            >
+              <div>
+                <p
+                  class="flex items-center gap-4 sm:gap-5 leading-[134%] md:text-xl text-KonBlue font-medium font-fira"
+                >
+                  <span class="flex-none">
+                    <img
+                      class="w-9 h-9 xl:w-14 xl:h-14 object-contain"
+                      src="./assets/images/png/tosmoke.png"
+                      alt="tosmoke"
+                    />
+                  </span>
+                  Rauchen und Stress - <br />
+                  Was tun ohne Zigarette?
+                </p>
+              </div>
+              <div
+                class="flex items-start lg:items-center justify-between flex-wrap gap-4 sm:gap-6 lg:gap-10 xl:gap-30.25 lg:w-fit w-full"
+              >
+                <div class="flex gap-2 items-stretch">
+                  <span
+                    class="info-badge"
+                    >Folge 24</span
+                  >
+                  <span
+                    class="info-badge"
+                    ><img
+                      class="w-4 h-5 sm:w-4.5 sm:h-6 object-contain"
+                      src="./assets/images/png/clock.png"
+                      alt="clock"
+                    />
+                    45 min</span
+                  >
+                </div>
+                <button
+                  class="article-btn-black h-13! sm:h-14! w-full! sm:w-47! text-base! sm:text-xl!"
+                >
+                  Jezzt anhören
+                </button>
+              </div>
+            </div>
+          </article>
+          <article
+            class="podcast-item w-full hidden opacity-0 translate-y-5 transition-all duration-500"
+          >
+            <div
+              class="flex items-start lg:items-center justify-between bg-iceFishing rounded-[20px] p-4 sm:p-6 lg:p-8 flex-col lg:flex-row gap-y-4 sm:gap-y-6"
+            >
+              <div>
+                <p
+                  class="flex items-center gap-4 sm:gap-5 leading-[134%] md:text-xl text-KonBlue font-medium font-fira"
+                >
+                  <span class="flex-none">
+                    <img
+                      class="w-9 h-9 xl:w-14 xl:h-14 object-contain"
+                      src="./assets/images/png/tosmoke.png"
+                      alt="tosmoke"
+                    />
+                  </span>
+                  Rauchen und Stress - <br />
+                  Was tun ohne Zigarette?
+                </p>
+              </div>
+              <div
+                class="flex items-start lg:items-center justify-between flex-wrap gap-4 sm:gap-6 lg:gap-10 xl:gap-30.25 lg:w-fit w-full"
+              >
+                <div class="flex gap-2 items-stretch">
+                  <span
+                    class="info-badge"
+                    >Folge 24</span
+                  >
+                  <span
+                    class="info-badge"
+                    ><img
+                      class="w-4 h-5 sm:w-4.5 sm:h-6 object-contain"
+                      src="./assets/images/png/clock.png"
+                      alt="clock"
+                    />
+                    45 min</span
+                  >
+                </div>
+                <button
+                  class="article-btn-black h-13! sm:h-14! w-full! sm:w-47! text-base! sm:text-xl!"
+                >
+                  Jezzt anhören
+                </button>
+              </div>
+            </div>
+          </article>
+          <article
+            class="podcast-item w-full hidden opacity-0 translate-y-5 transition-all duration-500"
+          >
+            <div
+              class="flex items-start lg:items-center justify-between bg-iceFishing rounded-[20px] p-4 sm:p-6 lg:p-8 flex-col lg:flex-row gap-y-4 sm:gap-y-6"
+            >
+              <div>
+                <p
+                  class="flex items-center gap-4 sm:gap-8 leading-[134%] md:text-xl text-KonBlue font-medium font-fira"
+                >
+                  <span class="flex-none">
+                    <img
+                      class="w-9 h-9 xl:w-14 xl:h-14 object-contain"
+                      src="./assets/images/png/tosmoke.png"
+                      alt="tosmoke"
+                    />
+                  </span>
+                  Rauchen und Stress - <br />
+                  Was tun ohne Zigarette?
+                </p>
+              </div>
+              <div
+                class="flex items-start lg:items-center justify-between flex-wrap gap-4 sm:gap-6 lg:gap-10 xl:gap-30.25 lg:w-fit w-full"
+              >
+                <div class="flex gap-2 items-stretch">
+                  <span
+                    class="info-badge"
+                    >Folge 24</span
+                  >
+                  <span
+                    class="info-badge"
+                    ><img
+                      class="w-4 h-5 sm:w-4.5 sm:h-6 object-contain"
+                      src="./assets/images/png/clock.png"
+                      alt="clock"
+                    />
+                    45 min</span
+                  >
+                </div>
+                <button
+                  class="article-btn-black h-13! sm:h-14! w-full! sm:w-47! text-base! sm:text-xl!"
+                >
+                  Jezzt anhören
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+    <!------------------------ Footer Section --------------------------->
+    <footer class="bg-KonBlue text-white px-8 sm:px-5">
+      <!-- TOP SECTION -->
+      <div
+        class="w-full max-w-322 mx-auto sm:mt-8 lg:mt-10 xl:mt-20 py-12 xl:justify-between grid grid-cols-1 sm:grid-cols-2 3xl:pt-27.75 3xl:pb-26.25 lg:grid-cols-4 gap-8 3xl:gap-17 xl:flex"
+      >
+        <!-- Column 1 -->
+        <div>
+          <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+            Sanero Medical GmbH
+          </h3>
+          <p class="footer-link font-normal font-ibm-plex">
+            Wilhelmstraße 19 70182<br />
+            Stuttgart Germany
+          </p>
+
+          <div class="mt-4 md:mt-6 space-y-2 text-sm">
+            <a
+              href="tel:+49 (0)711 / 99 538 110"
+              class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+            >
+              <img
+                class="max-w-5 w-full"
+                src="./assets/images/phone-white.webp"
+                alt="phone"
+              />
+
+              +49 (0)711 / 99 538 110
+            </a>
+            <a
+              href="mailto:info@sanero-medical.de"
+              class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+            >
+              <img
+                class="max-w-5 w-full"
+                src="./assets/images/email-white.webp"
+                alt="email"
+              />
+              info@sanero-medical.de
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div>
+          <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+            Unternehmen
+          </h3>
+          <ul
+            class="space-y-2 font-normal footer-link font-ibm-plex text-white"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Über uns</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Kontakt</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Presse</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div>
+          <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+            Service
+          </h3>
+          <ul
+            class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >FAQ</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Impressum</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Datenschutz</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4 -->
+        <div>
+          <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+            Prävention nach §20
+          </h3>
+          <ul
+            class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Präventionskurs</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Krankenkassen</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Firmenprogramm</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- BOTTOM BAR -->
+    <section class="bg-windsweptBeach hidden md:block px-5">
+      <div
+        class="section-container mt-0! py-4 md:py-6.5! flex flex-col lg:flex-row justify-between items-center gap-4"
+      >
+        <p class="text-encoreGray footer-link font-ibm-plex">
+          © 2025 NichtraucherHelden – ein produkt der Sanero Medical GmbH
+        </p>
+
+        <div class="flex items-center gap-6">
+          <a
+            href="#"
+            class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+            >Impressum</a
+          >
+          <a
+            href="#"
+            class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+            >Datenschutzerklärung</a
+          >
+          <a
+            href="#"
+            class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+            >AGB</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/popup.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/back-to-top.js"></script>
+  </body>
+</html>

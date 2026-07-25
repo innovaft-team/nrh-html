@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Urf - Deine App auf Rezept unterstützt Dichlangfristig und kostenfrei.
+    </title>
+
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="icon" type="image/svg" href="./assets/images/logo.webp" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <!---------------------------------------- HEADER ---------------------------------- -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 z-[999] opacity-0 pointer-events-none transition-opacity duration-300"
+    ></div>
+    <header
+      class="text-white z-50 transition-transform duration-300 ease-in-out sticky top-0 w-full"
+    >
+      <!-- {/* Top Bar for Contact Info */} -->
+      <div class="bg-KonBlue">
+        <div
+          class="flex justify-end items-center sm:px-9! px-4! py-2 text-[11px] xs:text-xs font-ibm-plex sm:text-sm bg-KonBlue gap-4 overflow-auto custom-container hide-scrollbar"
+        >
+          <span class="hidden md:inline text-iceFishing text-base font-medium">
+            Unsere Experten sind für Dich da:
+          </span>
+          <div
+            class="flex sm:justify-center justify-between items-center xs:gap-7! gap-2! sm:w-fit w-full"
+          >
+            <a
+              href="tel:+49871121999343"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/phone-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              +49 8711 21 999 343
+            </a>
+            <a
+              href="mailto:service@nichtraucherhelden.de"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/email-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              service@nichtraucherhelden.de
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- {/* Main Navigation Bar */} -->
+      <div class="bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.05)] text-black">
+        <div class="custom-container py-3 3xl:py-6">
+          <div class="flex justify-between items-center">
+            <div class="shrink-0 flex items-center">
+              <div class="max-w-[41px] 3xl:max-w-20 w-full cursor-pointer">
+                <img
+                  class="w-full h-auto"
+                  src="/assets/images/logo.webp"
+                  alt="logo"
+                />
+              </div>
+            </div>
+            <button class="primary-btn block sm:hidden">
+              Dein Weg zur App
+            </button>
+            <nav
+              class="flex text-lg md:text-xl 3xl:text-2xl font-ibm-plex font-medium items-center gap-8 3xl:gap-12 leading-[100%]"
+            >
+              <div
+                class="hidden xl:flex justify-between items-center gap-10 text-primary"
+              >
+                <a href="#" class="header-li"> Magazin </a>
+                <a href="#" class="header-li"> Erfolgsgeschichten </a>
+                <a href="#" class="header-li"> FAQ </a>
+
+                <a
+                  href="#"
+                  class="flex justify-center items-center gap-2 header-li icon-hover"
+                >
+                  <img
+                    class="max-w-[19px] w-full icon"
+                    src="./assets/images/profile-icon.webp"
+                    alt="profile"
+                  />
+                  Login
+                </a>
+              </div>
+              <div class="hidden sm:flex justify-between gap-5">
+                <button
+                  class="sm:py-2 py-1.5 lg:py-3 3xl:py-4 px-8 rounded-4xl bg-iceFishing text-primary border-iceFishing border font-medium hidden md:block hover:bg-transparent hover:border-primary transition-all duration-300 ease-in-out font-ibm-plex text-base lg:text-lg xl:text-xl 3xl:text-2xl cursor-pointer"
+                >
+                  Fachkreise
+                </button>
+                <button class="primary-btn">Dein Weg zur App</button>
+              </div>
+              <button
+                id="hamburger"
+                aria-label="hamburger button"
+                class="block xl:hidden space-y-1.5"
+              >
+                <span class="w-[21px] h-0.5 bg-primary flex"></span>
+
+                <span class="w-[21px] h-0.5 bg-primary flex"></span>
+                <span class="w-[21px] h-0.5 bg-primary flex"></span>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <aside
+        id="sidebar"
+        class="fixed top-0 right-0 h-dvh bg-white w-[320px] transform transition-transform duration-300 ease-in-out z-[9999] flex flex-col justify-start p-4 translate-x-full"
+      >
+        <!-- Main Menu Content -->
+        <div class="sidebar-overlay"></div>
+        <div id="main-menu">
+          <div class="flex justify-between items-center mb-6">
+            <a aria-label="logo" href="./">
+              <img
+                class="max-w-[41px] w-full"
+                src="./assets/images/logo.webp"
+                alt="logo"
+              />
+            </a>
+            <button
+              id="close-sidebar"
+              class="text-2xl"
+              aria-label="clsoe sidebar"
+            >
+              <img
+                class="w-8 h-8 object-cover"
+                src="./assets/images/close-sidebar.webp"
+                alt="cross-icon"
+              />
+            </button>
+          </div>
+          <div>
+            <nav
+              class="flex flex-col justify-between grow overflow-auto h-full hide-scrollbar"
+            >
+              <div class="flex flex-col justify-between gap-7 text-primary">
+                <a aria-label="manu list" href="#" class="header-li">
+                  Magazin
+                </a>
+                <a aria-label="manu list" href="#" class="header-li">
+                  Erfolgsgeschichten
+                </a>
+                <a aria-label="manu list" href="#" class="header-li"> FAQ </a>
+
+                <a
+                  aria-label="manu list"
+                  href="#"
+                  class="flex gap-2 hover:scale-95 transition-all duration-300 ease-in-out"
+                >
+                  <img
+                    class="max-w-[19px] w-full"
+                    src="./assets/images/profile-icon.webp"
+                    alt="profile"
+                  />
+                  Login
+                </a>
+              </div>
+            </nav>
+            <div
+              class="flex flex-col justify-between items-center gap-3 w-full pt-10"
+            >
+              <button
+                class="sm:py-2 py-1.5 lg:py-3 3xl:py-4 px-6 rounded-4xl bg-iceFishing text-primary font-medium hover:scale-95 transition-all duration-300 ease-in-out font-ibm-plex text-base lg:text-lg xl:text-xl 3xl:text-2xl w-full eading-[150%] sm:leading-[100%]"
+              >
+                Fachkreise
+              </button>
+              <button class="primary-btn w-full">Dein Weg zur App</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <section
+        class="w-full 3xl:space-y-16 xl:space-y-14 lg:space-y-12 md:space-y-10 space-y-8 my-8 md:my-10 lg:my-13 3xl:my-16 max-w-[760px] mx-auto"
+      >
+        <div class="px-6 xl:px-0">
+          <h3 class="imprint-title">
+            Anmeldung zum <br />
+            Nichtraucher-Programm
+          </h3>
+        </div>
+        <div
+          class="bg-iceFishing md:px-5 px-5 md:py-8 py-9 max-w-[760px] w-full mx-auto rounded-3xl space-y-12 md:space-y-10"
+        >
+          <!-- Title -->
+          <div class="md:px-0 px-4">
+            <h2
+              class="text-xl sm:text-2xl lg:text-[26px] 3xl:text-[32px] font-medium text-KonBlue font-fira leading-[125%]"
+            >
+              Wähle Deine Krankenversicherung
+            </h2>
+            <p
+              class="free-help-text md:mt-3 mt-4 leading-[160%] text-KonBlue font-light"
+            >
+              Unser Programm wird von fast allen Krankenkassen bezuschusst. Wo
+              bist Du
+              <br class="3xl:block hidden" />
+              versichert?
+            </p>
+          </div>
+          <div class="w-full space-y-2 md:space-y-4">
+            <!-- Dropdown -->
+            <div class="relative dropdown">
+              <!-- Trigger -->
+              <button
+                class="trigger group w-full flex justify-between items-center bg-white text-KonBlue xl:rounded-2xl xs:rounded-[20px] rounded-xl lg:p-4 3xl:p-6 xs:p-4 p-3 hover:bg-blueBay hover:text-white [.is-selected]:bg-blueBay [.is-selected]:text-white transition-all duration-200"
+              >
+                <div class="flex items-center gap-2 xs:gap-4">
+                  <div
+                    class="radio 3xl:w-10 lg:w-8 3xl:h-10 lg:h-8 w-6 h-6 rounded-full bg-white flex items-center justify-center border-2 border-KonBlue group-hover:border-white group-[.is-selected]:border-white"
+                  >
+                    <span
+                      class="radio-dot hidden lg:w-[13px] w-[9px] lg:h-[13px] h-[9px] rounded-full bg-blueBay"
+                    ></span>
+                  </div>
+
+                  <div class="text-left">
+                    <p
+                      class="free-help-text font-fira font-medium leading-[160%]"
+                    >
+                      Gesetzliche Krankenkasse
+                    </p>
+                    <p
+                      class="selected free-help-text font-fira group-hover:text-white"
+                    ></p>
+                  </div>
+                </div>
+
+                <img
+                  class="3xl:w-14 lg:w-12 3xl:h-14 lg:h-12 md:w-10 md:h-10 xs:w-8 w-6 xs:h-8 h-6 rounded-full"
+                  src="./assets/images/png/Icon.png"
+                />
+              </button>
+              <!-- Content -->
+              <div
+                class="content max-h-0 transition-all overflow-hidden absolute z-30 w-full mt-4"
+              >
+                <div
+                  class="overflow-hidden duration-300 bg-blueRay rounded-xl w-full px-2 lg:px-4 lg:py-6 py-4 max-h-72 flex flex-col"
+                >
+                  <input
+                    placeholder="Search"
+                    class="dropdown-input"
+                    type="text"
+                    name=""
+                  />
+                  <div class="overflow-y-auto secondary-scrollbar h-full">
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      TK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      Barmer
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      AOK Baden-Württemberg
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      AOK Bayern
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      DAK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      IKK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      IKK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      IKK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      IKK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      IKK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      IKK
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative dropdown">
+              <!-- Trigger -->
+              <button
+                class="trigger group w-full flex justify-between items-center bg-white text-KonBlue xl:rounded-2xl xs:rounded-[20px] rounded-xl lg:p-4 3xl:p-6 xs:p-4 p-3 hover:bg-blueBay hover:text-white [.is-selected]:bg-blueBay [.is-selected]:text-white transition-all duration-200"
+              >
+                <div class="flex items-center gap-2 xs:gap-4">
+                  <div
+                    class="radio 3xl:w-10 lg:w-8 3xl:h-10 lg:h-8 w-6 h-6 rounded-full bg-white flex items-center justify-center border-2 border-KonBlue group-hover:border-white group-[.is-selected]:border-white"
+                  >
+                    <span
+                      class="radio-dot hidden lg:w-[13px] w-[9px] lg:h-[13px] h-[9px] rounded-full bg-blueBay"
+                    ></span>
+                  </div>
+
+                  <div class="text-left">
+                    <p
+                      class="free-help-text font-fira font-medium leading-[160%]"
+                    >
+                      Gesetzliche Krankenkasse
+                    </p>
+                    <p
+                      class="selected free-help-text font-fira group-hover:text-white"
+                    ></p>
+                  </div>
+                </div>
+
+                <img
+                  class="3xl:w-14 lg:w-12 3xl:h-14 lg:h-12 md:w-10 md:h-10 xs:w-8 w-6 xs:h-8 h-6 rounded-full"
+                  src="./assets/images/png/Icon.png"
+                />
+              </button>
+              <!-- Content -->
+              <div
+                class="content max-h-0 transition-all overflow-hidden absolute z-30 w-full mt-4"
+              >
+                <div
+                  class="overflow-hidden duration-300 bg-blueRay rounded-xl w-full px-2 lg:px-4 lg:py-6 py-4 max-h-72 flex flex-col"
+                >
+                  <input
+                    placeholder="Search"
+                    class="dropdown-input"
+                    type="text"
+                    name=""
+                  />
+                  <div class="overflow-y-auto secondary-scrollbar h-full">
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      TK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      Barmer
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      AOK Baden-Württemberg
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      AOK Bayern
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      DAK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      IKK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      IKK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      IKK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      IKK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      IKK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      IKK
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative dropdown">
+              <!-- Trigger -->
+              <button
+                class="trigger group w-full flex justify-between items-center bg-white text-KonBlue xl:rounded-2xl xs:rounded-[20px] rounded-xl lg:p-4 3xl:p-6 xs:p-4 p-3 hover:bg-blueBay hover:text-white [.is-selected]:bg-blueBay [.is-selected]:text-white transition-all duration-200"
+              >
+                <div class="flex items-center gap-2 xs:gap-4">
+                  <div
+                    class="radio 3xl:w-10 lg:w-8 3xl:h-10 lg:h-8 w-6 h-6 rounded-full bg-white flex items-center justify-center border-2 border-KonBlue group-hover:border-white group-[.is-selected]:border-white"
+                  >
+                    <span
+                      class="radio-dot hidden lg:w-[13px] w-[9px] lg:h-[13px] h-[9px] rounded-full bg-blueBay"
+                    ></span>
+                  </div>
+
+                  <div class="text-left">
+                    <p
+                      class="free-help-text font-fira font-medium leading-[160%]"
+                    >
+                      Gesetzliche Krankenkasse
+                    </p>
+                    <p
+                      class="selected free-help-text font-fira group-hover:text-white"
+                    ></p>
+                  </div>
+                </div>
+
+                <img
+                  class="3xl:w-14 lg:w-12 3xl:h-14 lg:h-12 md:w-10 md:h-10 xs:w-8 w-6 xs:h-8 h-6 rounded-full"
+                  src="./assets/images/png/Icon.png"
+                />
+              </button>
+              <!-- Content -->
+              <div
+                class="content max-h-0 transition-all overflow-hidden absolute z-30 w-full mt-4"
+              >
+                <div
+                  class="overflow-hidden duration-300 bg-blueRay rounded-xl w-full px-2 lg:px-4 lg:py-6 py-4 max-h-72 flex flex-col"
+                >
+                  <input
+                    placeholder="Search"
+                    class="dropdown-input"
+                    type="text"
+                    name=""
+                  />
+                  <div class="overflow-y-auto secondary-scrollbar h-full">
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      TK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      Barmer
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      AOK Baden-Württemberg
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      AOK Bayern
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      DAK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      IKK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      IKK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      IKK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      IKK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      IKK
+                    </div>
+                    <div
+                      class="option free-help-text select-option px-2 max-w-[95%]"
+                    >
+                      IKK
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Button -->
+          <div class="md:px-0 px-4">
+            <button class="primary-button sm:max-w-[340px] w-full">
+              Weiter
+            </button>
+          </div>
+
+          <div class="flex xl:gap-28 lg:pt-8">
+            <div
+              class="text-KonBlue text-xs sm:text-sm xl:text-base 2xl:text-base 3xl:text-xl leading-[133%] space-y-4 text-center w-full"
+            >
+              <img
+                class="object-contain aspect-square w-full h-full max-w-[72px] md:max-w-[121px] max-h-[68px] md:max-h-[116px] mx-auto"
+                src="/assets/images/png/ssl.png"
+                alt="zga"
+              />
+              <p>Sichere Datenübertragung</p>
+            </div>
+            <div
+              class="text-KonBlue text-xs sm:text-sm xl:text-base 2xl:text-base 3xl:text-xl leading-[133%] space-y-4 text-center w-full"
+            >
+              <img
+                class="object-contain aspect-square w-full h-full max-w-[72px] md:max-w-[121px] max-h-[68px] md:max-h-[116px] mx-auto"
+                src="/assets/images/png/zga.png"
+                alt="zga"
+              />
+              <p>Krankenkassen-Zertifiziert</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!------------------------ Footer Section --------------------------->
+      <footer class="bg-KonBlue text-white px-8 sm:px-5">
+        <!-- TOP SECTION -->
+        <div
+          class="section-container py-12 xl:justify-between grid grid-cols-1 sm:grid-cols-2 3xl:pt-[111px] 3xl:pb-[105px] lg:grid-cols-4 gap-8 3xl:gap-17 xl:flex"
+        >
+          <!-- Column 1 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Sanero Medical GmbH
+            </h3>
+            <p class="footer-link font-normal font-ibm-plex">
+              Wilhelmstraße 19 70182<br />
+              Stuttgart Germany
+            </p>
+
+            <div class="mt-4 md:mt-6 space-y-2 text-sm">
+              <a
+                href="tel:+49 (0)711 / 99 538 110"
+                class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+              >
+                <img
+                  class="max-w-5 w-full"
+                  src="./assets/images/phone-white.webp"
+                  alt="phone"
+                />
+
+                +49 (0)711 / 99 538 110
+              </a>
+              <a
+                href="mailto:info@sanero-medical.de"
+                class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+              >
+                <img
+                  class="max-w-5 w-full"
+                  src="./assets/images/email-white.webp"
+                  alt="phone"
+                />
+                info@sanero-medical.de
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Unternehmen
+            </h3>
+            <ul
+              class="space-y-2 font-normal footer-link font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Über uns</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Kontakt</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Presse</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Service
+            </h3>
+            <ul
+              class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Impressum</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Datenschutz</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Prävention nach §20
+            </h3>
+            <ul
+              class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Präventionskurs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Krankenkassen</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Firmenprogramm</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <!-- BOTTOM BAR -->
+      <section class="bg-windsweptBeach hidden md:block px-5">
+        <div
+          class="section-container mt-0! py-4 md:py-6.5! flex flex-col lg:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-encoreGray footer-link font-ibm-plex">
+            © 2025 NichtraucherHelden – ein Produkt der Sanero Medical GmbH
+          </p>
+
+          <div class="flex items-center gap-6">
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >Impressum</a
+            >
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >Datenschutzerklärung</a
+            >
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >AGB</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <button
+      id="backToTopBtn"
+      class="bg-KonBlue invisible fixed right-2 min-h-11 min-w-11 bottom-4 z-40 translate-y-4 cursor-pointer rounded-full p-3 text-white opacity-0 shadow-lg transition-all duration-300 focus:outline-none lg:right-8 md:bottom-8 border border-white"
+    >
+      <!-- Arrow Up Icon -->
+      <img
+        class="max-w-5 rotate-[177deg]"
+        src="./assets/images/scroll-button.webp"
+        alt="arrow"
+      />
+    </button>
+    <!-- JS -->
+
+    <script src="/js/common.js"></script>
+    <script src="/js/custom-select.js"></script>
+    <!-- <script src="/js/header-animation.js"></script> -->
+    <script src="/js/back-to-top.js"></script>
+  </body>
+</html>

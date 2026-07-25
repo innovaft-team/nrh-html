@@ -1,0 +1,1443 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Urf - Deine App auf Rezept unterstützt Dichlangfristig und kostenfrei.
+    </title>
+
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="icon" type="image/svg" href="./assets/images/logo.webp" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+
+  <body>
+    <!---------------------------------------- HEADER ---------------------------------- -->
+    <style>
+      .swiper-button-next svg,
+      .swiper-button-prev svg {
+        display: none;
+      }
+      .swiper-slide {
+        width: auto !important;
+      }
+      .swiper-button-next.swiper-button-disabled,
+      .swiper-button-prev.swiper-button-disabled {
+        background-color: #e3eff8;
+        opacity: 100;
+      }
+      .swiper-button-next.swiper-button-disabled img,
+      .swiper-button-prev.swiper-button-disabled img {
+        filter: brightness(0) saturate(100%) invert(9%) sepia(22%)
+          saturate(1200%) hue-rotate(200deg) brightness(95%) contrast(95%);
+      }
+      .swiper-button-next img,
+      .swiper-button-prev img {
+        filter: brightness(0) invert(1); /* white */
+      }
+    </style>
+    <aside
+      id="sidebar"
+      class="fixed top-0 right-0 h-dvh bg-white w-[320px] transform transition-transform duration-300 ease-in-out z-[9999] flex flex-col justify-start p-4 translate-x-full"
+    >
+      <!-- Main Menu Content -->
+      <div class="sidebar-overlay"></div>
+      <div id="main-menu">
+        <div class="flex justify-between items-center mb-6">
+          <a aria-label="logo" href="./">
+            <img
+              class="max-w-10.25 w-full"
+              src="./assets/images/logo.webp"
+              alt="logo"
+            />
+          </a>
+          <button
+            id="close-sidebar"
+            class="text-2xl"
+            aria-label="clsoe sidebar"
+          >
+            <img
+              class="w-8 h-8 object-cover"
+              src="./assets/images/close-sidebar.webp"
+              alt="cross-icon"
+            />
+          </button>
+        </div>
+        <div>
+          <nav
+            class="flex flex-col justify-between grow overflow-auto h-full hide-scrollbar"
+          >
+            <div class="flex flex-col justify-between gap-7 text-primary">
+              <a aria-label="manu list" href="#" class="header-li"> Magazin </a>
+              <a aria-label="manu list" href="#" class="header-li">
+                Erfolgsgeschichten
+              </a>
+              <a aria-label="manu list" href="#" class="header-li"> FAQ </a>
+
+              <button
+                data-modal-open="login"
+                class="flex gap-2 hover:scale-95 transition-all duration-300 ease-in-out"
+              >
+                <img
+                  class="max-w-4.75 w-full"
+                  src="./assets/images/profile-icon.webp"
+                  alt="profile"
+                />
+                Login
+              </button>
+            </div>
+          </nav>
+          <div
+            class="flex flex-col justify-between items-center gap-3 w-full pt-10"
+          >
+            <button
+              class="sm:py-2 py-1.5 lg:py-3 3xl:py-4 px-6 rounded-4xl bg-iceFishing text-primary font-medium hover:scale-95 transition-all duration-300 ease-in-out font-ibm-plex text-base lg:text-lg xl:text-xl 3xl:text-2xl w-full eading-[150%] sm:leading-[100%]"
+            >
+              Fachkreise
+            </button>
+            <button class="primary-btn w-full">Dein Weg zur App</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!---------------------------------------- HEADER ---------------------------------- -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 z-999 opacity-0 pointer-events-none transition-opacity duration-300"
+    ></div>
+    <header
+      class="text-white z-50 transition-transform duration-300 ease-in-out sticky top-0 w-full"
+    >
+      <!-- {/* Top Bar for Contact Info */} -->
+      <div class="bg-KonBlue">
+        <div
+          class="flex justify-end items-center sm:px-9! px-4! py-2 text-[11px] xs:text-xs font-ibm-plex sm:text-sm gap-4 overflow-auto custom-container hide-scrollbar"
+        >
+          <span class="hidden md:inline text-iceFishing text-base font-medium">
+            Unsere Experten sind für Dich da:
+          </span>
+          <div
+            class="flex sm:justify-center justify-between items-center xs:gap-7! gap-2! sm:w-fit w-full"
+          >
+            <a
+              href="tel:+49871121999343"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/phone-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              +49 8711 21 999 343
+            </a>
+            <a
+              href="mailto:service@nichtraucherhelden.de"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/email-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              service@nichtraucherhelden.de
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- {/* Main Navigation Bar */} -->
+      <div class="bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.05)] text-black">
+        <div class="custom-container py-2 sm:py-3 3xl:py-4">
+          <div class="flex justify-between items-center">
+            <div class="shrink-0 flex items-center">
+              <a href="/" aria-label="home" class="max-w-13 3xl:max-w-18 aspect-square w-full cursor-pointer">
+                <img class="w-full h-full" src="/assets/images/logo.webp" alt="logo" />
+              </a>
+            </div>
+            <button class="primary-btn block sm:hidden">
+              Dein Weg zur App
+            </button>
+            <nav
+              class="flex text-lg md:text-xl font-fira font-medium items-center gap-8 3xl:gap-12 leading-[140%]"
+            >
+              <div
+                class="hidden xl:flex justify-between items-center gap-10 text-primary"
+              >
+                <a href="#" class="header-li"> Magazin </a>
+                <a href="#" class="header-li"> Erfolgsgeschichten </a>
+                <a href="#" class="header-li"> FAQ </a>
+
+                <button
+                  data-modal-open="login"
+                  class="flex justify-center items-center gap-2 header-li icon-hover"
+                >
+                  <img
+                    class="max-w-4.75 w-full icon"
+                    src="./assets/images/profile-icon.webp"
+                    alt="profile"
+                  />
+                  Login
+                </button>
+              </div>
+              <div class="hidden sm:flex justify-between gap-5">
+                <button class="primary-btn-v3">Fachkreise</button>
+                <button class="primary-btn-v2">Dein Weg zur App</button>
+              </div>
+              <button
+                id="hamburger"
+                aria-label="hamburger button"
+                class="block xl:hidden space-y-1.5"
+              >
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- <<============================================= SIDERBAR ============================================>> -->
+    <main id="main-content">
+      <section class="hallo-sticky-container">
+        <div class="custom-container py-8">
+          <div
+            class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"
+          >
+            <div class="flex items-center gap-3 sm:gap-4 2xl:gap-6 3xl:gap-16">
+              <img
+                src="./assets/images/profile.webp"
+                alt="profile"
+                class="3xl:max-w-23.5 2xl:max-w-20 max-w-16 w-full object-cover aspect-square rounded-full border-4 border-white"
+              />
+              <div>
+                <h1 class="traning-hero-heading">Hallo Du Heldin!</h1>
+                <p class="paragraph-xl font-light mt-4">
+                  Schon, dass Du hier bist...
+                </p>
+              </div>
+            </div>
+
+            <div class="hallo">
+              <a
+                href="/heroes-day.html"
+                class="hero-pages group free-help-text-v2"
+              >
+                <img
+                  class="secondary-nav-img-inactive"
+                  src="assets/images/png/normal-calander.png"
+                  alt="calander"
+                />
+                <span class="sm:block hidden"> Heldentag</span>
+                <span class="block sm:hidden"> Dein Tag</span>
+              </a>
+              <a
+                href="/hero-status.html"
+                class="hero-pages bg-iceFishing font-bold group free-help-text-v2"
+              >
+                <img
+                  class="secondary-nav-img-active"
+                  src="assets/images/png/shield-halved.png"
+                  alt="calander"
+                />
+
+                <span class="sm:block hidden"> Heldenstatus</span>
+                <span class="block sm:hidden"> Status</span>
+              </a>
+              <a
+                href="/dranbleiben.html"
+                class="hero-pages group free-help-text-v2"
+              >
+                <img
+                  class="secondary-nav-img-inactive"
+                  src="assets/images/png/rocket.png"
+                  alt="calander"
+                />
+                Dranbleiben
+              </a>
+              <a
+                href="community.html"
+                class="hero-pages group free-help-text-v2"
+              >
+                <img
+                  class="secondary-nav-img-inactive"
+                  src="assets/images/png/grid-box.png"
+                  alt="calander"
+                />
+
+                Community
+              </a>
+              <a href="profile.html" class="hero-pages group free-help-text-v2">
+                <img
+                  class="secondary-nav-img-inactive"
+                  src="assets/images/png/circle-user.png"
+                  alt="calander"
+                />
+                Profil
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section-container-primary 3xl:px-0 px-4 py-14 lg:py-16 3xl:py-20 hero-mobile-tab-container"
+      >
+        <div class="flex items-center justify-between gap-4">
+          <h2
+            class="text-[32px] xl:text-[40px] 3xl:text-[44px] font-medium leading-[133%] md:leading-[118.182%] font-fira text-KonBlue"
+          >
+            Dein Heldentag:
+          </h2>
+          <div class="flex items-center gap-3">
+            <button
+              class="swiper-button-next relative! inset-0! m-0! min-w-11! w-11! aspect-square rounded-full flex items-center justify-center shrink-0 bg-primary text-white!"
+            >
+              <img
+                class="rotate-180"
+                src="assets/images/svg/arrow-icon-hero.svg"
+                alt=""
+              />
+            </button>
+            <button
+              class="swiper-button-prev relative! inset-0! m-0! min-w-11! w-11! aspect-square rounded-full flex items-center justify-center shrink-0 bg-primary text-white!"
+            >
+              <img src="assets/images/svg/arrow-icon-hero.svg" alt="" />
+            </button>
+          </div>
+        </div>
+        <div class="swiper mySwiper w-full">
+          <div class="py-6 swiper-wrapper w-full">
+            <article class="swiper-slide">
+              <div class="flex! justify-evenly! items-center gap-1.5">
+                <button
+                  class="free-help-text hero-page-tag bg-green-600 text-white"
+                >
+                  Start
+                </button>
+                <div class="bg-meteor w-3.75 md:w-5.75 h-px shrink-0"></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="flex! justify-evenly! items-center gap-1.5">
+                <button
+                  class="free-help-text hero-page-tag bg-green-600 text-white"
+                >
+                  SB
+                </button>
+                <div class="bg-meteor w-3.75 md:w-5.75 h-px shrink-0"></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="flex! justify-evenly! items-center gap-1.5">
+                <button
+                  class="free-help-text hero-page-tag bg-green-600 text-white"
+                >
+                  Tag 1
+                </button>
+                <div class="bg-meteor w-3.75 md:w-5.75 h-px shrink-0"></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="flex! justify-evenly! items-center gap-1.5">
+                <button
+                  class="free-help-text hero-page-tag bg-green-600 text-white"
+                >
+                  Tag 2
+                </button>
+                <div class="bg-meteor w-3.75 md:w-5.75 h-px shrink-0"></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="flex! justify-evenly! items-center gap-1.5">
+                <button
+                  class="free-help-text bg-KonBlue hero-page-tag text-white"
+                >
+                  Tag 3
+                </button>
+                <div class="bg-meteor w-3.75 md:w-5.75 h-px shrink-0"></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="flex! justify-evenly! items-center gap-1.5">
+                <button
+                  class="free-help-text border-encoreGray border hero-page-tag text-encoreGray"
+                >
+                  Tag 4
+                </button>
+                <div class="bg-meteor w-3.75 md:w-5.75 h-px shrink-0"></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="flex! justify-evenly! items-center gap-1.5">
+                <button
+                  data-target="tooltip-1"
+                  class="tooltip-btn free-help-text border-encoreGray border hero-page-tag text-encoreGray"
+                >
+                  Tag 5
+                  <!-- ONLY FOR DESKTOP -->
+                  <div
+                    data-tooltip="tooltip-1"
+                    class="tool-tip-conatiner tooltip-content md:flex hidden"
+                  >
+                    <img
+                      class="w-5 aspect-square"
+                      src="/assets/images/png/tool.png"
+                    />
+                    <span class="free-help-text">
+                      Der 5. Tag steht Dir erst nach Erfüllung Deines 4.
+                      Heldentages zur Verfügung.
+                    </span>
+
+                    <div class="tool-tip-icon"></div>
+                  </div>
+                </button>
+                <div class="bg-meteor w-3.75 md:w-5.75 h-px shrink-0"></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="flex! justify-evenly! items-center gap-1.5">
+                <button
+                  class="free-help-text border-encoreGray border hero-page-tag text-encoreGray"
+                >
+                  Tag 6
+                </button>
+                <div class="bg-meteor w-3.75 md:w-5.75 h-px shrink-0"></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="flex! justify-evenly! items-center gap-1.5">
+                <button
+                  class="free-help-text border-encoreGray border hero-page-tag text-encoreGray"
+                >
+                  Tag 7
+                </button>
+                <div class="bg-meteor w-3.75 md:w-5.75 h-px shrink-0"></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="flex! justify-evenly! items-center gap-1.5">
+                <button
+                  class="free-help-text border-encoreGray border hero-page-tag text-encoreGray"
+                >
+                  <img
+                    class="2xl:w-8 w-6 aspect-square"
+                    src="/assets/images/png/smoking-ban.png"
+                    alt="smoking-ban"
+                  />
+                </button>
+                <div class="bg-meteor w-3.75 md:w-5.75 h-px shrink-0"></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="flex! justify-evenly! items-center gap-1.5">
+                <button
+                  class="free-help-text border-encoreGray border hero-page-tag text-encoreGray"
+                >
+                  Tag 9
+                </button>
+                <div class="bg-meteor w-3.75 md:w-5.75 h-px shrink-0"></div>
+              </div>
+            </article>
+            <article class="swiper-slide">
+              <div class="flex! justify-evenly! items-center gap-1.5">
+                <button
+                  class="free-help-text border-encoreGray border hero-page-tag text-encoreGray"
+                >
+                  Tag 10
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+        <!-- ONLY-FOR-MOBILE -->
+        <div id="tooltip-1" class="tooltip-content flex md:hidden">
+          <div class="tool-tip-conatiner mb-6">
+            <div class="flex items-start gap-3">
+              <img
+                class="w-5 aspect-square object-contain"
+                src="/assets/images/png/tool.png"
+              />
+              <span class="free-help-text-v2">
+                Der 5. Tag steht Dir erst nach Erfüllung Deines 4. Heldentages
+                zur Verfügung.
+              </span>
+            </div>
+            <button class="w-5 h-3.25 tooltip-close">
+              <img
+                class="object-contain"
+                src="assets/images/png/tip-close.png"
+                alt="tip-close"
+              />
+            </button>
+          </div>
+        </div>
+        <p
+          class="md:text-base text-sm font-light text-KonBlue font-ibm-plex leading-6 flex items-center lg:gap-6 gap-4"
+        >
+          <img
+            class="max-w-5 aspect-square object-cover"
+            src="assets/images/png/heros-tip.png"
+            alt="img"
+          />
+          Du kannst jederzeit auf frühere Tage zurückgehen und Dir das Video
+          sowie die Übungen nochmals anschauen. Dazu einfach auf die
+          entsprechenden Tage klicken.
+        </p>
+      </section>
+
+      <section class="section-container-primary 3xl:px-0 px-4">
+        <h3 class="imprint-title">Dein Heldenstatus</h3>
+        <div
+          class="grid md:grid-cols-3 xxs:grid-cols-2 grid-cols-1 2xl:gap-7 gap-4 xl:mt-8 mt-6"
+        >
+          <article
+            class="3xl:rounded-3xl rounded-2xl bg-iceFishing 3xl:p-8 2xl:p-6 p-4 card"
+          >
+            <div class="flex items-center justify-between">
+              <img
+                class="3xl:w-15 2xl:w-12 w-10 object-contain aspect-square"
+                src="assets/images/png/calendar-check.png"
+                alt="img"
+              />
+              <button
+                class="3xl:w-15 2xl:w-12 w-10 aspect-square cursor-pointer editBtn"
+              >
+                <img
+                  class="object-cover"
+                  src="assets/images/png/hero-edit.png"
+                  alt="img"
+                />
+              </button>
+              <button
+                class="w-full bg-primary max-w-44 text-white rounded-[28px] font-medium text-base leading-6 cursor-pointer 2xl:h-14 1xl:h-13 sm:h-10 h-9 saveBtn hidden hover:bg-transparent hover:border-KonBlue border-transparent border hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >
+                Speichern
+              </button>
+            </div>
+            <div class="2xl:mb-7 mb-4 3xl:mt-[86px] 2xl:mt-12 mt-8">
+              <p
+                class="text-blueBay textValue 3xl:text-[84px] 2xl:text-[60px] xl:text-5xl text-4xl font-bold font-fira leading-[101%] wrap-break-word"
+              >
+                78
+              </p>
+              <input
+                value="78"
+                class="px-6 inputValue py-4.75 bg-white focus-within:border-blueBay border border-white 3xl:rounded-3xl rounded-2xl free-help-text text-hero w-full outline-blueBay hidden"
+                type="number"
+              />
+            </div>
+            <p
+              class="individually-card-title text-blueBay font-fira leading-[133%]"
+            >
+              Rauchfreie Tage seit Rauchstopp
+            </p>
+          </article>
+          <article
+            class="3xl:rounded-3xl rounded-2xl bg-red-100 3xl:p-8 2xl:p-6 p-4 card"
+          >
+            <div class="flex items-center justify-between">
+              <img
+                class="3xl:w-15 2xl:w-12 w-10 object-contain aspect-square"
+                src="assets/images/png/no-smoke.png"
+                alt="img"
+              />
+              <button class="3xl:w-15 2xl:w-12 w-10 aspect-square editBtn">
+                <img
+                  class="object-cover"
+                  src="assets/images/png/hero-edit.png"
+                  alt="img"
+                />
+              </button>
+              <button
+                class="w-full bg-primary max-w-44 text-white rounded-[28px] font-medium text-base leading-6 cursor-pointer 2xl:h-14 1xl:h-13 sm:h-10 h-9 saveBtn hidden hover:bg-transparent hover:border-KonBlue border-transparent border hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >
+                Speichern
+              </button>
+            </div>
+            <div class="2xl:mb-7 mb-4 3xl:mt-[86px] 2xl:mt-12 mt-8">
+              <p
+                class="text-dein1 3xl:text-[84px] 2xl:text-[60px] xl:text-5xl text-4xl font-bold font-fira leading-[101%] textValue wrap-break-word"
+              >
+                365
+              </p>
+              <input
+                value="365"
+                class="px-6 inputValue py-4.75 bg-white focus-within:border-blueBay border border-white 3xl:rounded-3xl rounded-2xl free-help-text text-hero w-full outline-blueBay hidden"
+                type="number"
+              />
+            </div>
+            <p
+              class="individually-card-title text-dein1 font-fira leading-[133%]"
+            >
+              Nicht gerauchte Zigaretten
+            </p>
+          </article>
+          <article
+            class="3xl:rounded-3xl rounded-2xl bg-lightlavender 3xl:p-8 2xl:p-6 p-4 card"
+          >
+            <div class="flex items-center justify-between">
+              <img
+                class="3xl:w-15 2xl:w-12 w-10 object-contain aspect-square"
+                src="assets/images/png/bolt-lightning.png"
+                alt="img"
+              />
+              <button class="3xl:w-15 2xl:w-12 w-10 aspect-square editBtn">
+                <img
+                  class="object-cover"
+                  src="assets/images/png/hero-edit.png"
+                  alt="img"
+                />
+              </button>
+              <button
+                class="w-full bg-primary max-w-44 text-white rounded-[28px] font-medium text-base leading-6 cursor-pointer 2xl:h-14 1xl:h-13 sm:h-10 h-9 saveBtn hidden hover:bg-transparent hover:border-KonBlue border-transparent border hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >
+                Speichern
+              </button>
+            </div>
+            <div class="2xl:mb-7 mb-4 3xl:mt-[86px] 2xl:mt-12 mt-8">
+              <p
+                class="text-mediumpurple 3xl:text-[84px] 2xl:text-[60px] xl:text-5xl text-4xl font-bold font-fira leading-[101%] textValue wrap-break-word"
+              >
+                5
+              </p>
+              <input
+                value="5"
+                class="px-6 inputValue py-4.75 bg-white focus-within:border-blueBay border border-white 3xl:rounded-3xl rounded-2xl free-help-text text-hero w-full outline-blueBay hidden"
+                type="number"
+              />
+            </div>
+            <p
+              class="individually-card-title text-mediumpurple font-fira leading-[133%]"
+            >
+              Ausrutscher seit <br class="3xl:block hidden" />
+              dem Rauchstopp
+            </p>
+          </article>
+          <article
+            class="3xl:rounded-3xl rounded-2xl bg-greenBrocade 3xl:p-8 2xl:p-6 p-4 card"
+          >
+            <div class="flex items-center justify-between">
+              <img
+                class="3xl:w-15 2xl:w-12 w-10 object-contain aspect-square"
+                src="assets/images/png/piggy-bank.png"
+                alt="img"
+              />
+              <button class="3xl:w-15 2xl:w-12 w-10 aspect-square editBtn">
+                <img
+                  class="object-cover"
+                  src="assets/images/png/hero-edit.png"
+                  alt="img"
+                />
+              </button>
+              <button
+                class="w-full bg-primary max-w-44 text-white rounded-[28px] font-medium text-base leading-6 cursor-pointer 2xl:h-14 1xl:h-13 sm:h-10 h-9 saveBtn hidden hover:bg-transparent hover:border-KonBlue border-transparent border hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >
+                Speichern
+              </button>
+            </div>
+            <div class="2xl:mb-7 mb-4 3xl:mt-[86px] 2xl:mt-12 mt-8">
+              <p
+                class="text-dein2 3xl:text-[84px] 2xl:text-[60px] xl:text-5xl text-4xl font-bold font-fira leading-[101%] textValue wrap-break-word"
+              >
+                162
+              </p>
+              <input
+                value="162"
+                class="px-6 inputValue py-4.75 bg-white focus-within:border-blueBay border border-white 3xl:rounded-3xl rounded-2xl free-help-text text-hero w-full outline-blueBay hidden"
+                type="number"
+              />
+            </div>
+            <p
+              class="individually-card-title text-dein2 font-fira leading-[133%]"
+            >
+              Euro gespart seit dem Rauchstopp
+            </p>
+          </article>
+          <article
+            class="3xl:rounded-3xl rounded-2xl bg-offGreen 3xl:p-8 2xl:p-6 p-4 xxs:col-span-2"
+          >
+            <div class="flex items-center justify-between">
+              <img
+                class="3xl:w-10 3xl:h-21.25 h-16 object-contain"
+                src="assets/images/png/men.png"
+                alt="img"
+              />
+              <button
+                data-modal-open="heroes"
+                class="3xl:w-15 2xl:w-12 w-10 aspect-square"
+              >
+                <img
+                  class="object-cover"
+                  src="assets/images/png/eye-hero.png"
+                  alt="img"
+                />
+              </button>
+            </div>
+            <div class="2xl:mb-7 mb-4 3xl:mt-[86px] 2xl:mt-12 mt-8">
+              <p
+                class="text-meltingGlacierdim 3xl:text-[84px] 2xl:text-[60px] xl:text-5xl text-4xl font-bold font-fira leading-[101%]"
+              >
+                Gold-Held
+              </p>
+            </div>
+            <p
+              class="individually-card-title text-meltingGlacierdim font-fira leading-[133%]"
+            >
+              Dein Rang
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- THIS-SECTION -->
+      <section
+        class="3xl:space-y-20 lg:space-y-16 space-y-14 pb-14 lg:pb-16 3xl:pb-20 section-container-primary 3xl:px-0 px-4"
+      >
+        <div>
+          <h3 class="traning-hero-heading text-KonBlue font-fira font-medium">
+            Deine gesammelten Unterlagen
+          </h3>
+          <p
+            class="free-help-text font-ibm-plex font-light text-KonBlue 3xl:leading-8 2xl:mt-6 mt-4"
+          >
+            Der Weg der Heldin ist gepflegt mit Erfolgen
+          </p>
+        </div>
+        <div class="space-y-2 md:space-y-4">
+          <article
+            class="bg-lightgray rounded-2xl p-4 md:p-6 3xl:p-8 grid md:grid-cols-3 xxs:grid-cols-2 grid-cols-1 gap-4 md:gap-5"
+          >
+            <div class="flex items-center gap-4 md:gap-6">
+              <img
+                class="object-cover md:max-w-14 max-w-10 w-full aspect-square"
+                src="assets/images/png/grid.png"
+                alt="list icon"
+              />
+              <h3 class="paragraph-xl text-KonBlue font-medium">
+                Fagerstrom-Test
+              </h3>
+            </div>
+            <p
+              class="paragraph-xl text-KonBlue font-light w-full text-center flex xxs:items-center xxs:justify-center"
+            >
+              Start
+            </p>
+            <div class="md:col-span-1 col-span-2">
+              <button class="primary-button w-full sm:max-w-71 ml-auto">
+                Jetzt herunterladen
+              </button>
+            </div>
+          </article>
+          <article
+            class="bg-lightgray rounded-2xl p-4 md:p-6 3xl:p-8 grid md:grid-cols-3 xxs:grid-cols-2 grid-cols-1 gap-4 md:gap-5"
+          >
+            <div class="flex items-center gap-4 md:gap-6">
+              <img
+                class="object-cover md:max-w-14 max-w-10 w-full aspect-square"
+                src="assets/images/png/grid.png"
+                alt="list icon"
+              />
+              <h3 class="paragraph-xl text-KonBlue font-medium">
+                Analyse Deines Rauchverhaltens
+              </h3>
+            </div>
+            <p
+              class="paragraph-xl text-KonBlue font-light w-full text-center flex xxs:items-center xxs:justify-center"
+            >
+              Start
+            </p>
+            <div class="md:col-span-1 col-span-2">
+              <button class="primary-button w-full sm:max-w-71 ml-auto">
+                Jetzt herunterladen
+              </button>
+            </div>
+          </article>
+          <article
+            class="bg-lightgray rounded-2xl p-4 md:p-6 3xl:p-8 grid md:grid-cols-3 xxs:grid-cols-2 grid-cols-1 gap-4 md:gap-5"
+          >
+            <div class="flex items-center gap-4 md:gap-6">
+              <img
+                class="object-cover md:max-w-14 max-w-10 w-full aspect-square"
+                src="assets/images/png/grid.png"
+                alt="list icon"
+              />
+              <h3 class="paragraph-xl text-KonBlue font-medium">
+                Deine Motivationsanalyse
+              </h3>
+            </div>
+            <p
+              class="paragraph-xl text-KonBlue font-light w-full text-center flex xxs:items-center xxs:justify-center"
+            >
+              Tag 1
+            </p>
+            <div class="md:col-span-1 col-span-2">
+              <button class="primary-button w-full sm:max-w-71 ml-auto">
+                Jetzt herunterladen
+              </button>
+            </div>
+          </article>
+          <article
+            class="bg-lightgray rounded-2xl p-4 md:p-6 3xl:p-8 grid md:grid-cols-3 xxs:grid-cols-2 grid-cols-1 gap-4 md:gap-5"
+          >
+            <div class="flex items-center gap-4 md:gap-6">
+              <img
+                class="object-cover md:max-w-14 max-w-10 w-full aspect-square"
+                src="assets/images/png/grid.png"
+                alt="list icon"
+              />
+              <h3 class="paragraph-xl text-KonBlue font-medium">
+                Deine Motivationskarten
+              </h3>
+            </div>
+            <p
+              class="paragraph-xl text-KonBlue font-light w-full text-center flex xxs:items-center xxs:justify-center"
+            >
+              Tag 1
+            </p>
+            <div class="md:col-span-1 col-span-2">
+              <button class="primary-button w-full sm:max-w-71 ml-auto">
+                Jetzt herunterladen
+              </button>
+            </div>
+          </article>
+          <article
+            class="bg-lightgray rounded-2xl p-4 md:p-6 3xl:p-8 grid md:grid-cols-3 xxs:grid-cols-2 grid-cols-1 gap-4 md:gap-5"
+          >
+            <div class="flex items-center gap-4 md:gap-6">
+              <img
+                class="object-cover md:max-w-14 max-w-10 w-full aspect-square"
+                src="assets/images/png/grid.png"
+                alt="list icon"
+              />
+              <h3 class="paragraph-xl text-KonBlue font-medium">
+                Die Top Facts: Die Sucht nach Nikotin
+              </h3>
+            </div>
+            <p
+              class="paragraph-xl text-KonBlue font-light w-full text-center flex xxs:items-center xxs:justify-center"
+            >
+              Tag 2
+            </p>
+            <div class="md:col-span-1 col-span-2">
+              <button class="primary-button w-full sm:max-w-71 ml-auto">
+                Jetzt herunterladen
+              </button>
+            </div>
+          </article>
+          <article
+            class="bg-lightgray rounded-2xl p-4 md:p-6 3xl:p-8 grid md:grid-cols-3 xxs:grid-cols-2 grid-cols-1 gap-4 md:gap-5"
+          >
+            <div class="flex items-center gap-4 md:gap-6">
+              <img
+                class="object-cover md:max-w-14 max-w-10 w-full aspect-square"
+                src="assets/images/png/grid.png"
+                alt="list icon"
+              />
+              <h3 class="paragraph-xl text-KonBlue font-medium">
+                Deine Raucherrituale
+              </h3>
+            </div>
+            <p
+              class="paragraph-xl text-KonBlue font-light w-full text-center flex xxs:items-center xxs:justify-center"
+            >
+              Tag 3
+            </p>
+            <div class="md:col-span-1 col-span-2">
+              <button class="primary-button w-full sm:max-w-71 ml-auto">
+                Jetzt herunterladen
+              </button>
+            </div>
+          </article>
+          <article
+            class="bg-lightgray rounded-2xl p-4 md:p-6 3xl:p-8 grid md:grid-cols-3 xxs:grid-cols-2 grid-cols-1 gap-4 md:gap-5"
+          >
+            <div class="flex items-center gap-4 md:gap-6">
+              <img
+                class="object-cover md:max-w-14 max-w-10 w-full aspect-square"
+                src="assets/images/png/grid.png"
+                alt="list icon"
+              />
+              <h3 class="paragraph-xl text-KonBlue font-medium">
+                Deine Dekonditionierung
+              </h3>
+            </div>
+            <p
+              class="paragraph-xl text-KonBlue font-light w-full text-center flex xxs:items-center xxs:justify-center"
+            >
+              Tag 3
+            </p>
+            <div class="md:col-span-1 col-span-2">
+              <button class="primary-button w-full sm:max-w-71 ml-auto">
+                Jetzt herunterladen
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!------------------------ Footer Section --------------------------->
+      <footer class="bg-KonBlue text-white px-8 sm:px-5">
+        <!-- TOP SECTION -->
+        <div
+          class="section-container-primary py-12 xl:justify-between grid grid-cols-1 sm:grid-cols-2 3xl:pt-27.75 3xl:pb-26.25 lg:grid-cols-4 gap-8 3xl:gap-17 xl:flex"
+        >
+          <!-- Column 1 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Sanero Medical GmbH
+            </h3>
+            <p class="footer-link font-normal font-ibm-plex">
+              Wilhelmstraße 19 70182<br />
+              Stuttgart Germany
+            </p>
+
+            <div class="mt-4 md:mt-6 space-y-2 text-sm">
+              <a
+                href="tel:+49 (0)711 / 99 538 110"
+                class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+              >
+                <img
+                  class="max-w-5 w-full"
+                  src="./assets/images/phone-white.webp"
+                  alt="phone"
+                />
+
+                +49 (0)711 / 99 538 110
+              </a>
+              <a
+                href="mailto:info@sanero-medical.de"
+                class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+              >
+                <img
+                  class="max-w-5 w-full"
+                  src="./assets/images/email-white.webp"
+                  alt="phone"
+                />
+                info@sanero-medical.de
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Unternehmen
+            </h3>
+            <ul
+              class="space-y-2 font-normal footer-link font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Über uns</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Kontakt</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Presse</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Service
+            </h3>
+            <ul
+              class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Impressum</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Datenschutz</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Prävention nach §20
+            </h3>
+            <ul
+              class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Präventionskurs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Krankenkassen</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Firmenprogramm</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <!-- BOTTOM BAR -->
+      <section class="bg-windsweptBeach hidden md:block px-5">
+        <div
+          class="section-container-primary py-4 md:py-6.5! flex flex-col lg:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-encoreGray footer-link font-ibm-plex">
+            © 2025 NichtraucherHelden – ein Produkt der Sanero Medical GmbH
+          </p>
+
+          <div class="flex items-center gap-6">
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >Impressum</a
+            >
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >Datenschutzerklärung</a
+            >
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >AGB</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <div
+      class="lg:right-8 md:bottom-8 fixed right-2 bottom-4 flex flex-col gap-3 items-center"
+    >
+      <button
+        class="bg-KonBlue 3xl:min-w-25 2xl:min-w-20 min-w-16 w-full aspect-square flex items-center justify-center z-40 cursor-pointer rounded-full shadow-lg transition-all duration-300 focus:outline-none drawer-open shrink-0 hover:bg-dein1 ease-in-out"
+      >
+        <img
+          class="3xl:max-w-10.5 2xl:max-w-8 max-w-6 w-full aspect-square"
+          src="./assets/images/png/siren-on.png"
+          alt="arrow"
+        />
+      </button>
+      <button
+        id="backToTopBtn"
+        class="bg-KonBlue invisible min-h-11 min-w-11 z-40 translate-y-4 cursor-pointer rounded-full p-3 text-white opacity-0 shadow-lg transition-all duration-300 focus:outline-none"
+      >
+        <img
+          class="max-w-5 rotate-[177deg]"
+          src="./assets/images/scroll-button.webp"
+          alt="arrow"
+        />
+      </button>
+    </div>
+    <div
+      data-modal="login"
+      class="fixed modal inset-0 z-50 hidden overflow-hidden"
+    >
+      <!-- Overlay -->
+      <div
+        class="fixed inset-0 bg-KonBlue/90 opacity-0 transition-opacity duration-300 modal-overlay"
+      ></div>
+      <!-- Modal Content -->
+      <div
+        class="min-h-dvh h-dvh max-h-dvh p-5 flex items-center justify-center"
+      >
+        <div
+          class="modal-content modal-container max-w-190 relative overflow-auto max-h-full hide-scrollbar"
+        >
+          <div class="modal-header sticky top-0">
+            <h4 class="individually-card-title">Login</h4>
+            <button class="modal-close-button" data-modal-close>
+              <img
+                class="object-contain w-full h-full"
+                src="./assets/images/png/modal-close.png"
+                alt="modal-close"
+              />
+            </button>
+          </div>
+          <form
+            id="loginForm"
+            class="3xl:gap-12 2xl:gap-10 h-auto 1xl:gap-8 gap-6 xl:px-6 px-4 3xl:pt-11 2xl:pt-10 1xl:pt-9 pt-6 3xl:pb-12 2xl:pb-10 pb-8 flex flex-col justify-center overflow-auto"
+          >
+            <p class="free-help-text text-KonBlue leading-[150%] px-4">
+              Melde Dich hier für deinen persönlichen Bereich an.
+            </p>
+
+            <div class="md:space-y-3 space-y-2">
+              <!-- Email -->
+              <div>
+                <input
+                  id="email"
+                  class="primary-input free-help-text"
+                  placeholder="Benutzername / E-Mail-Adresse"
+                  type="email"
+                />
+                <p id="emailError" class="text-red-500 text-sm mt-1 hidden"></p>
+              </div>
+
+              <!-- Password -->
+              <div>
+                <div
+                  class="flex items-center justify-between primary-input free-help-text"
+                >
+                  <input
+                    id="password"
+                    class="w-full outline-none bg-transparent placeholder:text-encoreGray"
+                    placeholder="Passwort*"
+                    type="password"
+                  />
+
+                  <button type="button" id="togglePassword" class="w-6 h-6">
+                    <img
+                      id="eyeIcon"
+                      class="object-contain w-full h-full"
+                      src="./assets/images/png/open-eye.png"
+                      alt="toggle password"
+                    />
+                  </button>
+                </div>
+                <p
+                  id="passwordError"
+                  class="text-red-500 text-sm mt-1 hidden"
+                ></p>
+              </div>
+            </div>
+
+            <a
+              class="free-help-text text-KonBlue underline font-light leading-[160%] w-fit mx-auto"
+              href=""
+            >
+              Passwort vergessen?
+            </a>
+
+            <button
+              type="submit"
+              class="text-white leading-[160%] font-fira font-medium hover:bg-white border border-blueBay bg-blueBay rounded-2xl flex items-center justify-center free-help-text md:h-14 h-13 hover:text-blueBay duration-300 ease-in-out transition-all"
+            >
+              Einloggen
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div
+      data-modal="heroes"
+      class="fixed modal inset-0 z-50 hidden overflow-hidden"
+    >
+      <!-- Overlay -->
+      <div
+        class="fixed inset-0 bg-KonBlue/90 opacity-0 transition-opacity duration-300 modal-overlay"
+      ></div>
+
+      <!-- Modal -->
+      <div
+        class="min-h-dvh h-dvh max-h-dvh p-5 flex items-center justify-center"
+      >
+        <div
+          class="modal-content modal-container max-w-190 relative overflow-auto max-h-full hide-scrollbar"
+        >
+          <!-- Header -->
+          <div class="modal-header sticky top-0 bg-meltingGlacierdim z-50">
+            <h4 class="individually-card-title">Heldenränge</h4>
+            <button class="modal-close-button" data-modal-close>
+              <img
+                class="object-contain w-full h-full"
+                src="./assets/images/png/modal-close.png"
+                alt="modal-close"
+              />
+            </button>
+          </div>
+
+          <!-- Body -->
+          <div
+            class="3xl:px-6 px-4 3xl:space-y-11 2xl:space-y-8 space-y-4 3xl:py-11 2xl:py-8 py-4 bg-offGreen"
+          >
+            <!-- Start Card -->
+            <div
+              class="bg-white 3xl:rounded-3xl rounded-2xl 3xl:p-8 p-4 text-center"
+            >
+              <p
+                class="free-help-text font-fira font-medium leading-8 text-black"
+              >
+                Helden-Anwärter
+              </p>
+              <img
+                class="2xl:max-w-32.5 xl:max-w-24 max-w-16 w-full aspect-square object-cover mx-auto my-2.5"
+                src="assets/images/png/rang-1.png"
+                alt="img"
+              />
+              <p
+                class="free-help-text font-light 3xl:leading-8 font-ibm-plex text-KonBlue"
+              >
+                Start
+              </p>
+            </div>
+
+            <!-- Silber -->
+            <div
+              class="bg-white 3xl:rounded-3xl rounded-2xl 3xl:p-8 p-4 text-center"
+            >
+              <p
+                class="free-help-text font-fira font-medium leading-8 text-black"
+              >
+                Helden-Anwärter
+              </p>
+              <div
+                class="grid xxs:grid-cols-3 grid-cols-1 3xl:gap-7.5 gap-4 mt-3"
+              >
+                <article>
+                  <img
+                    class="2xl:max-w-32.5 xl:max-w-24 max-w-16 w-full aspect-square object-cover mx-auto mb-3"
+                    src="assets/images/png/rang-2.png"
+                    alt="img"
+                  />
+                  <p
+                    class="free-help-text font-light 3xl:leading-8 font-ibm-plex text-KonBlue"
+                  >
+                    Nach 1 Tag rauchfrei
+                  </p>
+                </article>
+                <article>
+                  <img
+                    class="2xl:max-w-32.5 xl:max-w-24 max-w-16 w-full aspect-square object-cover mx-auto mb-3"
+                    src="assets/images/png/rang-3.png"
+                    alt="img"
+                  />
+                  <p
+                    class="free-help-text font-light 3xl:leading-8 font-ibm-plex text-KonBlue"
+                  >
+                    Nach 1 Wocherauchfrei
+                  </p>
+                </article>
+                <article>
+                  <img
+                    class="2xl:max-w-32.5 xl:max-w-24 max-w-16 w-full aspect-square object-cover mx-auto mb-3"
+                    src="assets/images/png/rang-4.png"
+                    alt="img"
+                  />
+                  <p
+                    class="free-help-text font-light 3xl:leading-8 font-ibm-plex text-KonBlue"
+                  >
+                    Nach 2 Wochenrauchfrei
+                  </p>
+                </article>
+              </div>
+            </div>
+
+            <!-- Gold -->
+            <div class="bg-white 3xl:rounded-3xl rounded-2xl p-8 text-center">
+              <p
+                class="free-help-text font-fira font-medium leading-8 text-black"
+              >
+                Silber-Held
+              </p>
+              <div
+                class="grid xxs:grid-cols-3 grid-cols-1 3xl:gap-7.5 gap-4 mt-3"
+              >
+                <article>
+                  <img
+                    class="2xl:max-w-32.5 xl:max-w-24 max-w-16 w-full aspect-square object-cover mx-auto mb-3"
+                    src="assets/images/png/rang-5.png"
+                    alt="img"
+                  />
+                  <p
+                    class="free-help-text font-light 3xl:leading-8 font-ibm-plex text-KonBlue"
+                  >
+                    Nach 1 Tag rauchfrei
+                  </p>
+                </article>
+                <article class="opacity-45">
+                  <img
+                    class="2xl:max-w-32.5 xl:max-w-24 max-w-16 w-full aspect-square object-cover mx-auto mb-3"
+                    src="assets/images/png/rang-3.png"
+                    alt="img"
+                  />
+                  <p
+                    class="free-help-text font-light 3xl:leading-8 font-ibm-plex text-KonBlue"
+                  >
+                    Nach 1 Wocherauchfrei
+                  </p>
+                </article>
+                <article class="opacity-45">
+                  <img
+                    class="2xl:max-w-32.5 xl:max-w-24 max-w-16 w-full aspect-square object-cover mx-auto mb-3"
+                    src="assets/images/png/rang-4.png"
+                    alt="img"
+                  />
+                  <p
+                    class="free-help-text font-light 3xl:leading-8 font-ibm-plex text-KonBlue"
+                  >
+                    Nach 2 Wochenrauchfrei
+                  </p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="drawer-wrapper fixed inset-0 z-50 hidden px-4 3xl:px-0">
+      <div
+        class="drawer-overlay absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300"
+      ></div>
+
+      <div
+        class="drawer absolute bottom-0 left-0 w-full max-h-dvh overflow-auto bg-iceFishing 3xl:rounded-t-[52px] 2xl:rounded-t-[30px] rounded-t-3xl shadow-xl translate-y-full transition-transform duration-300 ease-out px-4 xl:pb-12.75 pb-8 pt-6 text-center"
+      >
+        <div
+          class="w-19.75 drawer-close cursor-pointer rounded-full h-2.5 bg-drawerBrown mx-auto lg:mb-8 mb-6"
+        ></div>
+        <h2 class="imprint-title">Soforthilfe 2</h2>
+        <p class="free-help-text text-KonBlue font-light mt-3">
+          Hast Du einen starker Drang zu Rauchen oder ist ein Rückfall passiert?
+          Wir sind für Dich da.
+        </p>
+        <div
+          class="flex items-center free-help-text text-KonBlue font-medium font-fira xl:gap-6 gap-4 2xl:p-6 p-3 rounded-xl 2xl:rounded-2xl 3xl:rounded-3xl bg-report max-w-190 w-full mx-auto md:mb-6.5 mb-4 3xl:mt-17.5 2xl:mt-14 xl:mt-12 mt-10"
+        >
+          <div
+            class="object-cover 3xl:max-w-14 2xl:max-w-12 max-w-10 w-full aspect-square bg-white rounded-full md:p-3.5 p-3"
+          >
+            <img
+              class="object-cover"
+              src="/assets/images/png/hilfe.png"
+              alt="img"
+            />
+          </div>
+          Hilfe, ich will rauchen
+        </div>
+        <div
+          class="flex items-center free-help-text text-KonBlue font-medium font-fira xl:gap-6 gap-4 2xl:p-6 p-3 rounded-xl 2xl:rounded-2xl 3xl:rounded-3xl bg-mist max-w-190 w-full mx-auto"
+        >
+          <div
+            class="object-cover 3xl:max-w-14 2xl:max-w-12 max-w-10 w-full aspect-square bg-white rounded-full md:p-3.5 p-3"
+          >
+            <img
+              class="object-cover"
+              src="/assets/images/png/mist.png"
+              alt="img"
+            />
+          </div>
+          Mist, ich habe geraucht
+        </div>
+        <button
+          class="drawer-close w-full flex items-center justify-center mx-auto bg-white aspect-square rounded-full 3xl:max-w-20 2xl:max-w-16 xl:max-w-14 md:max-w-12 max-w-10 3xl:mt-13 2xl:mt-11 lg:mt-10 mt-6"
+        >
+          <img
+            class="3xl:max-w-8.5 2xl:max-w-6 lg:max-w-5 max-w-4 w-full aspect-square object-cover"
+            src="assets/images/png/xmark.png"
+            alt="img"
+          />
+        </button>
+      </div>
+    </div>
+    <script src="/js/popup.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/back-to-top.js"></script>
+    <script src="/js/tool-top-postion.js"></script>
+    <script src="/js/videp-play.js"></script>
+    <script>
+      document.querySelectorAll(".check-item").forEach((item) => {
+        item.addEventListener("click", () => {
+          const dot = item.querySelector(".radio-dot");
+          dot.classList.toggle("hidden");
+        });
+      });
+    </script>
+    <script>
+      const editButtons = document.querySelectorAll(".editBtn");
+      const saveButtons = document.querySelectorAll(".saveBtn");
+
+      // Edit click
+      editButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const card = btn.closest(".card");
+
+          const text = card.querySelector(".textValue");
+          const input = card.querySelector(".inputValue");
+          const editBtn = card.querySelector(".editBtn");
+          const saveBtn = card.querySelector(".saveBtn");
+
+          input.value = text.innerText; // current value input me daal do
+
+          text.classList.add("hidden");
+          input.classList.remove("hidden");
+
+          editBtn.classList.add("hidden");
+          saveBtn.classList.remove("hidden");
+        });
+      });
+
+      // Save click
+      saveButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const card = btn.closest(".card");
+
+          const text = card.querySelector(".textValue");
+          const input = card.querySelector(".inputValue");
+          const editBtn = card.querySelector(".editBtn");
+          const saveBtn = card.querySelector(".saveBtn");
+
+          // ✅ value update
+          text.innerText = input.value;
+
+          // UI reset
+          text.classList.remove("hidden");
+          input.classList.add("hidden");
+
+          editBtn.classList.remove("hidden");
+          saveBtn.classList.add("hidden");
+        });
+      });
+    </script>
+    <script src="/js/drawer.js"></script>
+    <script src="/js/free-style-slider.js"></script>
+    <script src="/js/tool-top-postion.js"></script>
+  </body>
+</html>

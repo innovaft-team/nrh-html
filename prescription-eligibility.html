@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Urf - Deine App auf Rezept unterstützt Dichlangfristig und kostenfrei.
+    </title>
+
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="icon" type="image/svg" href="./assets/images/logo.webp" />
+  </head>
+
+  <body class="bg-white font-fira flex flex-col pb-9 relative">
+    <!-- Header -->
+    <section
+      class="bg-KonBlue md:rounded-b-none rounded-b-4xl sticky! top-0 z-10"
+    >
+      <div class="common-step-layout py-6">
+        <div class="flex items-center justify-between">
+          <a class="common-back-button-step" href="/effectiveness-program.html">
+            <img src="./assets/images/back-arrow-icon.webp" alt="back-arrow" />
+          </a>
+          <a
+            class="common-close-button-step"
+            href="/effectiveness-program.html"
+          >
+            <img
+              src="./assets/images/close-arrow-icon.webp"
+              alt="close-arrow-icon"
+            />
+          </a>
+        </div>
+        <h2 class="common-heading-layout-title">Der Abhänigkeitstest</h2>
+        <h2
+          class="common-heading-layout-sub-title sm:w-full sm:max-w-full max-w-[80%]"
+        >
+          Prüfe, ob du die App auf Rezept erhälst
+        </h2>
+      </div>
+    </section>
+    <main class="space-y-8 mt-8">
+      <p class="common-step-layout paragraph-xl">
+        Die Wirksamkeit unseres Programms wurde in klinischen Studien umfassend
+        bestätigt.
+      </p>
+      <!-- Highlight Box -->
+      <section class="common-step-layout">
+        <article class="bg-meltingGlacier rounded-xl">
+          <!-- Accordion Header -->
+          <button
+            type="button"
+            class="flex gap-4 items-center w-full text-left px-4 py-4 xl:px-6 sm:py-6 justify-between"
+            onclick="toggleAccordion()"
+          >
+            <div class="flex items-center gap-3">
+              <img
+                class="xl:w-10 xl:h-10 w-9 h-9 rounded-full object-cover"
+                src="./assets/images/user-icon.webp"
+                alt="user-icon"
+              />
+              <h3
+                class="font-medium font-fira text-KonBlue xl:text-celestialBlue paragraph-xl"
+              >
+                Bin ich tabakabhängig?
+              </h3>
+            </div>
+            <span>
+              <img
+                id="accordionArrow"
+                class="transition-transform min-w-10 min-h-10 w-10 h-10 rounded-full flex items-center justify-center object-cover"
+                src="./assets/images/primary-accordion.webp"
+                alt="accordion-icon"
+            /></span>
+          </button>
+
+          <!-- Accordion Content (OPEN BY DEFAULT) -->
+          <div class="accordion">
+            <div
+              class="accordion-inner overflow-hidden transition-all duration-500 ease-in-out max-h-[500px] px-4 xl:px-6 pb-3"
+            >
+              <p class="paragraph-xl text-primary mt-4">
+                “Bei den früheren Aufhörversuchen war es eher so, dass ich eine
+                Raucherin war, die gerade nicht raucht. Seit Abschluss des
+                Programms habe ich das erste Mal wirklich das Gefühl,
+                Nichtraucherin zu sein.”
+              </p>
+
+              <a
+                href="/check-prescription-question-1.html"
+                class="inline-block mt-4"
+              >
+                <button class="primary-button w-full sm:w-fit">
+                  Kostenübernahme prüfen
+                </button>
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- Accordion -->
+      <section class="common-step-layout">
+        <div
+          class="space-y-2 lg:space-y-3 3xl:space-y-4 bg-iceFishing p-4 3xl:p-8 w-full rounded-xl xl:rounded-4xl"
+        >
+          <article
+            class="rounded-[20px] xl:rounded-3xl bg-white cursor-pointer"
+          >
+            <button
+              onclick="toggleAccordion()"
+              class="w-full flex justify-between items-center cursor-pointer gap-3 p-4 md:px-6 md:py-4"
+            >
+              <p
+                class="paragraph-xl text-left font-fira font-medium text-celestialBlue"
+              >
+                Wir haben die App für Dich und nicht für IT-Experten entwickelt.
+              </p>
+              <img
+                id="accordionArrow"
+                class="transition-transform min-w-10 min-h-10 w-10 h-10 rounded-full flex items-center justify-center object-cover"
+                src="./assets/images/primary-accordion.webp"
+                alt="accordion-icon"
+              />
+            </button>
+
+            <div class="accordion">
+              <div
+                class="accordion-inner px-4 md:px-6 md:pb-5 pb-4 free-help-text font-normal font-ibm-plex text-primary"
+              >
+                Du rauchst seit Jahrzehnten und fragst Dich, ob sich der Aufwand
+                noch lohnt? Die Antwort ist ein klares Ja. Dein Körper beginnt
+                sofort mit der Reparatur: Schon nach wenigen Stunden verbessert
+                sich Deine Blutzirkulation, nach wenigen Tagen atmest Du besser.
+                Unsere App macht diese Erfolge sichtbar. Du siehst in Echtzeit,
+                wie viele gesparte Zigaretten, wie viel Geld und welche
+                gesundheitlichen Verbesserungen Du erreicht hast. Das ist die
+                stärkste Motivation, die Dich jeden Tag aufs Neue bestätigt.
+              </div>
+            </div>
+          </article>
+          <article
+            class="rounded-[20px] xl:rounded-3xl bg-white cursor-pointer"
+          >
+            <button
+              onclick="toggleAccordion()"
+              class="w-full flex justify-between items-center cursor-pointer gap-3 p-4 md:px-6 md:py-4"
+            >
+              <p
+                class="paragraph-xl text-left font-fira font-medium text-celestialBlue"
+              >
+                Du bist nicht allein – wir haben den Notfallplan.
+              </p>
+              <img
+                id="accordionArrow"
+                class="transition-transform min-w-10 min-h-10 w-10 h-10 rounded-full flex items-center justify-center object-cover"
+                src="./assets/images/primary-accordion.webp"
+                alt="accordion-icon"
+              />
+            </button>
+
+            <div class="accordion">
+              <div
+                class="accordion-inner px-4 md:px-6 md:pb-5 pb-4 free-help-text font-normal font-ibm-plex text-primary"
+              >
+                Du rauchst seit Jahrzehnten und fragst Dich, ob sich der Aufwand
+                noch lohnt? Die Antwort ist ein klares Ja. Dein Körper beginnt
+                sofort mit der Reparatur: Schon nach wenigen Stunden verbessert
+                sich Deine Blutzirkulation, nach wenigen Tagen atmest Du besser.
+                Unsere App macht diese Erfolge sichtbar. Du siehst in Echtzeit,
+                wie viele gesparte Zigaretten, wie viel Geld und welche
+                gesundheitlichen Verbesserungen Du erreicht hast. Das ist die
+                stärkste Motivation, die Dich jeden Tag aufs Neue bestätigt.
+              </div>
+            </div>
+          </article>
+          <article
+            class="rounded-[20px] xl:rounded-3xl bg-white cursor-pointer"
+          >
+            <button
+              onclick="toggleAccordion()"
+              class="w-full flex justify-between items-center cursor-pointer gap-3 p-4 md:px-6 md:py-4"
+            >
+              <p
+                class="paragraph-xl text-left font-fira font-medium text-celestialBlue"
+              >
+                Jeder rauchfreie Tag zählt – Du gewinnst sofort Lebenszeit.
+              </p>
+              <img
+                id="accordionArrow"
+                class="transition-transform min-w-10 min-h-10 w-10 h-10 rounded-full flex items-center justify-center object-cover"
+                src="./assets/images/primary-accordion.webp"
+                alt="accordion-icon"
+              />
+            </button>
+
+            <div class="accordion">
+              <div
+                class="accordion-inner px-4 md:px-6 md:pb-5 pb-4 free-help-text font-normal font-ibm-plex text-primary"
+              >
+                Du rauchst seit Jahrzehnten und fragst Dich, ob sich der Aufwand
+                noch lohnt? Die Antwort ist ein klares Ja. Dein Körper beginnt
+                sofort mit der Reparatur: Schon nach wenigen Stunden verbessert
+                sich Deine Blutzirkulation, nach wenigen Tagen atmest Du besser.
+                Unsere App macht diese Erfolge sichtbar. Du siehst in Echtzeit,
+                wie viele gesparte Zigaretten, wie viel Geld und welche
+                gesundheitlichen Verbesserungen Du erreicht hast. Das ist die
+                stärkste Motivation, die Dich jeden Tag aufs Neue bestätigt.
+              </div>
+            </div>
+          </article>
+          <article
+            class="rounded-[20px] xl:rounded-3xl bg-white cursor-pointer"
+          >
+            <button
+              onclick="toggleAccordion()"
+              class="w-full flex justify-between items-center cursor-pointer gap-3 p-4 md:px-6 md:py-4"
+            >
+              <p
+                class="paragraph-xl text-left font-fira font-medium text-celestialBlue"
+              >
+                Kaffee ohne Zigarette? Wir machen es zur neuen Normalität.
+              </p>
+              <img
+                id="accordionArrow"
+                class="transition-transform min-w-10 min-h-10 w-10 h-10 rounded-full flex items-center justify-center object-cover"
+                src="./assets/images/primary-accordion.webp"
+                alt="accordion-icon"
+              />
+            </button>
+
+            <div class="accordion">
+              <div
+                class="accordion-inner px-4 md:px-6 md:pb-5 pb-4 free-help-text font-normal font-ibm-plex text-primary"
+              >
+                Du rauchst seit Jahrzehnten und fragst Dich, ob sich der Aufwand
+                noch lohnt? Die Antwort ist ein klares Ja. Dein Körper beginnt
+                sofort mit der Reparatur: Schon nach wenigen Stunden verbessert
+                sich Deine Blutzirkulation, nach wenigen Tagen atmest Du besser.
+                Unsere App macht diese Erfolge sichtbar. Du siehst in Echtzeit,
+                wie viele gesparte Zigaretten, wie viel Geld und welche
+                gesundheitlichen Verbesserungen Du erreicht hast. Das ist die
+                stärkste Motivation, die Dich jeden Tag aufs Neue bestätigt.
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Support Card -->
+      <section class="common-step-layout">
+        <div
+          class="md:rounded-3xl rounded-xl md:p-6 p-4 bg-whiteSmoke space-y-6"
+        >
+          <div class="md:space-y-4 space-y-6">
+            <div class="flex items-center md:gap-8 sm:gap-6 gap-4">
+              <img
+                class="w-[60px] h-[60px] rounded-full"
+                src="/assets/images/andre.webp"
+                alt="andre"
+              />
+              <p
+                class="paragraph-text text-KonBlue font-medium leading-[120%] font-fira"
+              >
+                Wir sind für Sie da
+              </p>
+            </div>
+            <p
+              class="free-help-text font-light leading-[160%] text-primary font-ibm-plex"
+            >
+              Du hast Fragen zu NichtraucherHelden? Wir helfen dir gern!
+              Telefonisch von Mo. - Fr. von 10:00 - 17:00 Uhr, E-Mails
+              beantworten wir innerhalb von 24 Stunden.
+            </p>
+          </div>
+          <div class="md:space-y-4 space-y-2">
+            <a
+              href="tel:+49 0711 21 959 343"
+              class="flex items-center gap-2.5 md:gap-4 bg-white rounded-xl free-help-text font-normal text-KonBlue px-4 py-3 md:py-5"
+            >
+              <img
+                class="md:w-[18px] md:h-5 w-3 h-5 object-contain"
+                src="./assets/images/png/mobile-icon.png"
+                alt="mobile-icon"
+              />
+              +49 0711 21 959 343
+            </a>
+            <a
+              href="mailto:service@nichtraucherhelden.de"
+              class="flex items-center gap-2.5 md:gap-4 bg-white rounded-xl free-help-text font-normal text-KonBlue px-4 py-3 md:py-5"
+            >
+              <img
+                class="md:w-[18px] md:h-5 w-3 h-3 object-contain"
+                src="./assets/images/png/mail-icon.png"
+                alt="mail-icon"
+              />
+
+              service@nichtraucherhelden.de
+            </a>
+          </div>
+          <div>
+            <h5
+              class="paragraph-text text-KonBlue font-medium leading-[116.667%]"
+            >
+              Von Anfang an an Deiner Seite
+            </h5>
+            <p
+              class="free-help-text font-ibm-plex leading-[160%] text-primary md:mt-4 mt-6"
+            >
+              Trage alternativ Deine E-Mail-Adresse ein und wir unterstützen
+              Dich Schritt für Schritt, vom Rezept bis zur Aktivierung.
+              Kostenlos und unverbindlich.
+            </p>
+          </div>
+          <form class="space-y-4" action="/check-prescription-question-1.html">
+            <div
+              class="relative bg-white px-4 py-3 sm:py-6 xl:py-5 rounded-xl mt-6 paragraph-xl text-primaryButton hover:text-primary font-fira duration-300"
+            >
+              <span class="absolute left-3 top-1/2 -translate-y-1/2"
+                ><img
+                  class="max-w-[15px] w-full"
+                  src="./assets/images/profile-icon.webp"
+                  alt="profile"
+                />
+              </span>
+              <input
+                required
+                type="text"
+                placeholder="Name"
+                class="w-full pl-7 focus:outline-none"
+              />
+            </div>
+            <div
+              class="relative bg-white px-4 py-3 sm:py-6 xl:py-5 rounded-xl mt-6 paragraph-xl text-primaryButton hover:text-primary font-fira duration-300"
+            >
+              <span class="absolute left-3 top-1/2 -translate-y-1/2">
+                <img
+                  class="max-w-[15px] w-full"
+                  src="./assets/images/email.webp"
+                  alt="profile"
+                />
+              </span>
+              <input
+                required
+                type="email"
+                placeholder="E-Mail-Adresse"
+                class="w-full pl-7 focus:outline-none"
+              />
+            </div>
+            <button type="submit" class="primary-button w-full">
+              Anmelden
+            </button>
+          </form>
+          <p
+            class="md:text-base sm:text-sm text-xs font-light leading-[175%] font-ibm-plex text-primary"
+          >
+            Wir benötigen deine Einwilligung zur Verarbeitung deiner Daten.
+            Indem du auf „Anmelden“ klickst, gibst du der Sanero Medical GmbH
+            die Erlaubnis, dir regelmäßig und kostenlos E-Mails zu schicken.
+          </p>
+        </div>
+      </section>
+    </main>
+    <script src="/js/common-accordion.js"></script>
+  </body>
+</html>

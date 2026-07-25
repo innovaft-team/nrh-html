@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Urf - Deine App auf Rezept unterstützt Dichlangfristig und kostenfrei.
+    </title>
+
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="icon" type="image/svg" href="./assets/images/logo.webp" />
+  </head>
+
+  <body class="bg-white font-fira pb-9 h-dvh overflow-hidden flex flex-col">
+    <section class="bg-KonBlue md:rounded-b-none rounded-b-4xl">
+      <div class="common-step-layout py-6">
+        <div class="flex items-center justify-between">
+          <a
+            class="common-back-button-step"
+            href="/prescription-eligibility.html"
+          >
+            <img src="./assets/images/back-arrow-icon.webp" alt="back-arrow" />
+          </a>
+          <a
+            class="common-close-button-step"
+            href="/prescription-eligibility.html"
+          >
+            <img
+              src="./assets/images/close-arrow-icon.webp"
+              alt="close-arrow-icon"
+            />
+          </a>
+        </div>
+        <h2 class="common-heading-layout-title">Der Abhänigkeitstest</h2>
+        <h2
+          class="common-heading-layout-sub-title sm:w-full sm:max-w-full max-w-[80%]"
+        >
+          Prüfe, ob du die App auf Rezept erhälst
+        </h2>
+        <div class="bg-white w-full mt-5 md:mt-6 h-2 rounded-full">
+          <div
+            class="max-w-[53.16px] w-full bg-blueBay rounded-full h-full"
+          ></div>
+        </div>
+      </div>
+    </section>
+    <section class="space-y-8 mt-8 overflow-auto grow hide-scrollbar">
+      <div class="md:space-y-8 space-y-6.5 common-step-layout">
+        <h2 class="common-step-description">
+          Deine Motivation ist der Schlüssel. Jetzt prüfen wir, ob die Kosten
+          für unsere App von Deiner Krankenkasse übernommen werden.
+        </h2>
+        <h3 class="common-step-description">
+          Deine Motivation ist der Schlüssel. Jetzt prüfen wir, ob die Kosten
+          für unsere App von Deiner Krankenkasse übernommen werden.
+        </h3>
+      </div>
+      <div class="md:space-y-5 space-y-3.5 common-step-layout">
+        <p class="common-step-tag">Frage 1 von 6</p>
+        <h4 class="common-heading-layout-sub-heading">
+          Bereitet es Dir ein ungutes Gefühl, wenn Du Dir vorstellst, mehrere
+          Tage ohne Zigarette zu sein?
+        </h4>
+      </div>
+      <div class="space-y-2 md:space-y-4 common-step-layout">
+        <button
+          type="button"
+          data-value="yes"
+          class="common-step-radio-buttons js-radio-btn"
+        >
+          Ja
+        </button>
+        <button
+          type="button"
+          data-value="no"
+          class="common-step-radio-buttons js-radio-btn"
+        >
+          Nein
+        </button>
+      </div>
+    </section>
+    <div class="common-step-layout pt-5 md:pt-8">
+      <a
+        class="primary-button next-btn is-disabled is-active"
+        href="/check-prescription-question-2.html"
+        >Weiter
+      </a>
+    </div>
+    <script src="/js/common-step.js"></script>
+  </body>
+</html>

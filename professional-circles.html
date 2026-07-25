@@ -1,0 +1,1154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desktop/Fachkreise/Start</title>
+
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="icon" type="image/svg" href="./assets/images/logo.webp" />
+  </head>
+  <body>
+    <aside
+      id="sidebar"
+      class="fixed top-0 right-0 h-dvh bg-white w-[320px] transform transition-transform duration-300 ease-in-out z-[9999] flex flex-col justify-start p-4 translate-x-full"
+    >
+      <!-- Main Menu Content -->
+      <div class="sidebar-overlay"></div>
+      <div id="main-menu">
+        <div class="flex justify-between items-center mb-6">
+          <a aria-label="logo" href="./">
+            <img
+              class="max-w-10.25 w-full"
+              src="./assets/images/logo.webp"
+              alt="logo"
+            />
+          </a>
+          <button
+            id="close-sidebar"
+            class="text-2xl"
+            aria-label="clsoe sidebar"
+          >
+            <img
+              class="w-8 h-8 object-cover"
+              src="./assets/images/close-sidebar.webp"
+              alt="cross-icon"
+            />
+          </button>
+        </div>
+        <div>
+          <nav
+            class="flex flex-col justify-between grow overflow-auto h-full hide-scrollbar"
+          >
+            <div class="flex flex-col justify-between gap-7 text-primary">
+              <a aria-label="manu list" href="#" class="header-li"> Magazin </a>
+              <a aria-label="manu list" href="#" class="header-li">
+                Erfolgsgeschichten
+              </a>
+              <a aria-label="manu list" href="#" class="header-li"> FAQ </a>
+
+              <button
+                data-modal-open="login"
+                class="flex gap-2 hover:scale-95 transition-all duration-300 ease-in-out"
+              >
+                <img
+                  class="max-w-4.75 w-full"
+                  src="./assets/images/profile-icon.webp"
+                  alt="profile"
+                />
+                Login
+              </button>
+            </div>
+          </nav>
+          <div
+            class="flex flex-col justify-between items-center gap-3 w-full pt-10"
+          >
+            <button
+              class="sm:py-2 py-1.5 lg:py-3 3xl:py-4 px-6 rounded-4xl bg-iceFishing text-primary font-medium hover:scale-95 transition-all duration-300 ease-in-out font-ibm-plex text-base lg:text-lg xl:text-xl 3xl:text-2xl w-full eading-[150%] sm:leading-[100%]"
+            >
+              Fachkreise
+            </button>
+            <button class="primary-btn w-full">Dein Weg zur App</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!---------------------------------------- HEADER ---------------------------------- -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 z-999 opacity-0 pointer-events-none transition-opacity duration-300"
+    ></div>
+    <header
+      class="text-white z-50 transition-transform duration-300 ease-in-out sticky top-0 w-full"
+    >
+      <!-- {/* Top Bar for Contact Info */} -->
+      <div class="bg-KonBlue">
+        <div
+          class="flex justify-end items-center sm:px-9! px-4! py-2 text-[11px] xs:text-xs font-ibm-plex sm:text-sm bg-KonBlue gap-4 overflow-auto custom-container hide-scrollbar"
+        >
+          <span class="hidden md:inline text-iceFishing text-base font-medium">
+            Unsere Experten sind für Dich da:
+          </span>
+          <div
+            class="flex sm:justify-center justify-between items-center xs:gap-7! gap-2! sm:w-fit w-full"
+          >
+            <a
+              href="tel:+49871121999343"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/phone-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              +49 8711 21 999 343
+            </a>
+            <a
+              href="mailto:service@nichtraucherhelden.de"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/email-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              service@nichtraucherhelden.de
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- {/* Main Navigation Bar */} -->
+      <div class="bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.05)] text-black">
+        <div class="custom-container py-2 sm:py-3 3xl:py-4">
+          <div class="flex justify-between items-center">
+            <div class="shrink-0 flex items-center">
+              <a href="/" aria-label="home" class="max-w-13 3xl:max-w-18 aspect-square w-full cursor-pointer">
+                <img class="w-full h-full" src="/assets/images/logo.webp" alt="logo" />
+              </a>
+            </div>
+            <button class="primary-btn block sm:hidden">
+              Dein Weg zur App
+            </button>
+            <nav
+              class="flex text-lg md:text-xl font-fira font-medium items-center gap-8 3xl:gap-12 leading-[140%]"
+            >
+              <div
+                class="hidden xl:flex justify-between items-center gap-10 text-primary"
+              >
+                <a href="#" class="header-li"> Magazin </a>
+                <a href="#" class="header-li"> Erfolgsgeschichten </a>
+                <a href="#" class="header-li"> FAQ </a>
+
+                <button
+                  data-modal-open="login"
+                  class="flex justify-center items-center gap-2 header-li icon-hover"
+                >
+                  <img
+                    class="max-w-4.75 w-full icon"
+                    src="./assets/images/profile-icon.webp"
+                    alt="profile"
+                  />
+                  Login
+                </button>
+              </div>
+              <div class="hidden sm:flex justify-between gap-5">
+                <button class="primary-btn-v3">Fachkreise</button>
+                <button class="primary-btn-v2">Dein Weg zur App</button>
+              </div>
+              <button
+                id="hamburger"
+                aria-label="hamburger button"
+                class="block xl:hidden space-y-1.5"
+              >
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- HERO -->
+    <div class="px-9 sm:px-5">
+      <div class="section-container">
+        <h2
+          class="text-[28px] xl:text-[44px] font-fira leading-[120%] text-KonBlue mb-8 sm:mb-6 font-medium"
+        >
+          Online CME-Seminar
+        </h2>
+        <p class="article-desc font-light w-full max-w-223">
+          <span class="hidden sm:block">
+            Quam orci aliquam viverra vestibulum. A cursus viverra ridiculus in
+            aliquet duis. Turpis risus aliquet nisl sem auctor purus nulla ac
+            ipsum. Vestibulum massa non sem semper sit. Sed id dignissim
+            elementum aliquam massa diam vel.
+          </span>
+          <span class="sm:hidden"
+            >Tabakentwöhnung in der Arztpraxis – <br />
+            einfach, schnell und effektiv</span
+          >
+        </p>
+      </div>
+    </div>
+    <!-- ONLINE SEMINARS & PROGRAMS FOR QUITTING -->
+    <section class="lg:px-5">
+      <div
+        class="flex flex-col lg:flex-row gap-6 lg:gap-8 section-container items-start"
+      >
+        <div class="px-5 lg:px-0 lg:w-1/2 lg:sticky lg:top-40">
+          <div>
+            <video
+              class="aspect-video object-cover rounded-[9px]"
+              src="./assets/video/hello-doctor.mp4"
+              controls
+              poster="./assets/images/professional-video.webp"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+        <!-- RIGHT-SIDE -->
+        <div
+          class="bg-iceFishing px-5 py-4 lg:p-8 xl:p-12 rounded-3xl w-full lg:w-1/2"
+        >
+          <!-- Header Card -->
+          <div
+            class="bg-blueBay rounded-[20px] px-4 pb-2 sm:pb-6 pt-6 mb-6 sm:mb-8"
+          >
+            <!-- Top Bar -->
+            <div class="flex items-center justify-between mb-4 lg:mb-6">
+              <div class="flex items-center gap-4 lg:gap-6">
+                <!-- Hamburger Menu -->
+                <button class="text-white" aria-label="menu">
+                  <img
+                    class="lg:w-14 w-9 sm:w-10 lg:h-14 object-contain"
+                    src="./assets/images/png/menu.png"
+                    alt="menu"
+                  />
+                </button>
+
+                <!-- Title -->
+                <h1
+                  class="lg:text-lg xl:text-2xl font-medium leading-[133%] font-fira text-white"
+                >
+                  Online Seminar <br />
+                  Tabakentwöhnung
+                </h1>
+              </div>
+
+              <!-- Profile Icon -->
+              <button aria-label="profile">
+                <img
+                  class="w-9 lg:w-14 h-9 lg:h-14"
+                  src="./assets/images/png/profile.png"
+                  alt="profile"
+                />
+              </button>
+            </div>
+
+            <!-- Tabs -->
+            <div
+              class="flex relative justify-between px-2.5 lg:px-6.75 xl:px-7.25"
+            >
+              <!-- Q&A Tab -->
+              <button
+                class="tab-item active flex items-center justify-center gap-2 py-2 text-white leading-[150%] font-medium transition-opacity relative px-4 xl:px-8"
+                data-tab="qa"
+              >
+                <img
+                  class="w-4.5 h-5 object-contain"
+                  src="./assets/images/png/incoming-message.png"
+                  alt="incoming-message"
+                />
+                <span>Q&A</span>
+              </button>
+
+              <!-- Polls Tab -->
+              <button
+                class="tab-item flex items-center justify-center gap-2 py-2 text-white leading-[150%] font-medium transition-opacity relative px-4 xl:px-8"
+                data-tab="polls"
+              >
+                <img
+                  class="w-3.5 h-5 object-contain"
+                  src="./assets/images/png/poll.png"
+                  alt="poll"
+                />
+                <span>Polls</span>
+              </button>
+
+              <!-- Underline -->
+              <div
+                id="tabUnderline"
+                class="absolute bottom-0 h-1 bg-white transition-all duration-300 ease-out rounded-lg"
+              ></div>
+            </div>
+          </div>
+
+          <!-- Q&A Content -->
+          <div id="qaContent" class="tab-content">
+            <!-- Filter Tabs & Question Count -->
+            <div class="flex items-center justify-between mb-6 sm:mb-4">
+              <div class="flex gap-2">
+                <button
+                  class="filter-btn active rounded-xl font-medium transition-all leading-[150%] w-22.5 sm:w-24.25 h-9 sm:h-10"
+                  data-filter="popular"
+                >
+                  Popular
+                </button>
+                <button
+                  class="filter-btn rounded-xl font-medium transition-all leading-[150%] w-22.5 sm:w-24.25 h-9 sm:h-10"
+                  data-filter="recent"
+                >
+                  Recent
+                </button>
+              </div>
+              <span
+                class="sm:text-xl leading-[160%] text-KonBlue font-light pr-3 sm:pr-0"
+                id="questionCount"
+                >14 Questions</span
+              >
+            </div>
+
+            <!-- Popular Questions -->
+            <div
+              id="popularQuestions"
+              class="questions-container space-y-2 sm:space-y-4"
+            >
+              <!-- Popular Question 1 -->
+              <!-- Popular Questions -->
+              <div
+                id="popularQuestions"
+                class="questions-container space-y-2 sm:space-y-4"
+              >
+                <!-- Popular Question 1 -->
+                <div
+                  class="bg-white rounded-[20px] p-4 md:p-6 xl:p-8 hover:shadow-md transition-shadow"
+                >
+                  <div class="flex justify-between gap-3">
+                    <div class="flex gap-4 md:gap-6">
+                      <div
+                        class="bg-alphabetBlue rounded-full w-9 h-9 md:w-14 md:h-14 flex items-center justify-center shrink-0"
+                      >
+                        <img
+                          class="md:w-6 w-5 h-5 md:h-6 object-contain"
+                          src="./assets/images/png/user-pic.png"
+                          alt="user"
+                        />
+                      </div>
+                      <div>
+                        <div>
+                          <div>
+                            <h3
+                              class="font-medium md:text-xl font-fira leading-[125%] md:leading-[160%] text-KonBlue text-left"
+                            >
+                              Robin Schaeffer
+                            </h3>
+                            <p
+                              class="text-KonBlue md:font-light leading-[120%] md:leading-[150%] text-xs font-medium md:text-base"
+                            >
+                              9 Weeks ago
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button
+                      class="like-btn text-KonBlue hover:text-blue-500 transition-colors bg-lightgray w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1"
+                          d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
+                        ></path>
+                      </svg>
+                      <span class="sr-only">5</span>
+                    </button>
+                  </div>
+                  <p
+                    class="leading-[150%] md:leading-[160%] mt-3 sm:mt-6 md:text-xl text-KonBlue md:font-light"
+                  >
+                    I'm out of Vortrag
+                  </p>
+                </div>
+
+                <!-- Popular Question 2 -->
+                <div
+                  class="bg-white rounded-[20px] p-4 md:p-6 xl:p-8 hover:shadow-md transition-shadow"
+                >
+                  <div class="flex justify-between gap-3">
+                    <div class="flex gap-4 md:gap-6">
+                      <div
+                        class="bg-report rounded-full w-9 h-9 md:w-14 md:h-14 flex items-center justify-center shrink-0"
+                      >
+                        <img
+                          class="md:w-6 w-5 h-5 md:h-6 object-contain"
+                          src="./assets/images/png/user-pic.png"
+                          alt="user"
+                        />
+                      </div>
+                      <div>
+                        <div>
+                          <div>
+                            <h3
+                              class="font-medium md:text-xl font-fira leading-[125%] md:leading-[160%] text-KonBlue text-left"
+                            >
+                              Anonymous
+                            </h3>
+                            <p
+                              class="text-KonBlue md:font-light leading-[120%] md:leading-[150%] text-xs font-medium md:text-base"
+                            >
+                              9 Weeks ago
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button
+                      class="like-btn text-KonBlue hover:text-blue-500 transition-colors bg-lightgray w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1"
+                          d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
+                        ></path>
+                      </svg>
+                      <span class="sr-only">5</span>
+                    </button>
+                  </div>
+                  <p
+                    class="leading-[150%] md:leading-[160%] mt-3 sm:mt-6 md:text-xl text-KonBlue md:font-light"
+                  >
+                    Wir beginnen um 19 Uhr
+                  </p>
+                </div>
+
+                <!-- Popular Question 3 -->
+                <div
+                  class="bg-white rounded-[20px] p-4 md:p-6 xl:p-8 hover:shadow-md transition-shadow"
+                >
+                  <div class="flex justify-between gap-3">
+                    <div class="flex gap-4 md:gap-6">
+                      <div
+                        class="bg-lightyellow rounded-full w-9 h-9 md:w-14 md:h-14 flex items-center justify-center shrink-0"
+                      >
+                        <img
+                          class="md:w-6 w-5 h-5 md:h-6 object-contain"
+                          src="./assets/images/png/user-pic.png"
+                          alt="user"
+                        />
+                      </div>
+                      <div>
+                        <div>
+                          <div>
+                            <h3
+                              class="font-medium md:text-xl font-fira leading-[125%] md:leading-[160%] text-KonBlue text-left"
+                            >
+                              Anonymous
+                            </h3>
+                            <p
+                              class="text-KonBlue md:font-light leading-[120%] md:leading-[150%] text-xs font-medium md:text-base"
+                            >
+                              9 Weeks ago
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button
+                      class="like-btn text-KonBlue hover:text-blue-500 transition-colors bg-lightgray w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1"
+                          d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
+                        ></path>
+                      </svg>
+                      <span class="sr-only">5</span>
+                    </button>
+                  </div>
+                  <p
+                    class="leading-[150%] md:leading-[160%] mt-3 sm:mt-6 md:text-xl text-KonBlue md:font-light"
+                  >
+                    Eine kurze Anmerkung: Ich weiß nicht, ob es nur auf meinem
+                    Bildschirm so ist, aber die Folien sind recht verschwommen.
+                  </p>
+                </div>
+              </div>
+              <!-- ... बाकी popular questions ... -->
+            </div>
+
+            <!-- Recent Questions -->
+            <div
+              id="recentQuestions"
+              class="questions-container space-y-2 sm:space-y-4 hidden"
+            >
+              <!-- Recent Question 1 -->
+              <div
+                class="bg-white rounded-[20px] p-4 md:p-6 xl:p-8 hover:shadow-md transition-shadow"
+              >
+                <div class="flex justify-between gap-3">
+                  <div class="flex gap-4 md:gap-6">
+                    <div
+                      class="bg-lightyellow rounded-full w-9 h-9 md:w-14 md:h-14 flex items-center justify-center shrink-0"
+                    >
+                      <img
+                        class="md:w-6 w-5 h-5 md:h-6 object-contain"
+                        src="./assets/images/png/user-pic.png"
+                        alt="user"
+                      />
+                    </div>
+                    <div>
+                      <h3
+                        class="font-medium md:text-xl font-fira leading-[125%] md:leading-[160%] text-KonBlue text-left"
+                      >
+                        Dr. Mueller
+                      </h3>
+                      <p
+                        class="text-KonBlue md:font-light leading-[120%] md:leading-[150%] text-xs font-medium md:text-base"
+                      >
+                        Just now
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    class="like-btn text-KonBlue hover:text-blue-500 transition-colors bg-lightgray w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1"
+                        d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
+                      ></path>
+                    </svg>
+                    <span class="sr-only">2</span>
+                  </button>
+                </div>
+                <p
+                  class="leading-[150%] md:leading-[160%] mt-3 sm:mt-6 md:text-xl text-KonBlue md:font-light"
+                >
+                  Vielen Dank für die ausführliche Präsentation!
+                </p>
+              </div>
+
+              <!-- Recent Question 2 -->
+              <div
+                class="bg-white rounded-[20px] p-4 md:p-6 xl:p-8 hover:shadow-md transition-shadow"
+              >
+                <div class="flex justify-between gap-3">
+                  <div class="flex gap-4 md:gap-6">
+                    <div
+                      class="bg-report rounded-full w-9 h-9 md:w-14 md:h-14 flex items-center justify-center shrink-0"
+                    >
+                      <img
+                        class="md:w-6 w-5 h-5 md:h-6 object-contain"
+                        src="./assets/images/png/user-pic.png"
+                        alt="user"
+                      />
+                    </div>
+                    <div>
+                      <h3
+                        class="font-medium md:text-xl font-fira leading-[125%] md:leading-[160%] text-KonBlue text-left"
+                      >
+                        Anonymous
+                      </h3>
+                      <p
+                        class="text-KonBlue md:font-light leading-[120%] md:leading-[150%] text-xs font-medium md:text-base"
+                      >
+                        5 minutes ago
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    class="like-btn text-KonBlue hover:text-blue-500 transition-colors bg-lightgray w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1"
+                        d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
+                      ></path>
+                    </svg>
+                    <span class="sr-only">1</span>
+                  </button>
+                </div>
+                <p
+                  class="leading-[150%] md:leading-[160%] mt-3 sm:mt-6 md:text-xl text-KonBlue md:font-light"
+                >
+                  Gibt es auch eine App-basierte Lösung?
+                </p>
+              </div>
+
+              <!-- Recent Question 3 -->
+              <div
+                class="bg-white rounded-[20px] p-4 md:p-6 xl:p-8 hover:shadow-md transition-shadow"
+              >
+                <div class="flex justify-between gap-3">
+                  <div class="flex gap-4 md:gap-6">
+                    <div
+                      class="bg-alphabetBlue rounded-full w-9 h-9 md:w-14 md:h-14 flex items-center justify-center shrink-0"
+                    >
+                      <img
+                        class="md:w-6 w-5 h-5 md:h-6 object-contain"
+                        src="./assets/images/png/user-pic.png"
+                        alt="user"
+                      />
+                    </div>
+                    <div>
+                      <h3
+                        class="font-medium md:text-xl font-fira leading-[125%] md:leading-[160%] text-KonBlue text-left"
+                      >
+                        Lisa Schmidt
+                      </h3>
+                      <p
+                        class="text-KonBlue md:font-light leading-[120%] md:leading-[150%] text-xs font-medium md:text-base"
+                      >
+                        10 minutes ago
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    class="like-btn text-KonBlue hover:text-blue-500 transition-colors bg-lightgray w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1"
+                        d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
+                      ></path>
+                    </svg>
+                    <span class="sr-only">3</span>
+                  </button>
+                </div>
+                <p
+                  class="leading-[150%] md:leading-[160%] mt-3 sm:mt-6 md:text-xl text-KonBlue md:font-light"
+                >
+                  Wann ist das nächste Seminar geplant?
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Polls Content -->
+          <div id="pollsContent" class="tab-content hidden">
+            <div class="bg-white rounded-2xl p-4 md:p-6 shadow-md">
+              <h2 class="text-xl font-semibold mb-4 text-gray-800">
+                Active Polls
+              </h2>
+
+              <!-- Poll 1 -->
+              <div class="mb-6 pb-6 border-b">
+                <p class="font-medium text-gray-800 mb-4">
+                  Wie hilfreich war dieses Seminar?
+                </p>
+                <div class="space-y-3">
+                  <button
+                    class="poll-option w-full text-left px-4 py-3 rounded-xl border-2 border-gray-200 hover:border-blue-400 transition-all relative overflow-hidden group"
+                  >
+                    <div
+                      class="poll-progress absolute left-0 top-0 h-full bg-blue-100 transition-all"
+                      style="width: 65%"
+                    ></div>
+                    <div
+                      class="relative z-10 flex justify-between items-center"
+                    >
+                      <span class="text-sm font-medium">Sehr hilfreich</span>
+                      <span class="text-sm text-gray-500">65%</span>
+                    </div>
+                  </button>
+                  <button
+                    class="poll-option w-full text-left px-4 py-3 rounded-xl border-2 border-gray-200 hover:border-blue-400 transition-all relative overflow-hidden group"
+                  >
+                    <div
+                      class="poll-progress absolute left-0 top-0 h-full bg-blue-100 transition-all"
+                      style="width: 25%"
+                    ></div>
+                    <div
+                      class="relative z-10 flex justify-between items-center"
+                    >
+                      <span class="text-sm font-medium">Hilfreich</span>
+                      <span class="text-sm text-gray-500">25%</span>
+                    </div>
+                  </button>
+                  <button
+                    class="poll-option w-full text-left px-4 py-3 rounded-xl border-2 border-gray-200 hover:border-blue-400 transition-all relative overflow-hidden group"
+                  >
+                    <div
+                      class="poll-progress absolute left-0 top-0 h-full bg-blue-100 transition-all"
+                      style="width: 10%"
+                    ></div>
+                    <div
+                      class="relative z-10 flex justify-between items-center"
+                    >
+                      <span class="text-sm font-medium"
+                        >Nicht sehr hilfreich</span
+                      >
+                      <span class="text-sm text-gray-500">10%</span>
+                    </div>
+                  </button>
+                </div>
+                <p class="text-xs text-gray-500 mt-3">156 votes</p>
+              </div>
+
+              <!-- Poll 2 -->
+              <div>
+                <p class="font-medium text-gray-800 mb-4">
+                  Welches Thema interessiert Sie am meisten?
+                </p>
+                <div class="space-y-3">
+                  <button
+                    class="poll-option w-full text-left px-4 py-3 rounded-xl border-2 border-gray-200 hover:border-blue-400 transition-all relative overflow-hidden group"
+                  >
+                    <div
+                      class="poll-progress absolute left-0 top-0 h-full bg-green-100 transition-all"
+                      style="width: 45%"
+                    ></div>
+                    <div
+                      class="relative z-10 flex justify-between items-center"
+                    >
+                      <span class="text-sm font-medium"
+                        >Nikotinersatztherapie</span
+                      >
+                      <span class="text-sm text-gray-500">45%</span>
+                    </div>
+                  </button>
+                  <button
+                    class="poll-option w-full text-left px-4 py-3 rounded-xl border-2 border-gray-200 hover:border-blue-400 transition-all relative overflow-hidden group"
+                  >
+                    <div
+                      class="poll-progress absolute left-0 top-0 h-full bg-green-100 transition-all"
+                      style="width: 35%"
+                    ></div>
+                    <div
+                      class="relative z-10 flex justify-between items-center"
+                    >
+                      <span class="text-sm font-medium"
+                        >Verhaltenstherapie</span
+                      >
+                      <span class="text-sm text-gray-500">35%</span>
+                    </div>
+                  </button>
+                  <button
+                    class="poll-option w-full text-left px-4 py-3 rounded-xl border-2 border-gray-200 hover:border-blue-400 transition-all relative overflow-hidden group"
+                  >
+                    <div
+                      class="poll-progress absolute left-0 top-0 h-full bg-green-100 transition-all"
+                      style="width: 20%"
+                    ></div>
+                    <div
+                      class="relative z-10 flex justify-between items-center"
+                    >
+                      <span class="text-sm font-medium"
+                        >Medikamentöse Unterstützung</span
+                      >
+                      <span class="text-sm text-gray-500">20%</span>
+                    </div>
+                  </button>
+                </div>
+                <p class="text-xs text-gray-500 mt-3">98 votes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- NO REGISTRATION REQUIRED -->
+    <article class="px-5">
+      <div
+        class="bg-lightlavender section-container rounded-[20px] lg:rounded-3xl px-4 sm:px-6 py-4 lg:px-12 xl:px-33 md:py-10 xl:py-19 flex items-center gap-4 sm:gap-6 lg:gap-8"
+      >
+        <div
+          class="w-10 xl:w-14 h-10 xl:h-14 rounded-full bg-mediumpurple grid place-content-center"
+        >
+          <img
+            class="w-6 xl:w-8 h-6 xl:h-8 object-cover"
+            src="./assets/images/png/i.png"
+            alt="notwendig"
+          />
+        </div>
+        <h3 class="article-heading leading-[140%]! sm:leading-[125%]!">
+          Keine Registrierung <br class="sm:hidden" />
+          notwendig
+        </h3>
+      </div>
+    </article>
+    <!--  -->
+    <div class="px-5">
+      <div
+        class="bg-meltingGlacier section-container rounded-[20px] lg:rounded-3xl px-4 sm:px-6 py-4 lg:px-12 xl:px-33 md:py-10 xl:py-19"
+      >
+        <h3
+          class="mb-3 text-2xl xl:text-[32px] font-fira font-medium leading-[125%] sm:mb-4 lg:mb-6 text-KonBlue"
+        >
+          Hintergrund
+        </h3>
+        <p class="article-desc font-light">
+          Zu selten werden Patient:innen auf Ihr Raucherverhalten angesprochen
+          und noch seltener werden ihnen Maßnahmen zur Tabakentwöhnung
+          angeboten. Wie gelingt es im hektischen Praxisalltag, mit wenig
+          Zeitaufwand, Raucher zu sensibilisieren und sie zum Rauchstopp zu
+          motivieren? Lernen Sie genau dies in einer Fortbildung mit dem
+          langjährigen Tabakentwöhner und Pneumologen Dr. Alexander Rupp. Im
+          Anschluss an den Vortrag haben die Teilnehmer:innen die Möglichkeit
+          zum Austausch mit dem Referenten.
+        </p>
+        <div class="mt-6 md:mt-8 xl:mt-12">
+          <h3
+            class="mb-3 text-2xl xl:text-[32px] font-fira font-medium leading-[125%] text-KonBlue"
+          >
+            Der Referent
+          </h3>
+          <h4
+            class="text-xl md:text-2xl leading-[133%] font-medium font-fira text-KonBlue mb-3 sm:mb-4 lg:mb-6"
+          >
+            Dr. med. Alexander Rupp
+          </h4>
+          <p class="article-desc font-light">
+            Facharzt für Innere Medizin, Pneumologie, Allergologie und
+            Suchtmedizin. Er ist niedergelassener Pneumologe mit eigener Praxis
+            in Stuttgart. Seit über 15 Jahren führt er mit viel Herzblut
+            Tabakentwöhnungen und Raucherberatungen durch. 2009 hat Dr. Rupp die
+            Zusatzqualifikation Tabakentwöhnung der Bundesärztekammer erworben.
+            Er ist sowohl wissenschaftlich als auch berufspolitisch im Bereich
+            Tabakentwöhnung tätig. Außerdem ist er im Medical Board der Sanero
+            Medical GmbH (NichtraucherHelden) beratend tätig.
+          </p>
+        </div>
+        <div class="mt-6 md:mt-8 xl:mt-12">
+          <h3
+            class="mb-3 text-2xl xl:text-[32px] font-fira font-medium leading-[125%] sm:mb-4 lg:mb-6 text-KonBlue"
+          >
+            Veranstalter
+          </h3>
+          <p class="article-desc font-light">
+            Sanero Medical GmbH (Team NichtraucherHelden)
+          </p>
+        </div>
+      </div>
+    </div>
+    <!------------------------ Footer Section --------------------------->
+    <footer class="bg-KonBlue text-white px-8 sm:px-5">
+      <!-- TOP SECTION -->
+      <div
+        class="section-container py-12 xl:justify-between grid grid-cols-1 sm:grid-cols-2 3xl:pt-27.75 3xl:pb-26.25 lg:grid-cols-4 gap-8 3xl:gap-17 xl:flex"
+      >
+        <!-- Column 1 -->
+        <div>
+          <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+            Sanero Medical GmbH
+          </h3>
+          <p class="footer-link font-normal font-ibm-plex">
+            Wilhelmstraße 19 70182<br />
+            Stuttgart Germany
+          </p>
+
+          <div class="mt-4 md:mt-6 space-y-2 text-sm">
+            <a
+              href="tel:+49 (0)711 / 99 538 110"
+              class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+            >
+              <img
+                class="max-w-5 w-full"
+                src="./assets/images/phone-white.webp"
+                alt="phone"
+              />
+
+              +49 (0)711 / 99 538 110
+            </a>
+            <a
+              href="mailto:info@sanero-medical.de"
+              class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+            >
+              <img
+                class="max-w-5 w-full"
+                src="./assets/images/email-white.webp"
+                alt="phone"
+              />
+              info@sanero-medical.de
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div>
+          <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+            Unternehmen
+          </h3>
+          <ul
+            class="space-y-2 font-normal footer-link font-ibm-plex text-white"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Über uns</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Kontakt</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Presse</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div>
+          <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+            Service
+          </h3>
+          <ul
+            class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >FAQ</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Impressum</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Datenschutz</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4 -->
+        <div>
+          <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+            Prävention nach §20
+          </h3>
+          <ul
+            class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Präventionskurs</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Krankenkassen</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Firmenprogramm</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- BOTTOM BAR -->
+    <section class="bg-windsweptBeach hidden md:block px-5">
+      <div
+        class="section-container mt-0! py-4 md:py-6.5! flex flex-col lg:flex-row justify-between items-center gap-4"
+      >
+        <p class="text-encoreGray footer-link font-ibm-plex">
+          © 2025 NichtraucherHelden – ein Produkt der Sanero Medical GmbH
+        </p>
+
+        <div class="flex items-center gap-6">
+          <a
+            href="#"
+            class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+            >Impressum</a
+          >
+          <a
+            href="#"
+            class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+            >Datenschutzerklärung</a
+          >
+          <a
+            href="#"
+            class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+            >AGB</a
+          >
+        </div>
+      </div>
+    </section>
+    <!-- BACK-TO-TOP -->
+    <button
+      id="backToTopBtn"
+      class="bg-KonBlue invisible fixed right-2 min-h-11 min-w-11 bottom-4 z-40 translate-y-4 cursor-pointer rounded-full p-3 text-white opacity-0 shadow-lg transition-all duration-300 focus:outline-none lg:right-8 md:bottom-8 border border-white"
+    >
+      <!-- Arrow Up Icon -->
+      <img
+        class="max-w-5 rotate-[177deg]"
+        src="./assets/images/scroll-button.webp"
+        alt="arrow"
+      />
+    </button>
+    <div
+      data-modal="login"
+      class="fixed modal inset-0 z-50 hidden overflow-hidden"
+    >
+      <!-- Overlay -->
+      <div
+        class="fixed inset-0 bg-KonBlue/90 opacity-0 transition-opacity duration-300 modal-overlay"
+      ></div>
+      <!-- Modal Content -->
+      <div
+        class="min-h-dvh h-dvh max-h-dvh p-5 flex items-center justify-center"
+      >
+        <div
+          class="modal-content modal-container max-w-190 relative overflow-auto max-h-full hide-scrollbar"
+        >
+          <div class="modal-header sticky top-0">
+            <h4 class="individually-card-title">Login</h4>
+            <button class="modal-close-button" data-modal-close>
+              <img
+                class="object-contain w-full h-full"
+                src="./assets/images/png/modal-close.png"
+                alt="modal-close"
+              />
+            </button>
+          </div>
+          <form
+            id="loginForm"
+            class="3xl:gap-12 2xl:gap-10 h-auto 1xl:gap-8 gap-6 xl:px-6 px-4 3xl:pt-11 2xl:pt-10 1xl:pt-9 pt-6 3xl:pb-12 2xl:pb-10 pb-8 flex flex-col justify-center overflow-auto"
+          >
+            <p class="free-help-text text-KonBlue leading-[150%] px-4">
+              Melde Dich hier für deinen persönlichen Bereich an.
+            </p>
+
+            <div class="md:space-y-3 space-y-2">
+              <!-- Email -->
+              <div>
+                <input
+                  id="email"
+                  class="primary-input free-help-text"
+                  placeholder="Benutzername / E-Mail-Adresse"
+                  type="email"
+                />
+                <p id="emailError" class="text-red-500 text-sm mt-1 hidden"></p>
+              </div>
+
+              <!-- Password -->
+              <div>
+                <div
+                  class="flex items-center justify-between primary-input free-help-text"
+                >
+                  <input
+                    id="password"
+                    class="w-full outline-none bg-transparent placeholder:text-encoreGray"
+                    placeholder="Passwort*"
+                    type="password"
+                  />
+
+                  <button type="button" id="togglePassword" class="w-6 h-6">
+                    <img
+                      id="eyeIcon"
+                      class="object-contain w-full h-full"
+                      src="./assets/images/png/open-eye.png"
+                      alt="toggle password"
+                    />
+                  </button>
+                </div>
+                <p
+                  id="passwordError"
+                  class="text-red-500 text-sm mt-1 hidden"
+                ></p>
+              </div>
+            </div>
+
+            <a
+              class="free-help-text text-KonBlue underline font-light leading-[160%] w-fit mx-auto"
+              href=""
+            >
+              Passwort vergessen?
+            </a>
+
+            <button
+              type="submit"
+              class="text-white leading-[160%] font-fira font-medium hover:bg-white border border-blueBay bg-blueBay rounded-2xl flex items-center justify-center free-help-text md:h-14 h-13 hover:text-blueBay duration-300 ease-in-out transition-all"
+            >
+              Einloggen
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/js/popup.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/professional-circles.js"></script>
+    <script src="/js/choose-payment-method.js"></script>
+    <!-- <script src="/js/header-animation.js"></script> -->
+    <script src="/js/back-to-top.js"></script>
+    <script src="/js/professional.js"></script>
+  </body>
+</html>

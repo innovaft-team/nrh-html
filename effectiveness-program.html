@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Urf - Deine App auf Rezept unterstützt Dichlangfristig und kostenfrei.
+    </title>
+
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="icon" type="image/svg" href="./assets/images/logo.webp" />
+  </head>
+  <body>
+    <div
+      class="bg-white font-fira h-dvh overflow-hidden flex flex-col pb-9 relative"
+    >
+      <!-- Header -->
+      <section
+        class="bg-KonBlue md:rounded-b-none rounded-b-4xl md:sticky! top-0 z-10"
+      >
+        <div class="common-step-layout py-6">
+          <div class="flex items-center justify-between">
+            <a
+              class="common-back-button-step"
+              href="/check-prescription-question-1.html"
+            >
+              <img
+                src="./assets/images/back-arrow-icon.webp"
+                alt="back-arrow"
+              />
+            </a>
+            <a
+              class="common-close-button-step"
+              href="/check-prescription-question-1.html"
+            >
+              <img
+                src="./assets/images/close-arrow-icon.webp"
+                alt="close-arrow-icon"
+              />
+            </a>
+          </div>
+          <h2 class="common-heading-layout-title">Der Abhänigkeitstest</h2>
+          <h2
+            class="common-heading-layout-sub-title sm:w-full sm:max-w-full max-w-[80%]"
+          >
+            Prüfe, ob du die App auf Rezept erhälst
+          </h2>
+        </div>
+      </section>
+
+      <!-- Content -->
+      <div class="space-y-8 mt-8 overflow-auto grow hide-scrollbar">
+        <img
+          src="./assets/images/step-1.webp"
+          class="rounded-b-4xl object-cover sm:hidden w-full"
+          alt="step-1"
+        />
+
+        <p
+          class="common-step-description font-thin font-ibm-plex leading-[160%] common-step-layout"
+        >
+          Die Wirksamkeit unseres Programms wurde in klinischen Studien
+          umfassend bestätigt.
+        </p>
+
+        <!-- Options -->
+        <div class="space-y-2 xl:space-y-4 mb-8 common-step-layout">
+          <a
+            href="/prescription-eligibility.html"
+            class="w-full flex items-center gap-3 3xl:py-8 2xl:py-6 3xl:px-6 3xl:gap-4 bg-iceFishing hover:bg-icelightBlue transition p-4 rounded-[20px] 3xl:rounded-4xl text-left group cursor-pointer"
+          >
+            <span
+              class="xl:w-10 h-9 w-9 xl:h-10 flex items-center justify-center"
+            >
+              <img
+                class="h-full w-full"
+                src="./assets/images/paper-close.webp"
+                alt="paper"
+              />
+            </span>
+            <p
+              class="text-celestialBlue font-fira font-medium paragraph-xl group-hover:text-black duration-300"
+            >
+              Ich brauche ein Rezept
+            </p>
+          </a>
+
+          <a
+            href="/prescription-eligibility.html"
+            class="w-full flex items-center gap-3 3xl:py-8 2xl:py-6 3xl:px-6 3xl:gap-4 bg-iceFishing hover:bg-icelightBlue transition p-4 rounded-[20px] 3xl:rounded-4xl text-left group cursor-pointer"
+          >
+            <span
+              class="xl:w-10 h-9 w-9 xl:h-10 flex items-center justify-center"
+            >
+              <img
+                class="h-full w-full"
+                src="./assets/images/paper-open.webp"
+                alt="paper"
+              />
+            </span>
+            <p
+              class="text-celestialBlue font-fira font-medium text-base xl:text-lg 3xl:text-xl group-hover:text-black duration-300"
+            >
+              Ich habe bereits ein Rezept
+            </p>
+          </a>
+
+          <a
+            href="/prescription-eligibility.html"
+            class="w-full flex items-center gap-3 3xl:py-8 2xl:py-6 3xl:px-6 3xl:gap-4 bg-iceFishing hover:bg-icelightBlue transition p-4 rounded-[20px] 3xl:rounded-4xl text-left group cursor-pointer"
+          >
+            <span
+              class="xl:w-10 h-9 w-9 xl:h-10 flex items-center justify-center"
+            >
+              <img
+                class="h-full w-full"
+                src="./assets/images/scane-icon.webp"
+                alt="paper"
+              />
+            </span>
+            <p
+              class="text-celestialBlue font-fira font-medium text-base xl:text-lg 3xl:text-xl group-hover:text-black duration-300"
+            >
+              Ich habe einen Code von der Krankenkasse
+            </p>
+          </a>
+        </div>
+
+        <!-- Testimonial -->
+        <section class="common-step-layout">
+          <div
+            class="bg-windsweptBeach rounded-[20px] 3xl:rounded-4xl p-4 xl:p-5 3xl:p-6 flex gap-4 xl:gap-10 3xl:gap-14 items-start"
+          >
+            <img
+              src="https://i.pravatar.cc/60?img=32"
+              alt="User"
+              class="w-[60px] h-[60px] md:h-20 md:w-20 3xl:w-32 3xl:h-32 xl:w-28 xl:h-28 rounded-full object-cover"
+            />
+            <div>
+              <p
+                class="text-primary text-xs font-ibm-plex xl:text-lg 3xl:text-xl 3xl:leading-[160%] sm:text-sm"
+              >
+                “Bei den früheren Aufhörversuchen war es eher so, dass ich eine
+                Raucherin war, die gerade nicht raucht. Seit Abschluss des
+                Programms habe ich das erste Mal wirklich das Gefühl,
+                Nichtraucherin zu sein.”
+              </p>
+              <p
+                class="mt-6 xl:mt-3.5 text-[10px] xs:text-xs leading-[70%] sm:leading-[100%] xl:text-sm font-fira 3xl:text-base font-medium text-KonBlue"
+              >
+                Tina | seit 2 Jahren Nichtraucherin
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

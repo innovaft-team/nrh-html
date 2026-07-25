@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Urf - Deine App auf Rezept unterstützt Dichlangfristig und kostenfrei.
+    </title>
+
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="icon" type="image/svg" href="./assets/images/logo.webp" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+
+  <body>
+    <!---------------------------------------- HEADER ---------------------------------- -->
+
+    <aside
+      id="sidebar"
+      class="fixed top-0 right-0 h-dvh bg-white w-[320px] transform transition-transform duration-300 ease-in-out z-[9999] flex flex-col justify-start p-4 translate-x-full"
+    >
+      <!-- Main Menu Content -->
+      <div class="sidebar-overlay"></div>
+      <div id="main-menu">
+        <div class="flex justify-between items-center mb-6">
+          <a aria-label="logo" href="./">
+            <img
+              class="max-w-10.25 w-full"
+              src="./assets/images/logo.webp"
+              alt="logo"
+            />
+          </a>
+          <button
+            id="close-sidebar"
+            class="text-2xl"
+            aria-label="clsoe sidebar"
+          >
+            <img
+              class="w-8 h-8 object-cover"
+              src="./assets/images/close-sidebar.webp"
+              alt="cross-icon"
+            />
+          </button>
+        </div>
+        <div>
+          <nav
+            class="flex flex-col justify-between grow overflow-auto h-full hide-scrollbar"
+          >
+            <div class="flex flex-col justify-between gap-7 text-primary">
+              <a aria-label="manu list" href="#" class="header-li"> Magazin </a>
+              <a aria-label="manu list" href="#" class="header-li">
+                Erfolgsgeschichten
+              </a>
+              <a aria-label="manu list" href="#" class="header-li"> FAQ </a>
+
+              <button
+                data-modal-open="login"
+                class="flex gap-2 hover:scale-95 transition-all duration-300 ease-in-out"
+              >
+                <img
+                  class="max-w-4.75 w-full"
+                  src="./assets/images/profile-icon.webp"
+                  alt="profile"
+                />
+                Login
+              </button>
+            </div>
+          </nav>
+          <div
+            class="flex flex-col justify-between items-center gap-3 w-full pt-10"
+          >
+            <button
+              class="sm:py-2 py-1.5 lg:py-3 3xl:py-4 px-6 rounded-4xl bg-iceFishing text-primary font-medium hover:scale-95 transition-all duration-300 ease-in-out font-ibm-plex text-base lg:text-lg xl:text-xl 3xl:text-2xl w-full eading-[150%] sm:leading-[100%]"
+            >
+              Fachkreise
+            </button>
+            <button class="primary-btn w-full">Dein Weg zur App</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!---------------------------------------- HEADER ---------------------------------- -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 z-999 opacity-0 pointer-events-none transition-opacity duration-300"
+    ></div>
+    <header
+      class="text-white z-50 transition-transform duration-300 ease-in-out sticky top-0 w-full"
+    >
+      <!-- {/* Top Bar for Contact Info */} -->
+      <div class="bg-KonBlue">
+        <div
+          class="flex justify-end items-center sm:px-9! px-4! py-2 text-[11px] xs:text-xs font-ibm-plex sm:text-sm gap-4 overflow-auto custom-container hide-scrollbar"
+        >
+          <span class="hidden md:inline text-iceFishing text-base font-medium">
+            Unsere Experten sind für Dich da:
+          </span>
+          <div
+            class="flex sm:justify-center justify-between items-center xs:gap-7! gap-2! sm:w-fit w-full"
+          >
+            <a
+              href="tel:+49871121999343"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/phone-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              +49 8711 21 999 343
+            </a>
+            <a
+              href="mailto:service@nichtraucherhelden.de"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/email-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              service@nichtraucherhelden.de
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- {/* Main Navigation Bar */} -->
+      <div class="bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.05)] text-black">
+        <div class="custom-container py-2 sm:py-3 3xl:py-4">
+          <div class="flex justify-between items-center">
+            <div class="shrink-0 flex items-center">
+              <div
+                class="max-w-13 3xl:max-w-18 aspect-square w-full cursor-pointer"
+              >
+                <img
+                  class="w-full h-full"
+                  src="/assets/images/logo.webp"
+                  alt="logo"
+                />
+              </div>
+            </div>
+            <button class="primary-btn block sm:hidden">
+              Dein Weg zur App
+            </button>
+            <nav
+              class="flex text-lg md:text-xl font-fira font-medium items-center gap-8 3xl:gap-12 leading-[140%]"
+            >
+              <div
+                class="hidden xl:flex justify-between items-center gap-10 text-primary"
+              >
+                <a href="#" class="header-li"> Magazin </a>
+                <a href="#" class="header-li"> Erfolgsgeschichten </a>
+                <a href="#" class="header-li"> FAQ </a>
+
+                <button
+                  data-modal-open="login"
+                  class="flex justify-center items-center gap-2 header-li icon-hover"
+                >
+                  <img
+                    class="max-w-4.75 w-full icon"
+                    src="./assets/images/profile-icon.webp"
+                    alt="profile"
+                  />
+                  Login
+                </button>
+              </div>
+              <div class="hidden sm:flex justify-between gap-5">
+                <button class="primary-btn-v3">Fachkreise</button>
+                <button class="primary-btn-v2">Dein Weg zur App</button>
+              </div>
+              <button
+                id="hamburger"
+                aria-label="hamburger button"
+                class="block xl:hidden space-y-1.5"
+              >
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- <<============================================= SIDERBAR ============================================>> -->
+    <main id="main-content">
+      <section class="hallo-sticky-container">
+        <div class="custom-container py-8">
+          <div
+            class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"
+          >
+            <div class="flex items-center gap-3 sm:gap-4 2xl:gap-6 3xl:gap-16">
+              <img
+                src="./assets/images/profile.webp"
+                alt="profile"
+                class="3xl:max-w-23.5 2xl:max-w-20 max-w-16 w-full object-cover aspect-square rounded-full border-4 border-white"
+              />
+              <div>
+                <h1 class="traning-hero-heading">Hallo Du Heldin!</h1>
+                <p class="paragraph-xl font-light mt-4">
+                  Schon, dass Du hier bist...
+                </p>
+              </div>
+            </div>
+
+            <div class="hallo">
+              <a
+                href="/heroes-day.html"
+                class="hero-pages group free-help-text-v2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 21 21"
+                  class="group-hover:stroke-[1.8px] group-hover:stroke-primary duration-200 ease-in-out transition-all 2xl:w-8 2xl:h-8 w-6 h-6"
+                >
+                  <path
+                    fill="none"
+                    stroke="#191F3A"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width=""
+                    d="M4 8h16M4 8v8.8c0 1.12 0 1.68.218 2.108a2 2 0 0 0 .874.874c.427.218.987.218 2.105.218h9.606c1.118 0 1.677 0 2.104-.218c.377-.192.683-.498.875-.874c.218-.428.218-.986.218-2.104V8M4 8v-.8c0-1.12 0-1.68.218-2.108c.192-.377.497-.682.874-.874C5.52 4 6.08 4 7.2 4H8m12 4v-.803c0-1.118 0-1.678-.218-2.105a2 2 0 0 0-.875-.874C18.48 4 17.92 4 16.8 4H16m0-2v2m0 0H8m0-2v2"
+                  />
+                </svg>
+
+                Heldentag
+              </a>
+              <a
+                href="/hero-status.html"
+                class="hero-pages group free-help-text-v2"
+              >
+                <svg
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 32 34"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="group-hover:stroke-[0.5px] group-hover:stroke-primary duration-200 ease-in-out transition-all 2xl:w-8 2xl:h-8 w-6 h-6"
+                >
+                  <path
+                    d="M14.5833 2.47396L3.32027 7.22656C2.60412 7.55208 2.08329 8.26823 2.08329 9.04948C2.14839 15.1042 4.62235 25.7813 14.5833 30.7292V2.47396ZM16.6666 30.7292C26.6276 25.7813 29.1666 15.1042 29.1666 9.04948C29.1666 8.26823 28.7109 7.55208 27.9296 7.22656L16.6666 2.47396V30.7292ZM17.2526 0.45573L28.776 5.33854C30.2083 5.92448 31.25 7.35677 31.25 9.04948C31.25 15.4948 28.5807 27.3438 17.3177 32.6823C16.276 33.2031 14.9739 33.2031 13.9322 32.6823C2.66923 27.3438 0.0650609 15.4948 -4.3273e-05 9.04948C-4.3273e-05 7.35677 1.04162 5.92448 2.47391 5.33854L13.9974 0.45573C15.039 1.11014e-06 16.2109 1.11014e-06 17.2526 0.45573Z"
+                    fill="#191F3A"
+                    stroke=""
+                  />
+                </svg>
+
+                Heldenstatus
+              </a>
+              <a
+                href="/dranbleiben.html"
+                class="hero-pages group free-help-text-v2"
+              >
+                <svg
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 33 33"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="group-hover:stroke-[0.5px] group-hover:stroke-primary duration-200 ease-in-out transition-all 2xl:w-8 2xl:h-8 w-6 h-6"
+                >
+                  <path
+                    d="M30.9245 0.911454C31.3802 1.04166 31.7057 1.36718 31.7708 1.75781C32.3568 4.62239 32.6823 8.98437 30.5339 13.151C29.2969 15.625 27.2135 17.9036 23.9583 19.8568V25.7161C23.9583 26.8229 23.3724 27.7995 22.4609 28.3854L16.7318 31.8359C15.2995 32.6823 13.5417 31.6406 13.5417 30.0781V23.3073C13.5417 21.0286 11.6536 19.1406 9.375 19.1406H2.66927C1.04166 19.1406 -2.5034e-06 17.3828 0.846352 16.0156L4.29687 10.2213C4.88281 9.30989 5.85937 8.72395 6.96614 8.72395H12.8906C14.7786 5.46875 17.0573 3.45052 19.5312 2.14843C23.6979 -4.03821e-06 28.0599 0.390621 30.9245 0.911454ZM15.625 23.112C15.625 23.1771 15.625 23.2422 15.625 23.3073V30.0781L21.3542 26.6276C21.6797 26.4323 21.875 26.1068 21.875 25.7161V20.8984C20.1172 21.7448 18.0339 22.526 15.625 23.112ZM28.6458 12.2396C30.3385 8.91927 30.2734 5.46875 29.8177 2.86458C27.2135 2.40885 23.763 2.34375 20.5078 4.03645C17.0573 5.79427 13.6719 9.57031 11.6536 17.513C13.2812 18.099 14.5833 19.401 15.2344 21.0286C23.112 19.0755 26.888 15.625 28.7109 12.2396H28.6458ZM11.7839 10.8073H6.96614C6.64062 10.8073 6.25 11.0026 6.11979 11.3281L2.66927 17.0573H9.375C9.4401 17.0573 9.50521 17.0573 9.57031 17.0573C10.2214 14.6484 10.9375 12.6302 11.7839 10.8073ZM21.3542 9.76562C21.3542 10.612 22.0703 11.3281 22.9167 11.3281C23.763 11.3281 24.4792 10.612 24.4792 9.76562C24.4792 8.91927 23.763 8.20312 22.9167 8.20312C22.0703 8.20312 21.3542 8.91927 21.3542 9.76562ZM22.9167 13.4115C20.8984 13.4115 19.2708 11.7838 19.2708 9.76562C19.2708 7.74739 20.8984 6.11979 22.9167 6.11979C24.9349 6.11979 26.5625 7.74739 26.5625 9.76562C26.5625 11.7838 24.9349 13.4115 22.9167 13.4115Z"
+                    fill="#191F3A"
+                    stroke=""
+                  />
+                </svg>
+                Dranbleiben
+              </a>
+              <a
+                href="community.html"
+                class="hero-pages bg-iceFishing font-bold group free-help-text-v2"
+              >
+                <svg
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 30 30"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="group-hover:stroke-[0.5px] stroke-[0.5px] group-hover:stroke-primary stroke-primary duration-200 ease-in-out transition-all 2xl:w-8 2xl:h-8 w-6 h-6"
+                >
+                  <path
+                    d="M3.125 2.08333C2.53906 2.08333 2.08333 2.53906 2.08333 3.125V9.375C2.08333 9.96093 2.53906 10.4167 3.125 10.4167H9.375C9.96094 10.4167 10.4167 9.96093 10.4167 9.375V3.125C10.4167 2.53906 9.96094 2.08333 9.375 2.08333H3.125ZM0 3.125C0 1.43229 1.43229 -4.05312e-06 3.125 -4.05312e-06H9.375C11.1328 -4.05312e-06 12.5 1.43229 12.5 3.125V9.375C12.5 11.1328 11.1328 12.5 9.375 12.5H3.125C1.43229 12.5 0 11.1328 0 9.375V3.125ZM3.125 18.75C2.53906 18.75 2.08333 19.2057 2.08333 19.7917V26.0417C2.08333 26.6276 2.53906 27.0833 3.125 27.0833H9.375C9.96094 27.0833 10.4167 26.6276 10.4167 26.0417V19.7917C10.4167 19.2057 9.96094 18.75 9.375 18.75H3.125ZM0 19.7917C0 18.099 1.43229 16.6667 3.125 16.6667H9.375C11.1328 16.6667 12.5 18.099 12.5 19.7917V26.0417C12.5 27.7995 11.1328 29.1667 9.375 29.1667H3.125C1.43229 29.1667 0 27.7995 0 26.0417V19.7917ZM26.0417 2.08333H19.7917C19.2057 2.08333 18.75 2.53906 18.75 3.125V9.375C18.75 9.96093 19.2057 10.4167 19.7917 10.4167H26.0417C26.6276 10.4167 27.0833 9.96093 27.0833 9.375V3.125C27.0833 2.53906 26.6276 2.08333 26.0417 2.08333ZM19.7917 -4.05312e-06H26.0417C27.7995 -4.05312e-06 29.1667 1.43229 29.1667 3.125V9.375C29.1667 11.1328 27.7995 12.5 26.0417 12.5H19.7917C18.099 12.5 16.6667 11.1328 16.6667 9.375V3.125C16.6667 1.43229 18.099 -4.05312e-06 19.7917 -4.05312e-06ZM19.7917 18.75C19.2057 18.75 18.75 19.2057 18.75 19.7917V26.0417C18.75 26.6276 19.2057 27.0833 19.7917 27.0833H26.0417C26.6276 27.0833 27.0833 26.6276 27.0833 26.0417V19.7917C27.0833 19.2057 26.6276 18.75 26.0417 18.75H19.7917ZM16.6667 19.7917C16.6667 18.099 18.099 16.6667 19.7917 16.6667H26.0417C27.7995 16.6667 29.1667 18.099 29.1667 19.7917V26.0417C29.1667 27.7995 27.7995 29.1667 26.0417 29.1667H19.7917C18.099 29.1667 16.6667 27.7995 16.6667 26.0417V19.7917Z"
+                    fill="#191F3A"
+                    stroke=""
+                  />
+                </svg>
+
+                Community
+              </a>
+              <a href="profile.html" class="hero-pages group free-help-text-v2">
+                <svg
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 34 34"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="group-hover:stroke-[0.5px] group-hover:stroke-primary duration-200 ease-in-out transition-all 2xl:w-8 2xl:h-8 w-6 h-6"
+                >
+                  <path
+                    d="M26.823 27.1484C29.5573 24.4792 31.25 20.7682 31.25 16.6667C31.25 8.59376 24.7396 2.08334 16.6667 2.08334C8.5938 2.08334 2.08338 8.59376 2.08338 16.6667C2.08338 20.7682 3.77609 24.4792 6.51046 27.1484C7.42192 23.5026 10.6771 20.8333 14.5834 20.8333H18.75C22.6563 20.8333 25.9115 23.5026 26.823 27.1484ZM25 28.6458C24.7396 25.4557 22.0053 22.9167 18.75 22.9167H14.5834C11.3282 22.9167 8.5938 25.4557 8.33338 28.6458C10.7422 30.2734 13.6068 31.25 16.6667 31.25C19.7266 31.25 22.6563 30.2734 25 28.6458ZM16.6667 33.3333C7.48702 33.3333 4.57764e-05 25.8464 4.57764e-05 16.6667C4.57764e-05 7.48699 7.48702 6.19888e-06 16.6667 6.19888e-06C25.8464 6.19888e-06 33.3334 7.48699 33.3334 16.6667C33.3334 25.8464 25.8464 33.3333 16.6667 33.3333ZM16.6667 15.625C18.4245 15.625 19.7917 14.2578 19.7917 12.5C19.7917 10.7422 18.4245 9.37501 16.6667 9.37501C14.9089 9.37501 13.5417 10.7422 13.5417 12.5C13.5417 14.2578 14.9089 15.625 16.6667 15.625ZM11.4584 12.5C11.4584 9.63542 13.8021 7.29167 16.6667 7.29167C19.5313 7.29167 21.875 9.63542 21.875 12.5C21.875 15.3646 19.5313 17.7083 16.6667 17.7083C13.8021 17.7083 11.4584 15.3646 11.4584 12.5Z"
+                    fill="#191F3A"
+                    stroke=""
+                  />
+                </svg>
+
+                Profil
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section-container-primary 3xl:px-0 px-4 py-14 lg:py-16 3xl:py-20"
+      >
+        <div class="bg-iceFishing p-8 rounded-3xl">
+          <div class="md:space-y-8 space-y-5">
+            <h3
+              class="leading-[134%] text-2xl xl:text-[32px] text-KonBlue font-medium font-fira px-4 sm:px-0"
+            >
+              Beitrag ändern
+            </h3>
+            <div class="2xl:space-y-8 xl:space-y-6 space-y-4">
+              <div class="relative w-full">
+                <input
+                  required
+                  id="Dein-Name*"
+                  type="text"
+                  placeholder=" "
+                  class="step-input-field free-help-text font-ibm-plex font-light! leading-[175%] text-primaryButton peer bg-white!"
+                />
+
+                <label
+                  for="Dein-Name*"
+                  class="step-input-field-label-3 font-light! font-ibm-plex!"
+                >
+                  Das hier ist eine Test-Überschrift, die geändert werden soll.
+                </label>
+              </div>
+              <div class="relative w-full">
+                <textarea
+                  required
+                  id="Location of your practice*"
+                  placeholder=""
+                  rows="5"
+                  class="md:px-6 px-4 w-full bg-white! xl:rounded-3xl rounded-xl outline-0 leading-[175%] font-light font-ibm-plex text-base! 2xl:text-lg! 3xl:text-xl resize-none peer opacity-100! md:pt-10 pt-9 text-KonBlue"
+                ></textarea>
+
+                <label
+                  for="Location of your practice*"
+                  class="absolute md:left-6! left-4! text-encoreGray pointer-events-none transition-all duration-300 ease-in-out top-3 text-base xl:text-xl leading-[150%] font-light font-ibm-plex"
+                >
+                  Das ist ein Test-Beitrags-Text, der geändert werden soll.
+                </label>
+              </div>
+              <div class="relative w-full">
+                <textarea
+                  required
+                  id="Location of your practice*"
+                  placeholder=""
+                  rows="5"
+                  class="md:px-6 px-4 w-full bg-white! xl:rounded-3xl rounded-xl outline-0 leading-[175%] font-light font-ibm-plex text-base! 2xl:text-lg! 3xl:text-xl resize-none peer opacity-100! md:pt-10 pt-9 text-KonBlue"
+                ></textarea>
+
+                <label
+                  for="Location of your practice*"
+                  class="absolute md:left-6! left-4! text-encoreGray pointer-events-none transition-all duration-300 ease-in-out top-3 text-base xl:text-xl leading-[150%] font-light font-ibm-plex"
+                >
+                  Änderungs-Begründung (intern)
+                </label>
+              </div>
+            </div>
+
+            <button class="primary-button max-w-57.75 w-full font-normal!">
+              Änderung speichern
+            </button>
+          </div>
+        </div>
+      </section>
+      <!------------------------ Footer Section --------------------------->
+      <footer class="bg-KonBlue text-white px-8 sm:px-5">
+        <!-- TOP SECTION -->
+        <div
+          class="section-container-primary py-12 xl:justify-between grid grid-cols-1 sm:grid-cols-2 3xl:pt-27.75 3xl:pb-26.25 lg:grid-cols-4 gap-8 3xl:gap-17 xl:flex"
+        >
+          <!-- Column 1 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Sanero Medical GmbH
+            </h3>
+            <p class="footer-link font-normal font-ibm-plex">
+              Wilhelmstraße 19 70182<br />
+              Stuttgart Germany
+            </p>
+
+            <div class="mt-4 md:mt-6 space-y-2 text-sm">
+              <a
+                href="tel:+49 (0)711 / 99 538 110"
+                class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+              >
+                <img
+                  class="max-w-5 w-full"
+                  src="./assets/images/phone-white.webp"
+                  alt="phone"
+                />
+
+                +49 (0)711 / 99 538 110
+              </a>
+              <a
+                href="mailto:info@sanero-medical.de"
+                class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+              >
+                <img
+                  class="max-w-5 w-full"
+                  src="./assets/images/email-white.webp"
+                  alt="phone"
+                />
+                info@sanero-medical.de
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Unternehmen
+            </h3>
+            <ul
+              class="space-y-2 font-normal footer-link font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Über uns</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Kontakt</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Presse</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Service
+            </h3>
+            <ul
+              class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Impressum</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Datenschutz</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Prävention nach §20
+            </h3>
+            <ul
+              class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Präventionskurs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Krankenkassen</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Firmenprogramm</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <!-- BOTTOM BAR -->
+      <section class="bg-windsweptBeach hidden md:block px-5">
+        <div
+          class="section-container-primary py-4 md:py-6.5! flex flex-col lg:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-encoreGray footer-link font-ibm-plex">
+            © 2025 NichtraucherHelden – ein Produkt der Sanero Medical GmbH
+          </p>
+
+          <div class="flex items-center gap-6">
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >Impressum</a
+            >
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >Datenschutzerklärung</a
+            >
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >AGB</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <button
+      id="backToTopBtn"
+      class="bg-KonBlue invisible fixed right-2 min-h-11 min-w-11 bottom-4 z-40 translate-y-4 cursor-pointer rounded-full p-3 text-white opacity-0 shadow-lg transition-all duration-300 focus:outline-none lg:right-8 md:bottom-8 border border-white"
+    >
+      <!-- Arrow Up Icon -->
+      <img
+        class="max-w-5 rotate-[177deg]"
+        src="./assets/images/scroll-button.webp"
+        alt="arrow"
+      />
+    </button>
+    <div
+      data-modal="login"
+      class="fixed modal inset-0 z-50 hidden overflow-hidden"
+    >
+      <!-- Overlay -->
+      <div
+        class="fixed inset-0 bg-KonBlue/90 opacity-0 transition-opacity duration-300 modal-overlay"
+      ></div>
+      <!-- Modal Content -->
+      <div
+        class="min-h-dvh h-dvh max-h-dvh p-5 flex items-center justify-center"
+      >
+        <div
+          class="modal-content modal-container max-w-190 relative overflow-auto max-h-full hide-scrollbar"
+        >
+          <div class="modal-header sticky top-0">
+            <h4 class="individually-card-title">Login</h4>
+            <button class="modal-close-button" data-modal-close>
+              <img
+                class="object-contain w-full h-full"
+                src="./assets/images/png/modal-close.png"
+                alt="modal-close"
+              />
+            </button>
+          </div>
+          <form
+            id="loginForm"
+            class="3xl:gap-12 2xl:gap-10 h-auto 1xl:gap-8 gap-6 xl:px-6 px-4 3xl:pt-11 2xl:pt-10 1xl:pt-9 pt-6 3xl:pb-12 2xl:pb-10 pb-8 flex flex-col justify-center overflow-auto"
+          >
+            <p class="free-help-text text-KonBlue leading-[150%] px-4">
+              Melde Dich hier für deinen persönlichen Bereich an.
+            </p>
+
+            <div class="md:space-y-3 space-y-2">
+              <!-- Email -->
+              <div>
+                <input
+                  id="email"
+                  class="primary-input free-help-text"
+                  placeholder="Benutzername / E-Mail-Adresse"
+                  type="email"
+                />
+                <p id="emailError" class="text-red-500 text-sm mt-1 hidden"></p>
+              </div>
+
+              <!-- Password -->
+              <div>
+                <div
+                  class="flex items-center justify-between primary-input free-help-text"
+                >
+                  <input
+                    id="password"
+                    class="w-full outline-none bg-transparent placeholder:text-encoreGray"
+                    placeholder="Passwort*"
+                    type="password"
+                  />
+
+                  <button type="button" id="togglePassword" class="w-6 h-6">
+                    <img
+                      id="eyeIcon"
+                      class="object-contain w-full h-full"
+                      src="./assets/images/png/open-eye.png"
+                      alt="toggle password"
+                    />
+                  </button>
+                </div>
+                <p
+                  id="passwordError"
+                  class="text-red-500 text-sm mt-1 hidden"
+                ></p>
+              </div>
+            </div>
+
+            <a
+              class="free-help-text text-KonBlue underline font-light leading-[160%] w-fit mx-auto"
+              href=""
+            >
+              Passwort vergessen?
+            </a>
+
+            <button
+              type="submit"
+              class="text-white leading-[160%] font-fira font-medium hover:bg-white border border-blueBay bg-blueBay rounded-2xl flex items-center justify-center free-help-text md:h-14 h-13 hover:text-blueBay duration-300 ease-in-out transition-all"
+            >
+              Einloggen
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/js/popup.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/back-to-top.js"></script>
+  </body>
+</html>

@@ -1,0 +1,2943 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Urf - Deine App auf Rezept unterstützt Dichlangfristig und kostenfrei.
+    </title>
+
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="icon" type="image/svg" href="./assets/images/logo.webp" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+
+  <body>
+    <style>
+      .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #191f3a !important;
+        opacity: 100%;
+        transition: all 0.3s ease;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: #191f3a;
+        width: 40px;
+        height: 10px;
+        border-radius: 20px;
+      }
+
+      .testimonial-swiperImg .swiper-slide {
+        position: relative;
+        transition:
+          transform 0.45s ease,
+          opacity 0.45s ease;
+        will-change: transform;
+      }
+
+      @media screen and (max-width: 640px) {
+        .swiper-pagination-bullet-active {
+          background: #191f3a;
+          width: 40px !important;
+          height: 4px;
+          border-radius: 20px;
+        }
+
+        .swiper-pagination-bullet {
+          width: 8px;
+          height: 4px;
+          border-radius: 9px;
+          background: #191f3a !important;
+          opacity: 100%;
+          transition: all 0.3s ease;
+        }
+      }
+    </style>
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js" defer></script>
+
+    <script
+      src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <script src="/js/overlap.js" defer></script>
+    <!-- <script src="/js/header-animation.js" defer></script> -->
+    <!---------------------------------------- HEADER ---------------------------------- -->
+    <aside
+      id="sidebar"
+      class="fixed top-0 right-0 h-dvh bg-white w-[320px] transform transition-transform duration-300 ease-in-out z-[9999] flex flex-col justify-start p-4 translate-x-full"
+    >
+      <!-- Main Menu Content -->
+      <div class="sidebar-overlay"></div>
+      <div id="main-menu">
+        <div class="flex justify-between items-center mb-6">
+          <a aria-label="logo" href="./">
+            <img
+              class="max-w-10.25 w-full"
+              src="./assets/images/logo.webp"
+              alt="logo"
+            />
+          </a>
+          <button
+            id="close-sidebar"
+            class="text-2xl"
+            aria-label="clsoe sidebar"
+          >
+            <img
+              class="w-8 h-8 object-cover"
+              src="./assets/images/close-sidebar.webp"
+              alt="cross-icon"
+            />
+          </button>
+        </div>
+        <div>
+          <nav
+            class="flex flex-col justify-between grow overflow-auto h-full hide-scrollbar"
+          >
+            <div class="flex flex-col justify-between gap-7 text-primary">
+              <a aria-label="manu list" href="#" class="header-li"> Magazin </a>
+              <a aria-label="manu list" href="#" class="header-li">
+                Erfolgsgeschichten
+              </a>
+              <a aria-label="manu list" href="#" class="header-li"> FAQ </a>
+
+              <button
+                data-modal-open="login"
+                class="flex gap-2 hover:scale-95 transition-all duration-300 ease-in-out"
+              >
+                <img
+                  class="max-w-4.75 w-full"
+                  src="./assets/images/profile-icon.webp"
+                  alt="profile"
+                />
+                Login
+              </button>
+            </div>
+          </nav>
+          <div
+            class="flex flex-col justify-between items-center gap-3 w-full pt-10"
+          >
+            <button
+              class="sm:py-2 py-1.5 lg:py-3 3xl:py-4 px-6 rounded-4xl bg-iceFishing text-primary font-medium hover:scale-95 transition-all duration-300 ease-in-out font-ibm-plex text-base lg:text-lg xl:text-xl 3xl:text-2xl w-full eading-[150%] sm:leading-[100%]"
+            >
+              Fachkreise
+            </button>
+            <button class="primary-btn w-full">Dein Weg zur App</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!---------------------------------------- HEADER ---------------------------------- -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 z-999 opacity-0 pointer-events-none transition-opacity duration-300"
+    ></div>
+    <header
+      class="text-white z-50 transition-transform duration-300 ease-in-out sticky top-0 w-full"
+    >
+      <!-- {/* Top Bar for Contact Info */} -->
+      <div class="bg-KonBlue">
+        <div
+          class="flex justify-end items-center sm:px-9! px-4! py-2 text-[11px] xs:text-xs font-ibm-plex sm:text-sm bg-KonBlue gap-4 overflow-auto custom-container hide-scrollbar"
+        >
+          <span class="hidden md:inline text-iceFishing text-base font-medium">
+            Unsere Experten sind für Dich da:
+          </span>
+          <div
+            class="flex sm:justify-center justify-between items-center xs:gap-7! gap-2! sm:w-fit w-full"
+          >
+            <a
+              href="tel:+49871121999343"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/phone-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              +49 8711 21 999 343
+            </a>
+            <a
+              href="mailto:service@nichtraucherhelden.de"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/email-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              service@nichtraucherhelden.de
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- {/* Main Navigation Bar */} -->
+      <div class="bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.05)] text-black">
+        <div class="custom-container py-2 sm:py-3 3xl:py-4">
+          <div class="flex justify-between items-center">
+            <div class="shrink-0 flex items-center">
+              <div
+                class="max-w-13 3xl:max-w-18 aspect-square w-full cursor-pointer"
+              >
+                <img
+                  class="w-full h-full"
+                  src="/assets/images/logo.webp"
+                  alt="logo"
+                />
+              </div>
+            </div>
+            <button class="primary-btn block sm:hidden">
+              Dein Weg zur App
+            </button>
+            <nav
+              class="flex text-lg md:text-xl font-fira font-medium items-center gap-8 3xl:gap-12 leading-[140%]"
+            >
+              <div
+                class="hidden xl:flex justify-between items-center gap-10 text-primary"
+              >
+                <a href="#" class="header-li"> Magazin </a>
+                <a href="#" class="header-li"> Erfolgsgeschichten </a>
+                <a href="#" class="header-li"> FAQ </a>
+
+                <button
+                  data-modal-open="login"
+                  class="flex justify-center items-center gap-2 header-li icon-hover"
+                >
+                  <img
+                    class="max-w-4.75 w-full icon"
+                    src="./assets/images/profile-icon.webp"
+                    alt="profile"
+                  />
+                  Login
+                </button>
+              </div>
+              <div class="hidden sm:flex justify-between gap-5">
+                <button class="primary-btn-v3">Fachkreise</button>
+                <button class="primary-btn-v2">Dein Weg zur App</button>
+              </div>
+              <button
+                id="hamburger"
+                aria-label="hamburger button"
+                class="block xl:hidden space-y-1.5"
+              >
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- <<============================================= SIDERBAR ============================================>> -->
+    <main id="main-content">
+      <!---------------------------------------- HERO SECTION ---------------------------------- -->
+      <div
+        class="custom-container px-0! sm:px-4! pt-10 sm:py-16 xl:py-10 2xl:py-24 3xl:pt-[133px] 3xl:pb-[136px] hero-section2 relative sm:mt-[27px] rounded-b-4xl 2xl:rounded-[40px] overflow-hidden"
+      >
+        <!-- {/* This is the large box mimicking the design from the image */} -->
+        <div class="relative rounded-b-4xl sm:rounded-3xl overflow-hidden">
+          <div class="lg:grid lg:grid-cols-12 px-8 relative z-10">
+            <!-- {/* Text/CTA Area (Left Side) */} -->
+            <div
+              class="col-span-12 lg:col-span-7 lg:pl-20 flex flex-col justify-center"
+            >
+              <span class="block sm:hidden">
+                <img src="/assets/images/signature.webp" alt="img" />
+              </span>
+              <h1
+                class="hidden sm:block mb-[56px] max-w-[500px] 3xl:max-w-[692px] w-full"
+              >
+                <img src="/assets/images/signature-desktop.webp" alt="img" />
+              </h1>
+
+              <p
+                class="main-heading text-primary mb-8 2xl:mb-14 3xl:mb-16 hidden sm:block font-fira 2xl:pl-8"
+              >
+                Dein zertifiziertes Präventionsprogramm <br />
+                zur Rauchfreiheit
+              </p>
+
+              <button
+                class="secondary-btn hidden sm:block max-w-[250px] 3xl:max-w-[262px] w-full 2xl:ml-8"
+              >
+                Jetzt anmelden
+              </button>
+            </div>
+
+            <div
+              class="relative col-span-12 lg:col-span-5 flex justify-start sm:justify-center items-center pt-[141px] sm:mb-0 mb-11 sm:pt-0"
+            >
+              <div
+                class="sm:p-3 3xl:p-4 p-2 bg-white rounded-xl shadow-2xl sm:hidden flex gap-2 sm:gap-4 md:gap-6 items-center"
+              >
+                <div
+                  class="bg-KonBlue rounded-full w-8 sm:w-[45px] sm:h-[45px] 3xl:w-[55px] h-8 3xl:h-[55px] flex justify-center items-center"
+                  role="img"
+                  aria-label="Rating Icon"
+                >
+                  <img
+                    class="sm:w-6 w-4 h-[17px] sm:h-[33px] object-contain"
+                    src="./assets/images/wind.webp"
+                    alt="mobile-logo"
+                  />
+                </div>
+                <div class="max-w-[123px] sm:max-w-[135px] w-full">
+                  <p
+                    class="text-xs sm:text-sm 3xl:text-base text-KonBlue font-ibm-plex sm:leading-[125%] leading-[100%]"
+                  >
+                    Bis zu 100 % Kostenerstattung durch Deine Krankenkasse
+                  </p>
+                </div>
+              </div>
+              <div
+                class="absolute bottom-0 -right-2 lg:bottom-4 lg:right-4 3xl:right-[18%] 3xl:bottom-[10%] 3xl:px-6 px-3 py-2 bg-white rounded-2xl hidden sm:flex gap-4 w-fit items-center"
+              >
+                <div
+                  class="bg-KonBlue p-2 3xl:p-3 rounded-full w-10 h-10 3x:w-[55px] 3xl:h-[55px] flex justify-center items-center"
+                  role="img"
+                  aria-label="Rating Icon"
+                >
+                  <img
+                    class="w-6 h-6 object-contain"
+                    src="./assets/images/wind.webp"
+                    alt="wind"
+                  />
+                </div>
+                <div class="max-w-[123px] md:max-w-[135px] w-full">
+                  <p
+                    class="text-xs sm:text-sm 3xl:text-base text-KonBlue font-ibm-plex sm:leading-[125%] leading-[100%]"
+                  >
+                    Bis zu 100 % Kostenerstattung durch Deine Krankenkasse
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block sm:hidden px-6 pt-[33px]">
+          <p class="main-heading text-primary mb-[19px] font-fira">
+            Dein zertifiziertes Präventionsprogramm <br />
+            zur Rauchfreiheit
+          </p>
+
+          <button class="secondary-btn">Jetzt anmelden</button>
+        </div>
+      </div>
+      <!-------------------------------- RATING SECTION ------------------------ -------->
+      <section
+        class="lg:max-w-[98%] xl:max-w-6xl 3xl:max-w-[1320px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-5 md:gap-8 px-4 py-9 lg:py-[60px] 2xl:py-20 3xl:py-[152px]"
+      >
+        <div
+          class="relative shrink-0 max-w-[500px] w-full flex justify-start lg:justify-center items-center bg-iceFishing lg:bg-transparent px-5 pt-5 pb-0 lg:p-0 rounded-3xl md:rounded-[40px]"
+        >
+          <div
+            class="bg-iceFishing h-[75%] w-full absolute bottom-0 left-[3%] rounded-[40px] z-[-1] hidden lg:block"
+          ></div>
+          <div class="max-w-[200px] lg:max-w-[350px] 3xl:max-w-[366px] w-full">
+            <img src="./assets/images/mobile-review-2.webp" alt="rating" />
+
+            <div
+              class="absolute bottom-20 lg:bottom-28 right-[6%] sm:right-[70px] lg:right-0 2xl:-right-20 bg-white p-3 md:p-5 rounded-xl shadow-[0_18px_40px_0_rgba(0,0,0,0.10)] z-30 max-w-[230px] md:max-w-[251px] w-full flex flex-col justify-center items-center"
+            >
+              <div class="text-2xl font-bold text-yellow-400">★ ★ ★ ★ ★</div>
+              <p class="text-base mt-1 text-pureBlack font-bold font-ibm-plex">
+                4.5 von 500+ User:innen
+              </p>
+              <div class="flex mt-2">
+                <img
+                  class="max-w-[140px] w-full"
+                  src="./assets/images/group-image-1.webp"
+                  alt="profile"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="shrink-0 md:max-w-[600px] space-y-8 p-4">
+          <ul class="flex flex-col gap-4 3xl:gap-6 md:pb-12">
+            <li
+              class="flex items-center xl:space-x-8 md:space-x-4 lg:space-x-6 space-x-3"
+            >
+              <span class="max-w-8 2xl:max-w-[45px] 3xl:max-w-[72px]">
+                <img
+                  class="w-full h-full rounded-full object-cover"
+                  src="./assets/images/blue-check.webp"
+                  alt="blue check"
+                />
+              </span>
+              <p class="paragraph-text font-ibm-plex text-primary">
+                Zertifizierter Präventionskurs
+              </p>
+            </li>
+
+            <li
+              class="flex items-center xl:space-x-8 md:space-x-4 lg:space-x-6 space-x-3"
+            >
+              <span class="max-w-8 2xl:max-w-[45px] 3xl:max-w-[72px]">
+                <img
+                  class="w-full h-full rounded-full object-cover"
+                  src="./assets/images/blue-check.webp"
+                  alt="blue check"
+                />
+              </span>
+              <p
+                class="text-base md:text-lg xl:text-xl 3xl:text-2xl font-ibm-plex text-primary"
+              >
+                Bis zu 100 % Kostenersstattung
+              </p>
+            </li>
+
+            <li
+              class="flex items-center xl:space-x-8 md:space-x-4 lg:space-x-6 space-x-3"
+            >
+              <span class="max-w-8 2xl:max-w-[45px] 3xl:max-w-[72px]">
+                <img
+                  class="w-full h-full rounded-full object-cover"
+                  src="./assets/images/blue-check.webp"
+                  alt="blue check"
+                />
+              </span>
+              <p class="paragraph-text font-ibm-plex text-primary">
+                Wirksamkeit wissenschaftlich bestätigt
+              </p>
+            </li>
+          </ul>
+
+          <button
+            class="secondary-btn md:max-w-[250px] 3xl:max-w-[262px] w-fit md:w-full"
+          >
+            Jetzt anmelden
+          </button>
+        </div>
+      </section>
+      <!-------------------------------- STEP SECTION ------------------------ -------->
+      <section
+        class="custom-container pb-11 sm:pb-12.5 md:pb-15 lg:pb-17.5 2xl:pb-25 3xl:pb-38"
+      >
+        <div
+          class="bg-iceFishing rounded-3xl lg:rounded-[40px] px-4 py-11 md:p-8 lg:px-[100px] lg:py-[80px] 3xl:px-[100px] 3xl:py-[111px]"
+        >
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-20 text-center"
+          >
+            <!-- Item 1 -->
+            <article class="flex flex-col items-center">
+              <span
+                class="max-w-[76px] sm:max-w-[72px] lg:max-w-[60px] 3xl:max-w-[72px]"
+              >
+                <img
+                  class="w-full h-full rounded-full object-cover"
+                  src="./assets/images/die-aap.webp"
+                  alt="die aap"
+                />
+              </span>
+
+              <h3
+                class="font-medium text-KonBlue step-title font-fira mt-6.5 mb-3.5 2xl:mt-5 3xl:mt-5.75 2xl:mb-3 3xl:mb-4 leading-[103%]!"
+              >
+                Langjährige <br class="hidden md:block" />
+                Erfahrung
+              </h3>
+
+              <p
+                class="free-help-text text-KonBlue font-ibm-plex sm:max-w-full w-full max-w-67.5"
+              >
+                Seit über 10 Jahren <br class="3xl:flex hidden" />
+                auf dem Markt
+              </p>
+            </article>
+
+            <!-- Item 2 -->
+            <article class="flex flex-col items-center">
+              <span
+                class="max-w-[76px] sm:max-w-[72px] lg:max-w-[60px] 3xl:max-w-[72px]"
+              >
+                <img
+                  class="w-full h-full rounded-full object-cover"
+                  src="./assets/images/mit.webp"
+                  alt="die aap"
+                />
+              </span>
+
+              <h3
+                class="font-medium text-KonBlue step-title font-fira mt-[26px] mb-3.5 2xl:mt-5 3xl:mt-[23px] 2xl:mb-3 3xl:mb-4 leading-[103%]!"
+              >
+                Mit Experten <br class="hidden md:block" />
+                entwickelt
+              </h3>
+
+              <p
+                class="free-help-text text-KonBlue font-ibm-plex sm:max-w-full w-full max-w-[270px]"
+              >
+                Lungenärzte, Suchtmediziner und <br class="3xl:flex hidden" />
+                Experten aus der Tabakentwöhnung
+              </p>
+            </article>
+
+            <!-- Item 3 -->
+            <article
+              class="flex flex-col items-center lg:col-span-1 sm:col-span-2"
+            >
+              <span
+                class="max-w-[76px] sm:max-w-[72px] lg:max-w-[60px] 3xl:max-w-[72px]"
+              >
+                <img
+                  class="w-full h-full rounded-full object-cover"
+                  src="./assets/images/deign.webp"
+                  alt="deign"
+                />
+              </span>
+
+              <h3
+                class="font-medium text-KonBlue text-2xl md:text-[28px] font-fira mt-[26px] mb-3.5 2xl:mt-5 3xl:mt-[23px] 2xl:mb-3 3xl:mb-4 leading-[103%]!"
+              >
+                Strenger <br class="hidden md:block" />
+                Datenschutz
+              </h3>
+
+              <p
+                class="free-help-text text-KonBlue font-ibm-plex sm:max-w-full w-full max-w-[200px]"
+              >
+                Sichere und geschützte Daten <br class="hidden md:block" />
+                nach DSGVO
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!------------------------ Smoke-Free --------------------------->
+      <section
+        class="py-10 md:py-16 lg:py-[60px] 2xl:py-16 3xl:py-28 bg-icelightBlue mb-14 md:mb-20 xl:mb-28 3xl:mb-[152px]"
+      >
+        <div class="max-w-5xl mx-auto px-8 text-start md:text-center">
+          <p class="paragraph-text text-celestialBlue font-fira">
+            Dein weg zur Rauchfreiheit
+          </p>
+          <h2
+            class="section-title text-KonBlue mt-2 md:mt-5 font-fira leading-[100%]"
+          >
+            So funktioniert das Programm
+          </h2>
+          <p
+            class="paragraph-text text-KonBlue lg:mt-6 mt-3 sm:mt-4 xl:mt-[47px] max-w-[900px] mx-auto font-ibm-plex"
+          >
+            Du erhältst jeden Tag ein Coaching-Video plus hilfreiche
+            Übungen. Ein erfahrener Lungenfacharzt begleitet Dich auf Deinem Weg
+            zur Rauchfreiheit.
+          </p>
+        </div>
+
+        <div
+          class="secondary-container mx-auto mt-9 sm:mt-11 md:mt-16 3xl:mt-[113px] 2xl:mt-20 flex justify-between flex-col-reverse lg:flex-row items-center"
+        >
+          <!-- LEFT LIST -->
+          <div
+            class="flex flex-col gap-2 sm:gap-4 relative z-10 -mt-12 lg:mt-0 lg:-mr-10 max-w-[500px] 3xl:max-w-[628px] xl:-mr-[60px] w-full"
+          >
+            <!-- BOX 1 -->
+            <div
+              class="flex items-start md:items-center gap-3 sm:gap-4 p-4 2xl:px-4 2xl:py-5 3xl:px-6 3xl:pt-[43px] 3xl:pb-10 rounded-3xl md:rounded-[20px] bg-white"
+            >
+              <span class="max-w-12 lg:max-w-[60px] 3xl:max-w-[72px] w-full">
+                <img
+                  class="w-full h-full rounded-full object-cover"
+                  src="./assets/images/optimal-icon.webp"
+                  alt="deign"
+                />
+              </span>
+              <div>
+                <p class="text-KonBlue paragraph-text font-bold font-ibm-plex">
+                  1. Optimale Vorbereitung
+                </p>
+                <p class="text-KonBlue free-help-text font-ibm-plex pt-[3px]">
+                  Wir bereiten Dich Schritt für Schritt intensiv auf Deinen
+                  Rauchstopp vor.
+                </p>
+              </div>
+            </div>
+
+            <!-- BOX 2 -->
+            <div
+              class="flex items-start md:items-center gap-3 sm:gap-4 p-4 2xl:px-4 2xl:py-5 3xl:px-6 3xl:pt-[43px] 3xl:pb-10 rounded-3xl md:rounded-[20px] bg-white"
+            >
+              <span class="max-w-12 lg:max-w-[60px] 3xl:max-w-[72px] w-full">
+                <img
+                  class="w-full h-full rounded-full object-cover"
+                  src="./assets/images/star-2.webp"
+                  alt="deign"
+                />
+              </span>
+              <div>
+                <p class="text-KonBlue paragraph-text font-bold font-ibm-plex">
+                  2. Begleiteter Rauchstopp
+                </p>
+                <p class="text-KonBlue free-help-text font-ibm-plex pt-[3px]">
+                  Mit den richtigen Strategien an der Hand kannst Du den
+                  Rauchstopp wagen. Dann, wenn Du soweit bist.
+                </p>
+              </div>
+            </div>
+
+            <!-- BOX 3 -->
+            <div
+              class="flex items-start md:items-center gap-3 sm:gap-4 p-4 2xl:px-4 2xl:py-5 3xl:px-6 3xl:pt-[43px] 3xl:pb-10 rounded-3xl md:rounded-[20px] bg-white"
+            >
+              <span class="max-w-12 lg:max-w-[60px] 3xl:max-w-[72px] w-full">
+                <img
+                  class="w-full h-full rounded-full object-cover"
+                  src="./assets/images/shield-icon.webp"
+                  alt="deign"
+                />
+              </span>
+              <div>
+                <p class="text-KonBlue paragraph-text font-bold font-ibm-plex">
+                  2. Nachhaltiger Rückfallschutz*
+                </p>
+                <p class="text-KonBlue free-help-text font-ibm-plex pt-[3px]">
+                  Drei Monate tägliche Begleitung unterstützen Dich auf dem Weg
+                  in ein dauerhaft rauchfreies Leben.
+                </p>
+              </div>
+            </div>
+
+            <!-- BUTTON -->
+            <div class="flex justify-start items-center">
+              <p class="text-base text-KonBlue font-ibm-plex">
+                *Nur im Plusprogramm enthalten
+              </p>
+            </div>
+          </div>
+
+          <!-- RIGHT IMAGE -->
+          <div
+            class="flex justify-center lg:-ml-10 sm:max-w-[450px] max-w-[550px] xl:max-w-[700px] 3xl:max-w-[760px] w-full h-full max-h-[219px] sm:max-h-[672px]"
+          >
+            <img
+              src="./assets/images/dr-image.webp"
+              class="rounded-2xl w-full object-cover"
+              alt="Preview Image"
+            />
+          </div>
+        </div>
+        <div
+          class="custom-container pt-9 md:pt-[50px] lg:pt-[70px] xl:pt-[100px] 2xl:pt-[130px] 3xl:pt-[152px] w-full"
+        >
+          <div class="max-w-[1220px] mx-auto px-4 text-start md:text-center">
+            <p class="paragraph-text text-celestialBlue font-fira">
+              Basis- oder Plusprogramm
+            </p>
+            <h2
+              class="section-title text-KonBlue mt-2 md:mt-5 font-fira leading-[128.571%] md:leading-[100%]"
+            >
+              Wähle das passende Programm für Dich
+            </h2>
+          </div>
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-9 sm:gap-6 pt-9 md:pt-[50px] lg:pt-20 2xl:pt-[100px] 3xl:pt-[113px]"
+          >
+            <div class="bg-white rounded-[20px] md:rounded-3xl">
+              <div
+                class="rounded-t-[20px] md:rounded-t-3xl bg-KonBlue flex justify-between items-center sm:gap-2 md:pl-8 pl-4"
+              >
+                <h3
+                  class="paragraph-text text-white leading-[116%] font-medium font-ibm-plex"
+                >
+                  Plusprogramm –
+                  <span class="font-normal!">Mit Nachbetreuung</span>
+                </h3>
+                <span>
+                  <img
+                    class="max-w-[124px] w-full max-h-[63px] 3xl:max-h-[72px] h-full object-cover"
+                    src="/assets/images/mask-group.webp"
+                    alt="mask-group"
+                  />
+                </span>
+              </div>
+              <div class="md:px-6 px-4 md:py-[27px] py-9">
+                <div class="md:space-y-4 space-y-5">
+                  <article
+                    class="flex items-center md:gap-4 gap-3.5 free-help-text font-normal leading-[160%] text-black font-ibm-plex"
+                  >
+                    <img
+                      class="md:max-w-8 3xl:max-w-10 max-w-7 w-full"
+                      src="/assets/images/green-check.webp"
+                      alt="check-icon"
+                    />
+                    Umfangreiche Vorbereitung und Begleitung beim Rauchstopp
+                  </article>
+                  <article
+                    class="flex items-center md:gap-4 gap-3.5 free-help-text font-normal leading-[160%] text-black font-ibm-plex"
+                  >
+                    <img
+                      class="md:max-w-8 3xl:max-w-10 max-w-7 w-full"
+                      src="/assets/images/green-check.webp"
+                      alt="check-icon"
+                    />
+                    Nutzung der Community
+                  </article>
+                  <article
+                    class="flex items-center md:gap-4 gap-3.5 free-help-text font-normal leading-[160%] text-black font-ibm-plex"
+                  >
+                    <img
+                      class="md:max-w-8 3xl:max-w-10 max-w-7 w-full"
+                      src="/assets/images/green-check.webp"
+                      alt="check-icon"
+                    />
+                    Rückfallschutz: 3 Monate aktive Nachbetreuung
+                  </article>
+                  <article
+                    class="flex items-center md:gap-4 gap-3.5 free-help-text font-normal leading-[160%] text-black font-ibm-plex"
+                  >
+                    <img
+                      class="md:max-w-8 3xl:max-w-10 max-w-7 w-full"
+                      src="/assets/images/green-check.webp"
+                      alt="check-icon"
+                    />
+                    Vorbeugung einer Gewichtzunahme: Fitness- und
+                    Ernährungsvideos
+                  </article>
+                  <article
+                    class="flex items-center md:gap-4 gap-3.5 free-help-text font-normal leading-[160%] text-black font-ibm-plex"
+                  >
+                    <img
+                      class="md:max-w-8 3xl:max-w-10 max-w-7 w-full"
+                      src="/assets/images/green-check.webp"
+                      alt="check-icon"
+                    />
+                    Nutzungszeit 6 Monate
+                  </article>
+                </div>
+                <div class="pt-9 pb-5 md:pt-[21px] md:pb-[39px]">
+                  <h3
+                    class="paragraph-text font-semibold font-ibm-plex leading-[133.333%] text-black"
+                  >
+                    Einmalig 149 Euro
+                  </h3>
+                  <p
+                    class="free-help-text font-normal leading-[133.333%] font-ibm-plex text-black"
+                  >
+                    (Je nach Krankenkasse erhältst Du bis zu 100 % der Kosten
+                    erstattet)
+                  </p>
+                </div>
+                <a href="/path-to-regulate.html">
+                  <button class="primary-button w-full pt-2">
+                    Jetzt anmelden
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div class="bg-white rounded-[20px] md:rounded-3xl">
+              <div
+                class="rounded-t-[20px] md:rounded-t-3xl bg-encoreGray flex justify-between items-center sm:gap-2 md:pl-8 pl-4 py-5 3xl:py-6"
+              >
+                <h3
+                  class="paragraph-text text-white leading-[116%] font-medium font-ibm-plex"
+                >
+                  Basisprogramm – Ohne Nachbetreuung
+                </h3>
+              </div>
+              <div class="md:px-6 px-4 md:py-[27px] py-9">
+                <div class="md:space-y-4 space-y-5">
+                  <article
+                    class="flex items-center md:gap-4 gap-3.5 free-help-text font-normal leading-[160%] text-black font-ibm-plex"
+                  >
+                    <img
+                      class="md:max-w-8 3xl:max-w-10 max-w-7 w-full"
+                      src="/assets/images/green-check.webp"
+                      alt="check-icon"
+                    />
+                    Umfangreiche Vorbereitung und Begleitung beim Rauchstopp
+                  </article>
+                  <article
+                    class="flex items-center md:gap-4 gap-3.5 free-help-text font-normal leading-[160%] text-black font-ibm-plex"
+                  >
+                    <img
+                      class="md:max-w-8 3xl:max-w-10 max-w-7 w-full"
+                      src="/assets/images/green-check.webp"
+                      alt="check-icon"
+                    />
+                    Nutzung der Community
+                  </article>
+                  <article
+                    class="flex items-center md:gap-4 gap-3.5 free-help-text font-normal leading-[160%] text-black font-ibm-plex"
+                  >
+                    <img
+                      class="md:max-w-8 3xl:max-w-10 max-w-7 w-full"
+                      src="/assets/images/cross-icon.webp"
+                      alt="cross-icon"
+                    />
+                    Rückfallschutz: 3 Monate aktive Nachbetreuung
+                  </article>
+                  <article
+                    class="flex items-center md:gap-4 gap-3.5 free-help-text font-normal leading-[160%] text-black font-ibm-plex"
+                  >
+                    <img
+                      class="md:max-w-8 3xl:max-w-10 max-w-7 w-full"
+                      src="/assets/images/cross-icon.webp"
+                      alt="minus-icon"
+                    />
+                    Vorbeugung einer Gewichtzunahme: Fitness- und
+                    Ernährungsvideos
+                  </article>
+                  <article
+                    class="flex items-center md:gap-4 gap-3.5 free-help-text font-normal leading-[160%] text-black font-ibm-plex"
+                  >
+                    <img
+                      class="md:max-w-8 3xl:max-w-10 max-w-7 w-full"
+                      src="/assets/images/minus-icon.webp"
+                      alt="minus-icon"
+                    />
+                    Nutzungszeit 3 Monate
+                  </article>
+                </div>
+                <div class="pt-9 pb-5 md:pt-[21px] md:pb-[39px]">
+                  <h3
+                    class="paragraph-text font-semibold font-ibm-plex leading-[133.333%] text-black"
+                  >
+                    Einmalig 97 Euro
+                  </h3>
+                  <p
+                    class="free-help-text font-normal leading-[133.333%] font-ibm-plex text-black"
+                  >
+                    (Je nach Krankenkasse erhältst Du bis zu 100 % der Kosten
+                    erstattet)
+                  </p>
+                </div>
+                <a href="/path-to-regulate.html">
+                  <button class="secondary-button w-full">
+                    Jetzt anmelden
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- animation card  -->
+      <section class="relative overlap-conatiner-container">
+        <div class="flex justify-center min-w-full">
+          <div
+            class="card-wrapper w-full card flex items-center justify-center"
+          >
+            <!-- LEFT SIDE (PHONE IMAGE) -->
+            <div class="bg-icelightBlue overlap-card">
+              <div class="mx-auto md:mx-0 lg:w-1/2 flex justify-center">
+                <img
+                  src="/assets/images/fit-and-strong.webp"
+                  alt="Phone"
+                  class="object-cover max-w-[200px] lg:max-w-[424px] w-full lg:-mb-10 shrink-0 lg:mt-5 3xl:mt-11"
+                />
+              </div>
+
+              <!-- RIGHT SIDE CONTENT -->
+              <div
+                class="lg:w-1/2 lg:max-w-[625px] 3xl:pt-[89px] lg:pt-16 pb-8 lg:pb-16 3xl:pb-[84px] flex flex-col items-center lg:items-start"
+              >
+                <h4
+                  class="free-help-text font-fira text-celestialBlue mb-3 xl:mb-5 mt-3 lg:mt-0"
+                >
+                  Strukturiertes Coaching-Programm.
+                </h4>
+                <h2 class="overlap-card-heading">
+                  Schritt für Schritt zum <br />
+                  Erfolg.
+                </h2>
+                <p
+                  class="free-help-text text-KonBlue mt-3 mb-5 lg:mt-6 xl:mb-7 2xl:mt-8 3xl:mb-12 font-ibm-plex leading-[160%]!"
+                >
+                  In den Coaching-Videos lernst Du die Wirkung von Nikotin
+                  kennen, verstehst mögliche Entzugserscheinungen und erfährst,
+                  wie Du sie erfolgreich bewältigst. Ergänzend erhältst Du
+                  Übungen, Strategien und praktische Impulse für dein Leben ohne
+                  Zigarette.
+                </p>
+                <button class="secondary-btn px-8!">Jetzt anmelden</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center min-w-full">
+          <div
+            class="card-wrapper w-full card flex items-center justify-center"
+          >
+            <!-- LEFT SIDE (PHONE IMAGE) -->
+            <div class="bg-blueBooties overlap-card">
+              <div class="mx-auto md:mx-0 lg:w-1/2 flex justify-center">
+                <img
+                  src="/assets/images/fit-and-strong.webp"
+                  alt="Phone"
+                  class="object-cover max-w-[200px] lg:max-w-[424px] w-full lg:-mb-10 shrink-0 lg:mt-5 3xl:mt-11"
+                />
+              </div>
+              <!-- RIGHT SIDE CONTENT -->
+              <div
+                class="lg:w-1/2 lg:max-w-[625px] 3xl:pt-[89px] lg:pt-16 pb-8 lg:pb-16 3xl:pb-[84px] flex flex-col items-center lg:items-start"
+              >
+                <h4
+                  class="free-help-text font-fira text-celestialBlue mb-3 xl:mb-5 mt-3 lg:mt-0"
+                >
+                  Strukturiertes Coaching-Programm.
+                </h4>
+                <h2 class="overlap-card-heading">
+                  Schritt für Schritt zum <br />
+                  Erfolg.
+                </h2>
+                <p
+                  class="free-help-text text-KonBlue mt-3 mb-5 lg:mt-6 xl:mb-7 2xl:mt-8 3xl:mb-12 font-ibm-plex leading-[160%]!"
+                >
+                  In den Coaching-Videos lernst Du die Wirkung von Nikotin
+                  kennen, verstehst mögliche Entzugserscheinungen und erfährst,
+                  wie Du sie erfolgreich bewältigst. Ergänzend erhältst Du
+                  Übungen, Strategien und praktische Impulse für dein Leben ohne
+                  Zigarette.
+                </p>
+                <button class="secondary-btn px-8!">Jetzt anmelden</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center min-w-full">
+          <div
+            class="card-wrapper w-full card flex items-center justify-center"
+          >
+            <!-- LEFT SIDE (PHONE IMAGE) -->
+            <div class="bg-iceFishing overlap-card">
+              <div class="mx-auto md:mx-0 lg:w-1/2 flex justify-center">
+                <img
+                  src="/assets/images/fit-and-strong.webp"
+                  alt="Phone"
+                  class="object-cover max-w-[200px] lg:max-w-[424px] w-full lg:-mb-10 shrink-0 lg:mt-5 3xl:mt-11"
+                />
+              </div>
+              <!-- RIGHT SIDE CONTENT -->
+              <div
+                class="lg:w-1/2 lg:max-w-[625px] 3xl:pt-[89px] lg:pt-16 pb-8 lg:pb-16 3xl:pb-[84px] flex flex-col items-center lg:items-start"
+              >
+                <h4
+                  class="free-help-text font-fira text-celestialBlue mb-3 xl:mb-5 mt-3 lg:mt-0"
+                >
+                  Strukturiertes Coaching-Programm.
+                </h4>
+                <h2 class="overlap-card-heading">
+                  Schritt für Schritt zum <br />
+                  Erfolg.
+                </h2>
+                <p
+                  class="free-help-text text-KonBlue mt-3 mb-5 lg:mt-6 xl:mb-7 2xl:mt-8 3xl:mb-12 font-ibm-plex leading-[160%]!"
+                >
+                  In den Coaching-Videos lernst Du die Wirkung von Nikotin
+                  kennen, verstehst mögliche Entzugserscheinungen und erfährst,
+                  wie Du sie erfolgreich bewältigst. Ergänzend erhältst Du
+                  Übungen, Strategien und praktische Impulse für dein Leben ohne
+                  Zigarette.
+                </p>
+                <button class="secondary-btn px-8!">Jetzt anmelden</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- FEATURE CARDS -->
+      <section
+        class="custom-container mb-9 md:my-20 xl:my-28 3xl:my-[152px] for-swiper-button"
+      >
+        <div
+          class="md:hidden w-full bg-iceFishing flex items-center relative xl:rounded-[20px] rounded-xl px-4 swiper-feature-slider"
+        >
+          <!-- Swiper Container -->
+          <div
+            class="swiper-button-prev-feature relative max-w-12 2xl:max-w-[50px] 3xl:max-w-[72px] min-w-12 2xl:min-w-[50px] 3xl:min-w-[72px] cursor-pointer pointer-events-auto"
+          >
+            <img
+              class="w-full h-full"
+              src="./assets/images/feature-left.webp"
+              alt="magazin"
+            />
+          </div>
+          <div class="swiper feature-swiper relative">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide w-full">
+                <article class="group-of-card">
+                  <div
+                    class="3xl:w-[72px] w-[60px] 3xl:h-[72px] h-[60px] rounded-full flex justify-center items-center bg-primary mb-5 3xl:mb-8"
+                  >
+                    <img
+                      class="w-full h-full object-cover"
+                      src="./assets/images/reward-icon.webp"
+                      alt="magazin"
+                    />
+                  </div>
+                  <h3
+                    class="individually-card-title font-fira leading-[133.333%] lg:leading-[114%]"
+                  >
+                    Zertifizierter <br />
+                    Präventionskurs
+                  </h3>
+                  <p
+                    class="free-help-text 3xl:mt-6 mt-4 font-ibm-plex text-celestialBlue leading-[125%] lg:leading-[140%]"
+                  >
+                    Nach strengen Qualitätskriterien geprüft
+                  </p>
+                </article>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="swiper-slide w-full">
+                <article class="group-of-card">
+                  <div
+                    class="3xl:w-[72px] w-[60px] 3xl:h-[72px] h-[60px] rounded-full flex justify-center items-center bg-primary mb-5 3xl:mb-8"
+                  >
+                    <img
+                      class="w-full h-full object-cover"
+                      src="./assets/images/card-2.webp "
+                      alt="magazin"
+                    />
+                  </div>
+                  <h3
+                    class="individually-card-title font-fira leading-[133.333%] lg:leading-[114%]"
+                  >
+                    Dein Ort,
+                    <br />
+                    Deine Zeit
+                  </h3>
+                  <p
+                    class="free-help-text 3xl:mt-6 mt-4 font-ibm-plex text-celestialBlue leading-[125%] lg:leading-[140%]"
+                  >
+                    Flexibel in Deinen Alltag integrierbar
+                  </p>
+                </article>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="swiper-slide w-full">
+                <article class="group-of-card">
+                  <div
+                    class="3xl:w-[72px] w-[60px] 3xl:h-[72px] h-[60px] rounded-full flex justify-center items-center bg-primary mb-5 3xl:mb-8"
+                  >
+                    <img
+                      class="w-full h-full object-cover"
+                      src="./assets/images/percent-icon.webp"
+                      alt="magazin"
+                    />
+                  </div>
+                  <h3
+                    class="individually-card-title font-fira leading-[133.333%] lg:leading-[114%]"
+                  >
+                    Bis zu 100% <br />
+                    Kostenerstattung
+                  </h3>
+                  <p
+                    class="free-help-text 3xl:mt-6 mt-4 font-ibm-plex text-celestialBlue leading-[125%] lg:leading-[140%]"
+                  >
+                    Gesetzliche Krankenkassen erstatten die Kosten
+                  </p>
+                </article>
+              </div>
+              <!-- Slide 4 -->
+              <div class="swiper-slide w-full">
+                <article class="group-of-card">
+                  <div
+                    class="3xl:w-[72px] w-[60px] 3xl:h-[72px] h-[60px] rounded-full flex justify-center items-center bg-primary mb-5 3xl:mb-8"
+                  >
+                    <img
+                      class="w-full h-full object-cover"
+                      src="./assets/images/video-2-icon.webp"
+                      alt="magazin"
+                    />
+                  </div>
+                  <h3
+                    class="individually-card-title font-fira leading-[133.333%] lg:leading-[114%]"
+                  >
+                    Motivierende <br />
+                    Coaching-Videos
+                  </h3>
+                  <p
+                    class="free-help-text 3xl:mt-6 mt-4 font-ibm-plex text-celestialBlue leading-[125%] lg:leading-[140%]"
+                  >
+                    Echte Menschen statt trockener Texte und Chatbots
+                  </p>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div
+            class="swiper-button-next-feature max-w-12 rotate-180 2xl:max-w-[50px] 3xl:max-w-[72px] min-w-12 2xl:min-w-[50px] 3xl:min-w-[72px] cursor-pointer pointer-events-auto"
+          >
+            <img
+              class="w-full h-full"
+              src="./assets/images/feature-left.webp"
+              alt="magazin"
+            />
+          </div>
+        </div>
+        <div
+          class="md:grid hidden 3xl:gap-8 grid-cols-2 xl:grid-cols-4 gap-6 w-full"
+        >
+          <!-- Card -->
+          <article
+            class="group-of-card transition-all duration-300 ease-in-out hover:translate-y-1"
+          >
+            <div
+              class="3xl:w-[72px] w-[60px] 3xl:h-[72px] h-[60px] rounded-full flex justify-center items-center bg-primary mb-5 3xl:mb-[33px]"
+            >
+              <img
+                class="w-full h-full object-cover"
+                s
+                src="./assets/images/reward-icon.webp"
+                alt="magazin"
+              />
+            </div>
+            <h3
+              class="individually-card-title font-fira leading-[133.333%] lg:leading-[114%]"
+            >
+              Zertifizierter <br />
+              Präventionskurs
+            </h3>
+            <p
+              class="free-help-text 3xl:mt-[25px] mt-4 font-ibm-plex text-celestialBlue leading-[125%] lg:leading-[140%]"
+            >
+              Nach strengen Qualitätskriterien geprüft
+            </p>
+          </article>
+
+          <!-- Card -->
+          <article
+            class="group-of-card transition-all duration-300 ease-in-out hover:translate-y-1"
+          >
+            <div
+              class="3xl:w-[72px] w-[60px] 3xl:h-[72px] h-[60px] rounded-full flex justify-center items-center bg-primary mb-5 3xl:mb-[33px]"
+            >
+              <img
+                class="w-full h-full object-cover"
+                src="./assets/images/card-2.webp "
+                alt="magazin"
+              />
+            </div>
+            <h3
+              class="individually-card-title font-fira leading-[133.333%] lg:leading-[114%]"
+            >
+              Dein Ort, <br />
+              Deine Zeit
+            </h3>
+            <p
+              class="free-help-text 3xl:mt-[25px] mt-4 font-ibm-plex text-celestialBlue leading-[125%] lg:leading-[140%]"
+            >
+              Flexibel in Deinen Alltag integrierbar
+            </p>
+          </article>
+
+          <!-- Card -->
+          <article
+            class="group-of-card transition-all duration-300 ease-in-out hover:translate-y-1"
+          >
+            <div
+              class="3xl:w-[72px] w-[60px] 3xl:h-[72px] h-[60px] rounded-full flex justify-center items-center bg-primary mb-5 3xl:mb-[33px]"
+            >
+              <img
+                class="w-full h-full object-cover"
+                src="./assets/images/percent-icon.webp"
+                alt="magazin"
+              />
+            </div>
+            <h3
+              class="individually-card-title font-fira leading-[133.333%] lg:leading-[114%]"
+            >
+              Bis zu 100% <br />
+              Kostenerstattung
+            </h3>
+            <p
+              class="free-help-text 3xl:mt-[25px] mt-4 font-ibm-plex text-celestialBlue leading-[125%] lg:leading-[140%]"
+            >
+              Gesetzliche Krankenkassen erstatten die Kosten
+            </p>
+          </article>
+
+          <!-- Card -->
+          <article
+            class="group-of-card transition-all duration-300 ease-in-out hover:translate-y-1"
+          >
+            <div
+              class="3xl:w-[72px] w-[60px] 3xl:h-[72px] h-[60px] rounded-full flex justify-center items-center bg-primary mb-5 3xl:mb-[33px]"
+            >
+              <img
+                class="w-full h-full object-cover"
+                src="./assets/images/video-2-icon.webp"
+                alt="magazin"
+              />
+            </div>
+            <h3
+              class="individually-card-title font-fira leading-[133.333%] lg:leading-[114%]"
+            >
+              Motivierende <br />
+              Coaching-Videos
+            </h3>
+            <p
+              class="free-help-text 3xl:mt-[25px] mt-4 font-ibm-plex text-celestialBlue leading-[125%] lg:leading-[140%]"
+            >
+              Echte Menschen statt <br />
+              trockener Texte und Chatbots
+            </p>
+          </article>
+        </div>
+      </section>
+      <!------------------------ Cost Coverage --------------------------->
+      <section class="bg-white">
+        <div class="max-w-5xl mx-auto text-start md:text-center px-8">
+          <p class="paragraph-text text-celestialBlue font-fira">
+            Bis zu 100 % Kostenübernahme
+          </p>
+          <h2
+            class="section-title text-KonBlue mt-3.5 md:mt-5 font-fira leading-[100%]"
+          >
+            So funktioniert die Erstattung
+          </h2>
+          <p
+            class="paragraph-text text-KonBlue mt-3.5 md:mt-[47px] max-w-[800px] 3xl:max-w-[900px] mx-auto font-ibm-plex"
+          >
+            Das NichtraucherHelden-Programm ist von der zentralen Prüfstelle
+            Prävention als sogenannter Präventionskurs nach §20 SGB V
+            zertifiziert. Je nach Krankenkasse bekommst Du bis zu 100% der
+            Kurskosten wieder zurück..
+          </p>
+        </div>
+
+        <div
+          class="secondary-container mx-auto mt-9 md:mt-16 lg:mt-[113px] flex justify-between flex-col-reverse lg:flex-row items-center"
+        >
+          <!-- LEFT LIST -->
+          <div
+            class="flex flex-col gap-4 relative z-10 -mt-12 lg:mt-0 lg:-mr-10 max-w-[500px] 3xl:max-w-[628px] xl:-mr-[60px] w-full"
+          >
+            <!-- BOX 1 -->
+            <div
+              class="flex items-start md:item-center gap-4 p-4 2xl:px-5 2xl:py-6 3xl:px-8 3xl:pt-[43px] 3xl:pb-10 rounded-3xl md:rounded-[20px] bg-iceFishing"
+            >
+              <span class="max-w-12 md:max-w-[60px] 3xl:max-w-[72px] w-full">
+                <img
+                  class="w-full h-full object-cover"
+                  src="./assets/images/market-icon.webp"
+                  alt="magazin"
+                />
+              </span>
+              <div>
+                <p class="text-KonBlue paragraph-text font-bold font-ibm-plex">
+                  1. Kurs kaufen & starten
+                </p>
+                <p class="text-KonBlue free-help-text font-ibm-plex pt-[5px]">
+                  Kaufe einen der beiden Kurse (Basis- oder Plus-Kurs), melde
+                  Dich an und starte mit dem Kurs.
+                </p>
+              </div>
+            </div>
+
+            <!-- BOX 2 -->
+            <div
+              class="flex items-start md:item-center gap-4 p-4 2xl:px-5 2xl:py-6 3xl:px-8 3xl:pt-[43px] 3xl:pb-10 rounded-3xl md:rounded-[20px] bg-iceFishing"
+            >
+              <span class="max-w-12 md:max-w-[60px] 3xl:max-w-[72px] w-full">
+                <img
+                  class="w-full h-full object-cover"
+                  src="./assets/images/paper-down.webp"
+                  alt="magazin"
+                />
+              </span>
+              <div>
+                <p class="text-KonBlue paragraph-text font-bold font-ibm-plex">
+                  2. Bescheinigung abrufen
+                </p>
+                <p class="text-KonBlue free-help-text font-ibm-plex pt-[5px]">
+                  Durchlaufe das gesamte Porgramm und erhalte am Kursende eine
+                  Teilnahmebescheinigung.
+                </p>
+              </div>
+            </div>
+
+            <!-- BOX 3 -->
+            <div
+              class="flex items-start md:item-center gap-4 p-4 2xl:px-5 2xl:py-6 3xl:px-8 3xl:pt-[43px] 3xl:pb-10 rounded-3xl md:rounded-[20px] bg-iceFishing"
+            >
+              <span class="max-w-12 md:max-w-[60px] 3xl:max-w-[72px] w-full">
+                <img
+                  class="w-full h-full object-cover"
+                  src="./assets/images/percent-icon.webp"
+                  alt="magazin"
+                />
+              </span>
+              <div>
+                <p class="text-KonBlue paragraph-text font-bold font-ibm-plex">
+                  2. Erstattung erhalten
+                </p>
+                <p class="text-KonBlue free-help-text font-ibm-plex pt-[5px]">
+                  Reiche die Bescheinigung bei deiner Krankenkasse ein und
+                  erhalte bis zu 100% der Kosten erstattet.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT IMAGE -->
+          <div
+            class="flex justify-center lg:-ml-10 sm:max-w-[450px] max-w-[550px] xl:max-w-[700px] 3xl:max-w-[760px] w-full h-full max-h-[672px]"
+          >
+            <img
+              src="./assets/images/process-image.webp"
+              class="rounded-2xl w-full object-cover h-full"
+              alt="Preview Image"
+            />
+          </div>
+        </div>
+      </section>
+      <!------------------------ Testimonial Group Section --------------------------->
+      <section
+        class="max-w-7xl 3xl:max-w-[1580px] w-full mx-auto px-4 py-9 sm:py-12 md:py-14 lg:py-16 xl:py-20 xxl:py-[100px] 2xl:py-[130px] 3xl:py-[152px]"
+      >
+        <div
+          class="md:bg-iceFishing py-8 md:py-11 sm:rounded-2xl 3xl:rounded-3xl lg:mb-11 md:mb-9 mb-3"
+        >
+          <h2
+            class="paragraph-text font-fira text-celestialBlue leading-[100%] sm:text-center! text-start px-6"
+          >
+            Deine Erstattung
+          </h2>
+          <h3
+            class="section-title font-fira text-KonBlue mt-3.5 md:mt-5 md:mb-6 mb-5 leading-[100%] sm:text-center! text-start px-6"
+          >
+            Das zahlt Deine Krankenkasse
+          </h3>
+          <p
+            class="free-help-text leading-[160%] font-extralight font-ibm-plex sm:text-center! text-start px-6"
+          >
+            Wir zeigen Dir sofort, wie viel Deine Krankenkasse übernimmt.
+          </p>
+          <div class="max-w-[866px] mx-auto w-full md:px-6">
+            <article
+              class="md:bg-white bg-iceFishing rounded-xl sm:rounded-2xl 3xl:rounded-3xl my-5 lg:my-6"
+            >
+              <!-- Accordion Header -->
+              <button
+                type="button"
+                class="flex gap-4 items-center w-full text-left px-4 xl:px-6 py-[15px] xl:py-5 justify-between"
+                onclick="toggleAccordion()"
+              >
+                <h3
+                  class="font-medium font-fira text-celestialBlue text-base 3xl:text-xl"
+                >
+                  Was kostet das Programm?
+                </h3>
+                <img
+                  id="accordionArrow"
+                  class="transition-transform md:min-w-10 md:min-h-10 md:w-10 md:h-10 min-w-9 min-h-9 w-9 h-9 rounded-full md:flex hidden items-center justify-center object-cover"
+                  src="./assets/images/png/white.png"
+                  alt="accordion-icon"
+                />
+                <img
+                  id="accordionArrowMobile"
+                  class="transition-transform min-w-4 min-h-5 w-4 h-5 rounded-full md:hidden flex items-center justify-center object-contain"
+                  src="./assets/images/png/angle-down.png"
+                  alt="accordion-icon"
+                />
+              </button>
+
+              <!-- Accordion Content (OPEN BY DEFAULT) -->
+              <div class="accordion">
+                <div
+                  class="accordion-inner overflow-hidden transition-all duration-500 ease-in-out max-h-[500px] px-4 xl:px-6 pb-[15px] xl:pb-5"
+                >
+                  <p
+                    class="paragraph-xl text-primary font-light! font-ibm-plex"
+                  >
+                    Gute Nachricht: Deine AOK BW beteiligt sich an den Kosten
+                    mit bis zu 100 Euro sowohl für das Plus- als auch das
+                    Basisprogramm.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <button
+              id="showProgramsBtn"
+              class="py-1.5 3xl:h-16 xl:h-14 lg:h-12 md:h-10 h-9 px-4 sm:px-6 rounded-lg bg-superSaiyan text-primary font-bold border-superSaiyan border hover:border-primary font-ibm-plex hover:bg-transparent hover:text-primary transition-all duration-300 ease-in-out cursor-pointer text-base md:text-lg lg:text-xl 3xl:text-2xl 3xl:px-8 leading-[150%] sm:leading-[100%] w-full"
+            >
+              Dein Weg zur App
+            </button>
+          </div>
+
+          <!-- Program Section  -->
+          <div id="programSection" class="hidden">
+            <p
+              class="max-w-[866px] px-4 pt-5 md:pt-8 text-start md:text-center text-xl font-light text-black mx-auto"
+            >
+              Gute Nachricht: Deine AOK BW beteiligt sich an den Kosten mit bis
+              zu 100 Euro sowohl für das Plus- als auch das Basisprogramm.
+            </p>
+            <div
+              class="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 pt-5 md:pt-8 px-0 sm:px-6 md:px-8"
+            >
+              <div
+                class="bg-[#F3F3F3] md:bg-white rounded-[20px] md:rounded-3xl"
+              >
+                <div
+                  class="rounded-t-[20px] md:rounded-t-3xl bg-KonBlue flex justify-between items-center sm:gap-2 md:pl-8 pl-4"
+                >
+                  <h3
+                    class="paragraph-text text-white leading-[116%] font-medium font-ibm-plex"
+                  >
+                    Plusprogramm – Mit Nachbetreuung
+                  </h3>
+                  <span>
+                    <img
+                      class="max-w-[124px] w-full max-h-[72px] h-full object-cover"
+                      src="/assets/images/mask-group.webp"
+                      alt="mask-group"
+                    />
+                  </span>
+                </div>
+
+                <div class="md:px-6 px-4 md:py-[26px] py-9">
+                  <div
+                    class="px-4 md:px-6 3xl:py-8 md:py-3 py-4 flex items-center gap-4 rounded-[20px] md:rounded-3xl bg-alphabetBlue text-base md:text-lg lg:text-xl text-celestialBlue font-medium leading-[100%]"
+                  >
+                    <img
+                      class="md:w-8 md:h-8 3xl:w-10 3xl:h-10 w-9 h-9 hidden md:block"
+                      src="./assets/images/png/green-check.png"
+                      alt="green-check"
+                    />
+
+                    <div class="md:space-y-1">
+                      <p
+                        class="text-KonBlue text-base md:text-lg 3xl:text-xl font-normal font-fira"
+                      >
+                        Eigenanteil nach Erstattung:
+                        <span class="md:font-light!"> 49 Euro</span>
+                      </p>
+                      <p
+                        class="text-KonBlue text-base md:text-lg 3xl:text-xl font-normal font-fira"
+                      >
+                        Die Krankenkasse übernimmt:
+                        <span class="md:font-light!"> 100 Euro</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="md:space-y-4 space-y-5 py-9 md:py-[26px]">
+                    <article
+                      class="flex items-center md:gap-4 gap-3.5 free-help-text font-normal leading-[160%] text-black font-ibm-plex"
+                    >
+                      <img
+                        class="md:max-w-8 3xl:max-w-10 max-w-7 w-full"
+                        src="/assets/images/green-check.webp"
+                        alt="check-icon"
+                      />
+                      Umfangreiche Vorbereitung und Begleitung beim Rauchstopp
+                    </article>
+                    <article
+                      class="flex items-center md:gap-4 gap-3.5 free-help-text font-normal leading-[160%] text-black font-ibm-plex"
+                    >
+                      <img
+                        class="md:max-w-8 3xl:max-w-10 max-w-7 w-full"
+                        src="/assets/images/green-check.webp"
+                        alt="check-icon"
+                      />
+                      Nutzung der Community
+                    </article>
+                    <article
+                      class="flex items-center md:gap-4 gap-3.5 free-help-text font-normal leading-[160%] text-black font-ibm-plex"
+                    >
+                      <img
+                        class="md:max-w-8 3xl:max-w-10 max-w-7 w-full"
+                        src="/assets/images/green-check.webp"
+                        alt="check-icon"
+                      />
+                      Rückfallschutz: 3 Monate aktive Nachbetreuung
+                    </article>
+                    <article
+                      class="flex items-center md:gap-4 gap-3.5 free-help-text font-normal leading-[160%] text-black font-ibm-plex"
+                    >
+                      <img
+                        class="md:max-w-8 3xl:max-w-10 max-w-7 w-full"
+                        src="/assets/images/green-check.webp"
+                        alt="check-icon"
+                      />
+                      Vorbeugung einer Gewichtzunahme: Fitness- und
+                      Ernährungsvideos
+                    </article>
+                    <article
+                      class="flex items-center md:gap-4 gap-3.5 free-help-text font-normal leading-[160%] text-black font-ibm-plex"
+                    >
+                      <img
+                        class="md:max-w-8 3xl:max-w-10 max-w-7 w-full"
+                        src="/assets/images/green-check.webp"
+                        alt="check-icon"
+                      />
+                      Nutzungszeit 6 Monate
+                    </article>
+                  </div>
+
+                  <a href="/path-to-regulate.html">
+                    <button class="primary-button w-full">
+                      Jetzt anmelden
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="bg-whiteSmoke md:bg-white rounded-[20px] md:rounded-3xl"
+              >
+                <div
+                  class="rounded-t-[20px] md:rounded-t-3xl bg-encoreGray flex justify-between items-center sm:gap-2 md:pl-8 pl-4 py-6"
+                >
+                  <h3
+                    class="paragraph-text text-white leading-[116%] font-medium font-ibm-plex"
+                  >
+                    Basisprogramm – Ohne Nachbetreuung
+                  </h3>
+                </div>
+                <div class="md:px-6 px-4 md:py-[26px] py-9">
+                  <div
+                    class="px-4 md:px-6 3xl:py-8 md:py-3 py-4 flex items-center gap-4 rounded-[20px] md:rounded-3xl bg-alphabetBlue text-base md:text-lg lg:text-xl text-celestialBlue font-medium leading-[100%]"
+                  >
+                    <img
+                      class="md:w-8 md:h-8 3xl:w-10 3xl:h-10 w-9 h-9 hidden md:block"
+                      src="./assets/images/png/green-check.png"
+                      alt="green-check"
+                    />
+
+                    <div class="md:space-y-1">
+                      <p
+                        class="text-KonBlue text-base md:text-lg 3xl:text-xl font-normal font-fira"
+                      >
+                        Eigenanteil nach Erstattung:
+                        <span class="md:font-light!"> 0 Euro</span>
+                      </p>
+                      <p
+                        class="text-KonBlue text-base md:text-lg 3xl:text-xl font-normal font-fira"
+                      >
+                        Die Krankenkasse übernimmt:
+                        <span class="md:font-light!"> 100 Euro</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="md:space-y-4 space-y-5 py-9 md:py-[26px]">
+                    <article
+                      class="flex items-center md:gap-4 gap-3.5 free-help-text font-normal leading-[160%] text-black font-ibm-plex"
+                    >
+                      <img
+                        class="md:max-w-8 3xl:max-w-10 max-w-7 w-full"
+                        src="/assets/images/green-check.webp"
+                        alt="check-icon"
+                      />
+                      Umfangreiche Vorbereitung und Begleitung beim Rauchstopp
+                    </article>
+                    <article
+                      class="flex items-center md:gap-4 gap-3.5 free-help-text font-normal leading-[160%] text-black font-ibm-plex"
+                    >
+                      <img
+                        class="md:max-w-8 3xl:max-w-10 max-w-7 w-full"
+                        src="/assets/images/green-check.webp"
+                        alt="check-icon"
+                      />
+                      Nutzung der Community
+                    </article>
+                    <article
+                      class="flex items-center md:gap-4 gap-3.5 free-help-text font-normal leading-[160%] text-black font-ibm-plex"
+                    >
+                      <img
+                        class="md:max-w-8 3xl:max-w-10 max-w-7 w-full"
+                        src="/assets/images/cross-icon.webp"
+                        alt="cross-icon"
+                      />
+                      Rückfallschutz: 3 Monate aktive Nachbetreuung
+                    </article>
+                    <article
+                      class="flex items-center md:gap-4 gap-3.5 free-help-text font-normal leading-[160%] text-black font-ibm-plex"
+                    >
+                      <img
+                        class="md:max-w-8 3xl:max-w-10 max-w-7 w-full"
+                        src="/assets/images/cross-icon.webp"
+                        alt="minus-icon"
+                      />
+                      Vorbeugung einer Gewichtzunahme: Fitness- und
+                      Ernährungsvideos
+                    </article>
+                    <article
+                      class="flex items-center md:gap-4 gap-3.5 free-help-text font-normal leading-[160%] text-black font-ibm-plex"
+                    >
+                      <img
+                        class="md:max-w-8 3xl:max-w-10 max-w-7 w-full"
+                        src="/assets/images/minus-icon.webp"
+                        alt="minus-icon"
+                      />
+                      Nutzungszeit 3 Monate
+                    </article>
+                  </div>
+
+                  <a href="/path-to-regulate.html">
+                    <button class="secondary-button w-full">
+                      Jetzt anmelden
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="md:p-6 p-4 bg-whiteSmoke overflow-hidden rounded-xl sm:rounded-2xl 3xl:rounded-3xl"
+        >
+          <div class="mySwiperGroupCard">
+            <div class="marquee-track gap-12 md:gap-[72px]">
+              <div class="group-slider max-w-[120px]">
+                <img src="./assets/images/ikk.webp" />
+              </div>
+              <div class="group-slider max-w-[120px]">
+                <img src="./assets/images/png/rv-bkk.png" />
+              </div>
+              <div class="group-slider max-w-[120px]">
+                <img src="./assets/images/aok.webp" />
+              </div>
+              <div class="group-slider max-w-[120px]">
+                <img src="./assets/images/png/big.png" />
+              </div>
+              <div class="group-slider max-w-[120px]">
+                <img src="./assets/images/vdek.webp" />
+              </div>
+              <div class="group-slider max-w-[120px]">
+                <img src="./assets/images/png/exklusiv.png" />
+              </div>
+              <div class="group-slider max-w-[120px]">
+                <img src="./assets/images/tk.webp" />
+              </div>
+              <div class="group-slider max-w-[120px]">
+                <img src="assets/images/png/bkk-bosch.png" />
+              </div>
+
+              <!-- duplicate for seamless loop -->
+              <div class="group-slider max-w-[120px]">
+                <img src="./assets/images/ikk.webp" />
+              </div>
+              <div class="group-slider max-w-[120px]">
+                <img src="./assets/images/png/rv-bkk.png" />
+              </div>
+              <div class="group-slider max-w-[120px]">
+                <img src="./assets/images/aok.webp" />
+              </div>
+              <div class="group-slider max-w-[120px]">
+                <img src="./assets/images/png/big.png" />
+              </div>
+              <div class="group-slider max-w-[120px]">
+                <img src="./assets/images/vdek.webp" />
+              </div>
+              <div class="group-slider max-w-[120px]">
+                <img src="./assets/images/png/exklusiv.png" />
+              </div>
+              <div class="group-slider max-w-[120px]">
+                <img src="./assets/images/tk.webp" />
+              </div>
+              <div class="group-slider max-w-[120px]">
+                <img src="assets/images/png/bkk-bosch.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!------------------------ Testimonial Section --------------------------->
+      <section
+        class="bg-icelightBlue flex items-center justify-center py-10 sm:py-[50px] md:py-[60px] 2xl:py-20 3xl:py-[109px]"
+      >
+        <div class="secondary-container sm:px-4! px-8! w-full mx-auto">
+          <!-- Header Section -->
+          <div
+            class="text-start md:text-center mb-9 sm:mb-11 md:mb-16 3xl:mb-[113px] 2xl:mb-20 max-w-[800px] w-full mx-auto"
+          >
+            <p
+              class="text-base md:text-lg lg:text-xl text-celestialBlue mb-2 md:mb-5 font-fira"
+            >
+              Echte Menschen, echte Erfolge
+            </p>
+            <h1
+              class="section-title text-KonBlue mb-4 md:mb-[47px] font-fira max-w-[620px] w-full text-start sm:text-center mx-auto leading-[100%]"
+            >
+              Das berichten unsere Heldinnen & Helden
+            </h1>
+            <p
+              class="text-KonBlue text-base sm:text-lg md:text-xl 3xl:text-2xl font-ibm-plex"
+            >
+              30.000+ Erfolgsgeschichten. Lass dich inspirieren und werde auch
+              Du zum NichtraucherHelden.
+            </p>
+          </div>
+
+          <div class="relative w-full">
+            <div
+              class="flex flex-col md:flex-row items-center w-full justify-between"
+            >
+              <div
+                class="swiper testimonial-swiper relative max-w-[628px] w-full pointer-events-none"
+              >
+                <div class="swiper-wrapper w-full pr-[60px] rounded-r-full">
+                  <div class="rounded-3xl swiper-slide w-full">
+                    <div
+                      class="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
+                    >
+                      <div class="flex justify-between items-center gap-4">
+                        <img
+                          src="./assets/images/Ellipse-1.webp"
+                          alt="Profile"
+                          class="slider-img rounded-full object-cover"
+                        />
+                        <p
+                          class="text-base xl:text-lg xxl:text-xl text-galeForce font-medium font-ibm-plex block md:hidden"
+                        >
+                          David Müller, seit 3 Jahren Rauchfrei
+                        </p>
+                      </div>
+                      <div>
+                        <p
+                          class="text-base xl:text-lg 2xl:text-base 3xl:text-xl text-primary mb-2 font-ibm-plex font-light"
+                        >
+                          “Lorem ipsum dolor sit amet posuere a auctor
+                          malesuada. Magna eget etiam facilisis gravida
+                          adipiscing sapien porttitor hac vitae. Praesent
+                          elementum risus”
+                        </p>
+                        <p
+                          class="text-sm lg:text-base xl:text-lg 3xl:text-xl text-primary font-medium font-ibm-plex hidden md:block"
+                        >
+                          David Müller, seit 3 Jahren Rauchfrei
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rounded-3xl swiper-slide w-full">
+                    <div
+                      class="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
+                    >
+                      <div class="flex justify-between items-center gap-4">
+                        <img
+                          src="./assets/images/Ellipse-2.webp"
+                          alt="Profile"
+                          class="slider-img rounded-full object-cover"
+                        />
+                        <p
+                          class="text-base xl:text-lg xxl:text-xl text-galeForce font-medium font-ibm-plex block md:hidden"
+                        >
+                          David Müller, seit 3 Jahren Rauchfrei
+                        </p>
+                      </div>
+                      <div>
+                        <p
+                          class="text-base xl:text-lg 2xl:text-base 3xl:text-xl text-primary mb-2 font-ibm-plex font-light"
+                        >
+                          “Lorem ipsum dolor sit amet posuere a auctor
+                          malesuada. Magna eget etiam facilisis gravida
+                          adipiscing sapien porttitor hac vitae. Praesent
+                          elementum risus”
+                        </p>
+                        <p
+                          class="text-sm lg:text-base xl:text-lg 3xl:text-xl text-primary font-medium font-ibm-plex hidden md:block"
+                        >
+                          David Müller, seit 3 Jahren Rauchfrei
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rounded-3xl swiper-slide w-full">
+                    <div
+                      class="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
+                    >
+                      <div class="flex justify-between items-center gap-4">
+                        <img
+                          src="./assets/images/Ellipse-3.webp"
+                          alt="Profile"
+                          class="slider-img rounded-full object-cover"
+                        />
+                        <p
+                          class="text-base xl:text-lg xxl:text-xl text-galeForce font-medium font-ibm-plex block md:hidden"
+                        >
+                          David Müller, seit 3 Jahren Rauchfrei
+                        </p>
+                      </div>
+                      <div>
+                        <p
+                          class="text-base xl:text-lg 2xl:text-base 3xl:text-xl text-primary mb-2 font-ibm-plex font-light"
+                        >
+                          “Lorem ipsum dolor sit amet posuere a auctor
+                          malesuada. Magna eget etiam facilisis gravida
+                          adipiscing sapien porttitor hac vitae. Praesent
+                          elementum risus”
+                        </p>
+                        <p
+                          class="text-sm lg:text-base xl:text-lg 3xl:text-xl text-primary font-medium font-ibm-plex hidden md:block"
+                        >
+                          David Müller, seit 3 Jahren Rauchfrei
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rounded-3xl swiper-slide w-full">
+                    <div
+                      class="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
+                    >
+                      <div class="flex justify-between items-center gap-4">
+                        <img
+                          src="./assets/images/Ellipse-4.webp"
+                          alt="Profile"
+                          class="slider-img rounded-full object-cover"
+                        />
+                        <p
+                          class="text-base xl:text-lg xxl:text-xl text-galeForce font-medium font-ibm-plex block md:hidden"
+                        >
+                          David Müller, seit 3 Jahren Rauchfrei
+                        </p>
+                      </div>
+                      <div>
+                        <p
+                          class="text-base xl:text-lg 2xl:text-base 3xl:text-xl text-primary mb-2 font-ibm-plex font-light"
+                        >
+                          “Lorem ipsum dolor sit amet posuere a auctor
+                          malesuada. Magna eget etiam facilisis gravida
+                          adipiscing sapien porttitor hac vitae. Praesent
+                          elementum risus”
+                        </p>
+                        <p
+                          class="text-sm lg:text-base xl:text-lg 3xl:text-xl text-primary font-medium font-ibm-plex hidden md:block"
+                        >
+                          David Müller, seit 3 Jahren Rauchfrei
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rounded-3xl swiper-slide w-full">
+                    <div
+                      class="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
+                    >
+                      <div class="flex justify-between items-center gap-4">
+                        <img
+                          src="./assets/images/Ellipse-5.webp"
+                          alt="Profile"
+                          class="slider-img rounded-full object-cover"
+                        />
+                        <p
+                          class="text-base xl:text-lg xxl:text-xl text-galeForce font-medium font-ibm-plex block md:hidden"
+                        >
+                          David Müller, seit 3 Jahren Rauchfrei
+                        </p>
+                      </div>
+                      <div>
+                        <p
+                          class="text-base xl:text-lg 2xl:text-base 3xl:text-xl text-primary mb-2 font-ibm-plex font-light"
+                        >
+                          “Lorem ipsum dolor sit amet posuere a auctor
+                          malesuada. Magna eget etiam facilisis gravida
+                          adipiscing sapien porttitor hac vitae. Praesent
+                          elementum risus”
+                        </p>
+                        <p
+                          class="text-sm lg:text-base xl:text-lg 3xl:text-xl text-primary font-medium font-ibm-plex hidden md:block"
+                        >
+                          David Müller, seit 3 Jahren Rauchfrei
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rounded-3xl swiper-slide w-full">
+                    <div
+                      class="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
+                    >
+                      <div class="flex justify-between items-center gap-4">
+                        <img
+                          src="./assets/images/Ellipse-6.webp"
+                          alt="Profile"
+                          class="slider-img rounded-full object-cover"
+                        />
+                        <p
+                          class="text-base xl:text-lg xxl:text-xl text-galeForce font-medium font-ibm-plex block md:hidden"
+                        >
+                          David Müller, seit 3 Jahren Rauchfrei
+                        </p>
+                      </div>
+                      <div>
+                        <p
+                          class="text-base xl:text-lg 2xl:text-base 3xl:text-xl text-primary mb-2 font-ibm-plex font-light"
+                        >
+                          “Lorem ipsum dolor sit amet posuere a auctor
+                          malesuada. Magna eget etiam facilisis gravida
+                          adipiscing sapien porttitor hac vitae. Praesent
+                          elementum risus”
+                        </p>
+                        <p
+                          class="text-sm lg:text-base xl:text-lg 3xl:text-xl text-primary font-medium font-ibm-plex hidden md:block"
+                        >
+                          David Müller, seit 3 Jahren Rauchfrei
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="testimonial-swiperImg lg:flex! hidden! swiper pointer-events-none w-full max-w-[496px] rounded-full overflow-hidden"
+              >
+                <div class="swiper-wrapper">
+                  <div class="relative swiper-slide">
+                    <div class="relative overflow-hidden slider-img">
+                      <div
+                        class="absolute inset-0 bg-imgBg w-[110%] h-full slide-bg rounded-full"
+                      ></div>
+                      <img
+                        class="w-full h-full! object-cover"
+                        src="/assets/images/Ellipse-2.webp"
+                        alt="magazin"
+                      />
+                    </div>
+                  </div>
+                  <div class="relative swiper-slide">
+                    <div class="relative overflow-hidden slider-img">
+                      <img
+                        class="w-full h-full! object-cover"
+                        src="/assets/images/Ellipse-3.webp"
+                        alt="magazin"
+                      />
+                      <div
+                        class="absolute inset-0 bg-imgBg w-[110%] h-full slide-bg rounded-full"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="relative swiper-slide">
+                    <div class="relative overflow-hidden slider-img">
+                      <img
+                        class="w-full h-full! object-cover"
+                        src="/assets/images/Ellipse-4.webp"
+                        alt="magazin"
+                      />
+                      <div
+                        class="absolute inset-0 bg-imgBg w-[110%] h-full slide-bg rounded-full"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="relative swiper-slide">
+                    <div class="relative overflow-hidden slider-img">
+                      <img
+                        class="w-full h-full! object-cover"
+                        src="/assets/images/Ellipse-5.webp"
+                        alt="magazin"
+                      />
+
+                      <div
+                        class="absolute inset-0 bg-imgBg w-[110%] h-full slide-bg rounded-full"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="relative swiper-slide">
+                    <div class="relative overflow-hidden slider-img">
+                      <img
+                        class="w-full h-full! object-cover"
+                        src="/assets/images/Ellipse-6.webp"
+                        alt="magazin"
+                      />
+
+                      <div
+                        class="absolute inset-0 bg-imgBg w-[110%] h-full slide-bg rounded-full"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="relative swiper-slide">
+                    <div class="relative overflow-hidden slider-img">
+                      <img
+                        class="w-full h-full! object-cover"
+                        src="/assets/images/Ellipse-1.webp"
+                        alt="magazin"
+                      />
+
+                      <div
+                        class="absolute inset-0 bg-imgBg w-[110%] h-full slide-bg rounded-full"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="flex items-center justify-between gap-3 sm:gap-10 max-w-[420px] 3xl:max-w-[496px] w-full mx-auto mt-10 sm:mt-12"
+            >
+              <div
+                class="swiper-button-prev-custom flex! relative! w-full min-w-12 max-w-12 2xl:max-w-[50px] 3xl:max-w-[72px] cursor-pointer"
+              >
+                <img
+                  class="w-full h-full"
+                  src="./assets/images/slider-icon-left.webp"
+                  alt="magazin"
+                />
+              </div>
+              <div
+                class="swiper-pagination relative! w-ful! m-0~ top-0! bottom-0! flex! items-center justify-center duration-200 ease-in-out"
+                role="button"
+              ></div>
+              <div
+                class="swiper-button-next-custom flex! relative! w-full min-w-12 max-w-12 2xl:max-w-[50px] 3xl:max-w-[72px] cursor-pointer"
+              >
+                <img
+                  class="w-full h-full"
+                  src="./assets/images/slider-icon-right.webp"
+                  alt="magazin"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!------------------------ Free and helpful --------------------------->
+      <section class="pt-11 md:py-[50px] lg:py-16 2xl:py-24 3xl:py-28">
+        <div
+          class="secondary-container flex flex-col-reverse lg:flex-row justify-start lg:justify-between items-center gap-9 lg:gap-12"
+        >
+          <div class="max-w-[550px] px-4 lg:px-0 lg:max-w-[496px] w-full">
+            <p
+              class="free-help-text font-fira text-blueBay leading-[150%] 3xl:leading-[120%]"
+            >
+              Werde rauchfrei
+            </p>
+            <h2
+              class="program-card-title text-KonBlue 3xl:leading-[116.667%] leading-[120.571%] font-fira pt-[13px] 3xl:pt-5"
+            >
+              Wertvolle Tipps direkt in Dein Postfach!
+            </h2>
+            <p
+              class="text-KonBlue leading-[150%] 3xl:leading-[160%] free-help-text font-ibm-plex pt-3.5 sm:pt-[25px] lg:pt-[30px] mb-3.5 sm:mb-6 md:mb-8"
+            >
+              Wir begleiten Dich Schritt für Schritt. Trage dich in unseren
+              Newsletter mit kostenlosen Rauchfrei-Tipps
+              <br class="lg:block hidden" />
+              per E-Mail ein.
+            </p>
+
+            <form id="newsletterForm">
+              <div id="successMessage" class="hidden">
+                <div
+                  class="text-KonBlue text-base font-medium flex items-center gap-4 p-4 rounded-[20px] bg-iceFishing mb-[29px]"
+                >
+                  <div
+                    class="max-w-9 max-h-9 w-9 h-9 min-w-9 min-h-9 py-[7.5px] px-[5px] rounded-full flex items-center justify-center bg-KonBlue"
+                  >
+                    <img
+                      class="max-w-[26px] min-w-[26px] w-full min-h-[21px] max-h-[21px] h-[21px] object-contain"
+                      src="./assets/images/png/bulb.png"
+                      alt="bulb"
+                    />
+                  </div>
+
+                  Falls Du keine E-Mail siehst, prüfe bitte auch Deinen
+                  Spam-Ordner.
+                </div>
+              </div>
+              <div class="sm:space-y-4 space-y-2 mb-3.5 sm:mb-6 md:mb-8">
+                <div
+                  class="px-4 3xl:h-16 2xl:h-14 h-11 flex items-center rounded-xl gap-3 sm:gap-4 bg-iceFishing"
+                >
+                  <img
+                    class="max-w-[15px] w-full h-6 object-contain"
+                    src="./assets/images/png/name.png"
+                    alt="name"
+                  />
+                  <input
+                    required
+                    placeholder="Vorname, Nachname"
+                    type="text"
+                    class="w-full bg-transparent outline-none text-primaryButton free-help-text"
+                  />
+                </div>
+                <div
+                  class="px-4 3xl:h-16 2xl:h-14 h-11 flex items-center rounded-xl gap-3 sm:gap-4 bg-iceFishing"
+                >
+                  <img
+                    class="max-w-[15px] w-full h-6 object-contain"
+                    src="./assets/images/png/email.png"
+                    alt="email"
+                  />
+                  <input
+                    required
+                    placeholder="E-Mail-Adresse"
+                    type="text"
+                    class="w-full bg-transparent outline-none text-primaryButton free-help-text"
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="primary-btn 3xl:leading-[100%] leading-[150%]"
+              >
+                Newsletter abonnieren
+              </button>
+            </form>
+          </div>
+          <div class="max-w-[500px] 3xl:max-w-[628px] w-full">
+            <img
+              class="w-full object-cover rounded-[20px]"
+              src="./assets/images/free-help-girl.webp"
+              alt="free help"
+            />
+          </div>
+        </div>
+      </section>
+      <!------------------------ ACCORDION_SECTION --------------------------->
+      <section
+        class="max-w-7xl 3xl:max-w-[1580px] w-full mx-auto px-8 sm:px-4 py-9 sm:py-11 md:py-[50px] lg:py-16 2xl:py-24 3xl:py-28"
+      >
+        <p class="paragraph-text text-celestialBlue font-fira text-center">
+          Alles, was Du wissen musst
+        </p>
+        <h3
+          class="section-title text-KonBlue font-fira text-center sm:mt-5 mt-2.5 md:leading-[100%] leading-[128.571%]"
+        >
+          Häufig gestellte Fragen
+        </h3>
+        <div
+          class="grid lg:grid-cols-2 gap-3 xl:gap-[27px] mt-3.5 sm:mt-11 md:mt-[50px] lg:mt-16 2xl:mt-24 3xl:mt-28"
+        >
+          <div class="space-y-4">
+            <article class="bg-iceFishing rounded-xl">
+              <!-- Accordion Header -->
+              <button
+                type="button"
+                class="flex gap-4 items-center w-full text-left px-4 py-4 xl:px-6 xl:py-6 justify-between"
+                onclick="toggleAccordion()"
+              >
+                <h3
+                  class="font-medium font-fira text-celestialBlue text-base 3xl:text-xl"
+                >
+                  Was kostet das Programm?
+                </h3>
+                <img
+                  id="accordionArrow"
+                  class="accordion-arrow"
+                  src="./assets/images/faq-down-arrow.webp"
+                  alt="accordion-icon"
+                />
+              </button>
+
+              <!-- Accordion Content (OPEN BY DEFAULT) -->
+              <div class="accordion">
+                <div
+                  class="accordion-inner overflow-hidden transition-all duration-500 ease-in-out max-h-[500px] px-4 xl:px-6 pb-4 xl:pb-6"
+                >
+                  <p
+                    class="paragraph-xl text-primary font-light! font-ibm-plex"
+                  >
+                    “Bei den früheren Aufhörversuchen war es eher so, dass ich
+                    eine Raucherin war, die gerade nicht raucht. Seit Abschluss
+                    des Programms habe ich das erste Mal wirklich das Gefühl,
+                    Nichtraucherin zu sein.”
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="bg-iceFishing rounded-xl">
+              <!-- Accordion Header -->
+              <button
+                type="button"
+                class="flex gap-4 items-center w-full text-left px-4 py-4 xl:px-6 xl:py-6 justify-between"
+                onclick="toggleAccordion()"
+              >
+                <h3
+                  class="font-medium font-fira text-celestialBlue text-base 3xl:text-xl"
+                >
+                  Was ist der Unterschied zwischen Basis- und Plusprogramm?
+                </h3>
+                <img
+                  id="accordionArrow"
+                  class="accordion-arrow"
+                  src="./assets/images/faq-down-arrow.webp"
+                  alt="accordion-icon"
+                />
+              </button>
+
+              <!-- Accordion Content (OPEN BY DEFAULT) -->
+              <div class="accordion">
+                <div
+                  class="accordion-inner overflow-hidden transition-all duration-500 ease-in-out max-h-[500px] px-4 xl:px-6 pb-4 xl:pb-6"
+                >
+                  <p
+                    class="paragraph-xl text-primary font-light! font-ibm-plex"
+                  >
+                    “Bei den früheren Aufhörversuchen war es eher so, dass ich
+                    eine Raucherin war, die gerade nicht raucht. Seit Abschluss
+                    des Programms habe ich das erste Mal wirklich das Gefühl,
+                    Nichtraucherin zu sein.”
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="bg-iceFishing rounded-xl">
+              <!-- Accordion Header -->
+              <button
+                type="button"
+                class="flex gap-4 items-center w-full text-left px-4 py-4 xl:px-6 xl:py-6 justify-between"
+                onclick="toggleAccordion()"
+              >
+                <h3
+                  class="font-medium font-fira text-celestialBlue text-base 3xl:text-xl"
+                >
+                  Was sind die Voraussetzungen für die Teilnahme am Programm?
+                </h3>
+                <img
+                  id="accordionArrow"
+                  class="accordion-arrow"
+                  src="./assets/images/faq-down-arrow.webp"
+                  alt="accordion-icon"
+                />
+              </button>
+
+              <!-- Accordion Content (OPEN BY DEFAULT) -->
+              <div class="accordion">
+                <div
+                  class="accordion-inner overflow-hidden transition-all duration-500 ease-in-out max-h-[500px] px-4 xl:px-6 pb-4 xl:pb-6"
+                >
+                  <p
+                    class="paragraph-xl text-primary font-light! font-ibm-plex"
+                  >
+                    Die wichtigste Voraussetzung für die Teilnahme ist, dass Du
+                    mit dem Rauchen aufhören möchtest. Die bewusste Entscheidung
+                    für den Rauchstopp und gegen die Zigarette können wir Dir
+                    leider nicht abnehmen. Wenn Du diese Entscheidung getroffen
+                    hast, geben wir mit unserem Programm unser Bestes, Dich bei
+                    Deinem Vorhaben zu unterstützen und Dich zu begleiten. Wir
+                    freuen uns darauf, Dich beim Rauchstopp unterstützen zu
+                    dürfen.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="bg-iceFishing rounded-xl">
+              <!-- Accordion Header -->
+              <button
+                type="button"
+                class="flex gap-4 items-center w-full text-left px-4 py-4 xl:px-6 xl:py-6 justify-between"
+                onclick="toggleAccordion()"
+              >
+                <h3
+                  class="font-medium font-fira text-celestialBlue text-base 3xl:text-xl"
+                >
+                  Wie bekomme ich mein Geld von der Krankenkasse zurück?
+                </h3>
+                <img
+                  id="accordionArrow"
+                  class="accordion-arrow"
+                  src="./assets/images/faq-down-arrow.webp"
+                  alt="accordion-icon"
+                />
+              </button>
+
+              <!-- Accordion Content (OPEN BY DEFAULT) -->
+              <div class="accordion">
+                <div
+                  class="accordion-inner overflow-hidden transition-all duration-500 ease-in-out max-h-[500px] px-4 xl:px-6 pb-4 xl:pb-6"
+                >
+                  <p
+                    class="paragraph-xl text-primary font-light! font-ibm-plex"
+                  >
+                    Die wichtigste Voraussetzung für die Teilnahme ist, dass Du
+                    mit dem Rauchen aufhören möchtest. Die bewusste Entscheidung
+                    für den Rauchstopp und gegen die Zigarette können wir Dir
+                    leider nicht abnehmen. Wenn Du diese Entscheidung getroffen
+                    hast, geben wir mit unserem Programm unser Bestes, Dich bei
+                    Deinem Vorhaben zu unterstützen und Dich zu begleiten. Wir
+                    freuen uns darauf, Dich beim Rauchstopp unterstützen zu
+                    dürfen.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="bg-iceFishing rounded-xl">
+              <!-- Accordion Header -->
+              <button
+                type="button"
+                class="flex gap-4 items-center w-full text-left px-4 py-4 xl:px-6 xl:py-6 justify-between"
+                onclick="toggleAccordion()"
+              >
+                <h3
+                  class="font-medium font-fira text-celestialBlue text-base 3xl:text-xl"
+                >
+                  Wie lange gibt es das Programm schon und wer steht dahinter?
+                </h3>
+                <img
+                  id="accordionArrow"
+                  class="accordion-arrow"
+                  src="./assets/images/faq-down-arrow.webp"
+                  alt="accordion-icon"
+                />
+              </button>
+
+              <!-- Accordion Content (OPEN BY DEFAULT) -->
+              <div class="accordion">
+                <div
+                  class="accordion-inner overflow-hidden transition-all duration-500 ease-in-out max-h-[500px] px-4 xl:px-6 pb-4 xl:pb-6"
+                >
+                  <p
+                    class="paragraph-xl text-primary font-light! font-ibm-plex"
+                  >
+                    Die wichtigste Voraussetzung für die Teilnahme ist, dass Du
+                    mit dem Rauchen aufhören möchtest. Die bewusste Entscheidung
+                    für den Rauchstopp und gegen die Zigarette können wir Dir
+                    leider nicht abnehmen. Wenn Du diese Entscheidung getroffen
+                    hast, geben wir mit unserem Programm unser Bestes, Dich bei
+                    Deinem Vorhaben zu unterstützen und Dich zu begleiten. Wir
+                    freuen uns darauf, Dich beim Rauchstopp unterstützen zu
+                    dürfen.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="bg-iceFishing rounded-xl">
+              <!-- Accordion Header -->
+              <button
+                type="button"
+                class="flex gap-4 items-center w-full text-left px-4 py-4 xl:px-6 xl:py-6 justify-between"
+                onclick="toggleAccordion()"
+              >
+                <h3
+                  class="font-medium font-fira text-celestialBlue text-base 3xl:text-xl"
+                >
+                  Welche konkreten Themen beinhaltet das Programm?
+                </h3>
+                <img
+                  id="accordionArrow"
+                  class="accordion-arrow"
+                  src="./assets/images/faq-down-arrow.webp"
+                  alt="accordion-icon"
+                />
+              </button>
+
+              <!-- Accordion Content (OPEN BY DEFAULT) -->
+              <div class="accordion">
+                <div
+                  class="accordion-inner overflow-hidden transition-all duration-500 ease-in-out max-h-[500px] px-4 xl:px-6 pb-4 xl:pb-6"
+                >
+                  <p
+                    class="paragraph-xl text-primary font-light! font-ibm-plex"
+                  >
+                    Die wichtigste Voraussetzung für die Teilnahme ist, dass Du
+                    mit dem Rauchen aufhören möchtest. Die bewusste Entscheidung
+                    für den Rauchstopp und gegen die Zigarette können wir Dir
+                    leider nicht abnehmen. Wenn Du diese Entscheidung getroffen
+                    hast, geben wir mit unserem Programm unser Bestes, Dich bei
+                    Deinem Vorhaben zu unterstützen und Dich zu begleiten. Wir
+                    freuen uns darauf, Dich beim Rauchstopp unterstützen zu
+                    dürfen.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="bg-iceFishing rounded-xl">
+              <!-- Accordion Header -->
+              <button
+                type="button"
+                class="flex gap-4 items-center w-full text-left px-4 py-4 xl:px-6 xl:py-6 justify-between"
+                onclick="toggleAccordion()"
+              >
+                <h3
+                  class="font-medium font-fira text-celestialBlue text-base 3xl:text-xl"
+                >
+                  Wie lange kann ich das Programm nutzen?
+                </h3>
+                <img
+                  id="accordionArrow"
+                  class="accordion-arrow"
+                  src="./assets/images/faq-down-arrow.webp"
+                  alt="accordion-icon"
+                />
+              </button>
+
+              <!-- Accordion Content (OPEN BY DEFAULT) -->
+              <div class="accordion">
+                <div
+                  class="accordion-inner overflow-hidden transition-all duration-500 ease-in-out max-h-[500px] px-4 xl:px-6 pb-4 xl:pb-6"
+                >
+                  <p
+                    class="paragraph-xl text-primary font-light! font-ibm-plex"
+                  >
+                    Die wichtigste Voraussetzung für die Teilnahme ist, dass Du
+                    mit dem Rauchen aufhören möchtest. Die bewusste Entscheidung
+                    für den Rauchstopp und gegen die Zigarette können wir Dir
+                    leider nicht abnehmen. Wenn Du diese Entscheidung getroffen
+                    hast, geben wir mit unserem Programm unser Bestes, Dich bei
+                    Deinem Vorhaben zu unterstützen und Dich zu begleiten. Wir
+                    freuen uns darauf, Dich beim Rauchstopp unterstützen zu
+                    dürfen.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="space-y-4">
+            <article class="bg-iceFishing rounded-xl">
+              <!-- Accordion Header -->
+              <button
+                type="button"
+                class="flex gap-4 items-center w-full text-left px-4 py-4 xl:px-6 xl:py-6 justify-between"
+                onclick="toggleAccordion()"
+              >
+                <h3
+                  class="font-medium font-fira text-celestialBlue text-base 3xl:text-xl"
+                >
+                  Nach welcher Methode arbeitet das Programm?
+                </h3>
+                <img
+                  id="accordionArrow"
+                  class="accordion-arrow"
+                  src="./assets/images/faq-down-arrow.webp"
+                  alt="accordion-icon"
+                />
+              </button>
+
+              <!-- Accordion Content (OPEN BY DEFAULT) -->
+              <div class="accordion">
+                <div
+                  class="accordion-inner overflow-hidden transition-all duration-500 ease-in-out max-h-[500px] px-4 xl:px-6 pb-4 xl:pb-6"
+                >
+                  <p
+                    class="paragraph-xl text-primary font-light! font-ibm-plex"
+                  >
+                    “Bei den früheren Aufhörversuchen war es eher so, dass ich
+                    eine Raucherin war, die gerade nicht raucht. Seit Abschluss
+                    des Programms habe ich das erste Mal wirklich das Gefühl,
+                    Nichtraucherin zu sein.”
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="bg-iceFishing rounded-xl">
+              <!-- Accordion Header -->
+              <button
+                type="button"
+                class="flex gap-4 items-center w-full text-left px-4 py-4 xl:px-6 xl:py-6 justify-between"
+                onclick="toggleAccordion()"
+              >
+                <h3
+                  class="font-medium font-fira text-celestialBlue text-base 3xl:text-xl"
+                >
+                  Muss ich sofort mit dem Rauchen aufhören?
+                </h3>
+                <img
+                  id="accordionArrow"
+                  class="accordion-arrow"
+                  src="./assets/images/faq-down-arrow.webp"
+                  alt="accordion-icon"
+                />
+              </button>
+
+              <!-- Accordion Content (OPEN BY DEFAULT) -->
+              <div class="accordion">
+                <div
+                  class="accordion-inner overflow-hidden transition-all duration-500 ease-in-out max-h-[500px] px-4 xl:px-6 pb-4 xl:pb-6"
+                >
+                  <p
+                    class="paragraph-xl text-primary font-light! font-ibm-plex"
+                  >
+                    “Bei den früheren Aufhörversuchen war es eher so, dass ich
+                    eine Raucherin war, die gerade nicht raucht. Seit Abschluss
+                    des Programms habe ich das erste Mal wirklich das Gefühl,
+                    Nichtraucherin zu sein.”
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="bg-iceFishing rounded-xl">
+              <!-- Accordion Header -->
+              <button
+                type="button"
+                class="flex gap-4 items-center w-full text-left px-4 py-4 xl:px-6 xl:py-6 justify-between"
+                onclick="toggleAccordion()"
+              >
+                <h3
+                  class="font-medium font-fira text-celestialBlue text-base 3xl:text-xl"
+                >
+                  Startet das Programm direkt wenn ich mich anmelde?
+                </h3>
+                <img
+                  id="accordionArrow"
+                  class="accordion-arrow"
+                  src="./assets/images/faq-down-arrow.webp"
+                  alt="accordion-icon"
+                />
+              </button>
+
+              <!-- Accordion Content (OPEN BY DEFAULT) -->
+              <div class="accordion">
+                <div
+                  class="accordion-inner overflow-hidden transition-all duration-500 ease-in-out max-h-[500px] px-4 xl:px-6 pb-4 xl:pb-6"
+                >
+                  <p
+                    class="paragraph-xl text-primary font-light! font-ibm-plex"
+                  >
+                    “Bei den früheren Aufhörversuchen war es eher so, dass ich
+                    eine Raucherin war, die gerade nicht raucht. Seit Abschluss
+                    des Programms habe ich das erste Mal wirklich das Gefühl,
+                    Nichtraucherin zu sein.”
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="bg-iceFishing rounded-xl">
+              <!-- Accordion Header -->
+              <button
+                type="button"
+                class="flex gap-4 items-center w-full text-left px-4 py-4 xl:px-6 xl:py-6 justify-between"
+                onclick="toggleAccordion()"
+              >
+                <h3
+                  class="font-medium font-fira text-celestialBlue text-base 3xl:text-xl"
+                >
+                  Muss ich das Programm am Stück durchmachen?
+                </h3>
+                <img
+                  id="accordionArrow"
+                  class="accordion-arrow"
+                  src="./assets/images/faq-down-arrow.webp"
+                  alt="accordion-icon"
+                />
+              </button>
+
+              <!-- Accordion Content (OPEN BY DEFAULT) -->
+              <div class="accordion">
+                <div
+                  class="accordion-inner overflow-hidden transition-all duration-500 ease-in-out max-h-[500px] px-4 xl:px-6 pb-4 xl:pb-6"
+                >
+                  <p
+                    class="paragraph-xl text-primary font-light! font-ibm-plex"
+                  >
+                    “Bei den früheren Aufhörversuchen war es eher so, dass ich
+                    eine Raucherin war, die gerade nicht raucht. Seit Abschluss
+                    des Programms habe ich das erste Mal wirklich das Gefühl,
+                    Nichtraucherin zu sein.”
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="bg-iceFishing rounded-xl">
+              <!-- Accordion Header -->
+              <button
+                type="button"
+                class="flex gap-4 items-center w-full text-left px-4 py-4 xl:px-6 xl:py-6 justify-between"
+                onclick="toggleAccordion()"
+              >
+                <h3
+                  class="font-medium font-fira text-celestialBlue text-base 3xl:text-xl"
+                >
+                  Wie funktioniert ein Nichtraucherkurs online?
+                </h3>
+                <img
+                  id="accordionArrow"
+                  class="accordion-arrow"
+                  src="./assets/images/faq-down-arrow.webp"
+                  alt="accordion-icon"
+                />
+              </button>
+
+              <!-- Accordion Content (OPEN BY DEFAULT) -->
+              <div class="accordion">
+                <div
+                  class="accordion-inner overflow-hidden transition-all duration-500 ease-in-out max-h-[500px] px-4 xl:px-6 pb-4 xl:pb-6"
+                >
+                  <p
+                    class="paragraph-xl text-primary font-light! font-ibm-plex"
+                  >
+                    “Bei den früheren Aufhörversuchen war es eher so, dass ich
+                    eine Raucherin war, die gerade nicht raucht. Seit Abschluss
+                    des Programms habe ich das erste Mal wirklich das Gefühl,
+                    Nichtraucherin zu sein.”
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="bg-iceFishing rounded-xl">
+              <!-- Accordion Header -->
+              <button
+                type="button"
+                class="flex gap-4 items-center w-full text-left px-4 py-4 xl:px-6 xl:py-6 justify-between"
+                onclick="toggleAccordion()"
+              >
+                <h3
+                  class="font-medium font-fira text-celestialBlue text-base 3xl:text-xl"
+                >
+                  Wie viel Zeit benötige ich täglich für den Kurs?
+                </h3>
+                <img
+                  id="accordionArrow"
+                  class="accordion-arrow"
+                  src="./assets/images/faq-down-arrow.webp"
+                  alt="accordion-icon"
+                />
+              </button>
+
+              <!-- Accordion Content (OPEN BY DEFAULT) -->
+              <div class="accordion">
+                <div
+                  class="accordion-inner overflow-hidden transition-all duration-500 ease-in-out max-h-[500px] px-4 xl:px-6 pb-4 xl:pb-6"
+                >
+                  <p
+                    class="paragraph-xl text-primary font-light! font-ibm-plex"
+                  >
+                    “Bei den früheren Aufhörversuchen war es eher so, dass ich
+                    eine Raucherin war, die gerade nicht raucht. Seit Abschluss
+                    des Programms habe ich das erste Mal wirklich das Gefühl,
+                    Nichtraucherin zu sein.”
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="bg-iceFishing rounded-xl">
+              <!-- Accordion Header -->
+              <button
+                type="button"
+                class="flex gap-4 items-center w-full text-left px-4 py-4 xl:px-6 xl:py-6 justify-between"
+                onclick="toggleAccordion()"
+              >
+                <h3
+                  class="font-medium font-fira text-celestialBlue text-base 3xl:text-xl"
+                >
+                  Was bedeutet, dass der Kurs ein "zertifizierter
+                  Präventionskurs" ist?
+                </h3>
+                <img
+                  id="accordionArrow"
+                  class="accordion-arrow"
+                  src="./assets/images/faq-down-arrow.webp"
+                  alt="accordion-icon"
+                />
+              </button>
+
+              <!-- Accordion Content (OPEN BY DEFAULT) -->
+              <div class="accordion">
+                <div
+                  class="accordion-inner overflow-hidden transition-all duration-500 ease-in-out max-h-[500px] px-4 xl:px-6 pb-4 xl:pb-6"
+                >
+                  <p
+                    class="paragraph-xl text-primary font-light! font-ibm-plex"
+                  >
+                    “Bei den früheren Aufhörversuchen war es eher so, dass ich
+                    eine Raucherin war, die gerade nicht raucht. Seit Abschluss
+                    des Programms habe ich das erste Mal wirklich das Gefühl,
+                    Nichtraucherin zu sein.”
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!------------------------ Footer Section --------------------------->
+      <footer class="bg-KonBlue text-white px-8 sm:px-5">
+        <!-- TOP SECTION -->
+        <div
+          class="section-container-primary py-12 xl:justify-between grid grid-cols-1 sm:grid-cols-2 3xl:pt-27.75 3xl:pb-26.25 lg:grid-cols-4 gap-8 3xl:gap-17 xl:flex"
+        >
+          <!-- Column 1 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Sanero Medical GmbH
+            </h3>
+            <p class="footer-link font-normal font-ibm-plex">
+              Wilhelmstraße 19 70182<br />
+              Stuttgart Germany
+            </p>
+
+            <div class="mt-4 md:mt-6 space-y-2 text-sm">
+              <a
+                href="tel:+49 (0)711 / 99 538 110"
+                class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+              >
+                <img
+                  class="max-w-5 w-full"
+                  src="./assets/images/phone-white.webp"
+                  alt="phone"
+                />
+
+                +49 (0)711 / 99 538 110
+              </a>
+              <a
+                href="mailto:info@sanero-medical.de"
+                class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+              >
+                <img
+                  class="max-w-5 w-full"
+                  src="./assets/images/email-white.webp"
+                  alt="phone"
+                />
+                info@sanero-medical.de
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Unternehmen
+            </h3>
+            <ul
+              class="space-y-2 font-normal footer-link font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Über uns</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Kontakt</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Presse</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Service
+            </h3>
+            <ul
+              class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Impressum</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Datenschutz</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Prävention nach §20
+            </h3>
+            <ul
+              class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Präventionskurs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Krankenkassen</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Firmenprogramm</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <!-- BOTTOM BAR -->
+      <section class="bg-windsweptBeach hidden md:block px-5">
+        <div
+          class="section-container-primary py-4 md:py-6.5! flex flex-col lg:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-encoreGray footer-link font-ibm-plex">
+            © 2025 NichtraucherHelden – ein Produkt der Sanero Medical GmbH
+          </p>
+
+          <div class="flex items-center gap-6">
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >Impressum</a
+            >
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >Datenschutzerklärung</a
+            >
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >AGB</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <button
+      id="backToTopBtn"
+      class="bg-KonBlue invisible fixed right-2 min-h-11 min-w-11 bottom-4 z-40 translate-y-4 cursor-pointer rounded-full p-3 text-white opacity-0 shadow-lg transition-all duration-300 focus:outline-none lg:right-8 md:bottom-8 border border-white"
+    >
+      <!-- Arrow Up Icon -->
+      <img
+        class="max-w-5 rotate-[177deg]"
+        src="./assets/images/scroll-button.webp"
+        alt="arrow"
+      />
+    </button>
+    <div
+      data-modal="login"
+      class="fixed modal inset-0 z-50 hidden overflow-hidden"
+    >
+      <!-- Overlay -->
+      <div
+        class="fixed inset-0 bg-KonBlue/90 opacity-0 transition-opacity duration-300 modal-overlay"
+      ></div>
+      <!-- Modal Content -->
+      <div
+        class="min-h-dvh h-dvh max-h-dvh p-5 flex items-center justify-center"
+      >
+        <div
+          class="modal-content modal-container max-w-190 relative overflow-auto max-h-full hide-scrollbar"
+        >
+          <div class="modal-header sticky top-0">
+            <h4 class="individually-card-title">Login</h4>
+            <button class="modal-close-button" data-modal-close>
+              <img
+                class="object-contain w-full h-full"
+                src="./assets/images/png/modal-close.png"
+                alt="modal-close"
+              />
+            </button>
+          </div>
+          <form
+            id="loginForm"
+            class="3xl:gap-12 2xl:gap-10 h-auto 1xl:gap-8 gap-6 xl:px-6 px-4 3xl:pt-11 2xl:pt-10 1xl:pt-9 pt-6 3xl:pb-12 2xl:pb-10 pb-8 flex flex-col justify-center overflow-auto"
+          >
+            <p class="free-help-text text-KonBlue leading-[150%] px-4">
+              Melde Dich hier für deinen persönlichen Bereich an.
+            </p>
+
+            <div class="md:space-y-3 space-y-2">
+              <!-- Email -->
+              <div>
+                <input
+                  id="email"
+                  class="primary-input free-help-text"
+                  placeholder="Benutzername / E-Mail-Adresse"
+                  type="email"
+                />
+                <p id="emailError" class="text-red-500 text-sm mt-1 hidden"></p>
+              </div>
+
+              <!-- Password -->
+              <div>
+                <div
+                  class="flex items-center justify-between primary-input free-help-text"
+                >
+                  <input
+                    id="password"
+                    class="w-full outline-none bg-transparent placeholder:text-encoreGray"
+                    placeholder="Passwort*"
+                    type="password"
+                  />
+
+                  <button type="button" id="togglePassword" class="w-6 h-6">
+                    <img
+                      id="eyeIcon"
+                      class="object-contain w-full h-full"
+                      src="./assets/images/png/open-eye.png"
+                      alt="toggle password"
+                    />
+                  </button>
+                </div>
+                <p
+                  id="passwordError"
+                  class="text-red-500 text-sm mt-1 hidden"
+                ></p>
+              </div>
+            </div>
+
+            <a
+              class="free-help-text text-KonBlue underline font-light leading-[160%] w-fit mx-auto"
+              href=""
+            >
+              Passwort vergessen?
+            </a>
+
+            <button
+              type="submit"
+              class="text-white leading-[160%] font-fira font-medium hover:bg-white border border-blueBay bg-blueBay rounded-2xl flex items-center justify-center free-help-text md:h-14 h-13 hover:text-blueBay duration-300 ease-in-out transition-all"
+            >
+              Einloggen
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/js/popup.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/back-to-top.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      var swiper = new Swiper(".feature-swiper", {
+        navigation: {
+          nextEl: ".swiper-button-next-feature",
+          prevEl: ".swiper-button-prev-feature",
+        },
+      });
+    </script>
+    <script src="/js/nichtraucher-slider.js"></script>
+    <script src="/js/common-accordion.js"></script>
+    <script>
+      const form = document.getElementById("newsletterForm");
+      const successMessage = document.getElementById("successMessage");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // stop page reload
+
+        // show message
+        successMessage.classList.remove("hidden");
+
+        // optionally reset form
+        form.reset();
+      });
+    </script>
+  </body>
+</html>

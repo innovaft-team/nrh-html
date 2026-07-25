@@ -1,0 +1,1449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desktop/Fachkreise/Start</title>
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="icon" type="image/svg" href="./assets/images/logo.webp" />
+  </head>
+
+  <body>
+    <aside
+      id="sidebar"
+      class="fixed top-0 right-0 h-dvh bg-white w-[320px] transform transition-transform duration-300 ease-in-out z-[9999] flex flex-col justify-start p-4 translate-x-full"
+    >
+      <!-- Main Menu Content -->
+      <div class="sidebar-overlay"></div>
+      <div id="main-menu">
+        <div class="flex justify-between items-center mb-6">
+          <a aria-label="logo" href="./">
+            <img
+              class="max-w-10.25 w-full"
+              src="./assets/images/logo.webp"
+              alt="logo"
+            />
+          </a>
+          <button
+            id="close-sidebar"
+            class="text-2xl"
+            aria-label="clsoe sidebar"
+          >
+            <img
+              class="w-8 h-8 object-cover"
+              src="./assets/images/close-sidebar.webp"
+              alt="cross-icon"
+            />
+          </button>
+        </div>
+        <div>
+          <nav
+            class="flex flex-col justify-between grow overflow-auto h-full hide-scrollbar"
+          >
+            <div class="flex flex-col justify-between gap-7 text-primary">
+              <a aria-label="manu list" href="#" class="header-li"> Magazin </a>
+              <a aria-label="manu list" href="#" class="header-li">
+                Erfolgsgeschichten
+              </a>
+              <a aria-label="manu list" href="#" class="header-li"> FAQ </a>
+
+              <button
+                data-modal-open="login"
+                class="flex gap-2 hover:scale-95 transition-all duration-300 ease-in-out"
+              >
+                <img
+                  class="max-w-4.75 w-full"
+                  src="./assets/images/profile-icon.webp"
+                  alt="profile"
+                />
+                Login
+              </button>
+            </div>
+          </nav>
+          <div
+            class="flex flex-col justify-between items-center gap-3 w-full pt-10"
+          >
+            <button
+              class="sm:py-2 py-1.5 lg:py-3 3xl:py-4 px-6 rounded-4xl bg-iceFishing text-primary font-medium hover:scale-95 transition-all duration-300 ease-in-out font-ibm-plex text-base lg:text-lg xl:text-xl 3xl:text-2xl w-full eading-[150%] sm:leading-[100%]"
+            >
+              Fachkreise
+            </button>
+            <button class="primary-btn w-full">Dein Weg zur App</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!---------------------------------------- HEADER ---------------------------------- -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 z-999 opacity-0 pointer-events-none transition-opacity duration-300"
+    ></div>
+    <header
+      class="text-white z-50 transition-transform duration-300 ease-in-out sticky top-0 w-full"
+    >
+      <!-- {/* Top Bar for Contact Info */} -->
+      <div class="bg-KonBlue">
+        <div
+          class="flex justify-end items-center sm:px-9! px-4! py-2 text-[11px] xs:text-xs font-ibm-plex sm:text-sm bg-KonBlue gap-4 overflow-auto custom-container hide-scrollbar"
+        >
+          <span class="hidden md:inline text-iceFishing text-base font-medium">
+            Unsere Experten sind für Dich da:
+          </span>
+          <div
+            class="flex sm:justify-center justify-between items-center xs:gap-7! gap-2! sm:w-fit w-full"
+          >
+            <a
+              href="tel:+49871121999343"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/phone-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              +49 8711 21 999 343
+            </a>
+            <a
+              href="mailto:service@nichtraucherhelden.de"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/email-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              service@nichtraucherhelden.de
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- {/* Main Navigation Bar */} -->
+      <div class="bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.05)] text-black">
+        <div class="custom-container py-2 sm:py-3 3xl:py-4">
+          <div class="flex justify-between items-center">
+            <div class="shrink-0 flex items-center">
+              <div
+                class="max-w-13 3xl:max-w-18 aspect-square w-full cursor-pointer"
+              >
+                <img
+                  class="w-full h-full"
+                  src="/assets/images/logo.webp"
+                  alt="logo"
+                />
+              </div>
+            </div>
+            <button class="primary-btn block sm:hidden">
+              Dein Weg zur App
+            </button>
+            <nav
+              class="flex text-lg md:text-xl font-fira font-medium items-center gap-8 3xl:gap-12 leading-[140%]"
+            >
+              <div
+                class="hidden xl:flex justify-between items-center gap-10 text-primary"
+              >
+                <a href="#" class="header-li"> Magazin </a>
+                <a href="#" class="header-li"> Erfolgsgeschichten </a>
+                <a href="#" class="header-li"> FAQ </a>
+
+                <button
+                  data-modal-open="login"
+                  class="flex justify-center items-center gap-2 header-li icon-hover"
+                >
+                  <img
+                    class="max-w-4.75 w-full icon"
+                    src="./assets/images/profile-icon.webp"
+                    alt="profile"
+                  />
+                  Login
+                </button>
+              </div>
+              <div class="hidden sm:flex justify-between gap-5">
+                <button class="primary-btn-v3">Fachkreise</button>
+                <button class="primary-btn-v2">Dein Weg zur App</button>
+              </div>
+              <button
+                id="hamburger"
+                aria-label="hamburger button"
+                class="block xl:hidden space-y-1.5"
+              >
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- HERO -->
+    <div class="sm:px-5">
+      <div
+        class="custom-container 3xl:max-w-396 flex items-end relative overflow-hidden pt-63 sm:pt-40 xl:pt-81 pb-5 md:pb-14 xl:pb-28 px-5 md:px-12 xl:px-29 sm:rounded-[44px] rounded-[36px] rounded-t-none sm:mt-8"
+      >
+        <div
+          class="bg-KonBlue p-4 md:p-6 lg:p-10 2xl:p-16 rounded-[20px] relative z-10 max-w-208 w-full"
+        >
+          <p class="hero-subheading">Evidenz & Verordnung für Fachkreise</p>
+          <h2 class="traning-hero-heading text-white font-fira">
+            Die Rauchstopp-DiGA auf Rezept
+          </h2>
+        </div>
+        <img
+          class="absolute top-0 left-0 pointer-events-none h-full w-full object-cover hidden xxs:block"
+          src="./assets/images/professional-hero.webp"
+          alt="magazin"
+        /><img
+          class="absolute top-0 left-0 pointer-events-none h-full w-full object-cover xxs:hidden"
+          src="./assets/images/professional-hero-mobile.webp"
+          alt="magazin"
+        />
+      </div>
+    </div>
+    <!-- KEY BENEFITS AT A GLANCE -->
+    <section class="section-container grid md:grid-cols-2 gap-8">
+      <div
+        class="px-9 sm:p-5 xl:p-8 2xl:p-12 flex flex-col gap-8 sm:gap-5 xl:gap-8"
+      >
+        <h3 class="article-heading hidden sm:block">
+          Die Vorteile auf einen Blick
+        </h3>
+        <div class="space-y-4">
+          <p class="flex items-center gap-4 sm:gap-6 article-desc font-light">
+            <span
+              ><img
+                class="pointer-events-none w-7 h-7 lg:w-9 lg:h-9 hidden sm:block"
+                src="./assets/images/png/tick.png"
+                alt="tick" />
+              <img
+                class="sm:hidden w-7 h-7"
+                src="./assets/images/png/mobile-tick.png"
+                alt="tick-icon"
+            /></span>
+            Individuelles Rauchstopp-Coaching
+          </p>
+          <p class="flex items-center gap-4 sm:gap-6 article-desc font-light">
+            <span class="shrink-0"
+              ><img
+                class="pointer-events-none w-7 h-7 lg:w-9 lg:h-9 hidden sm:block"
+                src="./assets/images/png/tick.png"
+                alt="tick" />
+              <img
+                class="sm:hidden w-7 h-7"
+                src="./assets/images/png/mobile-tick.png"
+                alt="tick-icon"
+            /></span>
+            Klinisch bestätigt & leitlinienkonform
+          </p>
+          <p class="flex items-center gap-4 sm:gap-6 article-desc font-light">
+            <span
+              ><img
+                class="pointer-events-none w-7 h-7 lg:w-9 lg:h-9 hidden sm:block"
+                src="./assets/images/png/tick.png"
+                alt="tick" />
+              <img
+                class="sm:hidden w-7 h-7"
+                src="./assets/images/png/mobile-tick.png"
+                alt="tick-icon"
+            /></span>
+            Budgetneutrale Verordnung
+          </p>
+        </div>
+        <button class="professional-page-btn">Jetzt Kontakt aufnehmen</button>
+      </div>
+      <div class="px-5 md:px-0">
+        <div
+          class="p-6 xl:p-8 2xl:p-12 flex flex-col gap-4 sm:gap-5 xl:gap-8 bg-iceFishing rounded-3xl"
+        >
+          <h3 class="article-heading">Auf dieser Seite</h3>
+          <div class="space-y-3.5 sm:space-y-4">
+            <a
+              href="#Programübersicht"
+              class="article-desc font-light flex items-center justify-between w-full"
+            >
+              1. Programmübersicht
+              <img
+                class="pointer-events-none w-7 h-7 lg:w-9 lg:h-9"
+                src="./assets/images/png/download.png"
+                alt="download"
+              />
+            </a>
+            <a
+              href="#Wirksamkeitsstudien"
+              class="article-desc font-light flex items-center justify-between w-full"
+            >
+              2. Wirksamkeitsstudien
+              <img
+                class="pointer-events-none w-7 h-7 lg:w-9 lg:h-9"
+                src="./assets/images/png/download.png"
+                alt="download"
+              />
+            </a>
+            <a
+              href="#Verordnung"
+              class="article-desc font-light flex items-center justify-between w-full"
+            >
+              3. Verordnung
+              <img
+                class="pointer-events-none w-7 h-7 lg:w-9 lg:h-9"
+                src="./assets/images/png/download.png"
+                alt="download"
+              />
+            </a>
+            <a
+              href="#Infomaterial"
+              class="article-desc font-light flex items-center justify-between w-full"
+            >
+              4. Infomaterial & Testzugang
+              <img
+                class="pointer-events-none w-7 h-7 lg:w-9 lg:h-9"
+                src="./assets/images/png/download.png"
+                alt="download"
+              />
+            </a>
+            <a
+              href="#Fortbildungen"
+              class="article-desc font-light flex items-center justify-between w-full"
+            >
+              5. Fortbildungen
+              <img
+                class="pointer-events-none w-7 h-7 lg:w-9 lg:h-9"
+                src="./assets/images/png/download.png"
+                alt="download"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- DATA SECURITY -->
+    <section class="px-5">
+      <div
+        class="section-container grid lg:grid-cols-3 bg-transparent lg:bg-meltingGlacier lg:rounded-3xl lg:p-6 xl:p-12 gap-2 sm:gap-4 lg:gap-8 xl:gap-14"
+      >
+        <div
+          class="flex items-center flex-col sm:gap-3 xl:gap-5 lg:bg-transparent bg-meltingGlacier rounded-3xl p-4 sm:p-6 lg:p-0"
+        >
+          <div
+            class="bg-aquamarine w-9 sm:w-16 xl:w-22 h-9 sm:h-16 xl:h-22 rounded-full flex items-center justify-center"
+          >
+            <img
+              class="w-5 h-5 sm:h-fit xl:h-12 sm:w-6 xl:w-12 object-contain"
+              src="./assets/images/png/data.png"
+              alt="data"
+            />
+          </div>
+          <h2 class="article-heading-secondry mt-4 sm:mt-0">Datensicherheit</h2>
+          <p
+            class="w-full max-w-82.5 lg:max-w-fit sm:text-lg article-desc font-light text-center mt-2 sm:mt-0"
+          >
+            Daten werden auf deutschen Servern verschlüsselt gespeichert. Alle
+            Vorgaben der DSGVO werden erfüllt.
+          </p>
+        </div>
+        <!-- FIRST-CARD -->
+
+        <div
+          class="flex items-center flex-col sm:gap-3 xl:gap-5 lg:bg-transparent bg-meltingGlacier rounded-3xl p-4 sm:p-6 lg:p-0"
+        >
+          <div
+            class="bg-aquamarine w-9 sm:w-16 xl:w-22 h-9 sm:h-16 xl:h-22 rounded-full flex items-center justify-center"
+          >
+            <img
+              class="w-5 h-5 sm:h-fit xl:h-12 sm:w-6 xl:w-12 object-contain"
+              src="./assets/images/png/ce-second.png"
+              alt="ce"
+            />
+          </div>
+          <h2 class="article-heading-secondry mt-4 sm:mt-0">CE-konform</h2>
+          <p
+            class="w-full max-w-82.5 lg:max-w-fit sm:text-lg article-desc font-light text-center mt-2 sm:mt-0"
+          >
+            Das Medizinprogramm der NichtraucherHeldCE-konformssen-App ist ein
+            CE-konformes Medizinprodukt.
+          </p>
+        </div>
+        <!-- SECOND-CARD -->
+
+        <div
+          class="flex items-center flex-col sm:gap-3 xl:gap-5 lg:bg-transparent bg-meltingGlacier rounded-3xl p-4 sm:p-6 lg:p-0"
+        >
+          <div
+            class="bg-aquamarine w-9 sm:w-16 xl:w-22 h-9 sm:h-16 xl:h-22 rounded-full flex items-center justify-center"
+          >
+            <img
+              class="w-5 h-5 sm:h-fit xl:h-12 sm:w-6 xl:w-12 object-contain"
+              src="./assets/images/png/digital.png"
+              alt="digital"
+            />
+          </div>
+          <h2 class="article-heading-secondry mt-4 sm:mt-0">
+            Pneumodigital-Siegel
+          </h2>
+          <p
+            class="w-full max-w-82.5 lg:max-w-fit sm:text-lg article-desc font-light text-center mt-2 sm:mt-0"
+          >
+            Unsere App ist <br class="hidden lg:block" />
+            ausgezeichnet durch die Deutsche Atemwegsliga e.V.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- EVIDENCE-BASED TOBACCO CESSATION WITHOUT EFFORT -->
+    <section
+      id="Programübersicht"
+      class="w-full bg-icelightBlue py-9 px-5 mt-8 lg:mt-10 xl:mt-20 rounded-3xl sm:rounded-none scroll-mt-24.75 sm:scroll-mt-29 2xl:scroll-mt-30 3xl:scroll-mt-36"
+    >
+      <div
+        class="section-container grid lg:grid-cols-2 place-content-center items-center mt-0! xl:gap-x-8"
+      >
+        <div class="order-2 lg:order-1">
+          <video
+            class="aspect-video lg:w-full lg:h-full object-cover rounded-[9px]"
+            src="./assets/video/hello-doctor.mp4"
+            controls
+            poster="./assets/images/professional-video.webp"
+          >
+            Your browser does not support the video tag.
+          </video>
+          <div class="px-4 sm:px-0">
+            <button class="professional-page-btn mt-6 lg:hidden">
+              Jetzt Kontakt aufnehmen
+            </button>
+          </div>
+        </div>
+        <div class="lg:p-6 xl:p-12 order-1 lg:order-2">
+          <p
+            class="article-heading-secondry text-base! xl:text-2xl! mb-3 text-celestialBlue!"
+          >
+            Evidenzbasierte Tabakentwöhnung ohne Aufwand
+          </p>
+          <h3 class="article-heading text-[28px]! xl:text-[32px]! mb-6">
+            Die Rauchfrei-App auf Rezept für Ihre Patienten
+          </h3>
+          <p class="article-desc font-light mb-6">
+            Die NichtraucherHelden-App ist eine digitale Gesundheitsanwendung
+            (DiGA) für Patienten mit Tabakabhängigkeit, die auf
+            verhaltenstherapeutischen Methoden basiert. Sie unterstützt Nutzer
+            mit einem individuellen Coaching-Programm, das auf die Überwindung
+            der Sucht und das dauerhafte Aufhören abzielt.
+          </p>
+          <button class="professional-page-btn hidden lg:block">
+            Jetzt Kontakt aufnehmen
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- MEDICAL EVIDENCE -->
+    <section
+      id="Wirksamkeitsstudien"
+      class="px-5 scroll-mt-24.75 sm:scroll-mt-29 2xl:scroll-mt-30 3xl:scroll-mt-36"
+    >
+      <div
+        class="section-container gap-6 lg:gap-0 grid lg:grid-cols-2 items-center xl:gap-20"
+      >
+        <article class="px-4 lg:pr-6 xl:pr-22">
+          <h2
+            class="article-heading-secondry text-base! xl:text-2xl! mb-2 xl:mb-3 text-blueBay!"
+          >
+            Klinische Evidenz
+          </h2>
+          <h3
+            class="article-heading text-[28px]! xl:text-[32px]! mb-6 sm:mb-4 xl:mb-6 xl:whitespace-nowrap"
+          >
+            Erfolgsquoten & Studienergebnisse
+          </h3>
+          <p class="article-desc font-light lg:mb-6">
+            Die NichtraucherHelden-App führt zu einer statistisch signifikanten
+            und klinisch relevanten Wirkung im primären Endpunkt, der
+            selbstberichteten Abstinenz (7-Tages-Punktprävalenz). Der positive
+            Versorgungseffekt „Verbesserung des Gesundheitszustands“ wird somit
+            durch die Studienergebnisse, auch in relevanten Subgruppen,
+            hinreichend belegt.
+          </p>
+          <div class="space-y-4 hidden lg:block">
+            <p class="flex gap-4 xl:gap-6 items-start">
+              <img
+                class="w-7 h-7 sm:w-9 sm:h-9"
+                src="./assets/images/png/mobile.png"
+                alt="mobile"
+              />
+              <span class="article-desc font-light"
+                >Die Nutzung der NichtraucherHelden-App verdoppelt die
+                Erfolgsquote eines Rauchstopps (20% Intervention versus 10%
+                Kontrolle)</span
+              >
+            </p>
+            <p class="flex gap-4 xl:gap-6 items-start">
+              <img
+                class="w-7 h-7 sm:w-9 sm:h-9"
+                src="./assets/images/png/smoking.png"
+                alt="smoking"
+              />
+              <span class="article-desc font-light"
+                >Die prolongierte, selbstberichtete Abstinenz sowie die
+                objektive, bioche-misch validierte Abstinenz über 6 Mona-te ist
+                bei App-Nutzern signifikant erhöht</span
+              >
+            </p>
+            <p class="flex gap-4 xl:gap-6 items-start">
+              <img
+                class="w-7 h-7 sm:w-9 sm:h-9"
+                src="./assets/images/png/imoji.png"
+                alt="imoji"
+              />
+              <span class="article-desc font-light"
+                >Die psychische Lebensqualität verbessert sich bei App-Nutzern
+                signifikant</span
+              >
+            </p>
+            <p class="flex gap-4 xl:gap-6 items-start">
+              <img
+                class="w-7 h-7 sm:w-9 sm:h-9"
+                src="./assets/images/png/imoji2.png"
+                alt="imoji"
+              />
+              <span class="article-desc font-light"
+                >Atemnot und Husten verbessern sich bei Aufhörern verglichen mit
+                Nicht-Aufhörern signifikant</span
+              >
+            </p>
+          </div>
+        </article>
+        <article>
+          <div>
+            <img
+              class="object-cover w-full lg:max-w-[580px] rounded-[15px] sm:rounded-3xl xxs:aspect-3/2 lg:h-[552px]"
+              src="./assets/images/graph-secong.webp"
+              alt="graph-secong"
+            />
+          </div>
+          <div class="space-y-4 mt-6 lg:hidden">
+            <p class="flex gap-4 xl:gap-6 items-start">
+              <img
+                class="w-7 h-7 sm:w-9 sm:h-9"
+                src="./assets/images/png/mobile.png"
+                alt="mobile"
+              />
+              <span class="article-desc font-light"
+                >Die Nutzung der NichtraucherHelden-App verdoppelt die
+                Erfolgsquote eines Rauchstopps (20% Intervention versus 10%
+                Kontrolle)</span
+              >
+            </p>
+            <p class="flex gap-4 xl:gap-6 items-start">
+              <img
+                class="w-7 h-7 sm:w-9 sm:h-9"
+                src="./assets/images/png/smoking.png"
+                alt="smoking"
+              />
+              <span class="article-desc font-light"
+                >Die prolongierte, selbstberichtete Abstinenz sowie die
+                objektive, bioche-misch validierte Abstinenz über 6 Mona-te ist
+                bei App-Nutzern signifikant erhöht</span
+              >
+            </p>
+            <p class="flex gap-4 xl:gap-6 items-start">
+              <img
+                class="w-7 h-7 sm:w-9 sm:h-9"
+                src="./assets/images/png/imoji.png"
+                alt="imoji"
+              />
+              <span class="article-desc font-light"
+                >Die psychische Lebensqualität verbessert sich bei App-Nutzern
+                signifikant</span
+              >
+            </p>
+            <p class="flex gap-4 xl:gap-6 items-start">
+              <img
+                class="w-7 h-7 sm:w-9 sm:h-9"
+                src="./assets/images/png/imoji2.png"
+                alt="imoji"
+              />
+              <span class="article-desc font-light"
+                >Atemnot und Husten verbessern sich bei Aufhörern verglichen mit
+                Nicht-Aufhörern signifikant</span
+              >
+            </p>
+          </div>
+          <button class="professional-page-btn xl:hidden mt-6 lg:hidden">
+            Jetzt Kontakt aufnehmen
+          </button>
+        </article>
+      </div>
+    </section>
+    <!-- PILOT STUDY OF THE PRESCRIBED APP (N=50) -->
+    <section class="px-5">
+      <div
+        class="section-container grid md:grid-cols-2 gap-2 sm:gap-5 lg:gap-8"
+      >
+        <article
+          class="bg-iceFishing p-4 sm:p-6 xl:p-12 rounded-[20px] md:rounded-3xl"
+        >
+          <h2 class="article-heading text-2xl! xl:text-[32px]! mb-4 xl:mb-6">
+            Pilotstudie der App <br class="hidden md:block" />
+            auf <br class="md:hidden" />
+            Rezept (n=50)
+          </h2>
+          <div class="flex flex-col gap-y-4">
+            <p class="flex items-center gap-4 sm:gap-6 article-desc font-light">
+              <span class="flex-none">
+                <img
+                  class="w-7 lg:w-9 h-7 lg:h-9 object-cover"
+                  src="./assets/images/png/tick-whte.png"
+                  alt="tick-icon"
+              /></span>
+              Abstizenzquote von 30% 4 Monate nach <br />
+              Rauchstopp
+            </p>
+            <p class="flex items-center gap-4 sm:gap-6 article-desc font-light">
+              <span class="flex-none">
+                <img
+                  class="w-7 lg:w-9 h-7 lg:h-9 object-cover"
+                  src="./assets/images/png/tick-whte.png"
+                  alt="tick-icon"
+              /></span>
+              Signifikante Verbesserung von Husten und Lebensqualität
+            </p>
+            <p class="flex items-center gap-4 sm:gap-6 article-desc font-light">
+              <span class="flex-none">
+                <img
+                  class="w-7 lg:w-9 h-7 lg:h-9 object-cover"
+                  src="./assets/images/png/tick-whte.png"
+                  alt="tick-icon"
+              /></span>
+              Die psychische Lebensqualität verbessert sich bei App-Nutzern
+              signifikant
+            </p>
+            <p class="flex items-center gap-4 sm:gap-6 article-desc font-light">
+              <span class="flex-none">
+                <img
+                  class="w-7 lg:w-9 h-7 lg:h-9 object-cover"
+                  src="./assets/images/png/tick-whte.png"
+                  alt="tick-icon"
+              /></span>
+              Signifikante Reduktion der Zigarettenzahl
+            </p>
+          </div>
+          <button class="professional-page-btn-black mt-6">
+            Zum Ergebnisbericht
+          </button>
+        </article>
+        <article
+          class="bg-iceFishing p-4 sm:p-6 xl:p-12 rounded-[20px] md:rounded-3xl"
+        >
+          <h2 class="article-heading text-2xl! xl:text-[32px]! mb-4 xl:mb-6">
+            Datenauswertung des <br />
+            Präventionskurses (n=2491)
+          </h2>
+          <div class="flex flex-col gap-y-4">
+            <p class="flex items-center gap-4 sm:gap-6 article-desc font-light">
+              <span class="flex-none">
+                <img
+                  class="w-7 lg:w-9 h-7 lg:h-9 object-cover"
+                  src="./assets/images/png/tick-whte.png"
+                  alt="tick-icon"
+              /></span>
+              Abstizenzquote von 30% 4 Monate nach <br />
+              Rauchstopp
+            </p>
+            <p class="flex items-center gap-4 sm:gap-6 article-desc font-light">
+              <span class="flex-none">
+                <img
+                  class="w-7 lg:w-9 h-7 lg:h-9 object-cover"
+                  src="./assets/images/png/tick-whte.png"
+                  alt="tick-icon"
+              /></span>
+              Signifikante Verbesserung von Husten und Lebensqualität
+            </p>
+            <p class="flex items-center gap-4 sm:gap-6 article-desc font-light">
+              <span class="flex-none">
+                <img
+                  class="w-7 lg:w-9 h-7 lg:h-9 object-cover"
+                  src="./assets/images/png/tick-whte.png"
+                  alt="tick-icon"
+              /></span>
+              Die psychische Lebensqualität verbessert sich bei App-Nutzern
+              signifikant
+            </p>
+            <p class="flex items-center gap-4 sm:gap-6 article-desc font-light">
+              <span class="flex-none">
+                <img
+                  class="w-7 lg:w-9 h-7 lg:h-9 object-cover"
+                  src="./assets/images/png/tick-whte.png"
+                  alt="tick-icon"
+              /></span>
+              Signifikante Reduktion der Zigarettenzahl
+            </p>
+          </div>
+          <button class="professional-page-btn-black mt-6">
+            Zum Ergebnisbericht
+          </button>
+        </article>
+      </div>
+    </section>
+    <!-- ONLY-MOBILE-SHOW -->
+    <section class="px-5 mt-8 sm:hidden">
+      <div class="px-4">
+        <h3 class="text-blueBay font-medium leading-[133%] mb-1">
+          Fachliche Expertise & langjährige Erfahrung
+        </h3>
+        <h4
+          class="leading-[125%] text-[28px] xl:text-[32px] text-KonBlue font-medium font-fira mb-6"
+        >
+          Unser Expertenbeirat
+        </h4>
+        <p class="article-desc">
+          Wir sind ein interdisziplinäres motiviertes Team. Dr. Alexander Rupp
+          sowie Prof. Dr. Michael Kreuter bringen im wissenschaftlichen Beirat
+          ihre fachliche Expertise ein.
+        </p>
+      </div>
+    </section>
+    <!-- Professor Dr. Michael Kreuter -->
+    <section class="px-5">
+      <div
+        class="flex flex-col gap-7 lg:gap-8 md:flex-row md:items-center md:justify-between section-container rounded-2xl bg-[#152836] px-4 sm:px-6 py-8 lg:py-10 xl:py-14 mt-6! sm:mt-8! lg:mt-10! xl:mt-20!"
+      >
+        <!-- Profile 1 -->
+        <article class="flex flex-col items-center text-center md:w-1/2">
+          <img
+            src="./assets/images/profile-right.webp"
+            alt="Prof. Dr. Michael Kreuter"
+            class="mb-4 lg:mb-5 h-22 lg:h-36 w-22 lg:w-36 rounded-full object-cover"
+          />
+
+          <h3 class="text-2xl leading-[133%] font-medium font-fira text-white">
+            Prof. Dr. Michael Kreuter
+          </h3>
+
+          <p
+            class="w-full max-w-[432px] mt-3 leading-[160%] font-light text-white! article-desc"
+          >
+            Direktor des Lungenkrebszentrums der Universitätsmedizin Mainz und
+            des Marienhauses Klinikum Mainz.
+          </p>
+        </article>
+        <!-- Profile 2 -->
+        <article class="flex flex-col items-center text-center md:w-1/2">
+          <img
+            src="./assets/images/profile-left.webp"
+            alt="Prof. Dr. Michael Kreuter"
+            class="mb-4 lg:mb-5 h-22 lg:h-36 w-22 lg:w-36 rounded-full object-cover"
+          />
+
+          <h3 class="text-2xl leading-[133%] font-medium font-fira text-white">
+            Dr. Alexander Rupp
+          </h3>
+
+          <p
+            class="w-full max-w-108 mt-3 leading-[160%] text-white! article-desc font-light"
+          >
+            Niedergelassener Lungenfacharzt, der seit über 15 Jahren in der
+            Tabakentwöhnung tätig ist, im Bereich der wissenschaftlichen Arbeit.
+          </p>
+        </article>
+      </div>
+    </section>
+    <!-- THREE-STEP PROCESS -->
+    <section
+      id="Verordnung"
+      class="px-5 scroll-mt-24.75 sm:scroll-mt-29 2xl:scroll-mt-30 3xl:scroll-mt-36"
+    >
+      <div
+        class="section-container bg-iceFishing px-4 md:px-7 lg:px-10 xl:px-33 py-4 md:py-6 lg:py-10 xl:py-19 rounded-3xl"
+      >
+        <p
+          class="text-blueBay leading-[135%] font-medium mb-1 sm:mb-3 lg:text-2xl"
+        >
+          Prozess in 3 Schritten
+        </p>
+        <h2 class="article-heading text-2xl! xl:text-[32px]!">
+          Verordnung & Abrechnung
+        </h2>
+
+        <!-- STEP 1 -->
+        <article class="pt-6 lg:pt-10 xl:pt-12">
+          <span
+            class="mb-4 md:mb-6 text-xs sm:text-base inline-block rounded-xl bg-white px-5 py-2 leading-[150%] font-fira font-medium"
+          >
+            Schritt 1
+          </span>
+
+          <div class="bg-white rounded-[10px] p-4 sm:p-6 xl:p-12">
+            <h3 class="article-heading">
+              Tabakabhängigkeit nach F17.2 diagnostizieren
+            </h3>
+
+            <div
+              class="p-4 xl:p-6 bg-iceFishing rounded-2xl my-4 sm:my-7 lg:my-10 xl:my-12"
+            >
+              <button
+                class="accordion-btn flex w-full items-center gap-3 justify-between font-fira text-left article-desc font-medium!"
+              >
+                Indikationen & Kontraindikationen
+                <span
+                  class="transition-transform duration-300 bg-white rounded-full min-w-9 min-h-9 md:w-14 md:h-14 grid place-content-center"
+                  ><img
+                    class="md:w-7 object-cover md:h-4 w-6 h-auto"
+                    src="./assets/images/png/accordion.png"
+                    alt="accordion"
+                /></span>
+              </button>
+
+              <div
+                class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+              >
+                <div class="text-base xl:text-xl">
+                  <span
+                    class="text-blueBay font-fira leading-[150%] font-medium"
+                    >Indikation:</span
+                  >
+                  <ul
+                    class="list-disc text-KonBlue leading-[150%] pl-5 relative font-light"
+                  >
+                    <li>Tabakabhängigkeit (ICD 10 F17.2)</li>
+                  </ul>
+                  <span
+                    class="text-blueBay font-medium font-fira leading-[150%] mt-6 block"
+                    >Kontraindikation:</span
+                  >
+                  <ul
+                    class="list-disc text-KonBlue leading-[150%] sm:space-y-3 pl-5 font-light"
+                  >
+                    <li>
+                      R45.8 Sonstige Symptome, die die Stimmung betreffen [Inkl.
+                      Suizidalität, Suizidgedanken]
+                    </li>
+                    <li>
+                      F05.- Delir, nicht durch Alkohol oder andere psychotrope
+                      Substanzen bedingt
+                    </li>
+                    <li>
+                      F23.- Akute vorübergehende psychotische Störungen
+                      Schizoaffektive Störungen
+                    </li>
+                    <li>F25.- Schizoaffektive Störungen</li>
+                    <li>F31.- Bipolare affektive Störung</li>
+                    <li>F32.- depressive Episode</li>
+                    <li>F33.- Rezidivierende depressive Störung</li>
+                    <li>F41.- Andere Angststörungen</li>
+                  </ul>
+                  <p class="text-KonBlue leading-[150%] mt-6 font-light">
+                    Die Anwendung bei psychiatrischen Erkrankungen mit Zeichen
+                    der akuten Depressivität oder Suizidalität sowie bei
+                    Erkrankungen mit akuten deliranten oder akuten psychotischen
+                    Störungen wird nicht empfohlen.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <button class="professional-page-btn">
+              Diagnosekriterien bestellen
+            </button>
+          </div>
+        </article>
+        <!-- STEP 1 -->
+        <article class="pt-6 lg:pt-10 xl:pt-12">
+          <span
+            class="mb-4 md:mb-6 text-xs sm:text-base inline-block rounded-xl bg-white px-5 py-2 leading-[150%] font-fira font-medium"
+          >
+            Schritt 2
+          </span>
+          <div class="bg-white rounded-[10px] p-4 sm:p-6 xl:p-12">
+            <h3 class="article-heading">Rezept via Muster 16 drucken</h3>
+            <div
+              class="grid md:grid-cols-2 gap-4 sm:gap-6 xl:gap-12 my-4 sm:my-7 lg:my-10 xl:my-12"
+            >
+              <article class="md:flex flex-col gap-y-3 lg:gap-y-4 hidden">
+                <p
+                  class="flex items-center gap-4 sm:gap-6 article-desc font-light"
+                >
+                  <span
+                    ><img
+                      class="pointer-events-none min-w-7 min-h-7 lg:min-w-9 lg:minh-9"
+                      src="./assets/svg/tick.svg"
+                      alt="tick"
+                    />
+                  </span>
+                  Bezeichnung: Digitale Gesundheitsanwendung
+                </p>
+                <p
+                  class="flex items-center gap-4 sm:gap-6 article-desc font-light"
+                >
+                  <span
+                    ><img
+                      class="pointer-events-none min-w-7 min-h-7 lg:min-w-9 lg:minh-9"
+                      src="./assets/svg/tick.svg"
+                      alt="tick"
+                    />
+                  </span>
+                  PZN Erstverordnung (3 Monate): 17575561
+                </p>
+                <p
+                  class="flex items-center gap-4 sm:gap-6 article-desc font-light"
+                >
+                  <span
+                    ><img
+                      class="pointer-events-none min-w-7 min-h-7 lg:min-w-9 lg:minh-9"
+                      src="./assets/svg/tick.svg"
+                      alt="tick"
+                    />
+                  </span>
+                  PZN Folgeverordnung (3 Monate): 17575578
+                </p>
+                <p
+                  class="flex items-center gap-4 sm:gap-6 article-desc font-light"
+                >
+                  <span
+                    ><img
+                      class="pointer-events-none min-w-7 min-h-7 lg:min-w-9 lg:min-h-9"
+                      src="./assets/svg/tick.svg"
+                      alt="tick"
+                    />
+                  </span>
+                  Produktname: NichtraucherHelden-App – Sanero Medical GmbH
+                </p>
+              </article>
+              <ul
+                class="list-disc text-KonBlue leading-[150%] space-y-3 md:hidden pl-5"
+              >
+                <li>Bezeichnung: Digitale Gesundheitsanwendung</li>
+                <li>PZN Erstverordnung (3 Monate): 17575561</li>
+                <li>PZN Folgeverordnung (3 Monate): 17575578</li>
+                <li>
+                  Produktname: NichtraucherHelden-App – Sanero Medical GmbH
+                </li>
+              </ul>
+              <img
+                class="aspect-439/305 object-cover"
+                src="./assets/images/map.webp"
+                alt="Diagnosekriterien bestellen"
+              />
+            </div>
+            <button class="professional-page-btn">
+              Diagnosekriterien bestellen
+            </button>
+          </div>
+        </article>
+        <!-- STEP 1 -->
+        <article id="Verordnung" class="pt-6 lg:pt-10 xl:pt-12">
+          <span
+            class="mb-4 md:mb-6 text-xs sm:text-base inline-block rounded-xl bg-white px-5 py-2 leading-[150%] font-fira font-medium"
+          >
+            Schritt 3
+          </span>
+          <div class="bg-white rounded-[10px] p-4 sm:p-6 xl:p-12">
+            <h3 class="article-heading">Rezept aushändigen</h3>
+            <p class="my-4 sm:my-7 lg:my-10 xl:my-12 article-desc font-light">
+              anschließend reicht Ihr Pateint das Rezept bei seiner Krankenkasse
+              ein und erhält einen Freischaltcode. Mit dem Code kann er sich in
+              der App kostenlos registrieren und das Programm starten.
+            </p>
+            <button class="professional-page-btn">
+              Infoflyer für Patienten bestellen
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- FREE RESOURCES -->
+    <section
+      id="Infomaterial"
+      class="px-5 bg-icelightBlue py-9 mt-8 lg:mt-10 xl:mt-20 rounded-3xl sm:rounded-none scroll-mt-24.75 sm:scroll-mt-29 2xl:scroll-mt-30 3xl:scroll-mt-36"
+    >
+      <div class="section-container mt-0! grid md:grid-cols-2 gap-6 lg:gap-8">
+        <article class="p-4 xl:p-12">
+          <p class="article-heading-secondry mb-1 sm:mb-3 text-celestialBlue!">
+            Kostenfreie Materialien
+          </p>
+          <h3
+            class="mb-6 leading-[125%] text-[28px] xl:text-[32px] text-KonBlue font-medium font-fira"
+          >
+            Infopakete & Test-App
+          </h3>
+          <p class="article-desc font-light sm:mb-6">
+            Nutzen Sie unser umfassendes Angebot an Verordnungshilfen und
+            Informationsmaterialien. Fordern Sie jetzt kostenlose Flyer, Poster
+            und Ihren persönlichen Testzugang an – schnell und direkt in Ihre
+            Praxis.
+          </p>
+          <button class="professional-page-btn hidden sm:block">
+            Kostenfrei anfordern
+          </button>
+        </article>
+        <article>
+          <div>
+            <img
+              class="aspect-628/436 object-cover h-full"
+              src="./assets/images/test-app.webp"
+              alt="test-app"
+            />
+          </div>
+          <div class="px-4">
+            <button class="professional-page-btn sm:hidden mt-6">
+              Kostenfrei anfordern
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- YOUR INFORMATION ADVANTAGE -->
+    <section
+      id="Fortbildungen"
+      class="section-container bg-iceFishing px-9 xl:px-12 py-14 rounded-3xl scroll-mt-24.75 sm:scroll-mt-29 2xl:scroll-mt-30 3xl:scroll-mt-36"
+    >
+      <h4
+        class="text-blueBay font-medium leading-[133%] lg:text-2xl mb-1 sm:mb-3"
+      >
+        Ihr Wissensvorsprung
+      </h4>
+      <h3
+        class="leading-[125%] text-[28px] xl:text-[32px] text-KonBlue font-medium font-fira"
+      >
+        Unser Fortbildungsangebot
+      </h3>
+      <p class="article-desc font-light my-6 sm:my-8">
+        In unseren kostenlosen Fortbildungen sammeln Sie wertvolle CME-Punkte
+        und erhalten praxisrelevantes Fachwissen zur Behandlung von
+        Tabakabhängigkeit.
+      </p>
+      <div class="flex gap-y-2 sm:gap-y-4 gap-x-2 flex-wrap">
+        <a
+          href="#"
+          class="hover:bg-whiteish border border-KonBlue bg-transparent flex items-center justify-center w-full sm:w-[316px] py-3.5 sm:py-3 rounded-2xl sm:text-xl font-medium transition-all duration-300 leading-[160%] font-fira text-KonBlue"
+        >
+          CME-Fortbildungen
+        </a>
+        <a
+          href="#"
+          class="hover:bg-whiteish border border-KonBlue bg-transparent flex items-center justify-center w-full sm:w-[316px] py-3.5 sm:py-3 rounded-2xl sm:text-xl font-medium transition-all duration-300 leading-[160%] font-fira text-KonBlue"
+        >
+          Herstellerinformationen
+        </a>
+        <a
+          href="#"
+          class="hover:bg-whiteish border border-KonBlue bg-transparent flex items-center justify-center w-full sm:w-[316px] py-3.5 sm:py-3 rounded-2xl sm:text-xl font-medium transition-all duration-300 leading-[160%] font-fira text-KonBlue"
+        >
+          Whitepaper & mehr
+        </a>
+        <a
+          href="#"
+          class="tab-btn flex items-center justify-center w-full sm:w-fit px-6 active py-3.5 sm:py-3 rounded-2xl sm:text-xl font-medium transition-all duration-300 leading-[160%] font-fira hover:bg-transparent! hover:text-KonBlue!"
+        >
+          Termine & weitere Informationen
+        </a>
+      </div>
+    </section>
+    <!-- ADDITIONAL INFORMATION -->
+    <section class="px-5">
+      <div class="section-container">
+        <h4
+          class="text-blueBay font-medium leading-[133%] lg:text-2xl mb-1 sm:mb-3"
+        >
+          Weiterführende Informationen
+        </h4>
+        <h3
+          class="leading-[125%] text-[28px] xl:text-[32px] text-KonBlue font-medium font-fira"
+        >
+          Lungenkrebs-Screening auf Rezept
+        </h3>
+        <p class="article-desc font-light mt-6 w-full max-w-[892px]">
+          Das Lungenkrebs-Screening wird ab April 2026 zur Kassenleistung für
+          definierte Risikogruppen. Wir informieren Sie über die neuen Kriterien
+          und bieten Ihnen praktische Tools zur effizienten Patientenberatung.
+        </p>
+      </div>
+      <div
+        class="flex items-center justify-center lg:hidden w-full mt-8 px-[87px]"
+      >
+        <img
+          class="w-full max-w-[405px] h-auto object-contain"
+          src="./assets/images/mobile.webp"
+          alt="mobile"
+        />
+      </div>
+    </section>
+    <!-- REQUEST FREE INFORMATION MATERIALS -->
+    <section class="px-5">
+      <div
+        class="section-container grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-0 items-stretch"
+      >
+        <!-- Left Column -->
+        <div class="flex flex-col gap-4">
+          <article class="bg-iceFishing p-4 sm:p-6 xl:p-12 rounded-3xl flex-1">
+            <p class="article-desc font-light mb-6">
+              Fordern Sie gedruckte Flyer für Ihre Patienten an, um die
+              Aufklärung in der Praxis zu unterstützen.
+            </p>
+            <button class="professional-page-btn">
+              Infomaterial kostenlos bestellen
+            </button>
+          </article>
+
+          <article class="bg-iceFishing p-4 sm:p-6 xl:p-12 rounded-3xl flex-1">
+            <p class="article-desc font-light mb-6">
+              Geben Sie Ihren Patienten unseren Anspruchs-Rechner zur
+              Vorbereitung mit. <br />
+              Er ermittelt automatisch Packungsjahre und Kriterien vor dem
+              Termin und spart Ihnen manuelle Abfragen.
+            </p>
+            <button class="professional-page-btn-transparent">
+              Anspruchs-Rechner testen
+            </button>
+          </article>
+        </div>
+
+        <!-- Right Column -->
+        <div class="lg:flex items-center justify-center lg:justify-end hidden">
+          <img
+            class="w-full max-w-[405px] h-auto object-contain"
+            src="./assets/images/mobile.webp"
+            alt="mobile"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- RAINER OTT -->
+    <section class="px-5">
+      <div
+        class="bg-lightgray rounded-[20px] lg:rounded-3xl px-4 sm:px-6 py-4 lg:px-12 xl:px-[132px] md:py-10 xl:py-[76px] section-container"
+      >
+        <div class="flex items-center gap-6 mb-5 sm:mb-12">
+          <img
+            src="./assets/images/profile-footer.webp"
+            alt="profile"
+            class="w-15 sm:w-25 h-15 sm:h-25 object-cover rounded-full"
+          />
+          <div>
+            <h3 class="article-heading">Rainer Ott</h3>
+            <h4 class="article-desc hidden sm:block">
+              Ansprechpartner für Ärzt:innen
+            </h4>
+          </div>
+        </div>
+        <h4 class="article-desc sm:hidden mb-4">
+          Ansprechpartner für Ärzt:innen
+        </h4>
+
+        <div>
+          <article
+            class="bg-white rounded-2xl px-4 py-3 sm:p-6 flex items-center gap-4 sm:gap-6"
+          >
+            <img
+              class="w-5 sm:w-10 sm:h-10 h-5 object-contain"
+              src="/assets/images/png/mobile-footer.png"
+              alt="mobile-footer"
+            />
+            <a
+              class="article-desc hover:underline"
+              href="tel:+49 0711 21 959 343"
+              >+49 0711 21 959 343</a
+            >
+          </article>
+          <article
+            class="bg-white rounded-2xl px-4 py-3 sm:p-6 flex items-center gap-4 sm:gap-6 mt-3"
+          >
+            <img
+              class="w-5 sm:w-10 sm:h-10 h-5 object-contain"
+              src="./assets/images/png/mail.png"
+              alt="mail"
+            />
+            <a
+              class="article-desc hover:underline"
+              href="mailto:+49 0711 21 959 343"
+              >service@nichtraucherhelden.de</a
+            >
+          </article>
+          <p class="article-desc my-6 sm:my-8 md:my-12 font-light">
+            Sie haben Interesse an einem Testzugang oder einer Demo?
+          </p>
+          <button class="professional-page-btn w-full sm:w-[496px]!">
+            Zum Kontaktformular
+          </button>
+        </div>
+      </div>
+    </section>
+    <!------------------------ Footer Section --------------------------->
+    <footer class="bg-KonBlue text-white px-8 sm:px-5">
+      <!-- TOP SECTION -->
+      <div
+        class="section-container py-12 xl:justify-between grid grid-cols-1 sm:grid-cols-2 3xl:pt-27.75 3xl:pb-26.25 lg:grid-cols-4 gap-8 3xl:gap-17 xl:flex"
+      >
+        <!-- Column 1 -->
+        <div>
+          <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+            Sanero Medical GmbH
+          </h3>
+          <p class="footer-link font-normal font-ibm-plex">
+            Wilhelmstraße 19 70182<br />
+            Stuttgart Germany
+          </p>
+
+          <div class="mt-4 md:mt-6 space-y-2 text-sm">
+            <a
+              href="tel:+49 (0)711 / 99 538 110"
+              class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+            >
+              <img
+                class="max-w-5 w-full"
+                src="./assets/images/phone-white.webp"
+                alt="phone"
+              />
+
+              +49 (0)711 / 99 538 110
+            </a>
+            <a
+              href="mailto:info@sanero-medical.de"
+              class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+            >
+              <img
+                class="max-w-5 w-full"
+                src="./assets/images/email-white.webp"
+                alt="phone"
+              />
+              info@sanero-medical.de
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div>
+          <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+            Unternehmen
+          </h3>
+          <ul
+            class="space-y-2 font-normal footer-link font-ibm-plex text-white"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Über uns</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Kontakt</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Presse</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div>
+          <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+            Service
+          </h3>
+          <ul
+            class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >FAQ</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Impressum</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Datenschutz</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4 -->
+        <div>
+          <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+            Prävention nach §20
+          </h3>
+          <ul
+            class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Präventionskurs</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Krankenkassen</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Firmenprogramm</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- BOTTOM BAR -->
+    <section class="bg-windsweptBeach hidden md:block px-5">
+      <div
+        class="section-container mt-0! py-4 md:py-6.5! flex flex-col lg:flex-row justify-between items-center gap-4"
+      >
+        <p class="text-encoreGray footer-link font-ibm-plex">
+          © 2025 NichtraucherHelden – ein Produkt der Sanero Medical GmbH
+        </p>
+
+        <div class="flex items-center gap-6">
+          <a
+            href="#"
+            class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+            >Impressum</a
+          >
+          <a
+            href="#"
+            class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+            >Datenschutzerklärung</a
+          >
+          <a
+            href="#"
+            class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+            >AGB</a
+          >
+        </div>
+      </div>
+    </section>
+    <!-- BACK-TO-TOP -->
+    <button
+      id="backToTopBtn"
+      class="bg-KonBlue invisible fixed right-2 min-h-11 min-w-11 bottom-4 z-40 translate-y-4 cursor-pointer rounded-full p-3 text-white opacity-0 shadow-lg transition-all duration-300 focus:outline-none lg:right-8 md:bottom-8 border border-white"
+    >
+      <!-- Arrow Up Icon -->
+      <img
+        class="max-w-5 rotate-[177deg]"
+        src="./assets/images/scroll-button.webp"
+        alt="arrow"
+      />
+    </button>
+    <div
+      data-modal="login"
+      class="fixed modal inset-0 z-50 hidden overflow-hidden"
+    >
+      <!-- Overlay -->
+      <div
+        class="fixed inset-0 bg-KonBlue/90 opacity-0 transition-opacity duration-300 modal-overlay"
+      ></div>
+      <!-- Modal Content -->
+      <div
+        class="min-h-dvh h-dvh max-h-dvh p-5 flex items-center justify-center"
+      >
+        <div
+          class="modal-content modal-container max-w-190 relative overflow-auto max-h-full hide-scrollbar"
+        >
+          <div class="modal-header sticky top-0">
+            <h4 class="individually-card-title">Login</h4>
+            <button class="modal-close-button" data-modal-close>
+              <img
+                class="object-contain w-full h-full"
+                src="./assets/images/png/modal-close.png"
+                alt="modal-close"
+              />
+            </button>
+          </div>
+          <form
+            id="loginForm"
+            class="3xl:gap-12 2xl:gap-10 h-auto 1xl:gap-8 gap-6 xl:px-6 px-4 3xl:pt-11 2xl:pt-10 1xl:pt-9 pt-6 3xl:pb-12 2xl:pb-10 pb-8 flex flex-col justify-center overflow-auto"
+          >
+            <p class="free-help-text text-KonBlue leading-[150%] px-4">
+              Melde Dich hier für deinen persönlichen Bereich an.
+            </p>
+
+            <div class="md:space-y-3 space-y-2">
+              <!-- Email -->
+              <div>
+                <input
+                  id="email"
+                  class="primary-input free-help-text"
+                  placeholder="Benutzername / E-Mail-Adresse"
+                  type="email"
+                />
+                <p id="emailError" class="text-red-500 text-sm mt-1 hidden"></p>
+              </div>
+
+              <!-- Password -->
+              <div>
+                <div
+                  class="flex items-center justify-between primary-input free-help-text"
+                >
+                  <input
+                    id="password"
+                    class="w-full outline-none bg-transparent placeholder:text-encoreGray"
+                    placeholder="Passwort*"
+                    type="password"
+                  />
+
+                  <button type="button" id="togglePassword" class="w-6 h-6">
+                    <img
+                      id="eyeIcon"
+                      class="object-contain w-full h-full"
+                      src="./assets/images/png/open-eye.png"
+                      alt="toggle password"
+                    />
+                  </button>
+                </div>
+                <p
+                  id="passwordError"
+                  class="text-red-500 text-sm mt-1 hidden"
+                ></p>
+              </div>
+            </div>
+
+            <a
+              class="free-help-text text-KonBlue underline font-light leading-[160%] w-fit mx-auto"
+              href=""
+            >
+              Passwort vergessen?
+            </a>
+
+            <button
+              type="submit"
+              class="text-white leading-[160%] font-fira font-medium hover:bg-white border border-blueBay bg-blueBay rounded-2xl flex items-center justify-center free-help-text md:h-14 h-13 hover:text-blueBay duration-300 ease-in-out transition-all"
+            >
+              Einloggen
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/js/popup.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/choose-payment-method.js"></script>
+    <script src="/js/back-to-top.js"></script>
+    <script src="/js/professional.js"></script>
+  </body>
+</html>

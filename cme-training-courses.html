@@ -1,0 +1,2036 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Urf - Deine App auf Rezept unterstützt Dichlangfristig und kostenfrei.
+    </title>
+
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="icon" type="image/svg" href="./assets/images/logo.webp" />
+  </head>
+  <body>
+    <aside
+      id="sidebar"
+      class="fixed top-0 right-0 h-dvh bg-white w-[320px] transform transition-transform duration-300 ease-in-out z-[9999] flex flex-col justify-start p-4 translate-x-full"
+    >
+      <!-- Main Menu Content -->
+      <div class="sidebar-overlay"></div>
+      <div id="main-menu">
+        <div class="flex justify-between items-center mb-6">
+          <a aria-label="logo" href="./">
+            <img
+              class="max-w-10.25 w-full"
+              src="./assets/images/logo.webp"
+              alt="logo"
+            />
+          </a>
+          <button
+            id="close-sidebar"
+            class="text-2xl"
+            aria-label="clsoe sidebar"
+          >
+            <img
+              class="w-8 h-8 object-cover"
+              src="./assets/images/close-sidebar.webp"
+              alt="cross-icon"
+            />
+          </button>
+        </div>
+        <div>
+          <nav
+            class="flex flex-col justify-between grow overflow-auto h-full hide-scrollbar"
+          >
+            <div class="flex flex-col justify-between gap-7 text-primary">
+              <a aria-label="manu list" href="#" class="header-li"> Magazin </a>
+              <a aria-label="manu list" href="#" class="header-li">
+                Erfolgsgeschichten
+              </a>
+              <a aria-label="manu list" href="#" class="header-li"> FAQ </a>
+
+              <button
+                data-modal-open="login"
+                class="flex gap-2 hover:scale-95 transition-all duration-300 ease-in-out"
+              >
+                <img
+                  class="max-w-4.75 w-full"
+                  src="./assets/images/profile-icon.webp"
+                  alt="profile"
+                />
+                Login
+              </button>
+            </div>
+          </nav>
+          <div
+            class="flex flex-col justify-between items-center gap-3 w-full pt-10"
+          >
+            <button
+              class="sm:py-2 py-1.5 lg:py-3 3xl:py-4 px-6 rounded-4xl bg-iceFishing text-primary font-medium hover:scale-95 transition-all duration-300 ease-in-out font-ibm-plex text-base lg:text-lg xl:text-xl 3xl:text-2xl w-full eading-[150%] sm:leading-[100%]"
+            >
+              Fachkreise
+            </button>
+            <button class="primary-btn w-full">Dein Weg zur App</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!---------------------------------------- HEADER ---------------------------------- -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 z-999 opacity-0 pointer-events-none transition-opacity duration-300"
+    ></div>
+    <header
+      class="text-white z-50 transition-transform duration-300 ease-in-out sticky top-0 w-full"
+    >
+      <!-- {/* Top Bar for Contact Info */} -->
+      <div class="bg-KonBlue">
+        <div
+          class="flex justify-end items-center sm:px-9! px-4! py-2 text-[11px] xs:text-xs font-ibm-plex sm:text-sm bg-KonBlue gap-4 overflow-auto custom-container hide-scrollbar"
+        >
+          <span class="hidden md:inline text-iceFishing text-base font-medium">
+            Unsere Experten sind für Dich da:
+          </span>
+          <div
+            class="flex sm:justify-center justify-between items-center xs:gap-7! gap-2! sm:w-fit w-full"
+          >
+            <a
+              href="tel:+49871121999343"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/phone-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              +49 8711 21 999 343
+            </a>
+            <a
+              href="mailto:service@nichtraucherhelden.de"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/email-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              service@nichtraucherhelden.de
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- {/* Main Navigation Bar */} -->
+      <div class="bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.05)] text-black">
+        <div class="custom-container py-2 sm:py-3 3xl:py-4">
+          <div class="flex justify-between items-center">
+            <div class="shrink-0 flex items-center">
+              <a href="/" aria-label="home" class="max-w-13 3xl:max-w-18 aspect-square w-full cursor-pointer">
+                <img class="w-full h-full" src="/assets/images/logo.webp" alt="logo" />
+              </a>
+            </div>
+            <button class="primary-btn block sm:hidden">
+              Dein Weg zur App
+            </button>
+            <nav
+              class="flex text-lg md:text-xl font-fira font-medium items-center gap-8 3xl:gap-12 leading-[140%]"
+            >
+              <div
+                class="hidden xl:flex justify-between items-center gap-10 text-primary"
+              >
+                <a href="#" class="header-li"> Magazin </a>
+                <a href="#" class="header-li"> Erfolgsgeschichten </a>
+                <a href="#" class="header-li"> FAQ </a>
+
+                <button
+                  data-modal-open="login"
+                  class="flex justify-center items-center gap-2 header-li icon-hover"
+                >
+                  <img
+                    class="max-w-4.75 w-full icon"
+                    src="./assets/images/profile-icon.webp"
+                    alt="profile"
+                  />
+                  Login
+                </button>
+              </div>
+              <div class="hidden sm:flex justify-between gap-5">
+                <button class="primary-btn-v3">Fachkreise</button>
+                <button class="primary-btn-v2">Dein Weg zur App</button>
+              </div>
+              <button
+                id="hamburger"
+                aria-label="hamburger button"
+                class="block xl:hidden space-y-1.5"
+              >
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main id="main-content">
+      <!-- HERO -->
+      <section
+        class="custom-container flex items-end relative overflow-hidden pt-63 sm:pt-40 xl:pt-81 pb-5 md:pb-14 xl:pb-28 px-5 md:px-12 xl:px-29 sm:rounded-[44px] rounded-b-[36px] rounded-t-none sm:mt-8"
+      >
+        <div
+          class="bg-KonBlue p-4 md:p-6 lg:p-10 2xl:p-16 rounded-[20px] relative z-10 max-w-208 w-full"
+        >
+          <p class="hero-subheading">Kostenfreie Online-Fortbildungen</p>
+          <h2 class="traning-hero-heading text-white font-fira">
+            Unsere CME-Schulungen & Herstellerinfoveran- staltungen
+          </h2>
+        </div>
+        <img
+          class="absolute top-0 left-0 pointer-events-none h-full w-full object-cover hidden xxs:block"
+          src="./assets/images/professional-hero.webp"
+          alt="magazin"
+        /><img
+          class="absolute top-0 left-0 pointer-events-none h-full w-full object-cover xxs:hidden"
+          src="./assets/images/professional-hero-mobile.webp"
+          alt="magazin"
+        />
+      </section>
+      <!-- Infomaterialien -->
+      <div class="px-5">
+        <div class="section-container px-5 xl:px-0">
+          <div class="max-w-222 w-full flex md:flex-col flex-col">
+            <h3 class="imprint-title">Live-Webinare</h3>
+            <p
+              class="text-base md:text-lg 3xl:text-xl leading-[150%] md:leading-[160%] text-KonBlue"
+            >
+              Pellentesque amet ut facilisis id massa ligula scelerisque. Sit
+              vehicula consequat est tincidunt semper at consectetur mauris.
+              Etiam commodo dignissim aliquet id risus. Scelerisque sed fusce
+              dignissim congue massa magna egestas. Mauris sit ac enim purus.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- INFORMATION-CARD -->
+      <section class="px-5">
+        <div
+          class="section-container md:space-y-4 space-y-2 3xl:pb-20 2xl:pb-16 xl:pb-12 pb-8"
+        >
+          <!-- INFO_CARD-1 -->
+          <article
+            class="flex flex-wrap 2xl:flex-nowrap justify-between items-center gap-4 md:gap-5 bg-iceFishing md:bg-lightgray rounded-2xl p-4 md:p-6 3xl:p-8"
+          >
+            <div
+              class="flex items-center gap-4 md:gap-5 3xl:gap-8 sm:max-w-[288px] w-full"
+            >
+              <span class="max-w-9 md:max-w-14 w-full">
+                <img
+                  src="./assets/images/doctor-office-icon.webp"
+                  alt="doctor"
+                />
+              </span>
+              <h3
+                class="text-KonBlue text-base 3xl:text-xl font-medium leading-[140%]"
+              >
+                Tabakentwöhnung in der Arztpraxis
+              </h3>
+            </div>
+            <div
+              class="text-KonBlue text-base 3xl:text-xl font-light font-ibm-plex md:leading-[140%]! leading-[150%]! sm:max-w-36 w-full"
+            >
+              Februar 19:00 Uhr (Live)
+            </div>
+            <div
+              class="text-KonBlue text-base 3xl:text-xl font-light font-ibm-plex md:leading-[140%]! leading-[150%]! sm:max-w-55 w-full"
+            >
+              Dr. med. Alexander Rupp(Lungenfacharzt)
+            </div>
+            <div
+              class="text-KonBlue text-xs sm:text-base 3xl:text-xl font-light font-ibm-plex leading-[140%] max-w-28 md:max-w-22 w-full bg-white sm:bg-transparent rounded-lg px-3 py-2.5 sm:px-0 sm:py-0"
+            >
+              2 Punkte (CME)
+            </div>
+            <button
+              data-modal-open="unlockDownload"
+              class="bg-superSaiyan border-superSaiyan border hover:border-KonBlue text-KonBlue font-medium font-fira hover:bg-transparent hover:text-primary transition-all duration-300 ease-in-out cursor-pointer leading-[150%] sm:leading-[100%] h-13 sm:h-14 sm:text-base lg:text-lg 3xl:text-xl rounded-lg w-full sm:max-w-58"
+            >
+              Jetzt anmelden
+            </button>
+          </article>
+          <!-- INFO_CARD-2 -->
+          <article
+            class="flex flex-wrap 2xl:flex-nowrap justify-between items-center gap-4 md:gap-5 bg-iceFishing md:bg-lightgray rounded-2xl p-4 md:p-6 3xl:p-8"
+          >
+            <div
+              class="flex items-center gap-4 md:gap-5 3xl:gap-8 sm:max-w-[288px] w-full"
+            >
+              <span class="max-w-9 md:max-w-14 w-full">
+                <img
+                  src="./assets/images/doctor-office-icon.webp"
+                  alt="doctor"
+                />
+              </span>
+              <h3
+                class="text-KonBlue text-base 3xl:text-xl font-medium leading-[140%]"
+              >
+                Tabakentwöhnung in der Arztpraxis
+              </h3>
+            </div>
+            <div
+              class="text-KonBlue text-base 3xl:text-xl font-light font-ibm-plex md:leading-[140%]! leading-[150%]! sm:max-w-36 w-full"
+            >
+              Februar 19:00 Uhr (Live)
+            </div>
+            <div
+              class="text-KonBlue text-base 3xl:text-xl font-light font-ibm-plex md:leading-[140%]! leading-[150%]! sm:max-w-55 w-full"
+            >
+              Dr. med. Alexander Rupp(Lungenfacharzt)
+            </div>
+            <div
+              class="text-KonBlue text-xs sm:text-base 3xl:text-xl font-light font-ibm-plex leading-[140%] max-w-28 md:max-w-22 w-full bg-white sm:bg-transparent rounded-lg px-3 py-2.5 sm:px-0 sm:py-0"
+            >
+              2 Punkte (CME)
+            </div>
+            <button
+              data-modal-open="unlockDownload"
+              class="bg-superSaiyan border-superSaiyan border hover:border-KonBlue text-KonBlue font-medium font-fira hover:bg-transparent hover:text-primary transition-all duration-300 ease-in-out cursor-pointer leading-[150%] sm:leading-[100%] h-13 sm:h-14 sm:text-base lg:text-lg 3xl:text-xl rounded-lg w-full sm:max-w-58"
+            >
+              Jetzt anmelden
+            </button>
+          </article>
+          <!-- INFO_CARD-3 -->
+          <article
+            class="flex flex-wrap 2xl:flex-nowrap justify-between items-center gap-4 md:gap-5 bg-iceFishing md:bg-lightgray rounded-2xl p-4 md:p-6 3xl:p-8"
+          >
+            <div
+              class="flex items-center gap-4 md:gap-5 3xl:gap-8 sm:max-w-[288px] w-full"
+            >
+              <span class="max-w-9 md:max-w-14 w-full">
+                <img
+                  src="./assets/images/doctor-office-icon.webp"
+                  alt="doctor"
+                />
+              </span>
+              <h3
+                class="text-KonBlue text-base 3xl:text-xl font-medium leading-[140%]"
+              >
+                Tabakentwöhnung in der Arztpraxis
+              </h3>
+            </div>
+            <div
+              class="text-KonBlue text-base 3xl:text-xl font-light font-ibm-plex md:leading-[140%]! leading-[150%]! sm:max-w-36 w-full"
+            >
+              Februar 19:00 Uhr (Live)
+            </div>
+            <div
+              class="text-KonBlue text-base 3xl:text-xl font-light font-ibm-plex md:leading-[140%]! leading-[150%]! sm:max-w-55 w-full"
+            >
+              Dr. med. Alexander Rupp(Lungenfacharzt)
+            </div>
+            <div
+              class="text-KonBlue text-xs sm:text-base 3xl:text-xl font-light font-ibm-plex leading-[140%] max-w-28 md:max-w-22 w-full bg-white sm:bg-transparent rounded-lg px-3 py-2.5 sm:px-0 sm:py-0"
+            >
+              2 Punkte (CME)
+            </div>
+            <button
+              data-modal-open="unlockDownload"
+              class="bg-superSaiyan border-superSaiyan border hover:border-KonBlue text-KonBlue font-medium font-fira hover:bg-transparent hover:text-primary transition-all duration-300 ease-in-out cursor-pointer leading-[150%] sm:leading-[100%] h-13 sm:h-14 sm:text-base lg:text-lg 3xl:text-xl rounded-lg w-full sm:max-w-58"
+            >
+              Jetzt anmelden
+            </button>
+          </article>
+          <!-- INFO_CARD-4 -->
+          <article
+            class="flex flex-wrap 2xl:flex-nowrap justify-between items-center gap-4 md:gap-5 bg-iceFishing md:bg-lightgray rounded-2xl p-4 md:p-6 3xl:p-8"
+          >
+            <div
+              class="flex items-center gap-4 md:gap-5 3xl:gap-8 sm:max-w-[288px] w-full"
+            >
+              <span class="max-w-9 md:max-w-14 w-full">
+                <img
+                  src="./assets/images/doctor-office-icon.webp"
+                  alt="doctor"
+                />
+              </span>
+              <h3
+                class="text-KonBlue text-base 3xl:text-xl font-medium leading-[140%]"
+              >
+                Tabakentwöhnung in der Arztpraxis
+              </h3>
+            </div>
+            <div
+              class="text-KonBlue text-base 3xl:text-xl font-light font-ibm-plex md:leading-[140%]! leading-[150%]! sm:max-w-36 w-full"
+            >
+              Februar 19:00 Uhr (Live)
+            </div>
+            <div
+              class="text-KonBlue text-base 3xl:text-xl font-light font-ibm-plex md:leading-[140%]! leading-[150%]! sm:max-w-55 w-full"
+            >
+              Dr. med. Alexander Rupp(Lungenfacharzt)
+            </div>
+            <div
+              class="text-KonBlue text-xs sm:text-base 3xl:text-xl font-light font-ibm-plex leading-[140%] max-w-28 md:max-w-22 w-full bg-white sm:bg-transparent rounded-lg px-3 py-2.5 sm:px-0 sm:py-0"
+            >
+              2 Punkte (CME)
+            </div>
+            <button
+              data-modal-open="unlockDownload"
+              class="bg-superSaiyan border-superSaiyan border hover:border-KonBlue text-KonBlue font-medium font-fira hover:bg-transparent hover:text-primary transition-all duration-300 ease-in-out cursor-pointer leading-[150%] sm:leading-[100%] h-13 sm:h-14 sm:text-base lg:text-lg 3xl:text-xl rounded-lg w-full sm:max-w-58"
+            >
+              Jetzt anmelden
+            </button>
+          </article>
+        </div>
+      </section>
+      <!-- TEST ACCESS AND REQUEST -->
+      <section class="3xl:py-25 2xl:py-20 xl:py-12 py-9 bg-icelightBlue px-5">
+        <div class="section-container mt-0!">
+          <div class="2xl:mb-16 mb-12">
+            <p
+              class="text-xl 3xl:text-2xl text-celestialBlue mb-3 font-medium leading-[133.333%] font-fira"
+            >
+              Wissen, wann Sie es brauchen
+            </p>
+            <h2
+              class="text-lg md:text-2xl 3xl:text-[32px] font-medium text-KonBlue mb-6 max-w-223 w-full font-fira"
+            >
+              On-Demand-Mediathek
+            </h2>
+            <p
+              class="text-KonBlue text-lg 2xl:text-xl font-light leading-[160%]"
+            >
+              Greifen Sie jederzeit auf unsere aufgezeichneten Webinare und
+              E-Learnings zu. Ideal für flexible <br />
+              Fortbildung, wenn Sie Zeit haben.
+            </p>
+          </div>
+
+          <!-- Grid -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-4 2xl:gap-6 3xl:gap-8"
+          >
+            <!-- Card-1 -->
+            <article
+              class="bg-white rounded-xl shadow p-3 lg:p-5 3xl:p-6 flex flex-col gap-4 md:gap-4.75"
+            >
+              <div
+                class="relative lg:max-h-31.25 max-h-40 md:h-31.25 h-40 overflow-hidden rounded-[10px] video-card"
+              >
+                <video
+                  class="h-full object-cover w-full aspect-video card-video"
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                ></video>
+                <button
+                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-white flex items-center justify-center min-w-9 min-h-9 w-9 h-9 rounded-full transition-all duration-300 cursor-pointer video-btn"
+                >
+                  <img
+                    class="md:w-6.5 w-4 h-5 md:h-5.25 object-contain video-icon"
+                    src="./assets/images/png/play.png"
+                    alt="arrow-video"
+                  />
+                </button>
+              </div>
+              <div>
+                <h3 class="text-xl font-medium text-KonBlue leading-[140%]">
+                  Medikation in der Tabakentwöhnung
+                </h3>
+                <p
+                  class="text-xs lg:text-base text-KonBlue mt-2 grow font-light"
+                >
+                  Inkl. des neuen G-BA-Beschlusses
+                </p>
+              </div>
+              <div
+                class="bg-iceFishing rounded-2xl text-KonBlue font-fira text-base font-medium text-center px-5 py-2 w-fit"
+              >
+                CME 3 Pkt.
+              </div>
+              <div
+                class="flex items-center xl:gap-7 gap-4 text-KonBlue text-base font-light leading-[150%]"
+              >
+                <div class="flex items-center gap-2">
+                  <img
+                    class="object-contain w-3 h-4.25"
+                    src="./assets/images/png/location.png"
+                    alt="location"
+                  />
+                  <p>On Demand</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <img
+                    class="object-contain w-3 h-4.25"
+                    src="./assets/images/png/time.png"
+                    alt="location"
+                  />
+                  <p>45 min</p>
+                </div>
+              </div>
+              <button
+                data-modal-open="unlockDownload"
+                class="bg-superSaiyan border-superSaiyan border hover:border-KonBlue! text-KonBlue font-medium font-fira hover:bg-transparent hover:text-primary transition-all duration-300 ease-in-out cursor-pointer leading-[150%] sm:leading-[100%] h-13 sm:h-14 sm:text-base lg:text-lg 3xl:text-xl rounded-full w-full"
+              >
+                Jetzt anmelden
+              </button>
+            </article>
+            <!-- Card-2 -->
+            <article
+              class="bg-white rounded-xl shadow p-3 lg:p-5 3xl:p-6 flex flex-col gap-4 md:gap-4.75"
+            >
+              <div
+                class="relative lg:max-h-31.25 max-h-40 md:h-31.25 h-40 overflow-hidden rounded-[10px] video-card"
+              >
+                <video
+                  class="h-full object-cover w-full aspect-video card-video"
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                ></video>
+                <button
+                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-white flex items-center justify-center min-w-9 min-h-9 w-9 h-9 rounded-full transition-all duration-300 cursor-pointer video-btn"
+                >
+                  <img
+                    class="md:w-6.5 w-4 h-5 md:h-5.25 object-contain video-icon"
+                    src="./assets/images/png/play.png"
+                    alt="arrow-video"
+                  />
+                </button>
+              </div>
+              <div>
+                <h3 class="text-xl font-medium text-KonBlue leading-[140%]">
+                  Medikation in der Tabakentwöhnung
+                </h3>
+                <p
+                  class="text-xs lg:text-base text-KonBlue mt-2 grow font-light"
+                >
+                  Inkl. des neuen G-BA-Beschlusses
+                </p>
+              </div>
+              <div
+                class="bg-iceFishing rounded-2xl text-KonBlue font-fira text-base font-medium text-center px-5 py-2 w-fit"
+              >
+                CME 3 Pkt.
+              </div>
+              <div
+                class="flex items-center xl:gap-7 gap-4 text-KonBlue text-base font-light leading-[150%]"
+              >
+                <div class="flex items-center gap-2">
+                  <img
+                    class="object-contain w-3 h-4.25"
+                    src="./assets/images/png/location.png"
+                    alt="location"
+                  />
+                  <p>On Demand</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <img
+                    class="object-contain w-3 h-4.25"
+                    src="./assets/images/png/time.png"
+                    alt="location"
+                  />
+                  <p>45 min</p>
+                </div>
+              </div>
+              <button
+                data-modal-open="unlockDownload"
+                class="bg-superSaiyan border-superSaiyan border hover:border-KonBlue text-KonBlue font-medium font-fira hover:bg-transparent hover:text-primary transition-all duration-300 ease-in-out cursor-pointer leading-[150%] sm:leading-[100%] h-13 sm:h-14 sm:text-base lg:text-lg 3xl:text-xl rounded-full w-full"
+              >
+                Jetzt anmelden
+              </button>
+            </article>
+            <!-- Card-3 -->
+            <article
+              class="bg-white rounded-xl shadow p-3 lg:p-5 3xl:p-6 flex flex-col gap-4 md:gap-4.75"
+            >
+              <div
+                class="relative lg:max-h-31.25 max-h-40 md:h-31.25 h-40 overflow-hidden rounded-[10px] video-card"
+              >
+                <video
+                  class="h-full object-cover w-full aspect-video card-video"
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                ></video>
+                <button
+                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-white flex items-center justify-center min-w-9 min-h-9 w-9 h-9 rounded-full transition-all duration-300 cursor-pointer video-btn"
+                >
+                  <img
+                    class="md:w-6.5 w-4 h-5 md:h-5.25 object-contain video-icon"
+                    src="./assets/images/png/play.png"
+                    alt="arrow-video"
+                  />
+                </button>
+              </div>
+              <div>
+                <h3 class="text-xl font-medium text-KonBlue leading-[140%]">
+                  Medikation in der Tabakentwöhnung
+                </h3>
+                <p
+                  class="text-xs lg:text-base text-KonBlue mt-2 grow font-light"
+                >
+                  Inkl. des neuen G-BA-Beschlusses
+                </p>
+              </div>
+              <div
+                class="bg-iceFishing rounded-2xl text-KonBlue font-fira text-base font-medium text-center px-5 py-2 w-fit"
+              >
+                CME 3 Pkt.
+              </div>
+              <div
+                class="flex items-center xl:gap-7 gap-4 text-KonBlue text-base font-light leading-[150%]"
+              >
+                <div class="flex items-center gap-2">
+                  <img
+                    class="object-contain w-3 h-4.25"
+                    src="./assets/images/png/location.png"
+                    alt="location"
+                  />
+                  <p>On Demand</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <img
+                    class="object-contain w-3 h-4.25"
+                    src="./assets/images/png/time.png"
+                    alt="location"
+                  />
+                  <p>45 min</p>
+                </div>
+              </div>
+              <button
+                data-modal-open="unlockDownload"
+                class="bg-superSaiyan border-superSaiyan border hover:border-KonBlue text-KonBlue font-medium font-fira hover:bg-transparent hover:text-primary transition-all duration-300 ease-in-out cursor-pointer leading-[150%] sm:leading-[100%] h-13 sm:h-14 sm:text-base lg:text-lg 3xl:text-xl rounded-full w-full"
+              >
+                Jetzt anmelden
+              </button>
+            </article>
+            <!-- Card-4 -->
+            <article
+              class="bg-white rounded-xl shadow p-3 lg:p-5 3xl:p-6 flex flex-col gap-4 md:gap-4.75"
+            >
+              <div
+                class="relative lg:max-h-31.25 max-h-40 md:h-31.25 h-40 overflow-hidden rounded-[10px] video-card"
+              >
+                <video
+                  class="h-full object-cover w-full aspect-video card-video"
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                ></video>
+                <button
+                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-white flex items-center justify-center min-w-9 min-h-9 w-9 h-9 rounded-full transition-all duration-300 cursor-pointer video-btn"
+                >
+                  <img
+                    class="md:w-6.5 w-4 h-5 md:h-5.25 object-contain video-icon"
+                    src="./assets/images/png/play.png"
+                    alt="arrow-video"
+                  />
+                </button>
+              </div>
+              <div>
+                <h3 class="text-xl font-medium text-KonBlue leading-[140%]">
+                  Medikation in der Tabakentwöhnung
+                </h3>
+                <p
+                  class="text-xs lg:text-base text-KonBlue mt-2 grow font-light"
+                >
+                  Inkl. des neuen G-BA-Beschlusses
+                </p>
+              </div>
+              <div
+                class="bg-iceFishing rounded-2xl text-KonBlue font-fira text-base font-medium text-center px-5 py-2 w-fit"
+              >
+                CME 3 Pkt.
+              </div>
+              <div
+                class="flex items-center xl:gap-7 gap-4 text-KonBlue text-base font-light leading-[150%]"
+              >
+                <div class="flex items-center gap-2">
+                  <img
+                    class="object-contain w-3 h-4.25"
+                    src="./assets/images/png/location.png"
+                    alt="location"
+                  />
+                  <p>On Demand</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <img
+                    class="object-contain w-3 h-4.25"
+                    src="./assets/images/png/time.png"
+                    alt="location"
+                  />
+                  <p>45 min</p>
+                </div>
+              </div>
+              <button
+                data-modal-open="unlockDownload"
+                class="bg-superSaiyan border-superSaiyan border hover:border-KonBlue text-KonBlue font-medium font-fira hover:bg-transparent hover:text-primary transition-all duration-300 ease-in-out cursor-pointer leading-[150%] sm:leading-[100%] h-13 sm:h-14 sm:text-base lg:text-lg 3xl:text-xl rounded-full w-full"
+              >
+                Jetzt anmelden
+              </button>
+            </article>
+            <!-- Card-5 -->
+            <article
+              class="bg-white rounded-xl shadow p-3 lg:p-5 3xl:p-6 flex flex-col gap-4 md:gap-4.75"
+            >
+              <div
+                class="relative lg:max-h-31.25 max-h-40 md:h-31.25 h-40 overflow-hidden rounded-[10px] video-card"
+              >
+                <video
+                  class="h-full object-cover w-full aspect-video card-video"
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                ></video>
+                <button
+                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-white flex items-center justify-center min-w-9 min-h-9 w-9 h-9 rounded-full transition-all duration-300 cursor-pointer video-btn"
+                >
+                  <img
+                    class="md:w-6.5 w-4 h-5 md:h-5.25 object-contain video-icon"
+                    src="./assets/images/png/play.png"
+                    alt="arrow-video"
+                  />
+                </button>
+              </div>
+              <div>
+                <h3 class="text-xl font-medium text-KonBlue leading-[140%]">
+                  Medikation in der Tabakentwöhnung
+                </h3>
+                <p
+                  class="text-xs lg:text-base text-KonBlue mt-2 grow font-light"
+                >
+                  Inkl. des neuen G-BA-Beschlusses
+                </p>
+              </div>
+              <div
+                class="bg-iceFishing rounded-2xl text-KonBlue font-fira text-base font-medium text-center px-5 py-2 w-fit"
+              >
+                CME 3 Pkt.
+              </div>
+              <div
+                class="flex items-center xl:gap-7 gap-4 text-KonBlue text-base font-light leading-[150%]"
+              >
+                <div class="flex items-center gap-2">
+                  <img
+                    class="object-contain w-3 h-4.25"
+                    src="./assets/images/png/location.png"
+                    alt="location"
+                  />
+                  <p>On Demand</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <img
+                    class="object-contain w-3 h-4.25"
+                    src="./assets/images/png/time.png"
+                    alt="location"
+                  />
+                  <p>45 min</p>
+                </div>
+              </div>
+              <button
+                data-modal-open="unlockDownload"
+                class="bg-superSaiyan border-superSaiyan border hover:border-KonBlue text-KonBlue font-medium font-fira hover:bg-transparent hover:text-primary transition-all duration-300 ease-in-out cursor-pointer leading-[150%] sm:leading-[100%] h-13 sm:h-14 sm:text-base lg:text-lg 3xl:text-xl rounded-full w-full"
+              >
+                Jetzt anmelden
+              </button>
+            </article>
+            <!-- Card-6 -->
+            <article
+              class="bg-white rounded-xl shadow p-3 lg:p-5 3xl:p-6 flex flex-col gap-4 md:gap-4.75"
+            >
+              <div
+                class="relative lg:max-h-31.25 max-h-40 md:h-31.25 h-40 overflow-hidden rounded-[10px] video-card"
+              >
+                <video
+                  class="h-full object-cover w-full aspect-video card-video"
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                ></video>
+                <button
+                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-white flex items-center justify-center min-w-9 min-h-9 w-9 h-9 rounded-full transition-all duration-300 cursor-pointer video-btn"
+                >
+                  <img
+                    class="md:w-6.5 w-4 h-5 md:h-5.25 object-contain video-icon"
+                    src="./assets/images/png/play.png"
+                    alt="arrow-video"
+                  />
+                </button>
+              </div>
+              <div>
+                <h3 class="text-xl font-medium text-KonBlue leading-[140%]">
+                  Medikation in der Tabakentwöhnung
+                </h3>
+                <p
+                  class="text-xs lg:text-base text-KonBlue mt-2 grow font-light"
+                >
+                  Inkl. des neuen G-BA-Beschlusses
+                </p>
+              </div>
+              <div
+                class="bg-iceFishing rounded-2xl text-KonBlue font-fira text-base font-medium text-center px-5 py-2 w-fit"
+              >
+                CME 3 Pkt.
+              </div>
+              <div
+                class="flex items-center xl:gap-7 gap-4 text-KonBlue text-base font-light leading-[150%]"
+              >
+                <div class="flex items-center gap-2">
+                  <img
+                    class="object-contain w-3 h-4.25"
+                    src="./assets/images/png/location.png"
+                    alt="location"
+                  />
+                  <p>On Demand</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <img
+                    class="object-contain w-3 h-4.25"
+                    src="./assets/images/png/time.png"
+                    alt="location"
+                  />
+                  <p>45 min</p>
+                </div>
+              </div>
+              <button
+                data-modal-open="unlockDownload"
+                class="bg-superSaiyan border-superSaiyan border hover:border-KonBlue text-KonBlue font-medium font-fira hover:bg-transparent hover:text-primary transition-all duration-300 ease-in-out cursor-pointer leading-[150%] sm:leading-[100%] h-13 sm:h-14 sm:text-base lg:text-lg 3xl:text-xl rounded-full w-full"
+              >
+                Jetzt anmelden
+              </button>
+            </article>
+            <!-- Card-7 -->
+            <article
+              class="bg-white rounded-xl shadow p-3 lg:p-5 3xl:p-6 flex flex-col gap-4 md:gap-4.75"
+            >
+              <div
+                class="relative lg:max-h-31.25 max-h-40 md:h-31.25 h-40 overflow-hidden rounded-[10px] video-card"
+              >
+                <video
+                  class="h-full object-cover w-full aspect-video card-video"
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                ></video>
+                <button
+                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-white flex items-center justify-center min-w-9 min-h-9 w-9 h-9 rounded-full transition-all duration-300 cursor-pointer video-btn"
+                >
+                  <img
+                    class="md:w-6.5 w-4 h-5 md:h-5.25 object-contain video-icon"
+                    src="./assets/images/png/play.png"
+                    alt="arrow-video"
+                  />
+                </button>
+              </div>
+              <div>
+                <h3 class="text-xl font-medium text-KonBlue leading-[140%]">
+                  Medikation in der Tabakentwöhnung
+                </h3>
+                <p
+                  class="text-xs lg:text-base text-KonBlue mt-2 grow font-light"
+                >
+                  Inkl. des neuen G-BA-Beschlusses
+                </p>
+              </div>
+              <div
+                class="bg-iceFishing rounded-2xl text-KonBlue font-fira text-base font-medium text-center px-5 py-2 w-fit"
+              >
+                CME 3 Pkt.
+              </div>
+              <div
+                class="flex items-center xl:gap-7 gap-4 text-KonBlue text-base font-light leading-[150%]"
+              >
+                <div class="flex items-center gap-2">
+                  <img
+                    class="object-contain w-3 h-4.25"
+                    src="./assets/images/png/location.png"
+                    alt="location"
+                  />
+                  <p>On Demand</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <img
+                    class="object-contain w-3 h-4.25"
+                    src="./assets/images/png/time.png"
+                    alt="location"
+                  />
+                  <p>45 min</p>
+                </div>
+              </div>
+              <button
+                data-modal-open="unlockDownload"
+                class="bg-superSaiyan border-superSaiyan border hover:border-KonBlue text-KonBlue font-medium font-fira hover:bg-transparent hover:text-primary transition-all duration-300 ease-in-out cursor-pointer leading-[150%] sm:leading-[100%] h-13 sm:h-14 sm:text-base lg:text-lg 3xl:text-xl rounded-full w-full"
+              >
+                Jetzt anmelden
+              </button>
+            </article>
+            <!-- Card-8 -->
+            <article
+              class="bg-white rounded-xl shadow p-3 lg:p-5 3xl:p-6 flex flex-col gap-4 md:gap-4.75"
+            >
+              <div
+                class="relative lg:max-h-31.25 max-h-40 md:h-31.25 h-40 overflow-hidden rounded-[10px] video-card"
+              >
+                <video
+                  class="h-full object-cover w-full aspect-video card-video"
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                ></video>
+                <button
+                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-white flex items-center justify-center min-w-9 min-h-9 w-9 h-9 rounded-full transition-all duration-300 cursor-pointer video-btn"
+                >
+                  <img
+                    class="md:w-6.5 w-4 h-5 md:h-5.25 object-contain video-icon"
+                    src="./assets/images/png/play.png"
+                    alt="arrow-video"
+                  />
+                </button>
+              </div>
+              <div>
+                <h3 class="text-xl font-medium text-KonBlue leading-[140%]">
+                  Medikation in der Tabakentwöhnung
+                </h3>
+                <p
+                  class="text-xs lg:text-base text-KonBlue mt-2 grow font-light"
+                >
+                  Inkl. des neuen G-BA-Beschlusses
+                </p>
+              </div>
+              <div
+                class="bg-iceFishing rounded-2xl text-KonBlue font-fira text-base font-medium text-center px-5 py-2 w-fit"
+              >
+                CME 3 Pkt.
+              </div>
+              <div
+                class="flex items-center xl:gap-7 gap-4 text-KonBlue text-base font-light leading-[150%]"
+              >
+                <div class="flex items-center gap-2">
+                  <img
+                    class="object-contain w-3 h-4.25"
+                    src="./assets/images/png/location.png"
+                    alt="location"
+                  />
+                  <p>On Demand</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <img
+                    class="object-contain w-3 h-4.25"
+                    src="./assets/images/png/time.png"
+                    alt="location"
+                  />
+                  <p>45 min</p>
+                </div>
+              </div>
+              <button
+                data-modal-open="unlockDownload"
+                class="bg-superSaiyan border-superSaiyan border hover:border-KonBlue text-KonBlue font-medium font-fira hover:bg-transparent hover:text-primary transition-all duration-300 ease-in-out cursor-pointer leading-[150%] sm:leading-[100%] h-13 sm:h-14 sm:text-base lg:text-lg 3xl:text-xl rounded-full w-full"
+              >
+                Jetzt anmelden
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- Face-to-face events -->
+      <section class="px-5">
+        <div class="section-container">
+          <div>
+            <p
+              class="text-xl 3xl:text-2xl text-blueBay mb-3 font-medium leading-[133.333%] font-fira"
+            >
+              Präsenzveranstaltungen
+            </p>
+            <h3
+              class="text-xl md:text-2xl 3xl:text-[32px] font-medium font-fira text-KonBlue"
+            >
+              Vertiefende Ressourcen & Infomaterialien
+            </h3>
+            <p
+              class="text-lg md:text-xl font-light text-KonBlue pt-6 xl:max-w-223.25 w-full"
+            >
+              Laden Sie hier Fachinformationen, Checklisten und Whitepaper
+              herunter. Der Download ist kostenfrei und wir Ihnen per E-Mail zu
+              Verfügung gestellt.
+            </p>
+          </div>
+          <div class="lg:pt-12! pt-10!">
+            <div class="space-y-4">
+              <!-- INFO_CARD-1 -->
+              <article
+                class="flex flex-wrap 2xl:flex-nowrap justify-between items-center gap-4 md:gap-5 lg:gap-16 2xl:gap-27.5! bg-iceFishing md:bg-lightgray rounded-2xl p-4 md:p-6 3xl:p-8"
+              >
+                <div
+                  class="flex items-center gap-4 md:gap-5 3xl:gap-8 sm:max-w-109.5 w-full"
+                >
+                  <img
+                    class="max-w-9 md:max-w-14 w-full object-cover"
+                    src="./assets/images/png/pdf-1.png"
+                    alt="magazin"
+                  />
+                  <h3
+                    class="text-KonBlue text-base 3xl:text-xl font-medium leading-[140%]"
+                  >
+                    LKS: Kriterien und Verordnung
+                  </h3>
+                </div>
+                <div
+                  class="flex-row flex items-center md:gap-4 max-w-70.25 w-full md:justify-between"
+                >
+                  <div
+                    class="text-KonBlue text-base 3xl:text-xl font-light font-ibm-plex leading-[140%] gap-0.5"
+                  >
+                    PDF-Datei,
+                  </div>
+                  <div
+                    class="text-KonBlue text-base 3xl:text-xl font-light font-ibm-plex leading-[140%]"
+                  >
+                    4 Seiten
+                  </div>
+                </div>
+
+                <button
+                  data-modal-open="registrationform"
+                  class="bg-KonBlue text-white font-medium border hover:border-primary font-fira hover:bg-transparent hover:text-primary transition-all duration-300 ease-in-out cursor-pointer leading-[150%] sm:leading-[100%] h-13 sm:h-14 sm:text-base lg:text-lg 3xl:text-xl rounded-lg w-full sm:max-w-58"
+                >
+                  Jetzt herunterladen
+                </button>
+              </article>
+              <!-- INFO_CARD-2 -->
+              <article
+                class="flex flex-wrap 2xl:flex-nowrap justify-between items-center gap-4 md:gap-5 lg:gap-16 2xl:gap-27.5! bg-iceFishing md:bg-lightgray rounded-2xl p-4 md:p-6 3xl:p-8"
+              >
+                <div
+                  class="flex items-center gap-4 md:gap-5 3xl:gap-8 sm:max-w-109.5 w-full"
+                >
+                  <img
+                    class="max-w-9 md:max-w-14 w-full object-cover"
+                    src="./assets/images/png/pdf-2.png"
+                    alt="magazin"
+                  />
+                  <h3
+                    class="text-KonBlue text-base 3xl:text-xl font-medium leading-[140%]"
+                  >
+                    Erfolgreiche DiGA-Abrechnung
+                  </h3>
+                </div>
+                <div
+                  class="flex-row flex items-center md:gap-4 max-w-70.25 w-full md:justify-between"
+                >
+                  <div
+                    class="text-KonBlue text-base 3xl:text-xl font-light font-ibm-plex leading-[140%] gap-0.5"
+                  >
+                    Whitepaper,
+                  </div>
+                  <div
+                    class="text-KonBlue text-base 3xl:text-xl font-light font-ibm-plex leading-[140%]"
+                  >
+                    8 Seiten
+                  </div>
+                </div>
+
+                <button
+                  data-modal-open="registrationform"
+                  class="bg-KonBlue text-white font-medium border hover:border-primary font-fira hover:bg-transparent hover:text-primary transition-all duration-300 ease-in-out cursor-pointer leading-[150%] sm:leading-[100%] h-13 sm:h-14 sm:text-base lg:text-lg 3xl:text-xl rounded-lg w-full sm:max-w-58"
+                >
+                  Jetzt herunterladen
+                </button>
+              </article>
+              <!-- INFO_CARD-3 -->
+              <article
+                class="flex flex-wrap 2xl:flex-nowrap justify-between items-center gap-4 md:gap-5 lg:gap-16 2xl:gap-27.5! bg-iceFishing md:bg-lightgray rounded-2xl p-4 md:p-6 3xl:p-8"
+              >
+                <div
+                  class="flex items-center gap-4 md:gap-5 3xl:gap-8 sm:max-w-109.5 w-full"
+                >
+                  <img
+                    class="max-w-9 md:max-w-14 w-full object-cover"
+                    src="./assets/images/png/pdf-3.png"
+                    alt="magazin"
+                  />
+                  <h3
+                    class="text-KonBlue text-base 3xl:text-xl font-medium leading-[140%]"
+                  >
+                    Motivierende Gesprächsführung
+                  </h3>
+                </div>
+                <div
+                  class="flex-row flex items-center md:gap-4 max-w-70.25 w-full md:justify-between"
+                >
+                  <div
+                    class="text-KonBlue text-base 3xl:text-xl font-light font-ibm-plex leading-[140%] gap-0.5"
+                  >
+                    Checkliste
+                  </div>
+                  <div
+                    class="text-KonBlue text-base 3xl:text-xl font-light font-ibm-plex leading-[140%]"
+                  >
+                    2 Seiten
+                  </div>
+                </div>
+
+                <button
+                  data-modal-open="registrationform"
+                  class="bg-KonBlue text-white font-medium border hover:border-primary font-fira hover:bg-transparent hover:text-primary transition-all duration-300 ease-in-out cursor-pointer leading-[150%] sm:leading-[100%] h-13 sm:h-14 sm:text-base lg:text-lg 3xl:text-xl rounded-lg w-full sm:max-w-58"
+                >
+                  Jetzt herunterladen
+                </button>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Trade fairs and congresses -->
+      <section class="px-5">
+        <div class="section-container">
+          <!-- Left Content -->
+          <div>
+            <span
+              class="text-lg lg:text-xl 3xl:text-2xl text-blueBay font-medium leading-[133%]"
+            >
+              Präsenzveranstaltungen
+            </span>
+
+            <h2
+              class="text-xl md:text-2xl 3xl:text-3xl font-medium mt-2 mb-4 text-KonBlue"
+            >
+              Messen und Kongresse
+            </h2>
+
+            <p class="text-lg md:text-xl font-light text-KonBlue max-w-222.5">
+              Faucibus etiam sit aliquet ut feugiat massa elementum scelerisque
+              id. Accumsan sed ante auctor ultrices in mattis sapien. Nunc
+              aliquam viverra odio vel sapien pretium. Feugiat velit facilisis
+              lorem tincidunt sollicitudin. Risus ultrices pellentesque sed dis
+              convallis elit interdum eu a.
+            </p>
+
+            <div
+              class="flex md:flex-row flex-col-reverse justify-between gap-2 md:gap-4 xl:gap-10 mt-12"
+            >
+              <div
+                class="space-y-4 md:max-w-157 w-full flex flex-col justify-between"
+              >
+                <!-- Card 1 -->
+                <article
+                  class="bg-lightgray rounded-[20px] lg:rounded-3xl p-4 lg:p-6 xl:p-8 space-y-4"
+                >
+                  <div class="flex items-center gap-4 md:gap-6">
+                    <div
+                      class="xl:w-14 xl:min-w-14 lg:min-w-12 lg:w-12 min-w-9 w-9 aspect-square bg-KonBlue rounded-full flex items-center justify-center"
+                    >
+                      <img
+                        class="xl:w-7 w-5 xl:h-7 h-5 object-cover"
+                        src="./assets/images/png/calander.png"
+                        alt="calander"
+                      />
+                    </div>
+                    <h4
+                      class="free-help-text font-medium leading-[160%] font-fira"
+                    >
+                      Kongress der DGP
+                    </h4>
+                  </div>
+                  <p
+                    class="free-help-text font-ibm-plex leading-[160%] text-KonBlue font-light"
+                  >
+                    Fordern Sie gedruckte Flyer für Ihre Patienten an, um die
+                    Aufklärung in der Praxis zu unterstützen.
+                  </p>
+                  <div class="flex gap-2 xl:gap-3">
+                    <span
+                      class="bg-white md:text-base sm:text-sm text-xs leading-[110%] font-fira flex items-center xl:h-10 h-9 rounded-lg xl:rounded-xl md:px-5 px-3 font-medium"
+                      >München</span
+                    >
+                    <span
+                      class="bg-white md:text-base sm:text-sm text-xs leading-[110%] font-fira flex items-center xl:h-10 h-9 rounded-lg xl:rounded-xl md:px-5 px-3 font-medium"
+                      >18. März 2026</span
+                    >
+                  </div>
+                </article>
+                <!-- Card 2 -->
+                <article
+                  class="bg-lightgray rounded-[20px] lg:rounded-3xl p-4 lg:p-6 xl:p-8 space-y-4"
+                >
+                  <div class="flex items-center gap-4 md:gap-6">
+                    <div
+                      class="xl:w-14 xl:min-w-14 lg:min-w-12 lg:w-12 min-w-9 w-9 aspect-square bg-KonBlue rounded-full flex items-center justify-center"
+                    >
+                      <img
+                        class="xl:w-7 w-5 xl:h-7 h-5 object-cover"
+                        src="./assets/images/png/calander.png"
+                        alt="calander"
+                      />
+                    </div>
+                    <h4
+                      class="free-help-text font-medium leading-[160%] font-fira"
+                    >
+                      Kongress der DGP
+                    </h4>
+                  </div>
+                  <p
+                    class="free-help-text font-ibm-plex leading-[160%] text-KonBlue font-light"
+                  >
+                    Fordern Sie gedruckte Flyer für Ihre Patienten an, um die
+                    Aufklärung in der Praxis zu unterstützen.
+                  </p>
+                  <div class="flex gap-2 xl:gap-3">
+                    <span
+                      class="bg-white md:text-base sm:text-sm text-xs leading-[110%] font-fira flex items-center xl:h-10 h-9 rounded-lg xl:rounded-xl md:px-5 px-3 font-medium"
+                      >München</span
+                    >
+                    <span
+                      class="bg-white md:text-base sm:text-sm text-xs leading-[110%] font-fira flex items-center xl:h-10 h-9 rounded-lg xl:rounded-xl md:px-5 px-3 font-medium"
+                      >18. März 2026</span
+                    >
+                  </div>
+                </article>
+                <!-- Card 3 -->
+                <article
+                  class="bg-lightgray rounded-[20px] lg:rounded-3xl p-4 lg:p-6 xl:p-8 space-y-4"
+                >
+                  <div class="flex items-center gap-4 md:gap-6">
+                    <div
+                      class="xl:w-14 xl:min-w-14 lg:min-w-12 lg:w-12 min-w-9 w-9 aspect-square bg-KonBlue rounded-full flex items-center justify-center"
+                    >
+                      <img
+                        class="xl:w-7 w-5 xl:h-7 h-5 object-cover"
+                        src="./assets/images/png/calander.png"
+                        alt="calander"
+                      />
+                    </div>
+                    <h4
+                      class="free-help-text font-medium leading-[160%] font-fira"
+                    >
+                      Kongress der DGP
+                    </h4>
+                  </div>
+                  <p
+                    class="free-help-text font-ibm-plex leading-[160%] text-KonBlue font-light"
+                  >
+                    Fordern Sie gedruckte Flyer für Ihre Patienten an, um die
+                    Aufklärung in der Praxis zu unterstützen.
+                  </p>
+                  <div class="flex gap-2 xl:gap-3">
+                    <span
+                      class="bg-white md:text-base sm:text-sm text-xs leading-[110%] font-fira flex items-center xl:h-10 h-9 rounded-lg xl:rounded-xl md:px-5 px-3 font-medium"
+                      >München</span
+                    >
+                    <span
+                      class="bg-white md:text-base sm:text-sm text-xs leading-[110%] font-fira flex items-center xl:h-10 h-9 rounded-lg xl:rounded-xl md:px-5 px-3 font-medium"
+                      >18. März 2026</span
+                    >
+                  </div>
+                </article>
+              </div>
+
+              <!-- Right Image -->
+              <div
+                class="w-full max-h-62.25 sm:max-h-125 md:max-h-200 md:max-w-144.25 rounded-[20px] overflow-hidden"
+              >
+                <img
+                  src="./assets/images/hemd-image.webp"
+                  alt="Event"
+                  class="w-full h-full object-cover md:block hidden"
+                />
+                <img
+                  src="./assets/images/png/hemd-mobile.png"
+                  alt="Event"
+                  class="w-full h-full object-cover block md:hidden"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- RAINER OTT -->
+      <section class="px-5">
+        <div class="section-container">
+          <div
+            class="bg-lightgray rounded-[20px] lg:rounded-3xl px-4 sm:px-6 py-4 lg:px-12 xl:px-33 md:py-10 xl:py-19"
+          >
+            <div class="flex items-center gap-6 mb-5 sm:mb-12">
+              <img
+                src="./assets/images/profile-footer.webp"
+                alt="profile"
+                class="w-15 sm:w-25 h-15 sm:h-25 object-cover rounded-full"
+              />
+              <div>
+                <h3 class="article-heading">Rainer Ott</h3>
+                <h4 class="article-desc hidden sm:block">
+                  Ansprechpartner für Ärzt:innen
+                </h4>
+              </div>
+            </div>
+            <h4 class="article-desc sm:hidden mb-4">
+              Ansprechpartner für Ärzt:innen
+            </h4>
+
+            <div>
+              <article
+                class="bg-white rounded-2xl px-4 py-3 sm:p-6 flex items-center gap-4 sm:gap-6"
+              >
+                <img
+                  class="w-5 sm:w-10 sm:h-10 h-5 object-contain"
+                  src="/assets/images/png/mobile-footer.png"
+                  alt="mobile-footer"
+                />
+                <a
+                  class="article-desc hover:underline"
+                  href="tel:+49 0711 21 959 343"
+                  >+49 0711 21 959 343</a
+                >
+              </article>
+              <article
+                class="bg-white rounded-2xl px-4 py-3 sm:p-6 flex items-center gap-4 sm:gap-6 mt-3"
+              >
+                <img
+                  class="w-5 sm:w-10 sm:h-10 h-5 object-contain"
+                  src="./assets/images/png/mail.png"
+                  alt="mail"
+                />
+                <a
+                  class="article-desc hover:underline"
+                  href="mailto:+49 0711 21 959 343"
+                  >service@nichtraucherhelden.de</a
+                >
+              </article>
+              <p class="article-desc my-6 sm:my-8 md:my-12 font-light">
+                Sie haben Interesse an einem Testzugang oder einer Demo?
+              </p>
+              <button class="professional-page-btn w-full sm:w-124!">
+                Zum Kontaktformular
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!------------------------ Footer Section --------------------------->
+      <footer class="bg-KonBlue text-white px-8 sm:px-5">
+        <!-- TOP SECTION -->
+        <div
+          class="section-container py-12 xl:justify-between grid grid-cols-1 sm:grid-cols-2 3xl:pt-27.75 3xl:pb-26.25 lg:grid-cols-4 gap-8 3xl:gap-17 xl:flex"
+        >
+          <!-- Column 1 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Sanero Medical GmbH
+            </h3>
+            <p class="footer-link font-normal font-ibm-plex">
+              Wilhelmstraße 19 70182<br />
+              Stuttgart Germany
+            </p>
+
+            <div class="mt-4 md:mt-6 space-y-2 text-sm">
+              <a
+                href="tel:+49 (0)711 / 99 538 110"
+                class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+              >
+                <img
+                  class="max-w-5 w-full"
+                  src="./assets/images/phone-white.webp"
+                  alt="phone"
+                />
+
+                +49 (0)711 / 99 538 110
+              </a>
+              <a
+                href="mailto:info@sanero-medical.de"
+                class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+              >
+                <img
+                  class="max-w-5 w-full"
+                  src="./assets/images/email-white.webp"
+                  alt="phone"
+                />
+                info@sanero-medical.de
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Unternehmen
+            </h3>
+            <ul
+              class="space-y-2 font-normal footer-link font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Über uns</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Kontakt</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Presse</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Service
+            </h3>
+            <ul
+              class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Impressum</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Datenschutz</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4 -->
+          <div>
+            <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+              Prävention nach §20
+            </h3>
+            <ul
+              class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Präventionskurs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Krankenkassen</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                  >Firmenprogramm</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <!-- BOTTOM BAR -->
+      <section class="bg-windsweptBeach hidden md:block px-5">
+        <div
+          class="section-container mt-0! py-4 md:py-6.5! flex flex-col lg:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-encoreGray footer-link font-ibm-plex">
+            © 2025 NichtraucherHelden – ein Produkt der Sanero Medical GmbH
+          </p>
+
+          <div class="flex items-center gap-6">
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >Impressum</a
+            >
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >Datenschutzerklärung</a
+            >
+            <a
+              href="#"
+              class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+              >AGB</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- LOGIN MODAL -->
+    <div
+      data-modal="login"
+      class="fixed modal inset-0 z-50 hidden overflow-hidden"
+    >
+      <!-- Overlay -->
+      <div
+        data-modal-close
+        class="fixed inset-0 bg-KonBlue/90 opacity-0 transition-opacity duration-300 modal-overlay"
+      ></div>
+      <!-- Modal Content -->
+      <div
+        class="min-h-dvh h-dvh max-h-dvh p-5 flex items-center justify-center"
+      >
+        <div
+          class="modal-content modal-container max-w-190 relative overflow-auto max-h-full hide-scrollbar"
+        >
+          <div class="modal-header sticky top-0">
+            <h4 class="individually-card-title">Login</h4>
+            <button class="modal-close-button" data-modal-close>
+              <img
+                class="object-contain w-full h-full"
+                src="./assets/images/png/modal-close.png"
+                alt="modal-close"
+              />
+            </button>
+          </div>
+          <form
+            id="loginForm"
+            class="3xl:gap-12 2xl:gap-10 h-auto 1xl:gap-8 gap-6 xl:px-6 px-4 3xl:pt-11 2xl:pt-10 1xl:pt-9 pt-6 3xl:pb-12 2xl:pb-10 pb-8 flex flex-col justify-center overflow-auto"
+          >
+            <p class="free-help-text text-KonBlue leading-[150%] px-4">
+              Melde Dich hier für deinen persönlichen Bereich an.
+            </p>
+
+            <div class="md:space-y-3 space-y-2">
+              <!-- Email -->
+              <div>
+                <input
+                  id="email"
+                  class="primary-input free-help-text"
+                  placeholder="Benutzername / E-Mail-Adresse"
+                  type="email"
+                />
+                <p id="emailError" class="text-red-500 text-sm mt-1 hidden"></p>
+              </div>
+
+              <!-- Password -->
+              <div>
+                <div
+                  class="flex items-center justify-between primary-input free-help-text"
+                >
+                  <input
+                    id="password"
+                    class="w-full outline-none bg-transparent placeholder:text-encoreGray"
+                    placeholder="Passwort*"
+                    type="password"
+                  />
+
+                  <button type="button" id="togglePassword" class="w-6 h-6">
+                    <img
+                      id="eyeIcon"
+                      class="object-contain w-full h-full"
+                      src="./assets/images/png/open-eye.png"
+                      alt="toggle password"
+                    />
+                  </button>
+                </div>
+                <p
+                  id="passwordError"
+                  class="text-red-500 text-sm mt-1 hidden"
+                ></p>
+              </div>
+            </div>
+
+            <a
+              class="free-help-text text-KonBlue underline font-light leading-[160%] w-fit mx-auto"
+              href=""
+            >
+              Passwort vergessen?
+            </a>
+
+            <button
+              type="submit"
+              class="text-white leading-[160%] font-fira font-medium hover:bg-white border border-blueBay bg-blueBay rounded-2xl flex items-center justify-center free-help-text md:h-14 h-13 hover:text-blueBay duration-300 ease-in-out transition-all"
+            >
+              Einloggen
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- REGISTRATION FORM -->
+    <div
+      data-modal="registrationform"
+      class="fixed modal inset-0 z-50 hidden overflow-hidden"
+    >
+      <!-- Overlay -->
+      <div
+        data-modal-close
+        class="fixed inset-0 bg-KonBlue/90 opacity-0 transition-opacity duration-300 modal-overlay"
+      ></div>
+      <!-- Modal Content -->
+      <div
+        class="min-h-dvh h-dvh max-h-dvh p-5 flex items-center justify-center"
+      >
+        <div
+          class="modal-content modal-container max-w-190 relative overflow-auto max-h-full hide-scrollbar"
+        >
+          <div class="modal-header sticky top-0 z-10">
+            <h4 class="individually-card-title">Anmeldeformular</h4>
+            <button class="modal-close-button" data-modal-close>
+              <img
+                class="object-contain w-full h-full"
+                src="./assets/images/png/modal-close.png"
+                alt="modal-close"
+              />
+            </button>
+          </div>
+          <div
+            class="3xl:gap-12 2xl:gap-10 h-auto 1xl:gap-8 gap-6 xl:px-6 px-4 3xl:pt-11 2xl:pt-10 1xl:pt-9 pt-6 3xl:pb-12 2xl:pb-10 pb-8 flex flex-col justify-center overflow-auto"
+          >
+            <div
+              class="bg-blueBay xl:px-6 px-4 md:py-5 py-3 2xl:rounded-3xl xl:rounded-2xl rounded-xl"
+            >
+              <h4
+                class="text-white leading-[140%] md:leading-[133%] font-fira font-medium text-xl 3xl:text-2xl"
+              >
+                Tabakentwöhnung in der Arztpraxis
+              </h4>
+              <div
+                class="free-help-text text-white md:leading-[160%] leading-[150%] space-y-3 xl:py-6 lg:py-4 py-2"
+              >
+                <p>Feb, 19:00 Uhr (Live)</p>
+                <p>Dr. med. Alexander Rupp (Lungenfacharzt)</p>
+              </div>
+              <button
+                class="text-KonBlue bg-white rounded-xl md:px-5 px-3 md:h-10 h-9 lg:text-base md:text-sm text-xs font-fira hover:bg-opacity-30 leading-[150%] font-medium transition-all duration-300 ease-in-out md:mt-0 mt-2"
+              >
+                2 Punkte (CME)
+              </button>
+            </div>
+
+            <div class="md:space-y-3 space-y-2">
+              <!-- Dropdown -->
+              <div class="relative customSelect">
+                <!-- Button -->
+                <button
+                  type="button"
+                  class="w-full flex items-center justify-between step-input-field text-base 2xl:text-base 3xl:text-xl font-medium leading-[175%] text-primaryButton! peer opacity-100! bg-white! selectBtn py-0!"
+                >
+                  <span class="selectedValue">Geschlecht</span>
+
+                  <img
+                    class="max-w-3.5 w-full transition-transform duration-300 arrow"
+                    src="./assets/images/arrow-select.webp"
+                    alt="arrow"
+                  />
+                </button>
+
+                <!-- Options -->
+                <div
+                  class="absolute options left-0 right-0 mt-2 overflow-hidden rounded-xl md:rounded-2xl bg-white shadow-lg transition-all duration-300 ease-out max-h-0 opacity-0 -translate-y-2 pointer-events-none z-10"
+                >
+                  <div
+                    class="option px-4 py-3 cursor-pointer hover:bg-blueRay hover:text-white transition-all duration-200 ease-in-out font-fira text-base 2xl:text-base 3xl:text-xl"
+                  >
+                    männlich
+                  </div>
+                  <div
+                    class="option px-4 py-3 cursor-pointer hover:bg-blueRay hover:text-white transition-all duration-200 ease-in-out font-fira text-base 2xl:text-base 3xl:text-xl"
+                  >
+                    weiblich
+                  </div>
+                  <div
+                    class="option px-4 py-3 cursor-pointer hover:bg-blueRay hover:text-white transition-all duration-200 ease-in-out font-fira text-base 2xl:text-base 3xl:text-xl"
+                  >
+                    andere
+                  </div>
+                </div>
+              </div>
+
+              <div class="relative w-full">
+                <input
+                  required
+                  id="Titel*"
+                  type="text"
+                  placeholder="  "
+                  class="step-input-field-v2 peer"
+                />
+
+                <label for="Titel*" class="step-input-field-label-2">
+                  Titel*
+                </label>
+              </div>
+
+              <div class="relative w-full">
+                <input
+                  required
+                  id="VornameNachname*"
+                  type="text"
+                  placeholder="  "
+                  class="step-input-field-v2 peer"
+                />
+
+                <label for="VornameNachname*" class="step-input-field-label-2">
+                  Vorname, Nachname*
+                </label>
+              </div>
+
+              <div class="relative w-full">
+                <input
+                  required
+                  id="E-Mail-Adresse*"
+                  type="text"
+                  placeholder="  "
+                  class="step-input-field-v2 peer"
+                />
+
+                <label for="E-Mail-Adresse*" class="step-input-field-label-2">
+                  E-Mail-Adresse*
+                </label>
+              </div>
+
+              <div class="relative customSelect">
+                <!-- Button -->
+                <button
+                  type="button"
+                  class="w-full flex items-center justify-between step-input-field text-base 2xl:text-base 3xl:text-xl font-medium leading-[175%] text-primaryButton! peer opacity-100! bg-white! selectBtn py-0!"
+                >
+                  <span class="selectedValue">Geschlecht</span>
+
+                  <img
+                    class="max-w-3.5 w-full transition-transform duration-300 arrow"
+                    src="./assets/images/arrow-select.webp"
+                    alt="arrow"
+                  />
+                </button>
+
+                <!-- Options -->
+                <div
+                  class="absolute options left-0 right-0 mt-2 overflow-hidden rounded-xl md:rounded-2xl bg-white shadow-lg transition-all duration-300 ease-out max-h-0 opacity-0 -translate-y-2 pointer-events-none z-10"
+                >
+                  <div
+                    class="option px-4 py-3 cursor-pointer hover:bg-blueRay hover:text-white transition-all duration-200 ease-in-out font-fira text-base 2xl:text-base 3xl:text-xl"
+                  >
+                    männlich
+                  </div>
+                  <div
+                    class="option px-4 py-3 cursor-pointer hover:bg-blueRay hover:text-white transition-all duration-200 ease-in-out font-fira text-base 2xl:text-base 3xl:text-xl"
+                  >
+                    weiblich
+                  </div>
+                  <div
+                    class="option px-4 py-3 cursor-pointer hover:bg-blueRay hover:text-white transition-all duration-200 ease-in-out font-fira text-base 2xl:text-base 3xl:text-xl"
+                  >
+                    andere
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p
+              class="text-xs sm:text-sm md:text-base 2xl:text-base 3xl:text-xl text-KonBlue font-light"
+            >
+              Mit * markierte Felder sind Pflichtfelder
+            </p>
+            <div
+              class="w-full text-xs sm:text-sm md:text-base xl:gap-6 lg:gap-4 gap-2 2xl:text-base 3xl:text-xl text-KonBlue font-light cursor-pointer flex checkGroup"
+            >
+              <div class="flex gap-4 items-start check-item">
+                <div
+                  class="bg-white p-1.5 sm:p-2 md:p-2.5 rounded-full h-fit outer"
+                >
+                  <div
+                    class="radio-circle w-4 h-4 lg:w-8 lg:h-8 3xl:w-9 3xl:h-9 rounded-full flex items-center justify-center border-2 border-KonBlue"
+                  >
+                    <span
+                      class="radio-dot hidden w-1.25 h-1.25 sm:w-2.25 sm:h-2.25 lg:w-3.25 lg:h-3.25 rounded-full bg-blueBay"
+                    ></span>
+                  </div>
+                </div>
+                Ich erteile hiermit der Sanero Medical GmbH die ausdrückliche
+                Zustimmung, dass sie mit den Ausführungen des Vertrags vor
+                Ablauf der Widerrufsfrist beginnen darf und verzichte dadurch
+                auf mein Widerrufsrecht.
+              </div>
+            </div>
+            <div
+              class="w-full text-xs checkGroup sm:text-sm md:text-base xl:gap-6 lg:gap-4 gap-2 2xl:text-base 3xl:text-xl text-KonBlue font-light cursor-pointer flex"
+            >
+              <div class="flex gap-4 items-start check-item">
+                <div
+                  class="bg-white p-1.5 sm:p-2 md:p-2.5 rounded-full h-fit outer"
+                >
+                  <div
+                    class="radio-circle w-4 h-4 lg:w-8 lg:h-8 3xl:w-9 3xl:h-9 rounded-full flex items-center justify-center border-2 border-KonBlue"
+                  >
+                    <span
+                      class="radio-dot hidden w-1.25 h-1.25 sm:w-2.25 sm:h-2.25 lg:w-3.25 lg:h-3.25 rounded-full bg-blueBay"
+                    ></span>
+                  </div>
+                </div>
+                Hiermit akzeptiere ich die Allgemeinen Geschäftsbedingungen und
+                Datenschutzerklärung der Sanero Medical GmbH.
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="text-white leading-[160%] font-fira font-medium hover:bg-white border border-blueBay bg-blueBay rounded-2xl flex items-center justify-center free-help-text md:h-14 h-13 hover:text-blueBay duration-300 ease-in-out transition-all"
+            >
+              Einloggen
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- UNBLOCK DOWNLOAD -->
+    <div
+      data-modal="unlockDownload"
+      class="fixed modal inset-0 z-50 hidden overflow-hidden"
+    >
+      <!-- Overlay -->
+      <div
+        data-modal-close
+        class="fixed inset-0 bg-KonBlue/90 opacity-0 transition-opacity duration-300 modal-overlay"
+      ></div>
+      <!-- Modal Content -->
+      <div
+        class="min-h-dvh h-dvh max-h-dvh p-5 flex items-center justify-center"
+      >
+        <div
+          class="modal-content modal-container max-w-190! relative overflow-auto max-h-full hide-scrollbar"
+        >
+          <div class="modal-header sticky top-0 z-10">
+            <h4 class="individually-card-title">Download freischalten</h4>
+            <button class="modal-close-button" data-modal-close>
+              <img
+                class="object-contain w-full h-full"
+                src="./assets/images/png/modal-close.png"
+                alt="modal-close"
+              />
+            </button>
+          </div>
+          <div
+            class="3xl:gap-12 2xl:gap-10 h-auto 1xl:gap-8 gap-6 xl:px-6 px-4 3xl:pt-11 2xl:pt-10 1xl:pt-9 pt-6 3xl:pb-12 2xl:pb-10 pb-8 flex flex-col justify-center overflow-auto"
+          >
+            <div
+              class="bg-blueBay xl:px-6 px-4 md:py-5 py-3 2xl:rounded-3xl xl:rounded-2xl rounded-xl free-help-text text-white"
+            >
+              Bitte geben Sie einmalig Ihre Daten ein. Der Download startet
+              sofort. Wenn Sie anschließend weitere Dokumente herunterladen
+              möchten, müssen Sie dieses Formular innerhalb dieser Sitzung nicht
+              erneut ausfüllen.
+            </div>
+
+            <div class="md:space-y-3 space-y-2">
+              <!-- Dropdown -->
+              <div class="relative customSelect">
+                <!-- Button -->
+                <button
+                  type="button"
+                  class="w-full flex items-center justify-between step-input-field text-base 2xl:text-base 3xl:text-xl font-medium leading-[175%] text-primaryButton! peer opacity-100! bg-white! selectBtn py-0!"
+                >
+                  <span class="selectedValue">Geschlecht</span>
+
+                  <img
+                    class="max-w-3.5 w-full transition-transform duration-300 arrow"
+                    src="./assets/images/arrow-select.webp"
+                    alt="arrow"
+                  />
+                </button>
+
+                <!-- Options -->
+                <div
+                  class="absolute options left-0 right-0 mt-2 overflow-hidden rounded-xl md:rounded-2xl bg-white shadow-lg transition-all duration-300 ease-out max-h-0 opacity-0 -translate-y-2 pointer-events-none z-10"
+                >
+                  <div
+                    class="option px-4 py-3 cursor-pointer hover:bg-blueRay hover:text-white transition-all duration-200 ease-in-out font-fira text-base 2xl:text-base 3xl:text-xl"
+                  >
+                    männlich
+                  </div>
+                  <div
+                    class="option px-4 py-3 cursor-pointer hover:bg-blueRay hover:text-white transition-all duration-200 ease-in-out font-fira text-base 2xl:text-base 3xl:text-xl"
+                  >
+                    weiblich
+                  </div>
+                  <div
+                    class="option px-4 py-3 cursor-pointer hover:bg-blueRay hover:text-white transition-all duration-200 ease-in-out font-fira text-base 2xl:text-base 3xl:text-xl"
+                  >
+                    andere
+                  </div>
+                </div>
+              </div>
+              <div class="relative w-full">
+                <input
+                  required
+                  id="title*"
+                  type="text"
+                  placeholder="  "
+                  class="step-input-field-v2 peer"
+                />
+
+                <label for="title*" class="step-input-field-label-2">
+                  Titel*
+                </label>
+              </div>
+              <div class="relative w-full">
+                <input
+                  required
+                  id="Vorname, Nachname*"
+                  type="text"
+                  placeholder="  "
+                  class="step-input-field-v2 peer"
+                />
+
+                <label
+                  for="Vorname, Nachname*"
+                  class="step-input-field-label-2"
+                >
+                  Vorname, Nachname*
+                </label>
+              </div>
+              <div class="relative w-full">
+                <input
+                  required
+                  id="Ihre EFN*"
+                  type="text"
+                  placeholder="  "
+                  class="step-input-field-v2 peer"
+                />
+
+                <label for="Ihre EFN*" class="step-input-field-label-2">
+                  Ihre EFN*
+                </label>
+              </div>
+              <div class="relative w-full">
+                <input
+                  required
+                  id="E-Mail-Adresse*"
+                  type="text"
+                  placeholder="  "
+                  class="step-input-field-v2 peer"
+                />
+
+                <label for="E-Mail-Adresse*" class="step-input-field-label-2">
+                  E-Mail-Adresse*
+                </label>
+              </div>
+              <div class="relative customSelect">
+                <!-- Button -->
+                <button
+                  type="button"
+                  class="w-full flex items-center justify-between step-input-field text-base 2xl:text-base 3xl:text-xl font-medium leading-[175%] text-primaryButton! peer opacity-100! bg-white! selectBtn py-0!"
+                >
+                  <span class="selectedValue">Geschlecht</span>
+
+                  <img
+                    class="max-w-3.5 w-full transition-transform duration-300 arrow"
+                    src="./assets/images/arrow-select.webp"
+                    alt="arrow"
+                  />
+                </button>
+
+                <!-- Options -->
+                <div
+                  class="absolute options left-0 right-0 mt-2 overflow-hidden rounded-xl md:rounded-2xl bg-white shadow-lg transition-all duration-300 ease-out max-h-0 opacity-0 -translate-y-2 pointer-events-none z-10"
+                >
+                  <div
+                    class="option px-4 py-3 cursor-pointer hover:bg-blueRay hover:text-white transition-all duration-200 ease-in-out font-fira text-base 2xl:text-base 3xl:text-xl"
+                  >
+                    männlich
+                  </div>
+                  <div
+                    class="option px-4 py-3 cursor-pointer hover:bg-blueRay hover:text-white transition-all duration-200 ease-in-out font-fira text-base 2xl:text-base 3xl:text-xl"
+                  >
+                    weiblich
+                  </div>
+                  <div
+                    class="option px-4 py-3 cursor-pointer hover:bg-blueRay hover:text-white transition-all duration-200 ease-in-out font-fira text-base 2xl:text-base 3xl:text-xl"
+                  >
+                    andere
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p
+              class="text-xs sm:text-sm md:text-base 2xl:text-base 3xl:text-xl text-KonBlue font-light"
+            >
+              Mit * markierte Felder sind Pflichtfelder
+            </p>
+            <div
+              class="w-full text-xs sm:text-sm md:text-base xl:gap-6 lg:gap-4 gap-2 2xl:text-base 3xl:text-xl text-KonBlue font-light cursor-pointer flex checkGroup"
+            >
+              <div class="flex gap-4 items-start check-item">
+                <div
+                  class="bg-white p-1.5 sm:p-2 md:p-2.5 rounded-full h-fit outer"
+                >
+                  <div
+                    class="radio-circle w-4 h-4 lg:w-8 lg:h-8 3xl:w-9 3xl:h-9 rounded-full flex items-center justify-center border-2 border-KonBlue"
+                  >
+                    <span
+                      class="radio-dot hidden w-1.25 h-1.25 sm:w-2.25 sm:h-2.25 lg:w-3.25 lg:h-3.25 rounded-full bg-blueBay"
+                    ></span>
+                  </div>
+                </div>
+                Ich erteile hiermit der Sanero Medical GmbH die ausdrückliche
+                Zustimmung, dass sie mit den Ausführungen des Vertrags vor
+                Ablauf der Widerrufsfrist beginnen darf und verzichte dadurch
+                auf mein Widerrufsrecht.
+              </div>
+            </div>
+            <div
+              class="w-full text-xs checkGroup sm:text-sm md:text-base xl:gap-6 lg:gap-4 gap-2 2xl:text-base 3xl:text-xl text-KonBlue font-light cursor-pointer flex"
+            >
+              <div class="flex gap-4 items-start check-item">
+                <div
+                  class="bg-white p-1.5 sm:p-2 md:p-2.5 rounded-full h-fit outer"
+                >
+                  <div
+                    class="radio-circle w-4 h-4 lg:w-8 lg:h-8 3xl:w-9 3xl:h-9 rounded-full flex items-center justify-center border-2 border-KonBlue"
+                  >
+                    <span
+                      class="radio-dot hidden w-1.25 h-1.25 sm:w-2.25 sm:h-2.25 lg:w-3.25 lg:h-3.25 rounded-full bg-blueBay"
+                    ></span>
+                  </div>
+                </div>
+                Hiermit akzeptiere ich die Allgemeinen Geschäftsbedingungen und
+                Datenschutzerklärung der Sanero Medical GmbH.
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="text-white leading-[160%] font-fira font-medium hover:bg-white border border-blueBay bg-blueBay rounded-2xl flex items-center justify-center free-help-text md:h-14 h-13 hover:text-blueBay duration-300 ease-in-out transition-all"
+            >
+              Jetzt anmelden
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      id="backToTopBtn"
+      class="bg-KonBlue invisible fixed right-2 min-h-11 min-w-11 bottom-4 z-40 translate-y-4 cursor-pointer rounded-full p-3 text-white opacity-0 shadow-lg transition-all duration-300 focus:outline-none lg:right-8 md:bottom-8 border border-white"
+    >
+      <!-- Arrow Up Icon -->
+      <img
+        class="max-w-5 rotate-177"
+        src="./assets/images/scroll-button.webp"
+        alt="arrow"
+      />
+    </button>
+
+    <script src="/js/pricing-plan.js"></script>
+    <script src="/js/back-to-top.js"></script>
+    <script src="/js/custom-select.js"></script>
+    <script src="/js/select-v2.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/popup.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/videp-play.js"></script>
+    <script>
+      document.querySelectorAll(".check-item").forEach((item) => {
+        item.addEventListener("click", () => {
+          const dot = item.querySelector(".radio-dot");
+          dot.classList.toggle("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>
+<!-- npx @tailwindcss/cli -i ./input.css -o ./output.css --watch -->

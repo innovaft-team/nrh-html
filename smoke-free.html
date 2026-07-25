@@ -1,0 +1,956 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nrh - Dein evidenzbasiertes Coaching-Programm</title>
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="icon" type="image/svg" href="./assets/images/logo.webp" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <aside
+      id="sidebar"
+      class="fixed top-0 right-0 h-dvh bg-white w-[320px] transform transition-transform duration-300 ease-in-out z-[9999] flex flex-col justify-start p-4 translate-x-full"
+    >
+      <!-- Main Menu Content -->
+      <div class="sidebar-overlay"></div>
+      <div id="main-menu">
+        <div class="flex justify-between items-center mb-6">
+          <a aria-label="logo" href="./">
+            <img
+              class="max-w-10.25 w-full"
+              src="./assets/images/logo.webp"
+              alt="logo"
+            />
+          </a>
+          <button
+            id="close-sidebar"
+            class="text-2xl"
+            aria-label="clsoe sidebar"
+          >
+            <img
+              class="w-8 h-8 object-cover"
+              src="./assets/images/close-sidebar.webp"
+              alt="cross-icon"
+            />
+          </button>
+        </div>
+        <div>
+          <nav
+            class="flex flex-col justify-between grow overflow-auto h-full hide-scrollbar"
+          >
+            <div class="flex flex-col justify-between gap-7 text-primary">
+              <a aria-label="manu list" href="#" class="header-li"> Magazin </a>
+              <a aria-label="manu list" href="#" class="header-li">
+                Erfolgsgeschichten
+              </a>
+              <a aria-label="manu list" href="#" class="header-li"> FAQ </a>
+
+              <button
+                data-modal-open="login"
+                class="flex gap-2 hover:scale-95 transition-all duration-300 ease-in-out"
+              >
+                <img
+                  class="max-w-4.75 w-full"
+                  src="./assets/images/profile-icon.webp"
+                  alt="profile"
+                />
+                Login
+              </button>
+            </div>
+          </nav>
+          <div
+            class="flex flex-col justify-between items-center gap-3 w-full pt-10"
+          >
+            <button
+              class="sm:py-2 py-1.5 lg:py-3 3xl:py-4 px-6 rounded-4xl bg-iceFishing text-primary font-medium hover:scale-95 transition-all duration-300 ease-in-out font-ibm-plex text-base lg:text-lg xl:text-xl 3xl:text-2xl w-full eading-[150%] sm:leading-[100%]"
+            >
+              Fachkreise
+            </button>
+            <button class="primary-btn w-full">Dein Weg zur App</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!---------------------------------------- HEADER ---------------------------------- -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black/50 z-999 opacity-0 pointer-events-none transition-opacity duration-300"
+    ></div>
+    <header
+      class="text-white z-50 transition-transform duration-300 ease-in-out sticky top-0 w-full"
+    >
+      <!-- {/* Top Bar for Contact Info */} -->
+      <div class="bg-KonBlue">
+        <div
+          class="flex justify-end items-center sm:px-9! px-4! py-2 text-[11px] xs:text-xs font-ibm-plex sm:text-sm bg-KonBlue gap-4 overflow-auto custom-container hide-scrollbar"
+        >
+          <span class="hidden md:inline text-iceFishing text-base font-medium">
+            Unsere Experten sind für Dich da:
+          </span>
+          <div
+            class="flex sm:justify-center justify-between items-center xs:gap-7! gap-2! sm:w-fit w-full"
+          >
+            <a
+              href="tel:+49871121999343"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/phone-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              +49 8711 21 999 343
+            </a>
+            <a
+              href="mailto:service@nichtraucherhelden.de"
+              class="text-jordyBlue hover:scale-95 flex justify-center gap-3 transition-all duration-300 ease-in-out group"
+            >
+              <span class="hidden sm:block max-w-4 max-h-5 w-full">
+                <img
+                  class="h-full w-full object-contain"
+                  src="./assets/images/email-blue.webp"
+                  alt="phone"
+                />
+              </span>
+              service@nichtraucherhelden.de
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- {/* Main Navigation Bar */} -->
+      <div class="bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.05)] text-black">
+        <div class="custom-container py-2 sm:py-3 3xl:py-4">
+          <div class="flex justify-between items-center">
+            <div class="shrink-0 flex items-center">
+              <div
+                class="max-w-13 3xl:max-w-18 aspect-square w-full cursor-pointer"
+              >
+                <img
+                  class="w-full h-full"
+                  src="/assets/images/logo.webp"
+                  alt="logo"
+                />
+              </div>
+            </div>
+            <button class="primary-btn block sm:hidden">
+              Dein Weg zur App
+            </button>
+            <nav
+              class="flex text-lg md:text-xl font-fira font-medium items-center gap-8 3xl:gap-12 leading-[140%]"
+            >
+              <div
+                class="hidden xl:flex justify-between items-center gap-10 text-primary"
+              >
+                <a href="#" class="header-li"> Magazin </a>
+                <a href="#" class="header-li"> Erfolgsgeschichten </a>
+                <a href="#" class="header-li"> FAQ </a>
+
+                <button
+                  data-modal-open="login"
+                  class="flex justify-center items-center gap-2 header-li icon-hover"
+                >
+                  <img
+                    class="max-w-4.75 w-full icon"
+                    src="./assets/images/profile-icon.webp"
+                    alt="profile"
+                  />
+                  Login
+                </button>
+              </div>
+              <div class="hidden sm:flex justify-between gap-5">
+                <button class="primary-btn-v3">Fachkreise</button>
+                <button class="primary-btn-v2">Dein Weg zur App</button>
+              </div>
+              <button
+                id="hamburger"
+                aria-label="hamburger button"
+                class="block xl:hidden space-y-1.5"
+              >
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+                <span class="w-5.25 h-0.5 bg-primary flex"></span>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- HERO -->
+    <section class="sm:px-5">
+      <div
+        class="custom-container 3xl:max-w-396 flex items-end relative overflow-hidden pt-39.5 sm:pt-40 xl:pt-93 pb-5 md:pb-14 xl:pb-28 px-5 md:px-12 xl:px-33 sm:rounded-[44px] rounded-[36px] rounded-t-none sm:mt-8"
+      >
+        <div
+          class="bg-KonBlue w-full sm:w-fit p-4 md:p-6 lg:p-8 xl:p-10 3xl:p-16 xl:pr-0 rounded-[20px] relative z-10 xl:w-full xl:max-w-208"
+        >
+          <p
+            class="text-blueBay sm:text-xl leading-[160%] font-medium sm:mb-1 font-fira"
+          >
+            Dein evidenzbasiertes Coaching-Programm
+          </p>
+          <h2
+            class="text-2xl sm:text-[28px] xl:text-[44px] text-white font-fira leading-[120%]"
+          >
+            DWissenschaftlich fundiert <br />
+            rauchfrei werden
+          </h2>
+        </div>
+        <img
+          class="absolute top-0 left-0 pointer-events-none h-full w-full object-cover"
+          src="./assets/images/smoke-free.webp"
+          alt="magazin"
+        />
+      </div>
+    </section>
+
+    <section
+      class="secondary-container grid grid-cols-1 lg:grid-cols-2 py-8 md:py-14 lg:py-16 3xl:py-20 sm:gap-0 gap-4 text-wrap"
+    >
+      <div class="lg:space-y-8 space-y-4 2xl:p-12 lg:p-8 md:p-6 p-4">
+        <h4 class="individually-card-title text-KonBlue">
+          Die Methode ist wirksam
+        </h4>
+        <ul class="space-y-4 free-help-text font-ibm-plex md:font-light">
+          <li class="gap-4 md:gap-6 flex items-center">
+            <img
+              class="max-w-7 aspect-square sm:max-w-9 w-full"
+              src="/assets/images/png/listicon.png"
+              alt="check-icon"
+            />
+            <p>
+              Die App basiert auf den Grundsätzen der kognitiven
+              Verhaltenstherapie
+            </p>
+          </li>
+          <li class="gap-4 md:gap-6 flex items-center">
+            <img
+              class="max-w-7 aspect-square sm:max-w-9 w-full"
+              src="/assets/images/png/listicon.png"
+              alt="check-icon"
+            />
+            <p>
+              Zahlreiche Studien belegen die Wirksamkeit von Verhaltenstherapie
+              in der Tabakentwöhnung
+            </p>
+          </li>
+          <li class="gap-4 md:gap-6 flex items-center">
+            <img
+              class="max-w-7 aspect-square sm:max-w-9 w-full"
+              src="/assets/images/png/listicon.png"
+              alt="check-icon"
+            />
+            <p>
+              Nationale und internationale Leitlinien empfehlen die
+              Verhaltenstherapie als Mittel der Wahl. In Kombination mit
+              medikamentöser Unterstützung werden die höchsten Erfolgsquoten
+              erreicht
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="lg:space-y-8 space-y-4 bg-iceFishing 2xl:p-12 lg:p-8 md:p-6 p-4 xl:rounded-3xl rounded-[20px]"
+      >
+        <h4 class="individually-card-title text-KonBlue">
+          Der Aufbau und Inhalt entspricht dem Stand der Wissenschaft
+        </h4>
+        <ul class="space-y-4 free-help-text font-ibm-plex md:font-light">
+          <li class="gap-4 md:gap-6 flex items-center">
+            <img
+              class="max-w-7 aspect-square sm:max-w-9 w-full"
+              src="/assets/images/png/white-check.png"
+              alt="check-icon"
+            />
+            <p>
+              Die App entspricht den aktuellen Inhalten evaluierter
+              Nichtraucherprogramme
+            </p>
+          </li>
+          <li class="gap-4 md:gap-6 flex items-center">
+            <img
+              class="max-w-7 aspect-square sm:max-w-9 w-full"
+              src="/assets/images/png/white-check.png"
+              alt="check-icon"
+            />
+            <p>
+              Der Kurs ist fachlich in drei Phasen aufgeteilt: Vorbereitung,
+              Rauchstopp, Stabilisierung
+            </p>
+          </li>
+          <li class="gap-4 md:gap-6 flex items-center">
+            <img
+              class="max-w-7 aspect-square sm:max-w-9 w-full"
+              src="/assets/images/png/white-check.png"
+              alt="check-icon"
+            />
+            <p>
+              Empfohlener Aufbau und Bestandteile für technologie-basierte
+              Systeme, die eine Verhaltensänderung erreichen möchten, wurden
+              berücksichtigt (Persuasive System Design)
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="bg-icelightBlue py-9 lg:py-14 xl:py-24 2xl:py-31 font-fira">
+      <div class="secondary-container">
+        <div
+          class="md:space-y-3 space-y-1 xl:mb-13.5 lg:mb-10 md:mb-8 sm:mb-6 mb-4"
+        >
+          <p class="paragraph-text font-fira font-medium text-celestialBlue">
+            In der NichtraucherHelden Medizin App
+          </p>
+          <h5 class="individually-card-title text-KonBlue">
+            Bausteine der kognitiven Verhaltenstherapie
+          </h5>
+        </div>
+        <div class="space-y-4">
+          <article class="rounded-[20px] lg:p-8 md:p-6 p-4 bg-iceFishing">
+            <div class="flex items-center 2xl:gap-8 md:gap-6 gap-4">
+              <img
+                class="max-w-9 md:max-w-14 object-cover"
+                src="/assets/images/png/large-1.png"
+                alt="large"
+              />
+              <p class="free-help-text font-medium font-fira text-KonBlue">
+                Gezielte Informationsvermittlung
+              </p>
+            </div>
+            <p
+              class="free-help-text text-KonBlue md:font-light md:leading-8 leading-6.25 font-ibm-plex md:mt-3 mt-4 max-w-[91.9%] md:max-w-[85%]"
+            >
+              Wissen ist Macht. Du erfährst im Programm z.B. was hinter der
+              physische und psychische Tabakabhängigkeit steckt, was mögliche
+              Entzugserscheinungen sind oder welche gesundheitlichen Folgen das
+              Rauchens und welche Vorteile ein Rauchstopp für Dich hat. Das
+              hilft Dir dabei motiviert Dein Ziel zu erreichen. Durch das
+              entsprechende Wissen lernst du, das und wie Du die
+              Tabakabhängigkeit überwinden kannst.
+            </p>
+          </article>
+          <!-- 1 -->
+          <article class="rounded-[20px] lg:p-8 md:p-6 p-4 bg-iceFishing">
+            <div class="flex items-center 2xl:gap-8 md:gap-6 gap-4">
+              <img
+                class="max-w-9 md:max-w-14 object-cover"
+                src="/assets/images/png/large-2.png"
+                alt="large"
+              />
+              <p class="free-help-text font-medium font-fira text-KonBlue">
+                Motivationsstärkung
+              </p>
+            </div>
+            <p
+              class="free-help-text text-KonBlue md:font-light md:leading-8 leading-6.25 font-ibm-plex md:mt-3 mt-4 max-w-[91.9%] md:max-w-[85%]"
+            >
+              Deine Motivation ist entscheidend, um erfolgreich rauchfrei zu
+              werden. Daher ergründest Du zu Beginn des Programms intensiv Deine
+              persönliche Motivation. Im Programm wirst Du dauerhaft motiviert,
+              z.B. durch Videos, Impulse, die Rauchfrei-Statistik nach dem
+              Aufhören u.v.m. Du lernst, dass Belohnungen wichtig sind. Durch
+              Auszeichnungen für Erreichtes wirst Du von uns belohnt. Außerdem
+              kannst Du Dir jederzeit in der Community Zuspruch holen.
+            </p>
+          </article>
+
+          <!-- 2 -->
+          <article class="rounded-[20px] lg:p-8 md:p-6 p-4 bg-iceFishing">
+            <div class="flex items-center 2xl:gap-8 md:gap-6 gap-4">
+              <img
+                class="max-w-9 md:max-w-14 object-cover"
+                src="/assets/images/png/large-3.png"
+                alt="large"
+              />
+              <p class="free-help-text font-medium font-fira text-KonBlue">
+                Strategien zur Rückfallprophylaxe
+              </p>
+            </div>
+            <p
+              class="free-help-text text-KonBlue md:font-light md:leading-8 leading-6.25 font-ibm-plex md:mt-3 mt-4 max-w-[91.9%] md:max-w-[85%]"
+            >
+              Die Herausforderung beim Rauchen aufzuhören ist, nicht rückfällig
+              zu werden. Daher lernst Du im Programm den Umgang mit typischen
+              Schwierigkeiten und Problemen nach dem Rauchstopp. Du erhältst
+              z.B. Tipps, wie Du mit Entzugserscheinungen oder Rauchern in
+              Deinem Umfeld umgehen kannst. Du lernst Gefahrensituationen
+              vorzeitig zu erkennen und passende Ablenkstrategien parat zu
+              haben. In der App findest Du auch akute Hilfe bei Rauchverlangen,
+              wie z.B. Atem- und Entspannungsübungen.
+            </p>
+          </article>
+
+          <!-- 3 -->
+          <article class="rounded-[20px] lg:p-8 md:p-6 p-4 bg-iceFishing">
+            <div class="flex items-center 2xl:gap-8 md:gap-6 gap-4">
+              <img
+                class="max-w-9 md:max-w-14 object-cover"
+                src="/assets/images/png/large-4.png"
+                alt="large"
+              />
+              <p class="free-help-text font-medium font-fira text-KonBlue">
+                Stärkung der Erfolgszuversicht
+              </p>
+            </div>
+            <p
+              class="free-help-text text-KonBlue md:font-light md:leading-8 leading-[25px] font-ibm-plex md:mt-3 mt-4 max-w-[91.9%] md:max-w-[85%]"
+            >
+              Das Vertrauen in Dich und Deine Fähigkeiten, den Rauchstopp zu
+              schaffen, ist ein wichtiger Erfolgsbaustein. Während der
+              Vorbereitung auf den Rauchstopp lässt Du schon einmal erste
+              Zigaretten weg. Du wirst sehen, dass es einfacher als gedacht ist.
+              Solltest Du hier Schwierigkeiten haben, bekommst Du hilfreiche
+              Tipps. Im Programm wird immer wieder der Fokus darauf gelegt, was
+              Du bereits erreicht hast – im Übrigen auch unabhängig vom Projekt
+              Rauchfrei werden. Du hast schon viel in Deinem Leben gemeistert,
+              Du kannst auch den Rauchstopp schaffen!
+            </p>
+          </article>
+
+          <!-- 4 -->
+          <article class="rounded-[20px] lg:p-8 md:p-6 p-4 bg-iceFishing">
+            <div class="flex items-center 2xl:gap-8 md:gap-6 gap-4">
+              <img
+                class="max-w-9 md:max-w-14 object-cover"
+                src="/assets/images/png/large-5.png"
+                alt="large"
+              />
+              <p class="free-help-text font-medium font-fira text-KonBlue">
+                Konkrete Verhaltensinstruktionen und praktische
+                Bewältigungsstrategien
+              </p>
+            </div>
+            <p
+              class="free-help-text text-KonBlue md:font-light md:leading-8 leading-6.25 font-ibm-plex md:mt-3 mt-4 max-w-[91.9%] md:max-w-[85%]"
+            >
+              Du bekommst nicht nur Wissen vermittelt, sondern erhältst jede
+              Menge Übungen, Strategien und praktische Tipps. Zuerst analysierst
+              Du Dein eigenes Rauchverhalten. Danach wirst Du für Deine
+              typischen Rauchersituationen Alternativen und Ablenkstrategien
+              erarbeiten. Eine Checkliste hilft Dir, Dich konkret auf den
+              Rauchstopp vorzubereiten. Du erhältst Praxis-Tipps zum Umgang mit
+              Entzugserscheinungen und Rauchverlangen, wie Du Rückfälle
+              vorbeugen und mit Ausrutschern umgehen kannst. Neue
+              Bewältigungsstrategien zum Umgang mit Stress und Ärger warten auf
+              Dich. Du erhältst außerdem hilfreiche Tipps zum Thema
+              Gewichtszunahme sowie konkrete Unterstützung durch Fitnessvideos
+              und Rezepte.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section
+      class="secondary-container bg-iceFishing rounded-3xl py-4 sm:py-6 lg:py-14 xl:py-22 my-14 lg:my-16 3xl:my-20"
+    >
+      <div class="max-w-223 w-full mx-auto">
+        <div
+          class="md:space-y-3 space-y-1 xl:mb-16 lg:mb-10 md:mb-8 sm:mb-6 mb-4"
+        >
+          <p class="paragraph-text font-fira font-medium text-blueBay">
+            Die NichtraucherHelden-App basiert auf dem aktuellen Stand der
+            Wissenschaft
+          </p>
+          <h5
+            class="individually-card-title text-KonBlue font-medium font-fira"
+          >
+            Durch allgemeine Leitlinien und Studien belegt
+          </h5>
+        </div>
+        <div class="space-y-4">
+          <!-- 1 -->
+          <article class="flex items-center gap-4 lg:gap-6">
+            <b
+              class="bg-white rounded-full 2xl:min-w-9 2xl:min-h-9 min-w-7 min-h-7 2xl:w-9 2xl:h-9 w-7 h-7 flex items-center justify-center free-help-text font-medium font-fira"
+              >1</b
+            >
+            <h4 class="break-all">
+              Fiore, M. C. (2008). A Clinical Practice Guideline for Treating
+              Tobacco Use and Dependence: 2008 Update. A U.S. Public Health
+              Service Report. American Journal of Preventive Medicine, 35(2),
+              158–176. https://doi.org/10.1016/j.amepre.2008.04.009
+            </h4>
+          </article>
+
+          <!-- 2 -->
+          <article class="flex items-center gap-4 lg:gap-6">
+            <b
+              class="bg-white rounded-full 2xl:min-w-9 2xl:min-h-9 min-w-7 min-h-7 2xl:w-9 2xl:h-9 w-7 h-7 flex items-center justify-center free-help-text font-medium font-fira"
+              >2</b
+            >
+            <div class="break-all">
+              Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen
+              Fachgesellschaften (AWMF) (2021). S3-Leitlinie “Rauchen und
+              Tabakabhängigkeit: Screening, Diagnostik und Behandlung”
+              (AWMF-Register Nr. 076-006; AWMFonline).
+              https://www.awmf.org/uploads/tx_szleitlinien/076-006l_S3_Rauchen_Tabakaabhaengigkeit-Screening-Diagnostik-Behandlung_2021-01.pdf
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="flex items-center gap-4 lg:gap-6">
+            <b
+              class="bg-white rounded-full 2xl:min-w-9 2xl:min-h-9 min-w-7 min-h-7 2xl:w-9 2xl:h-9 w-7 h-7 flex items-center justify-center free-help-text font-medium font-fira"
+              >3</b
+            >
+            <h4>
+              Batra, A., & Buchkremer, G. (2004). Tabakentwöhnung – Ein
+              Leitfaden für Therapeuten (1. Auflage). Verlag W. Kohlhammer.
+            </h4>
+          </article>
+
+          <!-- 4 -->
+          <article class="flex items-center gap-4 lg:gap-6">
+            <b
+              class="bg-white rounded-full 2xl:min-w-9 2xl:min-h-9 min-w-7 min-h-7 2xl:w-9 2xl:h-9 w-7 h-7 flex items-center justify-center free-help-text font-medium font-fira"
+              >4</b
+            >
+            <h4>
+              Torchalla, I., Schröter, M., & Batra, A. (2013). Individualisierte
+              Tabakentwöhnung – Verhaltenstherapeutisches Manual (1. Auflage).
+              Verlag W. Kohlhammer.
+            </h4>
+          </article>
+
+          <!-- 5 -->
+          <article class="flex items-center gap-4 lg:gap-6">
+            <b
+              class="bg-white rounded-full 2xl:min-w-9 2xl:min-h-9 min-w-7 min-h-7 2xl:w-9 2xl:h-9 w-7 h-7 flex items-center justify-center free-help-text font-medium font-fira"
+              >5</b
+            >
+            <h4 class="break-all">
+              Batra, A., Collins, S. E., Torchalla, I., Schröter, M., &
+              Buchkremer, G. (2008). Multidimensional smoker profiles and their
+              prediction of smoking following a pharmacobehavioral intervention.
+              Journal of Substance Abuse Treatment, 35(1), 41–52.
+              https://doi.org/10.1016/j.jsat.2007.08.006
+            </h4>
+          </article>
+
+          <!-- 6 -->
+          <article class="flex items-center gap-4 lg:gap-6">
+            <b
+              class="bg-white rounded-full 2xl:min-w-9 2xl:min-h-9 min-w-7 min-h-7 2xl:w-9 2xl:h-9 w-7 h-7 flex items-center justify-center free-help-text font-medium font-fira"
+              >6</b
+            >
+            <h4>
+              Erfurt, L., & Kröger, C. B. (2015). Anwendung von Medikamenten in
+              Kombination mit einem modernen Gruppenprogramm zur
+              Tabakentwöhnung. Gesundheitswesen, 77(2), 74–80.
+              https://doi.org/10.1055/s-0034-1367039
+            </h4>
+          </article>
+
+          <!-- 7 -->
+          <article class="flex items-center gap-4 lg:gap-6">
+            <b
+              class="bg-white rounded-full 2xl:min-w-9 2xl:min-h-9 min-w-7 min-h-7 2xl:w-9 2xl:h-9 w-7 h-7 flex items-center justify-center free-help-text font-medium font-fira"
+              >7</b
+            >
+            <h4 class="wrap-break-word break-all">
+              Kröger, C., Nowak, M., & Erfurt, L. (2011). Projektbericht
+              Effektivität von Tabakentwöhnung in Deutschland (Fassung vom 07.
+              Juni 2011).
+              https://www.bundesgesundheitsministerium.de/fileadmin/Dateien/5_Publikationen/Drogen_und_Sucht/Berichte/...pdf
+            </h4>
+          </article>
+
+          <!-- 8 -->
+          <article class="flex items-center gap-4 lg:gap-6">
+            <b
+              class="bg-white rounded-full 2xl:min-w-9 2xl:min-h-9 min-w-7 min-h-7 2xl:w-9 2xl:h-9 w-7 h-7 flex items-center justify-center free-help-text font-medium font-fira"
+              >8</b
+            >
+            <h4>
+              Hering, T., Andres, J., Ruhr, H. J., & Berkling, K. (2015).
+              Real-Life-Evaluation des Kompakt-Programmes zur Tabakentwöhnung:
+              Mein Nichtraucherprogramm (BnP) unter Alltagsbedingungen.
+              Pneumologie, 69(10), 577–582.
+              https://doi.org/10.1055/s-0034-1392470
+            </h4>
+          </article>
+
+          <!-- 9 -->
+          <article class="flex items-center gap-4 lg:gap-6">
+            <b
+              class="bg-white rounded-full 2xl:min-w-9 2xl:min-h-9 min-w-7 min-h-7 2xl:w-9 2xl:h-9 w-7 h-7 flex items-center justify-center free-help-text font-medium font-fira"
+              >9</b
+            >
+            <h4>
+              Felten, S., Hering, T., & Ruhr, A. (2017). Mein Nichtraucher
+              Programm Trainermanual: Vol. Version1.2. Gesellschaft für
+              Gesundheitsmanagement GfGM GmbH
+            </h4>
+          </article>
+
+          <!-- 10 -->
+          <article class="flex items-center gap-4 lg:gap-6 break-all">
+            <b
+              class="bg-white rounded-full 2xl:min-w-9 2xl:min-h-9 min-w-7 min-h-7 2xl:w-9 2xl:h-9 w-7 h-7 flex items-center justify-center free-help-text font-medium font-fira"
+              >10</b
+            >
+            <h4 class="break-all">
+              Lehto, T., & Oinas-Kukkonen, H. (2011). Persuasive features in
+              web-based alcohol and smoking interventions: A systematic review
+              of the literature. Journal of Medical Internet Research, 13(3),
+              1–19. https://doi.org/10.2196/jmir.1559
+            </h4>
+          </article>
+
+          <!-- 11 -->
+          <article class="flex items-center gap-4 lg:gap-6">
+            <b
+              class="bg-white rounded-full 2xl:min-w-9 2xl:min-h-9 min-w-7 min-h-7 2xl:w-9 2xl:h-9 w-7 h-7 flex items-center justify-center free-help-text font-medium font-fira"
+              >11</b
+            >
+            <h4 class="break-all">
+              Wahle, F., Bollhalder, L., Kowatsch, T., & Fleisch, E. (2017).
+              Toward the Design of Evidence-Based Mental Health Information
+              Systems for People With Depression: A Systematic Literature Review
+              and Meta-Analysis. Journal of Medical Internet Research, 19(5),
+              e191. https://doi.org/10.2196/jmir.7381
+            </h4>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!------------------------ Footer Section --------------------------->
+    <footer class="bg-KonBlue text-white px-8 sm:px-5">
+      <!-- TOP SECTION -->
+      <div
+        class="section-container mt-0! py-12 xl:justify-between grid grid-cols-1 sm:grid-cols-2 3xl:pt-27.75 3xl:pb-26.25 lg:grid-cols-4 gap-8 3xl:gap-17 xl:flex"
+      >
+        <!-- Column 1 -->
+        <div>
+          <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+            Sanero Medical GmbH
+          </h3>
+          <p class="footer-link font-normal font-ibm-plex">
+            Wilhelmstraße 19 70182<br />
+            Stuttgart Germany
+          </p>
+
+          <div class="mt-4 md:mt-6 space-y-2 text-sm">
+            <a
+              href="tel:+49 (0)711 / 99 538 110"
+              class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+            >
+              <img
+                class="max-w-5 w-full"
+                src="./assets/images/phone-white.webp"
+                alt="phone"
+              />
+
+              +49 (0)711 / 99 538 110
+            </a>
+            <a
+              href="mailto:info@sanero-medical.de"
+              class="footer-link font-ibm-plex text-white hover:scale-95 duration-300 flex items-center gap-2 font-normal"
+            >
+              <img
+                class="max-w-5 w-full"
+                src="./assets/images/email-white.webp"
+                alt="phone"
+              />
+              info@sanero-medical.de
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div>
+          <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+            Unternehmen
+          </h3>
+          <ul
+            class="space-y-2 font-normal footer-link font-ibm-plex text-white"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Über uns</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Kontakt</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Presse</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div>
+          <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+            Service
+          </h3>
+          <ul
+            class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >FAQ</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Impressum</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Datenschutz</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4 -->
+        <div>
+          <h3 class="footer-title mb-3 md:mb-6 text-white font-fira">
+            Prävention nach §20
+          </h3>
+          <ul
+            class="space-y-2 footer-link font-normal font-ibm-plex text-white"
+          >
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Präventionskurs</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Krankenkassen</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-superSaiyan transition-all duration-300 ease-in-out"
+                >Firmenprogramm</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- BOTTOM BAR -->
+    <section class="bg-windsweptBeach hidden md:block px-5">
+      <div
+        class="section-container mt-0! py-4 md:py-6.5! flex flex-col lg:flex-row justify-between items-center gap-4"
+      >
+        <p class="text-encoreGray footer-link font-ibm-plex">
+          © 2025 NichtraucherHelden – ein Produkt der Sanero Medical GmbH
+        </p>
+
+        <div class="flex items-center gap-6">
+          <a
+            href="#"
+            class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+            >Impressum</a
+          >
+          <a
+            href="#"
+            class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+            >Datenschutzerklärung</a
+          >
+          <a
+            href="#"
+            class="text-encoreGray footer-link font-ibm-plex underline hover:text-KonBlue transition-all duration-300 ease-in-out"
+            >AGB</a
+          >
+        </div>
+      </div>
+    </section>
+    <!-- BACK-TO-TOP -->
+    <button
+      id="backToTopBtn"
+      class="bg-KonBlue invisible fixed right-2 min-h-11 min-w-11 bottom-4 z-40 translate-y-4 cursor-pointer rounded-full p-3 text-white opacity-0 shadow-lg transition-all duration-300 focus:outline-none lg:right-8 md:bottom-8 border border-white"
+    >
+      <!-- Arrow Up Icon -->
+      <img
+        class="max-w-5 rotate-[177deg]"
+        src="./assets/images/scroll-button.webp"
+        alt="arrow"
+      />
+    </button>
+    <div
+      data-modal="login"
+      class="fixed modal inset-0 z-50 hidden overflow-hidden"
+    >
+      <!-- Overlay -->
+      <div
+        class="fixed inset-0 bg-KonBlue/90 opacity-0 transition-opacity duration-300 modal-overlay"
+      ></div>
+      <!-- Modal Content -->
+      <div
+        class="min-h-dvh h-dvh max-h-dvh p-5 flex items-center justify-center"
+      >
+        <div
+          class="modal-content modal-container max-w-190 relative overflow-auto max-h-full hide-scrollbar"
+        >
+          <div class="modal-header sticky top-0">
+            <h4 class="individually-card-title">Login</h4>
+            <button class="modal-close-button" data-modal-close>
+              <img
+                class="object-contain w-full h-full"
+                src="./assets/images/png/modal-close.png"
+                alt="modal-close"
+              />
+            </button>
+          </div>
+          <form
+            id="loginForm"
+            class="3xl:gap-12 2xl:gap-10 h-auto 1xl:gap-8 gap-6 xl:px-6 px-4 3xl:pt-11 2xl:pt-10 1xl:pt-9 pt-6 3xl:pb-12 2xl:pb-10 pb-8 flex flex-col justify-center overflow-auto"
+          >
+            <p class="free-help-text text-KonBlue leading-[150%] px-4">
+              Melde Dich hier für deinen persönlichen Bereich an.
+            </p>
+
+            <div class="md:space-y-3 space-y-2">
+              <!-- Email -->
+              <div>
+                <input
+                  id="email"
+                  class="primary-input free-help-text"
+                  placeholder="Benutzername / E-Mail-Adresse"
+                  type="email"
+                />
+                <p id="emailError" class="text-red-500 text-sm mt-1 hidden"></p>
+              </div>
+
+              <!-- Password -->
+              <div>
+                <div
+                  class="flex items-center justify-between primary-input free-help-text"
+                >
+                  <input
+                    id="password"
+                    class="w-full outline-none bg-transparent placeholder:text-encoreGray"
+                    placeholder="Passwort*"
+                    type="password"
+                  />
+
+                  <button type="button" id="togglePassword" class="w-6 h-6">
+                    <img
+                      id="eyeIcon"
+                      class="object-contain w-full h-full"
+                      src="./assets/images/png/open-eye.png"
+                      alt="toggle password"
+                    />
+                  </button>
+                </div>
+                <p
+                  id="passwordError"
+                  class="text-red-500 text-sm mt-1 hidden"
+                ></p>
+              </div>
+            </div>
+
+            <a
+              class="free-help-text text-KonBlue underline font-light leading-[160%] w-fit mx-auto"
+              href=""
+            >
+              Passwort vergessen?
+            </a>
+
+            <button
+              type="submit"
+              class="text-white leading-[160%] font-fira font-medium hover:bg-white border border-blueBay bg-blueBay rounded-2xl flex items-center justify-center free-help-text md:h-14 h-13 hover:text-blueBay duration-300 ease-in-out transition-all"
+            >
+              Einloggen
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/js/popup.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/back-to-top.js"></script>
+    <script src="/js/professional.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+
+        slidesPerGroup: 1, // 🔥 ek hi slide move
+
+        navigation: {
+          nextEl: ".swiper-button-next-custom",
+          prevEl: ".swiper-button-prev-custom",
+        },
+
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+
+        on: {
+          init(swiper) {
+            updateVisibleDots(swiper);
+          },
+          slideChange(swiper) {
+            updateVisibleDots(swiper);
+          },
+        },
+
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 16,
+          },
+        },
+      });
+
+      function updateVisibleDots(swiper) {
+        const bullets = document.querySelectorAll(".swiper-pagination-bullet");
+        const total = bullets.length;
+        const current = swiper.realIndex;
+
+        const maxVisible = 5;
+
+        let start = Math.max(0, current - Math.floor(maxVisible / 2));
+        let end = start + maxVisible;
+
+        if (end > total) {
+          end = total;
+          start = end - maxVisible;
+        }
+
+        bullets.forEach((b, i) => {
+          b.style.display = i >= start && i < end ? "inline-block" : "none";
+        });
+      }
+    </script>
+  </body>
+</html>
