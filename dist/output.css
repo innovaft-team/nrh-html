@@ -1517,6 +1517,9 @@
   .max-w-\[253\.16px\] {
     max-width: 253.16px;
   }
+  .max-w-\[268px\] {
+    max-width: 268px;
+  }
   .max-w-\[270px\] {
     max-width: 270px;
   }
@@ -1561,6 +1564,9 @@
   }
   .max-w-\[633px\] {
     max-width: 633px;
+  }
+  .max-w-\[700px\] {
+    max-width: 700px;
   }
   .max-w-\[760px\] {
     max-width: 760px;
@@ -3874,6 +3880,11 @@
       padding-top: calc(var(--spacing) * 5);
     }
   }
+  .max-sm\:pt-\[56px\]\! {
+    @media (width < 640px) {
+      padding-top: 56px !important;
+    }
+  }
   .max-sm\:pb-0\! {
     @media (width < 640px) {
       padding-bottom: calc(var(--spacing) * 0) !important;
@@ -3895,6 +3906,12 @@
     @media (width < 640px) {
       --tw-leading: 150%;
       line-height: 150%;
+    }
+  }
+  .max-sm\:font-light\! {
+    @media (width < 640px) {
+      --tw-font-weight: var(--font-weight-light) !important;
+      font-weight: var(--font-weight-light) !important;
     }
   }
   .max-sm\:font-normal\! {
@@ -4659,6 +4676,11 @@
   .sm\:max-w-\[135px\] {
     @media (width >= 640px) {
       max-width: 135px;
+    }
+  }
+  .sm\:max-w-\[256px\]\! {
+    @media (width >= 640px) {
+      max-width: 256px !important;
     }
   }
   .sm\:max-w-\[288px\] {
@@ -9255,6 +9277,11 @@
       max-width: 50px;
     }
   }
+  .\32 xl\:max-w-\[1552px\] {
+    @media (width >= 1536px) {
+      max-width: 1552px;
+    }
+  }
   .\32 xl\:min-w-9 {
     @media (width >= 1536px) {
       min-width: calc(var(--spacing) * 9);
@@ -9591,6 +9618,11 @@
   .\33 xl\:mt-6 {
     @media (width >= 1920px) {
       margin-top: calc(var(--spacing) * 6);
+    }
+  }
+  .\33 xl\:mt-8 {
+    @media (width >= 1920px) {
+      margin-top: calc(var(--spacing) * 8);
     }
   }
   .\33 xl\:mt-11 {
@@ -10001,6 +10033,11 @@
   .\33 xl\:max-w-\[760px\] {
     @media (width >= 1920px) {
       max-width: 760px;
+    }
+  }
+  .\33 xl\:max-w-\[859px\] {
+    @media (width >= 1920px) {
+      max-width: 859px;
     }
   }
   .\33 xl\:max-w-\[900px\] {
@@ -10465,6 +10502,11 @@
       padding-top: 43px;
     }
   }
+  .\33 xl\:pt-\[52px\] {
+    @media (width >= 1920px) {
+      padding-top: 52px;
+    }
+  }
   .\33 xl\:pt-\[89px\] {
     @media (width >= 1920px) {
       padding-top: 89px;
@@ -10513,6 +10555,11 @@
   .\33 xl\:pb-6 {
     @media (width >= 1920px) {
       padding-bottom: calc(var(--spacing) * 6);
+    }
+  }
+  .\33 xl\:pb-8\! {
+    @media (width >= 1920px) {
+      padding-bottom: calc(var(--spacing) * 8) !important;
     }
   }
   .\33 xl\:pb-10 {
