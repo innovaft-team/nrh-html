@@ -714,7 +714,7 @@ a {
   opacity: 1;
 }
 .traning-hero-heading {
-  @apply text-xl sm:text-2xl lg:text-3xl xl:text-[40px] 3xl:text-[44px] font-medium leading-[100%] sm:leading-[133%] md:leading-[118.182%] font-fira;
+  @apply text-2xl lg:text-3xl xl:text-[40px] 3xl:text-[44px] font-medium md:leading-[100%] leading-[133%] lg:leading-[118.182%] font-fira;
 }
 html {
   scroll-behavior: smooth;
