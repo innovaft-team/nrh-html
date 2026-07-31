@@ -102,13 +102,13 @@
     @apply text-2xl sm:text-xl md:text-2xl lg:text-[26px] 3xl:text-[28px] font-medium;
   }
   .custom-container {
-    @apply max-w-7xl 3xl:max-w-396 px-4 mx-auto w-full;
+    @apply max-w-[1320px] 3xl:max-w-396 px-4 mx-auto w-full;
   }
   .overlap-conatiner-container {
     @apply max-w-7xl 3xl:max-w-396 px-5  sm:px-4 mx-auto w-full;
   }
   .secondary-container {
-    @apply lg:max-w-[90%] xl:max-w-262.5 3xl:max-w-330 mx-auto px-4;
+    @apply  max-w-330 mx-auto px-4;
   }
   .secondary-container-v4 {
     @apply lg:max-w-[90%] xl:max-w-262.5 3xl:max-w-330 mx-auto px-5;
