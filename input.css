@@ -104,8 +104,8 @@
   .custom-container {
     @apply max-w-7xl 3xl:max-w-396 px-4 mx-auto w-full;
   }
-  .overlap-container-container {
-    @apply max-w-343.75 3xl:max-w-421 mx-auto w-full;
+  .overlap-conatiner-container {
+    @apply max-w-7xl 3xl:max-w-396 px-5  sm:px-4 mx-auto w-full;
   }
   .secondary-container {
     @apply lg:max-w-[90%] xl:max-w-262.5 3xl:max-w-330 mx-auto px-4;
@@ -202,7 +202,7 @@ body::-webkit-scrollbar {
   @apply hover:text-superSaiyan flex items-center gap-3 transition-all duration-300 ease-in-out;
 }
 .slider-img {
-  @apply min-w-[170px] min-h-[170px] w-[170px] h-[170px] relative rounded-full;
+  @apply max-md:w-[60px] max-md:h-[60px] max-md:min-w-[60px] max-md:min-h-[60px] min-w-[170px] min-h-[170px] w-[170px] h-[170px] relative rounded-full;
 }
 .slider-img-primary {
   @apply xxs:max-w-[204px]! xxs:max-h-[204px]! xxs:min-w-[204px]! xxs:min-h-[204px]! max-w-[85px]! min-w-[85px]! min-h-[85px]! max-h-[85px]! relative rounded-full;
@@ -216,7 +216,7 @@ body::-webkit-scrollbar {
   z-index: -1;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 639px) {
   .hero-section::before {
     background-image: url("/assets/images/hero-bg-1.webp");
     background-size: cover;
@@ -226,7 +226,7 @@ body::-webkit-scrollbar {
     height: 100%;
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 638px) {
   .mobile-hero-section::before {
     content: "";
     position: absolute;
