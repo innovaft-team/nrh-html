@@ -7,7 +7,7 @@
 | Markup | HTML5 (static pages) | — |
 | Styling | Tailwind CSS | v4.1.18 |
 | CSS Source | `input.css` (compiled by Tailwind CLI) | — |
-| Fonts | Google Fonts — Fira Sans, IBM Plex Sans | — |
+| Fonts | Self-hosted — Fira Sans, IBM Plex Sans (`assets/fonts/`) | — |
 | Slider / Carousel | Swiper.js | v11 (CDN) |
 | JavaScript | Vanilla JS (no framework) | — |
 | Hosting | Firebase Hosting | — |
@@ -20,6 +20,7 @@
 ```
 nrh/
 ├── assets/
+│   ├── fonts/         # Self-hosted webfonts (.woff2) + fonts.css (@font-face)
 │   ├── images/        # All image assets (.webp, .png, etc.)
 │   ├── svg/           # SVG icons and illustrations
 │   └── video/         # Video files
@@ -207,7 +208,7 @@ This file is auto-generated and overwritten every time you build or save. Any ma
 
 | Section | What it contains |
 |---|---|
-| `@import` (top) | Google Fonts import |
+| `@import` (top) | Local font stylesheet (`assets/fonts/fonts.css`) + Tailwind |
 | `@theme { }` | Design tokens — colors, fonts, breakpoints |
 | `@layer base { }` | Global element and reusable class styles |
 | Rest of the file | Component-specific classes (buttons, cards, modals, etc.) |
