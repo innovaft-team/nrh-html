@@ -62,7 +62,8 @@ function cardAnimation() {
     cards.forEach((card, i) => {
       const isMobile = window.innerWidth < 640;
       gsap.set(card, {
-        scale: isMobile ? 1 : 0.87 + i * 0.02,
+        scaleX: 1,
+        scaleY: isMobile ? 1 : 0.87 + i * 0.02,
         transformOrigin: "center top",
         willChange: "transform",
       });
@@ -74,7 +75,8 @@ function cardAnimation() {
     cards.forEach((card, i) => {
       const isMobile = window.innerWidth < 640;
       gsap.to(card, {
-        scale: isMobile ? 1 : 0.87 + i * 0.02,
+        scaleX: 1,
+        scaleY: isMobile ? 1 : 0.87 + i * 0.02,
         ease: "none",
         scrollTrigger: {
           trigger: wrappers[i],

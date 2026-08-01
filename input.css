@@ -105,7 +105,7 @@
     @apply max-w-[1320px] 3xl:max-w-396 px-4 mx-auto w-full;
   }
   .overlap-conatiner-container {
-    @apply max-w-7xl 3xl:max-w-396 px-5  sm:px-4 mx-auto w-full;
+    @apply max-w-[1320px] 3xl:max-w-396 px-5  sm:px-4 mx-auto w-full;
   }
   .secondary-container {
     @apply  max-w-330 mx-auto px-4;
