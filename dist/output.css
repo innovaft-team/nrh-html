@@ -1529,6 +1529,9 @@
   .max-w-\[1288px\] {
     max-width: 1288px;
   }
+  .max-w-full {
+    max-width: 100%;
+  }
   .max-w-full\! {
     max-width: 100% !important;
   }
@@ -3717,6 +3720,11 @@
       max-width: 300px;
     }
   }
+  .max-sm\:max-w-full {
+    @media (width < 640px) {
+      max-width: 100%;
+    }
+  }
   .max-sm\:max-w-full\! {
     @media (width < 640px) {
       max-width: 100% !important;
@@ -3796,6 +3804,11 @@
   .max-sm\:px-5 {
     @media (width < 640px) {
       padding-inline: calc(var(--spacing) * 5);
+    }
+  }
+  .max-sm\:px-6\.5 {
+    @media (width < 640px) {
+      padding-inline: calc(var(--spacing) * 6.5);
     }
   }
   .max-sm\:px-9 {
@@ -5731,6 +5744,12 @@
       height: calc(var(--spacing) * 8);
     }
   }
+  .md\:size-9 {
+    @media (width >= 768px) {
+      width: calc(var(--spacing) * 9);
+      height: calc(var(--spacing) * 9);
+    }
+  }
   .md\:size-10 {
     @media (width >= 768px) {
       width: calc(var(--spacing) * 10);
@@ -7312,6 +7331,11 @@
       max-width: calc(var(--spacing) * 106);
     }
   }
+  .lg\:max-w-122\.25 {
+    @media (width >= 1024px) {
+      max-width: calc(var(--spacing) * 122.25);
+    }
+  }
   .lg\:max-w-124 {
     @media (width >= 1024px) {
       max-width: calc(var(--spacing) * 124);
@@ -7335,6 +7359,21 @@
   .lg\:max-w-137\.5 {
     @media (width >= 1024px) {
       max-width: calc(var(--spacing) * 137.5);
+    }
+  }
+  .lg\:max-w-138\.5 {
+    @media (width >= 1024px) {
+      max-width: calc(var(--spacing) * 138.5);
+    }
+  }
+  .lg\:max-w-140 {
+    @media (width >= 1024px) {
+      max-width: calc(var(--spacing) * 140);
+    }
+  }
+  .lg\:max-w-140\! {
+    @media (width >= 1024px) {
+      max-width: calc(var(--spacing) * 140) !important;
     }
   }
   .lg\:max-w-143 {
@@ -8072,6 +8111,13 @@
       line-height: 140%;
     }
   }
+  .lg\:max-sm\:px-\[26px\] {
+    @media (width >= 1024px) {
+      @media (width < 640px) {
+        padding-inline: 26px;
+      }
+    }
+  }
   .xl\:top-48\.75 {
     @media (width >= 1280px) {
       top: calc(var(--spacing) * 48.75);
@@ -8462,6 +8508,11 @@
   .xl\:max-w-100\.75 {
     @media (width >= 1280px) {
       max-width: calc(var(--spacing) * 100.75);
+    }
+  }
+  .xl\:max-w-138\.5 {
+    @media (width >= 1280px) {
+      max-width: calc(var(--spacing) * 138.5);
     }
   }
   .xl\:max-w-145 {
