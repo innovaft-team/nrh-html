@@ -1754,7 +1754,10 @@
               Häufige Fragen
             </h2>
           </div>
-          <div class="space-y-3 sm:space-y-6 secondary-container px-0">
+          <div
+            id="faq-wrapper"
+            class="space-y-3 sm:space-y-6 secondary-container px-0"
+          >
             <!-- FAQ 1 -->
             <div class="bg-white p-6 rounded-3xl">
               <div class="flex justify-between items-center cursor-pointer">
@@ -1765,13 +1768,13 @@
                 </h3>
                 <img
                   id="accordionArrow"
-                  class="size-10 accordion-arrow transition-transform duration-300 rotate-180"
+                  class="size-10 accordion-arrow faq-toggle-icon transition-transform duration-300"
                   src="./assets/images/png/arrow-up-down.png"
                   alt=""
                 />
               </div>
-              <div class="accordion">
-                <div class="accordion-inner overflow-hidden">
+              <div class="accordion faq-content">
+                <div class="accordion-inner faq-content-inner overflow-hidden">
                   <p
                     class="free-help-text text-KonBlue md:font-light leading-[160%] font-ibm-plex mt-6"
                   >
@@ -1802,13 +1805,13 @@
                 </h3>
                 <img
                   id="accordionArrow"
-                  class="size-10 accordion-arrow transition-transform duration-300"
+                  class="size-10 accordion-arrow faq-toggle-icon transition-transform duration-300 rotate-180"
                   src="./assets/images/png/arrow-up-down.png"
                   alt=""
                 />
               </div>
-              <div class="accordion">
-                <div class="accordion-inner overflow-hidden">
+              <div class="accordion faq-content">
+                <div class="accordion-inner faq-content-inner overflow-hidden">
                   <p
                     class="free-help-text text-KonBlue md:font-light leading-[160%] font-ibm-plex mt-6"
                   >
@@ -1834,13 +1837,13 @@
                 </h3>
                 <img
                   id="accordionArrow"
-                  class="size-10 accordion-arrow transition-transform duration-300"
+                  class="size-10 accordion-arrow faq-toggle-icon transition-transform duration-300 rotate-180"
                   src="./assets/images/png/arrow-up-down.png"
                   alt=""
                 />
               </div>
-              <div class="accordion">
-                <div class="accordion-inner overflow-hidden">
+              <div class="accordion faq-content">
+                <div class="accordion-inner faq-content-inner overflow-hidden">
                   <p
                     class="free-help-text text-KonBlue md:font-light leading-[160%] font-ibm-plex mt-6"
                   >
@@ -1862,13 +1865,13 @@
                 </h3>
                 <img
                   id="accordionArrow"
-                  class="size-10 accordion-arrow transition-transform duration-300"
+                  class="size-10 accordion-arrow faq-toggle-icon transition-transform duration-300 rotate-180"
                   src="./assets/images/png/arrow-up-down.png"
                   alt=""
                 />
               </div>
-              <div class="accordion">
-                <div class="accordion-inner overflow-hidden">
+              <div class="accordion faq-content">
+                <div class="accordion-inner faq-content-inner overflow-hidden">
                   <p
                     class="free-help-text text-KonBlue md:font-light leading-[160%] font-ibm-plex mt-6"
                   >
@@ -1891,13 +1894,13 @@
                 </h3>
                 <img
                   id="accordionArrow"
-                  class="size-10 accordion-arrow transition-transform duration-300"
+                  class="size-10 accordion-arrow faq-toggle-icon transition-transform duration-300 rotate-180"
                   src="./assets/images/png/arrow-up-down.png"
                   alt=""
                 />
               </div>
-              <div class="accordion">
-                <div class="accordion-inner overflow-hidden">
+              <div class="accordion faq-content">
+                <div class="accordion-inner faq-content-inner overflow-hidden">
                   <p
                     class="free-help-text text-KonBlue md:font-light leading-[160%] font-ibm-plex mt-6"
                   >
@@ -2208,21 +2211,54 @@
           prevEl: ".swiper-button-prev-feature",
         },
       });
-    </script>
-    <script src="/js/nichtraucher-slider.js"></script>
-    <script src="/js/common-accordion.js"></script>
-    <script>
-      // Open the first FAQ on load
-      window.addEventListener("DOMContentLoaded", () => {
-        const firstFaq = document.querySelector("#faq-section .accordion");
-        if (firstFaq) {
-          const firstFaqInner = firstFaq.querySelector(".accordion-inner");
-          firstFaq.style.height = firstFaqInner.scrollHeight + "px";
-          const firstFaqArrow =
-            firstFaq.previousElementSibling.querySelector("#accordionArrow");
-          if (firstFaqArrow) firstFaqArrow.style.transform = "rotate(180deg)";
-        }
+      document.addEventListener("DOMContentLoaded", () => {
+        const faqItems = document.querySelectorAll("#faq-wrapper .bg-white");
+
+        faqItems.forEach((item, index) => {
+          const header = item.querySelector(".cursor-pointer");
+          const content = item.querySelector(".faq-content");
+          const contentInner = item.querySelector(".faq-content-inner");
+          const icon = item.querySelector(".faq-toggle-icon");
+
+          // First FAQ open by default
+          if (index === 0) {
+            content.style.height = contentInner.scrollHeight + "px";
+            icon.classList.remove("rotate-180");
+          } else {
+            content.style.height = "0px";
+            icon.classList.add("rotate-180");
+          }
+
+          header.addEventListener("click", () => {
+            const isOpen = content.style.height !== "0px";
+
+            // Close all FAQs
+            faqItems.forEach((faq) => {
+              faq.querySelector(".faq-content").style.height = "0px";
+              faq.querySelector(".faq-toggle-icon").classList.add("rotate-180");
+            });
+
+            // Open clicked FAQ
+            if (!isOpen) {
+              content.style.height = contentInner.scrollHeight + "px";
+              icon.classList.remove("rotate-180");
+            }
+          });
+        });
+
+        // Recalculate height on resize
+        window.addEventListener("resize", () => {
+          faqItems.forEach((faq) => {
+            const content = faq.querySelector(".faq-content");
+            const inner = faq.querySelector(".faq-content-inner");
+
+            if (content.style.height !== "0px") {
+              content.style.height = inner.scrollHeight + "px";
+            }
+          });
+        });
       });
     </script>
+    <script src="./js/nichtraucher-slider.js"></script>
   </body>
 </html>
